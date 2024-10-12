@@ -182,9 +182,9 @@ PS &gt; wsl -l -v
 
 <div class="org-src-container">
 <pre class="src src-C">template&lt;typename... T&gt;
-<span style="color: #b6a0ff;">auto</span> add_val(T... args)
+<span style="color: #531ab6;">auto</span> add_val(T... args)
 {
-    <span style="color: #b6a0ff;">return</span> (... + args);
+    <span style="color: #531ab6;">return</span> (... + args);
 }
 </pre>
 </div>
@@ -204,10 +204,10 @@ PS &gt; wsl -l -v
 
 <div class="org-src-container">
 <pre class="src src-C">template &lt;typename... T&gt;
-<span style="color: #6ae4b9;">void</span> myvtfunct(T... args)
+<span style="color: #005f5f;">void</span> myvtfunct(T... args)
 {
-    cout &lt;&lt; <span style="color: #b6a0ff;">sizeof</span>...(args) &lt;&lt; endl;
-    cout &lt;&lt; <span style="color: #b6a0ff;">sizeof</span>...(T) &lt;&lt; endl;
+    cout &lt;&lt; <span style="color: #531ab6;">sizeof</span>...(args) &lt;&lt; endl;
+    cout &lt;&lt; <span style="color: #531ab6;">sizeof</span>...(T) &lt;&lt; endl;
 }
 </pre>
 </div>
@@ -294,56 +294,6 @@ The <code>reformatter-define</code> macro expands to code which generates <code>
 
 <p>
 料峭春风吹酒醒，微冷，山头斜照却相迎。回首向来萧瑟处，归去，也无风雨也无晴。
-</p>
-<hr><br>
-</div>
-</div>
-<div id="outline-container-build-emacs-on-windows" class="outline-2">
-<h2 id="build-emacs-on-windows"><a href="posts/2024/04/build-emacs-on-windows.html">Build Emacs On Windows</a></h2>
-<div class="outline-text-2" id="text-build-emacs-on-windows">
-<p>
-On Windows, we can build GNU Emacs with <a href="https://www.msys2.org/">MSYS2</a> and <a href="https://www.mingw-w64.org/">MinGW-w64</a>. 
-</p>
-
-<p>
-First, install some necessary packages. The packages include the base developer tools, the compiler toolchain, several image libraries, and XML library, the GnuTLS library, zlib for decompressing text, HarfBuzz for use as the shaping engine, libgccjit for native-compilation support, SQLite3 for accessing SQL databases, and the tree-sitter library used by some major modes. You can select only part of the libraries if you don't need them all.
-</p>
-<hr><br>
-</div>
-</div>
-<div id="outline-container-build-emacs-frome-source" class="outline-2">
-<h2 id="build-emacs-frome-source"><a href="posts/2024/03/build-emacs-from-source.html">Build Emacs From Source</a></h2>
-<div class="outline-text-2" id="text-build-emacs-frome-source">
-<p>
-Windows 11 features <a href="https://docs.microsoft.com/en-us/windows/wsl/tutorials/gui-apps">built-in support for running Linux GUI applications</a>. Emacs 29 has became a real GTK application, gone with the blurry fonts problem.
-</p>
-
-<p>
-Firstly, install essential packages in WSL2 Ubuntu 22.04.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-shell">apt-get update
-apt-get install build-essential libgtk-3-dev libgnutls28-dev libtiff5-dev libgif-dev libjpeg-dev libpng-dev libxpm-dev libncurses-dev texinfo sqlite3 libsqlite3-dev libjansson4 libjansson-dev autoconf
-</pre>
-</div>
-<hr><br>
-</div>
-</div>
-<div id="outline-container-math-equation-with-org-mode" class="outline-2">
-<h2 id="math-equation-with-org-mode"><a href="posts/2024/02/math-equation-with-org-mode.html">Math Equation With Org Mode</a></h2>
-<div class="outline-text-2" id="text-math-equation-with-org-mode">
-<p>
-<a href="https://www.latex-project.org">LaTeX</a> math snippets can be displayed on HTML pages which exported with org-mode. The default is to use the <a href="https://www.mathjax.org">MathJax</a>.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-latex">If <span style="color: #79a8ff;">$a^2=b$</span> and <span style="color: #b6a0ff;">\(</span> b=2 <span style="color: #b6a0ff;">\)</span>, then the solution must be either <span style="color: #79a8ff;">$$ a=+\sqrt{2} $$</span> or <span style="color: #b6a0ff;">\[</span> a=-<span style="color: #b6a0ff;">\sqrt</span>{2} <span style="color: #b6a0ff;">\]</span>.
-</pre>
-</div>
-
-<p>
-If \(a^2=b\) and \( b=2 \), then the solution must be either \[ a=+\sqrt{2} \] or \[ a=-\sqrt{2} \].
 </p>
 <hr><br>
 

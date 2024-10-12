@@ -49,7 +49,7 @@ And in Emacs 29, support for tree-sitter is built-in. Now build tree-sitter from
 <div class="org-src-container">
 <pre class="src src-shell">git clone https://github.com/tree-sitter/tree-sitter.git
 <span style="color: #8f0075;">cd</span> tree-sitter
-git checkout v0.21.0
+git checkout v0.24.3
 make
 make install
 </pre>
@@ -79,11 +79,14 @@ make install
 </div>
 
 <p>
-You may get some GTK warning on Emacs startup about the GNOME theme, fix this by installing <code>adwaita-icon-theme-full</code>.
+Build <a href="https://www.leonerd.org.uk/code/libvterm/">libvterm</a> if you need to use <a href="https://github.com/akermu/emacs-libvterm">vterm</a> on Linux.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-shell">apt-get install adwaita-icon-theme-full
+<pre class="src src-shell">tar -zxf libvterm-0.3.3.tar.gz
+<span style="color: #8f0075;">cd</span> libvterm-0.3.3
+make
+make install
 </pre>
 </div>
 
