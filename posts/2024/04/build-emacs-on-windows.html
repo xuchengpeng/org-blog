@@ -80,7 +80,7 @@ You now have a complete build environment for Emacs.
 git clone --depth=1 https://git.savannah.gnu.org/git/emacs.git emacs-master
 <span style="color: #8f0075;">cd</span> /c/emacs/emacs-master
 ./autogen.sh
-./configure --prefix=/c/programs/emacs --without-dbus --without-native-compilation
+./configure --prefix=/c/programs/emacs --with-tree-sitter --without-dbus --without-native-compilation
 <span style="color: #005e8b;">NPROC</span>=$(<span style="color: #8f0075;">nproc</span>)
 make -j${<span style="color: #005e8b;">NPROC</span>}
 make install
@@ -94,9 +94,9 @@ After building and installing, we need to copy necessary DLLs into Emacs's bin d
 <div class="org-src-container">
 <pre class="src src-bash">cp -v /mingw64/bin/libbrotlicommon.dll /c/programs/emacs/bin
 cp -v /mingw64/bin/libbrotlidec.dll /c/programs/emacs/bin
+cp -v /mingw64/bin/libbrotlienc.dll /c/programs/emacs/bin
 cp -v /mingw64/bin/libbz*.dll /c/programs/emacs/bin
 cp -v /mingw64/bin/libcairo-*.dll /c/programs/emacs/bin
-cp -v /mingw64/bin/libcairo-gobject-*.dll /c/programs/emacs/bin
 cp -v /mingw64/bin/libdatrie-*.dll /c/programs/emacs/bin
 cp -v /mingw64/bin/libdeflate.dll /c/programs/emacs/bin
 cp -v /mingw64/bin/libexpat-*.dll /c/programs/emacs/bin
@@ -119,12 +119,14 @@ cp -v /mingw64/bin/libhogweed-*.dll /c/programs/emacs/bin
 cp -v /mingw64/bin/libiconv-*.dll /c/programs/emacs/bin
 cp -v /mingw64/bin/libidn*.dll /c/programs/emacs/bin
 cp -v /mingw64/bin/libintl-*.dll /c/programs/emacs/bin
-cp -v /mingw64/bin/libjansson-*.dll /c/programs/emacs/bin
+cp -v /mingw64/bin/libisl-*.dll /c/programs/emacs/bin
 cp -v /mingw64/bin/libjbig-*.dll /c/programs/emacs/bin
 cp -v /mingw64/bin/libjpeg-*.dll /c/programs/emacs/bin
 cp -v /mingw64/bin/liblcms*.dll /c/programs/emacs/bin
 cp -v /mingw64/bin/libLerc.dll /c/programs/emacs/bin
 cp -v /mingw64/bin/liblzma-*.dll /c/programs/emacs/bin
+cp -v /mingw64/bin/libmpc-*.dll /c/programs/emacs/bin
+cp -v /mingw64/bin/libmpfr-*.dll /c/programs/emacs/bin
 cp -v /mingw64/bin/libnettle-*.dll /c/programs/emacs/bin
 cp -v /mingw64/bin/libp11-kit-*.dll /c/programs/emacs/bin
 cp -v /mingw64/bin/libpango-*.dll /c/programs/emacs/bin
@@ -135,6 +137,7 @@ cp -v /mingw64/bin/libpcre*.dll /c/programs/emacs/bin
 cp -v /mingw64/bin/libpixman-*.dll /c/programs/emacs/bin
 cp -v /mingw64/bin/libpng*.dll /c/programs/emacs/bin
 cp -v /mingw64/bin/librsvg*.dll /c/programs/emacs/bin
+cp -v /mingw64/bin/libsharpyuv-*.dll /c/programs/emacs/bin
 cp -v /mingw64/bin/libsqlite*.dll /c/programs/emacs/bin
 cp -v /mingw64/bin/libstdc++-*.dll /c/programs/emacs/bin
 cp -v /mingw64/bin/libtasn1-*.dll /c/programs/emacs/bin
@@ -148,6 +151,7 @@ cp -v /mingw64/bin/libwinpthread-*.dll /c/programs/emacs/bin
 cp -v /mingw64/bin/libxml*.dll /c/programs/emacs/bin
 cp -v /mingw64/bin/libXpm*.dll /c/programs/emacs/bin
 cp -v /mingw64/bin/libzstd.dll /c/programs/emacs/bin
+cp -v /mingw64/bin/wasmtime.dll /c/programs/emacs/bin
 cp -v /mingw64/bin/zlib*.dll /c/programs/emacs/bin
 </pre>
 </div>
