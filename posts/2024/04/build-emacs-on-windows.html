@@ -78,10 +78,11 @@ You now have a complete build environment for Emacs.
 <pre class="src src-bash">mkdir /c/emacs
 <span style="color: #8f0075;">cd</span> /c/emacs
 git clone --depth=1 https://git.savannah.gnu.org/git/emacs.git emacs-master
+<span style="color: #005e8b;">install_dir</span>=/c/programs/emacs
 <span style="color: #8f0075;">cd</span> /c/emacs/emacs-master
 ./autogen.sh
-./configure --prefix=/c/programs/emacs --with-tree-sitter --without-dbus --without-native-compilation
-<span style="color: #005e8b;">NPROC</span>=$(<span style="color: #8f0075;">nproc</span>)
+./configure --prefix=${<span style="color: #005e8b;">install_dir</span>} --with-native-compilation=aot --with-tree-sitter --without-dbus --without-pop
+<span style="color: #005e8b;">NPROC</span>=$(nproc)
 make -j${<span style="color: #005e8b;">NPROC</span>}
 make install
 </pre>
@@ -92,67 +93,76 @@ After building and installing, we need to copy necessary DLLs into Emacs's bin d
 </p>
 
 <div class="org-src-container">
-<pre class="src src-bash">cp -v /mingw64/bin/libbrotlicommon.dll /c/programs/emacs/bin
-cp -v /mingw64/bin/libbrotlidec.dll /c/programs/emacs/bin
-cp -v /mingw64/bin/libbrotlienc.dll /c/programs/emacs/bin
-cp -v /mingw64/bin/libbz*.dll /c/programs/emacs/bin
-cp -v /mingw64/bin/libcairo-*.dll /c/programs/emacs/bin
-cp -v /mingw64/bin/libdatrie-*.dll /c/programs/emacs/bin
-cp -v /mingw64/bin/libdeflate.dll /c/programs/emacs/bin
-cp -v /mingw64/bin/libexpat-*.dll /c/programs/emacs/bin
-cp -v /mingw64/bin/libffi-*.dll /c/programs/emacs/bin
-cp -v /mingw64/bin/libfontconfig-*.dll /c/programs/emacs/bin
-cp -v /mingw64/bin/libfreetype-*.dll /c/programs/emacs/bin
-cp -v /mingw64/bin/libfribidi-*.dll /c/programs/emacs/bin
-cp -v /mingw64/bin/libgcc_s_seh-*.dll /c/programs/emacs/bin
-cp -v /mingw64/bin/libgdk_pixbuf-*.dll /c/programs/emacs/bin
-cp -v /mingw64/bin/libgif-*.dll /c/programs/emacs/bin
-cp -v /mingw64/bin/libgio-*.dll /c/programs/emacs/bin
-cp -v /mingw64/bin/libglib-*.dll /c/programs/emacs/bin
-cp -v /mingw64/bin/libgmodule-*.dll /c/programs/emacs/bin
-cp -v /mingw64/bin/libgmp-*.dll /c/programs/emacs/bin
-cp -v /mingw64/bin/libgnutls-*.dll /c/programs/emacs/bin
-cp -v /mingw64/bin/libgobject-*.dll /c/programs/emacs/bin
-cp -v /mingw64/bin/libgraphite*.dll /c/programs/emacs/bin
-cp -v /mingw64/bin/libharfbuzz-*.dll /c/programs/emacs/bin
-cp -v /mingw64/bin/libhogweed-*.dll /c/programs/emacs/bin
-cp -v /mingw64/bin/libiconv-*.dll /c/programs/emacs/bin
-cp -v /mingw64/bin/libidn*.dll /c/programs/emacs/bin
-cp -v /mingw64/bin/libintl-*.dll /c/programs/emacs/bin
-cp -v /mingw64/bin/libisl-*.dll /c/programs/emacs/bin
-cp -v /mingw64/bin/libjbig-*.dll /c/programs/emacs/bin
-cp -v /mingw64/bin/libjpeg-*.dll /c/programs/emacs/bin
-cp -v /mingw64/bin/liblcms*.dll /c/programs/emacs/bin
-cp -v /mingw64/bin/libLerc.dll /c/programs/emacs/bin
-cp -v /mingw64/bin/liblzma-*.dll /c/programs/emacs/bin
-cp -v /mingw64/bin/libmpc-*.dll /c/programs/emacs/bin
-cp -v /mingw64/bin/libmpfr-*.dll /c/programs/emacs/bin
-cp -v /mingw64/bin/libnettle-*.dll /c/programs/emacs/bin
-cp -v /mingw64/bin/libp11-kit-*.dll /c/programs/emacs/bin
-cp -v /mingw64/bin/libpango-*.dll /c/programs/emacs/bin
-cp -v /mingw64/bin/libpangocairo-*.dll /c/programs/emacs/bin
-cp -v /mingw64/bin/libpangoft*.dll /c/programs/emacs/bin
-cp -v /mingw64/bin/libpangowin32-*.dll /c/programs/emacs/bin
-cp -v /mingw64/bin/libpcre*.dll /c/programs/emacs/bin
-cp -v /mingw64/bin/libpixman-*.dll /c/programs/emacs/bin
-cp -v /mingw64/bin/libpng*.dll /c/programs/emacs/bin
-cp -v /mingw64/bin/librsvg*.dll /c/programs/emacs/bin
-cp -v /mingw64/bin/libsharpyuv-*.dll /c/programs/emacs/bin
-cp -v /mingw64/bin/libsqlite*.dll /c/programs/emacs/bin
-cp -v /mingw64/bin/libstdc++-*.dll /c/programs/emacs/bin
-cp -v /mingw64/bin/libtasn1-*.dll /c/programs/emacs/bin
-cp -v /mingw64/bin/libthai-*.dll /c/programs/emacs/bin
-cp -v /mingw64/bin/libtiff-*.dll /c/programs/emacs/bin
-cp -v /mingw64/bin/libtree-sitter.dll /c/programs/emacs/bin
-cp -v /mingw64/bin/libunistring-*.dll /c/programs/emacs/bin
-cp -v /mingw64/bin/libwebp-*.dll /c/programs/emacs/bin
-cp -v /mingw64/bin/libwebpdemux-*.dll /c/programs/emacs/bin
-cp -v /mingw64/bin/libwinpthread-*.dll /c/programs/emacs/bin
-cp -v /mingw64/bin/libxml*.dll /c/programs/emacs/bin
-cp -v /mingw64/bin/libXpm*.dll /c/programs/emacs/bin
-cp -v /mingw64/bin/libzstd.dll /c/programs/emacs/bin
-cp -v /mingw64/bin/wasmtime.dll /c/programs/emacs/bin
-cp -v /mingw64/bin/zlib*.dll /c/programs/emacs/bin
+<pre class="src src-bash">cp -v /mingw64/bin/libbrotlicommon.dll ${<span style="color: #005e8b;">install_dir</span>}/bin
+cp -v /mingw64/bin/libbrotlidec.dll ${<span style="color: #005e8b;">install_dir</span>}/bin
+cp -v /mingw64/bin/libbrotlienc.dll ${<span style="color: #005e8b;">install_dir</span>}/bin
+cp -v /mingw64/bin/libbz*.dll ${<span style="color: #005e8b;">install_dir</span>}/bin
+cp -v /mingw64/bin/libcairo-*.dll ${<span style="color: #005e8b;">install_dir</span>}/bin
+cp -v /mingw64/bin/libdatrie-*.dll ${<span style="color: #005e8b;">install_dir</span>}/bin
+cp -v /mingw64/bin/libdeflate.dll ${<span style="color: #005e8b;">install_dir</span>}/bin
+cp -v /mingw64/bin/libexpat-*.dll ${<span style="color: #005e8b;">install_dir</span>}/bin
+cp -v /mingw64/bin/libffi-*.dll ${<span style="color: #005e8b;">install_dir</span>}/bin
+cp -v /mingw64/bin/libfontconfig-*.dll ${<span style="color: #005e8b;">install_dir</span>}/bin
+cp -v /mingw64/bin/libfreetype-*.dll ${<span style="color: #005e8b;">install_dir</span>}/bin
+cp -v /mingw64/bin/libfribidi-*.dll ${<span style="color: #005e8b;">install_dir</span>}/bin
+cp -v /mingw64/bin/libgccjit*.dll ${<span style="color: #005e8b;">install_dir</span>}/bin
+cp -v /mingw64/bin/libgcc_s_seh-*.dll ${<span style="color: #005e8b;">install_dir</span>}/bin
+cp -v /mingw64/bin/libgdk_pixbuf-*.dll ${<span style="color: #005e8b;">install_dir</span>}/bin
+cp -v /mingw64/bin/libgif-*.dll ${<span style="color: #005e8b;">install_dir</span>}/bin
+cp -v /mingw64/bin/libgio-*.dll ${<span style="color: #005e8b;">install_dir</span>}/bin
+cp -v /mingw64/bin/libglib-*.dll ${<span style="color: #005e8b;">install_dir</span>}/bin
+cp -v /mingw64/bin/libgmodule-*.dll ${<span style="color: #005e8b;">install_dir</span>}/bin
+cp -v /mingw64/bin/libgmp-*.dll ${<span style="color: #005e8b;">install_dir</span>}/bin
+cp -v /mingw64/bin/libgnutls-*.dll ${<span style="color: #005e8b;">install_dir</span>}/bin
+cp -v /mingw64/bin/libgobject-*.dll ${<span style="color: #005e8b;">install_dir</span>}/bin
+cp -v /mingw64/bin/libgraphite*.dll ${<span style="color: #005e8b;">install_dir</span>}/bin
+cp -v /mingw64/bin/libharfbuzz-*.dll ${<span style="color: #005e8b;">install_dir</span>}/bin
+cp -v /mingw64/bin/libhogweed-*.dll ${<span style="color: #005e8b;">install_dir</span>}/bin
+cp -v /mingw64/bin/libiconv-*.dll ${<span style="color: #005e8b;">install_dir</span>}/bin
+cp -v /mingw64/bin/libidn*.dll ${<span style="color: #005e8b;">install_dir</span>}/bin
+cp -v /mingw64/bin/libintl-*.dll ${<span style="color: #005e8b;">install_dir</span>}/bin
+cp -v /mingw64/bin/libisl-*.dll ${<span style="color: #005e8b;">install_dir</span>}/bin
+cp -v /mingw64/bin/libjbig-*.dll ${<span style="color: #005e8b;">install_dir</span>}/bin
+cp -v /mingw64/bin/libjpeg-*.dll ${<span style="color: #005e8b;">install_dir</span>}/bin
+cp -v /mingw64/bin/liblcms*.dll ${<span style="color: #005e8b;">install_dir</span>}/bin
+cp -v /mingw64/bin/libLerc.dll ${<span style="color: #005e8b;">install_dir</span>}/bin
+cp -v /mingw64/bin/liblzma-*.dll ${<span style="color: #005e8b;">install_dir</span>}/bin
+cp -v /mingw64/bin/libmpc-*.dll ${<span style="color: #005e8b;">install_dir</span>}/bin
+cp -v /mingw64/bin/libmpfr-*.dll ${<span style="color: #005e8b;">install_dir</span>}/bin
+cp -v /mingw64/bin/libnettle-*.dll ${<span style="color: #005e8b;">install_dir</span>}/bin
+cp -v /mingw64/bin/libp11-kit-*.dll ${<span style="color: #005e8b;">install_dir</span>}/bin
+cp -v /mingw64/bin/libpango-*.dll ${<span style="color: #005e8b;">install_dir</span>}/bin
+cp -v /mingw64/bin/libpangocairo-*.dll ${<span style="color: #005e8b;">install_dir</span>}/bin
+cp -v /mingw64/bin/libpangoft*.dll ${<span style="color: #005e8b;">install_dir</span>}/bin
+cp -v /mingw64/bin/libpangowin32-*.dll ${<span style="color: #005e8b;">install_dir</span>}/bin
+cp -v /mingw64/bin/libpcre*.dll ${<span style="color: #005e8b;">install_dir</span>}/bin
+cp -v /mingw64/bin/libpixman-*.dll ${<span style="color: #005e8b;">install_dir</span>}/bin
+cp -v /mingw64/bin/libpng*.dll ${<span style="color: #005e8b;">install_dir</span>}/bin
+cp -v /mingw64/bin/librsvg*.dll ${<span style="color: #005e8b;">install_dir</span>}/bin
+cp -v /mingw64/bin/libsharpyuv-*.dll ${<span style="color: #005e8b;">install_dir</span>}/bin
+cp -v /mingw64/bin/libsqlite*.dll ${<span style="color: #005e8b;">install_dir</span>}/bin
+cp -v /mingw64/bin/libstdc++-*.dll ${<span style="color: #005e8b;">install_dir</span>}/bin
+cp -v /mingw64/bin/libtasn1-*.dll ${<span style="color: #005e8b;">install_dir</span>}/bin
+cp -v /mingw64/bin/libthai-*.dll ${<span style="color: #005e8b;">install_dir</span>}/bin
+cp -v /mingw64/bin/libtiff-*.dll ${<span style="color: #005e8b;">install_dir</span>}/bin
+cp -v /mingw64/bin/libtree-sitter.dll ${<span style="color: #005e8b;">install_dir</span>}/bin
+cp -v /mingw64/bin/libunistring-*.dll ${<span style="color: #005e8b;">install_dir</span>}/bin
+cp -v /mingw64/bin/libwebp-*.dll ${<span style="color: #005e8b;">install_dir</span>}/bin
+cp -v /mingw64/bin/libwebpdemux-*.dll ${<span style="color: #005e8b;">install_dir</span>}/bin
+cp -v /mingw64/bin/libwinpthread-*.dll ${<span style="color: #005e8b;">install_dir</span>}/bin
+cp -v /mingw64/bin/libxml*.dll ${<span style="color: #005e8b;">install_dir</span>}/bin
+cp -v /mingw64/bin/libXpm*.dll ${<span style="color: #005e8b;">install_dir</span>}/bin
+cp -v /mingw64/bin/libzstd.dll ${<span style="color: #005e8b;">install_dir</span>}/bin
+cp -v /mingw64/bin/wasmtime.dll ${<span style="color: #005e8b;">install_dir</span>}/bin
+cp -v /mingw64/bin/zlib*.dll ${<span style="color: #005e8b;">install_dir</span>}/bin
+
+mkdir -p ${<span style="color: #005e8b;">install_dir</span>}/lib/gcc
+cp -v /mingw64/lib/{crtbegin,crtend,dllcrt2}.o ${<span style="color: #005e8b;">install_dir</span>}/lib/gcc
+cp -v /mingw64/lib/lib{advapi32,gcc_s,kernel32,mingw32,mingwex,moldname,msvcrt,pthread,shell32,user32}.a ${<span style="color: #005e8b;">install_dir</span>}/lib/gcc
+cp -v /mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/libgcc.a ${<span style="color: #005e8b;">install_dir</span>}/lib/gcc
+cp -v /mingw64/bin/{ld,as}.exe ${<span style="color: #005e8b;">install_dir</span>}/lib/gcc
+cp -v /mingw64/bin/libzstd.dll ${<span style="color: #005e8b;">install_dir</span>}/lib/gcc
+cp -v /mingw64/bin/zlib*.dll ${<span style="color: #005e8b;">install_dir</span>}/lib/gcc
 </pre>
 </div>
 

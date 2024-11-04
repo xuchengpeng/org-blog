@@ -43,6 +43,15 @@ apt-get install build-essential libgtk-3-dev libgnutls28-dev libtiff5-dev libgif
 </div>
 
 <p>
+Native compilation support is enabled by default with emacs 30, install <code>libgccjit0</code> and <code>libgccjit-xx-dev</code> to build this feature.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">apt-get install libgccjit0 libgccjit-13-dev
+</pre>
+</div>
+
+<p>
 And in Emacs 29, support for tree-sitter is built-in. Now build tree-sitter from source code.
 </p>
 
@@ -72,7 +81,7 @@ Now build emacs with pgtk and tree-sitter.
 <pre class="src src-shell">git clone https://git.savannah.gnu.org/git/emacs.git -b emacs-30
 <span style="color: #8f0075;">cd</span> emacs
 ./autogen.sh
-./configure --prefix=/usr/local/emacs --with-pgtk --with-tree-sitter --without-native-compilation
+./configure --prefix=/usr/local/emacs --with-native-compilation=aot --with-pgtk --with-tree-sitter --without-pop
 make -j 8
 make install
 </pre>
