@@ -11,6 +11,7 @@
        <link rel="manifest" href="/site.webmanifest">
        <link rel="stylesheet" type="text/css" href="/css/style.css">
        <script src="/js/copycode.js"></script>
+       <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
 </head>
 <body>
 <div id="preamble" class="status">
@@ -51,9 +52,10 @@
 此外，这里会调用 <a href="https://github.com/minad/tempel">tempel</a> 自动增加文章头部，org-mode中 <code>blog-title</code> 的定义如下：
 </p>
 
-<pre class="example">
-(blog-title "#+TITLE: " n "#+DATE: " (format-time-string "&lt;%Y-%m-%d %a %H:%M&gt;") n "#+STARTUP: hideblocks" n "#+OPTIONS: toc:nil" n)
+<div class="org-src-container">
+<pre class="src src-nil">(blog-title "#+TITLE: " n "#+DATE: " (format-time-string "&lt;%Y-%m-%d %a %H:%M&gt;") n "#+STARTUP: hideblocks" n "#+OPTIONS: toc:nil" n)
 </pre>
+</div>
 
 <p>
 然后，就可以愉快的写作啦！
@@ -62,7 +64,7 @@
 <div class="giscus-comments">
   <br>
   <script src="https://giscus.app/client.js"
-    data-repo="xuchengpeng/xuchengpeng.github.io"
+    data-repo="xuchengpeng/org-blog"
     data-repo-id="R_kgDOK90e9g"
     data-category="Comments"
     data-category-id="DIC_kwDOK90e9s4CcAQs"

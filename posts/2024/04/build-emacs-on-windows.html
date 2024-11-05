@@ -11,6 +11,7 @@
        <link rel="manifest" href="/site.webmanifest">
        <link rel="stylesheet" type="text/css" href="/css/style.css">
        <script src="/js/copycode.js"></script>
+       <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
 </head>
 <body>
 <div id="preamble" class="status">
@@ -82,7 +83,7 @@ git clone --depth=1 https://git.savannah.gnu.org/git/emacs.git emacs-master
 <span style="color: #8f0075;">cd</span> /c/emacs/emacs-master
 ./autogen.sh
 ./configure --prefix=${<span style="color: #005e8b;">install_dir</span>} --with-native-compilation=aot --with-tree-sitter --without-dbus --without-pop
-<span style="color: #005e8b;">NPROC</span>=$(nproc)
+<span style="color: #005e8b;">NPROC</span>=$(<span style="color: #8f0075;">nproc</span>)
 make -j${<span style="color: #005e8b;">NPROC</span>}
 make install
 </pre>
@@ -169,7 +170,7 @@ cp -v /mingw64/bin/zlib*.dll ${<span style="color: #005e8b;">install_dir</span>}
 <div class="giscus-comments">
   <br>
   <script src="https://giscus.app/client.js"
-    data-repo="xuchengpeng/xuchengpeng.github.io"
+    data-repo="xuchengpeng/org-blog"
     data-repo-id="R_kgDOK90e9g"
     data-category="Comments"
     data-category-id="DIC_kwDOK90e9s4CcAQs"
