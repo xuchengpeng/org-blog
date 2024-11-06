@@ -106,7 +106,7 @@ xhr.onreadystatechange = function() {
         elSearchBox.style.display = "block"
     }
 },
-xhr.open("get", "/feed.xml", !0),
+xhr.open("get", "/org-blog/feed.xml", !0),
 xhr.send(),
 elSearchBtn.onclick = searchConfirm,
 elSearchClear.onclick = searchClear,
