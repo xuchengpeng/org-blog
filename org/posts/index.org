@@ -1,0 +1,10 @@
+#+TITLE: Posts
+#+DATE: <2024-01-01 Mon 10:18>
+
+* Archives
+:PROPERTIES:
+:CUSTOM_ID: archives
+:END:
+
+My old blogs([[http://xuchengpeng.github.io/hugo-blog/][hugo-blog]], [[http://xuchengpeng.github.io/hexo-blog/][hexo-blog]]) were written in Markdown, now they are archived.
+

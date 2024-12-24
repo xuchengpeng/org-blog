@@ -1,0 +1,12 @@
+#+DATE: <2020-01-01 Wed 09:00>
+#+TITLE: 404 Page
+#+OPTIONS: toc:nil
+
+#+begin_export html
+<p>
+You got lost : )
+</p>
+<p>
+<b>Just Go Home</b> → <a href="/">Home Page</a>
+</p>
+#+end_export

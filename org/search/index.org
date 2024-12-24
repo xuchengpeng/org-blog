@@ -1,0 +1,15 @@
+#+TITLE: Search
+#+DATE: <2024-02-07 Wed 13:52>
+#+OPTIONS: toc:nil
+
+#+begin_export html
+<script src="/js/search.js"></script>
+<div class="search">
+  <input type="text" class="search-input" placeholder="Searching..."/>
+  <span class="search-icon search-start">&#128269;</span>
+  <span class="search-icon search-clear">&#10006;</span>
+  <br>
+  <div class="search-results"></div>
+</div>
+#+end_export
+
