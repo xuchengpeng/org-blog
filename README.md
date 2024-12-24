@@ -36,8 +36,8 @@ Generate rss automatically:
 ``` elisp
 (with-eval-after-load 'ox-publish
   (defun dotemacs-generate-rss (project &optional force async)
-    (let ((default-directory dotemacs-org-site-dir))
+    (let ((default-directory dotemacs-org-blog-dir))
       (dotemacs-call-process "python" "rss.py"))
-    (message "dotemacs generate rss in %s" dotemacs-org-site-dir))
+    (message "dotemacs generate rss in %s" dotemacs-org-blog-dir))
   (advice-add 'org-publish-project :after #'dotemacs-generate-rss))
 ```
