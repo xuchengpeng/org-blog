@@ -1,0 +1,63 @@
+#+TITLE: Emacs中Python开发
+#+DATE: <2024-12-19 Thu 15:57>
+
+#+BEGIN_PREVIEW
+A guide to do some Python development in GNU Emacs.
+#+END_PREVIEW
+
+* 创建虚拟环境
+:PROPERTIES:
+:CUSTOM_ID: create-venv
+:END:
+
+#+begin_src shell
+cd /path/to/project
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+#+end_src
+
+* 安装LSP服务端
+:PROPERTIES:
+:CUSTOM_ID: install-lsp-server
+:END:
+
+#+begin_quote
+[[https://github.com/microsoft/pyright][Pyright]] is a full-featured, standards-based static type checker for Python. It is designed for high performance and can be used with large Python source bases.
+#+end_quote
+
+#+begin_src shell
+npm install -g pyright
+#+end_src
+
+* 项目配置
+:PROPERTIES:
+:CUSTOM_ID: project-configuration
+:END:
+
+安装完Pyright后，在 =pyproject.toml= 中增加配置：
+
+#+begin_src toml
+[tool.pyright]
+venvPath = "."
+venv = ".venv"
+
+[tool.black]
+line-length = 120
+#+end_src
+
+* python-mode配置
+:PROPERTIES:
+:CUSTOM_ID: python-mode-configuration
+:END:
+
+在Emacs中使用[[https://www.gnu.org/software/emacs/manual/html_node/eglot/][Eglot]]作为LSP客户端，在 =.dir-locals.el= 中增加配置：
+
+#+begin_src elisp
+((python-base-mode . ((python-indent-offset . 4)
+                      (python-indent-guess-indent-offset-verbose . nil)
+                      (python-shell-interpreter . "python")
+                      (python-shell-virtualenv-root . "/path/to/project/.venv/"))))
+#+end_src
+
+#+include: ../comments.inc
