@@ -1,0 +1,26 @@
+#+TITLE: True Emacs Transparency
+#+DATE: <2024-02-01 Thu 14:37>
+
+#+BEGIN_PREVIEW
+Before Emacs 29, we can set the =alpha= frame parameter to adjust the opacity of the frame. The issue with =alpha= is that is set the opacity of the entire window, which means both text foreground and background become transparent together. But what we want is the text remains opaque while the background becomes transparent.
+#+END_PREVIEW
+
+The solution came from a [[https://lists.gnu.org/archive/html/emacs-devel/2022-01/msg01215.html][patch]] make by Håkon Flatval. The patch adds the =alpha-background= frame parameter which make only the background of a frame transparent.
+
+From Emacs 29, it supports [[https://git.savannah.gnu.org/cgit/emacs.git/commit/?id=b944841173f12134e4c68d269d5b82b1820b2a40][true transparency]]. The =alpha-background= frame parameter set the background transparency of the frame. Unlike the =alpha= frame parameter, this only controls the transparency of the background while keeping foreground elements such as text fully opaque. It should be an integer between 0 and 100, where 0 means completely transparent and 100 means completely opaque (default).
+
+Here I make a helper function to adjust transparency.
+
+#+begin_src elisp
+(defun dotemacs-adjust-transparency (frame incr)
+  "Adjust the background transparency of FRAME by increment INCR."
+  (let* ((oldalpha (or (frame-parameter frame 'alpha-background) 100))
+         (newalpha (+ incr oldalpha)))
+    (when (and (<= 0 newalpha) (>= 100 newalpha))
+      (set-frame-parameter frame 'alpha-background newalpha))))
+(keymap-global-set "C-M-8" (lambda () (interactive) (dotemacs-adjust-transparency nil -2)))
+(keymap-global-set "C-M-9" (lambda () (interactive) (dotemacs-adjust-transparency nil 2)))
+(keymap-global-set "C-M-0" (lambda () (interactive) (set-frame-parameter nil 'alpha-background 100)))
+#+end_src
+
+#+include: ../comments.inc

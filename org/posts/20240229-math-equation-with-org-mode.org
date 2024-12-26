@@ -1,0 +1,44 @@
+#+TITLE: Math Equation With Org Mode
+#+DATE: <2024-02-29 Thu 13:06>
+
+#+BEGIN_PREVIEW
+[[https://www.latex-project.org][LaTeX]] math snippets can be displayed on HTML pages which exported with org-mode. The default is to use the [[https://www.mathjax.org][MathJax]].
+#+END_PREVIEW
+
+#+begin_src latex
+If $a^2=b$ and \( b=2 \), then the solution must be either $$ a=+\sqrt{2} $$ or \[ a=-\sqrt{2} \].
+#+end_src
+
+If $a^2=b$ and \( b=2 \), then the solution must be either $$ a=+\sqrt{2} $$ or \[ a=-\sqrt{2} \].
+
+Some Mathjax display options can be configured via =org-html-mathjax-options=, or in the buffer, with =#+HTML_MATHJAX= or =#+OPTIONS= settings.
+
+Here comes with some complex examples.
+
+#+begin_src latex
+\begin{equation}
+  \sqrt{3x-1}+(1+x)^2
+\end{equation}
+#+end_src
+
+\begin{equation}
+  \sqrt{3x-1}+(1+x)^2
+\end{equation}
+
+#+begin_src latex
+\begin{eqnarray}
+  \nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} & = \frac{4\pi}{c}\vec{\mathbf{j}} \newline
+  \nabla \cdot \vec{\mathbf{E}} & = 4 \pi \rho \newline
+  \nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} & = \vec{\mathbf{0}} \newline
+  \nabla \cdot \vec{\mathbf{B}} & = 0
+\end{eqnarray}
+#+end_src
+
+\begin{eqnarray}
+  \nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} & = \frac{4\pi}{c}\vec{\mathbf{j}} \newline
+  \nabla \cdot \vec{\mathbf{E}} & = 4 \pi \rho \newline
+  \nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} & = \vec{\mathbf{0}} \newline
+  \nabla \cdot \vec{\mathbf{B}} & = 0
+\end{eqnarray}
+
+#+include: ../comments.inc
