@@ -1,0 +1,28 @@
+#+TITLE: 黄鹤楼
+#+DATE: <2024-01-03 Wed 14:22>
+
+#+begin_center
+
+#+begin_export html
+<figure>
+<image src="https://image.artron.net/wd/auction//118/art/28657/a55dc29b404ae2b145c3f4ae53404f0d.jpg" width="80%">
+</figure>
+#+end_export
+
+#+ATTR_HTML: :style font-weight:bold;font-size:25px;
+黄鹤楼
+
+唐 崔颢
+
+昔人已乘黄鹤去，此地空余黄鹤楼。
+
+黄鹤一去不复返，白云千载空悠悠。
+
+晴川历历汉阳树，芳草萋萋鹦鹉洲。
+
+日暮乡关何处是？烟波江上使人愁。
+
+#+end_center
+
+#+include: ../comments.inc
+

@@ -1,0 +1,20 @@
+#+TITLE: Check if a Font is Available with Emacs Lisp
+#+DATE: <2024-01-30 Tue 12:22>
+
+#+BEGIN_PREVIEW
+In Emacs Lisp, =find-font= function return a font-entity matching with FONT-SPEC. So we can make a helper function.
+#+END_PREVIEW
+
+#+begin_src elisp
+(defun font-available-p (font-name)
+  (find-font (font-spec :name font-name)))
+#+end_src
+
+Before setting a font, we can check with this helper function.
+
+#+begin_src elisp
+(when (font-available-p "Fira Code")
+  (set-face-attribute 'default nil :font (font-spec :family "Fira Code" :size 17)))
+#+end_src
+
+#+include: ../comments.inc

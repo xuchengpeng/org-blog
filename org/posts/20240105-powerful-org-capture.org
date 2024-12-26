@@ -1,0 +1,118 @@
+#+TITLE: 强大的Org Capture
+#+DATE: <2024-01-05 Fri 08:41>
+
+Capture让你快速的保存笔记，并且让你的工作流中很少被打断。
+
+Capture的配置比较复杂，主要是Capture templates。
+
+* Capture templates[fn:1]
+:PROPERTIES:
+:CUSTOM_ID: capture-templates
+:END:
+
+配置Capture templates的基本形式是：
+
+#+begin_src emacs-lisp
+(setq org-capture-templates
+      '(("t" "Todo" entry (file+headline "~/org/gtd.org" "Tasks")
+         "* TODO %?\n  %i\n  %a")
+        ("j" "Journal" entry (file+datetree "~/org/journal.org")
+         "* %?\nEntered on %U\n  %i\n  %a")))
+#+end_src
+
+在Capture菜单中按下 ~t~ 时，Org会准备Todo模板：
+
+* Template elements[fn:2]
+:PROPERTIES:
+:CUSTOM_ID: template-elements
+:END:
+
+| 关键字        | 对应内容                                  | 描述                         |
+|-------------+-----------------------------------------+-----------------------------|
+| keys        | "t"                                     | 用来选择模板的key，一般1～2个字符 |
+| description | "Todo"                                  | 模板的简短描述                 |
+| type        | entry                                   | 模板的类型                    |
+| target      | (file+headline "~/org/gtd.org" "Tasks") | 模板的存储位置                 |
+| template    | "* TODO %?\n %i\n %a"                   | 模板的内容                    |
+| properties  | :prepend t                              | 模板的参数                    |
+
+模板的类型支持以下几种：
+
+| type       | description              |
+|------------+--------------------------|
+| entry      | 带有headline的Org mode节点 |
+| item       | 列表项                     |
+| checkitem  | checkbox列表项             |
+| table-line | 表格行                     |
+| plane      | 普通文本                   |
+
+模板的存储位置：
+
+| type              | description          | example                                                 |
+|-------------------+----------------------+---------------------------------------------------------|
+| file              | 文件                  | (file "/path/to/file")                                  |
+| id                | 特定ID                | (id "id of existing org entry")                         |
+| file+headline     | 文件中唯一的headline    | (file+headline "filename" "node headline")              |
+| file+olp          | 非唯一headline，全路径  | (file+olp "filename" "Level 1 heading" "Level 2" ...)   |
+| file+regexp       | 正则匹配的headline     | (file+regexp "filename" "regexp to find location")      |
+| file+olp+datetree | 文件中当日所在的headline | (file+olp+datetree "filename" [ "Level 1 heading" ...]) |
+| file+function     | 文件中寻找正确位置的函数  | (file+function "filename" function-finding-location)    |
+| clock             | 文件到当前正在计时的条目  | (clock)                                                 |
+| function          | 自定义函数             | (function function-finding-location)                    |
+
+* Template expansion[fn:3]
+:PROPERTIES:
+:CUSTOM_ID: template-expansion
+:END:
+
+| type         | description                          |
+|--------------+--------------------------------------|
+| %[FILE]      | 插入文件内容                            |
+| %(EXP)       | 插入Elisp表达式的结果                    |
+| %<FORMAT>    | 格式化时间                             |
+| %t           | 日期                                  |
+| %T           | 日期和时间                             |
+| %u, %U       | 类似%t和%T，未激活的时间戳                |
+| %i           | 插入当前buffer选中的内容                 |
+| %a           | 注释，通常是 =org-store-link= 创建的链接  |
+| %A           | 类型%a，但是弹出描述部分                  |
+| %l           | 类似%a，但是只插入字面上的链接             |
+| %L           | 类型%l，但是没有括号                     |
+| %c           | 当前kill ring的head                    |
+| %x           | 剪切板中的内容                          |
+| %k           | 当前计时任务的标题                       |
+| %K           | 当前计时任务的链接                       |
+| %n           | =user-full-name=                     |
+| %f           | 打开org-capture时当前的buffer           |
+| %F           | 当前buffer的全路径                      |
+| %:keyword    | 特殊链接                               |
+| ~%^g~        | 弹出目标文件中tags                      |
+| ~%^G~        | 弹出所有agenda文件中的tags               |
+| ~%^t~        | 类似%t，但是弹出日期， ~%^T,%^u,%^U~ 类似 |
+| ~%^C~        | 交互式选择kill ring或剪切板中的内容        |
+| ~%^L~        | 类似 ~%^C~ ，以链接的方式插入             |
+| ~%^{PROP}p~  | 弹出PROP属性的值                        |
+| ~%^{PROMPT}~ | 弹出让用户输入                          |
+| %\N          | 插入第N个 ~%^{PROMPT}~ 中的标记          |
+| %?           | 模板插入完成后定位的位置                  |
+
+特殊链接类型：
+
+| Link type    | Available keywords                                                                                                                                             |
+|--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| bbdb         | %:name, %:company                                                                                                                                              |
+| irc          | %:server, %:port, %:nick                                                                                                                                       |
+| mh, rmail    | %:type, %:subject, %:message-id, %:from, %:fromname, %:fromaddress, %:to, %:toname, %:toaddress, %:date, %:date-timestamp, %:date-timestamp-inactive, %:fromto |
+| gnus         | %:group                                                                                                                                                        |
+| w3, w3m      | %:url                                                                                                                                                          |
+| info         | %:file, %:node                                                                                                                                                 |
+| calendar     | %:date                                                                                                                                                         |
+| org-protocol | %:link, %:description, %:annotation                                                                                                                            |
+
+
+[fn:1] https://orgmode.org/manual/Capture-templates.html
+[fn:2] https://orgmode.org/manual/Template-elements.html
+[fn:3] https://orgmode.org/manual/Template-expansion.html
+
+#+include: ../comments.inc
+

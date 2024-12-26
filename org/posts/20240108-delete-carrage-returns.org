@@ -1,0 +1,22 @@
+#+TITLE: 删除文件中的Windows换行符
+#+DATE: <2024-01-08 Mon 08:03>
+
+在Windows中创建的文件如果使用了Windows换行符，那么在Linux中打开时每一行行末会显示 =^M= 。
+
+可以使用replace命令[fn:1]删除： *M-x replace-string RET C-q C-m RET RET* ，或者使用 *query-replace* 命令，会询问你是否进行替换。
+
+还可以封装一个函数，直接执行进行删除替换：
+
+#+begin_src emacs-lisp
+(defun delete-carrage-returns ()
+  (interactive)
+  (save-excursion
+    (goto-char 0)
+    (while (search-forward "\r" nil :noerror)
+      (replace-match ""))))
+#+end_src
+
+[fn:1] https://www.gnu.org/software/emacs/manual/html_node/emacs/Replace.html
+
+#+include: ../comments.inc
+

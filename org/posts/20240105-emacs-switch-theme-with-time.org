@@ -1,0 +1,23 @@
+#+TITLE: Emacs根据时间切换主题
+#+DATE: <2024-01-05 Fri 12:26>
+
+每小时运行一次，早上6点和晚上18点自动切换主题。
+
+#+begin_src emacs-lisp
+  (setq day-theme 'modus-operandi)
+  (setq dark-theme 'modus-vivendi)
+  (defun switch-theme ()
+      (setq hour
+            (string-to-number
+              (substring (current-time-string) 11 13)))
+      (if (member hour (number-sequence 6 18))
+          (setq now day-theme)
+        (setq now dark-theme))
+      (load-theme now)
+  )
+  (run-with-timer 0 3600 'switch-theme)
+#+end_src
+
+自动切换主题的包：[[https://github.com/guidoschmidt/circadian.el][circadian.el]]
+
+#+include: ../comments.inc
