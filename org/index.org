@@ -12,4 +12,4 @@
 
 * Recent
 
-#+include: ./sitemap.org::*posts :lines "-35" :only-contents t
+#+include: ./sitemap.org::*posts :lines "-30" :only-contents t
