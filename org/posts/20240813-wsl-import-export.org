@@ -1,0 +1,36 @@
+#+TITLE: WSL导入导出
+#+DATE: <2024-08-13 Tue 12:36>
+
+#+BEGIN_PREVIEW
+默认情况WSL会安装在C盘，可以将其迁移到其他盘，这里使用WSL提供的导入和导出命令。
+#+END_PREVIEW
+
+关闭所有的WSL，查询要导出的名称:
+
+#+begin_src bash
+PS > wsl --shutdown
+PS > wsl -l -v
+  NAME            STATE           VERSION
+  Ubuntu-22.04    Stopped         2
+#+end_src
+
+将要导出的WSL保存到D盘：
+
+#+begin_src bash
+PS > wsl --export Ubuntu-22.04 D:\Ubuntu-22.04.tar
+#+end_src
+
+注销原有的WSL：
+
+#+begin_src bash
+PS > wsl --unregister Ubuntu-22.04
+#+end_src
+
+在D盘安装WSL：
+
+#+begin_src bash
+PS > wsl --import Ubuntu-22.04 D:\WSL\Ubuntu-22.04 D:\Ubuntu-22.04.tar
+#+end_src
+
+#+include: ../comments.inc
+
