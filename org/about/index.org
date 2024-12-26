@@ -1,7 +1,0 @@
-#+DATE: <2023-12-27 Wed 10:18>
-#+TITLE:   About
-#+OPTIONS: toc:nil
-
-如有一味绝境，非历十方生死。
-
-#+include: ../comments.inc

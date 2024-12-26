@@ -1,6 +1,6 @@
-#+DATE: <2019-12-28 Sat 23:03>
-#+TITLE: Chuck
-#+OPTIONS: toc:nil title:nil
+#+DATE: <2023-12-27 Wed 10:18>
+#+TITLE:   About
+#+OPTIONS: toc:nil
 
 #+begin_center
 
@@ -10,6 +10,4 @@
 
 #+end_center
 
-* Recent
-
-#+include: ./sitemap.org::*posts :lines "-35" :only-contents t
+#+include: ./comments.inc

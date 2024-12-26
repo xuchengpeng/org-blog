@@ -1,34 +1,31 @@
 # org-blog
 
 ```elisp
-(setq dotemacs-org-blog-dir "d:/github/org-site/"
+(setq dotemacs-org-blog-dir "d:/github/org-blog/"
       dotemacs-org-html-head "
 <link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"/apple-touch-icon.png\">
 <link rel=\"icon\" type=\"image/png\" sizes=\"32x32\" href=\"/favicon-32x32.png\">
 <link rel=\"icon\" type=\"image/png\" sizes=\"16x16\" href=\"/favicon-16x16.png\">
 <link rel=\"manifest\" href=\"/site.webmanifest\">
 <link rel=\"stylesheet\" type=\"text/css\" href=\"/css/style.css\">
-<script src=\"/js/copycode.js\"></script>
-<script src=\"https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js\"></script>"
-      dotemacs-org-html-preamble-format
-      '(("en" "
+<script src=\"/js/copycode.js\"></script>"
+      dotemacs-org-html-preamble "
 <div class=\"header-wrapper\">
   <div class=\"site-header\">
   <a class=\"site-title\" href=\"/\">Chuck</a>
   <div class=\"site-nav\">
-    <a class=\"nav-link\" href=\"/posts/\">Posts</a>
-    <a class=\"nav-link\" href=\"/search/\">Search</a>
-    <a class=\"nav-link\" href=\"/about/\">About</a>
+    <a class=\"nav-link\" href=\"/archives.html\">Archives</a>
+    <a class=\"nav-link\" href=\"/search.html\">Search</a>
+    <a class=\"nav-link\" href=\"/about.html\">About</a>
   </div>
   </div>
-</div>"))
-      dotemacs-org-html-postamble-format
-      '(("en" "
-<div class=\"nav-btn\"><a href=\"/\">Home</a></div>
-  <div class=\"top-btn\"><a href=\"#top\">Top</a></div>
-  <div class=\"footer-wrapper\">
+</div>"
+      dotemacs-org-html-postamble "
+<a href=\"#top\" class=\"top-link\" id=\"top-link\" style=\"visibility: hidden; opacity: 0;\">Top &#8593;</a>
+<script src=\"/js/scroll-to-top.js\"></script>
+<div class=\"footer-wrapper\">
   <div class=\"site-footer\">&copy xuchengpeng. <a href=\"/feed.xml\">RSS Feed</a></div>
-</div>")))
+</div>")
 ```
 
 Generate rss automatically:
