@@ -2,4 +2,4 @@
 #+DATE: <2019-12-01 Sun 10:18>
 #+OPTIONS: toc:nil
 
-#+include: ./sitemap.org::*posts :only-contents t
+#+include: ./sitemap-archives.org :lines "5-"
