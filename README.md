@@ -9,7 +9,7 @@
 <link rel=\"manifest\" href=\"/site.webmanifest\">
 <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css?family=Open+Sans|Cousine&display=swap\">
 <link rel=\"stylesheet\" type=\"text/css\" href=\"/css/style.css\">
-<script async src=\"/js/copycode.js\"></script>"
+<script defer src=\"/js/copycode.js\"></script>"
       dotemacs-org-html-preamble "
 <div class=\"header-wrapper\">
   <div class=\"site-header\">
