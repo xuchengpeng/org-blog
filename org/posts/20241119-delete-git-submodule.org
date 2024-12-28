@@ -1,10 +1,14 @@
 #+TITLE: 删除Git Submodule
 #+DATE: <2024-11-19 Tue 15:40>
 
-1. 删除子模块目录；
-2. 删除 =.gitmodules= 中对应的子模块内容；
-3. 删除 =.git/config= 中对应的子模块内容；
-4. 删除 =.git/modules/= 下对应的子模块目录；
-5. =git rm --cached= 子模块目录。
+#+begin_preview
+Git子模块的删除相对比较麻烦，需要执行多个步骤才能清理干净。
+#+end_preview
+
++ 删除子模块目录；
++ 删除 =.gitmodules= 中对应的子模块内容；
++ 删除 =.git/config= 中对应的子模块内容；
++ 删除 =.git/modules/= 下对应的子模块目录；
++ =git rm --cached= 子模块目录。
 
 #+include: ../comments.inc

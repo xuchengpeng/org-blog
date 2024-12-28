@@ -1,6 +1,10 @@
 #+TITLE: Solutions to Introduction to Algorithms
 #+DATE: <2024-11-18 Mon 15:36>
 
+#+begin_preview
+收集了一些互联网上算法导论练习题的答案。
+#+end_preview
+
 https://github.com/walkccc/CLRS
 
 https://sites.math.rutgers.edu/~ajl213/CLRS/CLRS.html
