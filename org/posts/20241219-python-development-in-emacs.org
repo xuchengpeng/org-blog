@@ -1,9 +1,9 @@
 #+TITLE: Emacs中Python开发
 #+DATE: <2024-12-19 Thu 15:57>
 
-#+BEGIN_PREVIEW
-A guide to do some Python development in GNU Emacs.
-#+END_PREVIEW
+#+begin_preview
+在Emacs中开发Python的指南，包含虚拟环境、LSP、Python项目配置、Emacs工程配置。
+#+end_preview
 
 * 创建虚拟环境
 :PROPERTIES:

@@ -1,9 +1,7 @@
 #+TITLE: WSL导入导出
 #+DATE: <2024-08-13 Tue 12:36>
 
-#+BEGIN_PREVIEW
 默认情况WSL会安装在C盘，可以将其迁移到其他盘，这里使用WSL提供的导入和导出命令。
-#+END_PREVIEW
 
 关闭所有的WSL，查询要导出的名称:
 

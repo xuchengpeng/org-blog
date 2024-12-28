@@ -1,9 +1,7 @@
 #+TITLE: Emacs代码缩进
 #+DATE: <2023-12-28 Thu 20:28>
 
-#+BEGIN_PREVIEW
 Emacs自带的 =electric-indent-mode= 或者第三方插件 [[https://github.com/Malabarba/aggressive-indent-mode][aggressive-indent-mode]] 可以自动进行代码缩进。
-#+END_PREVIEW
 
 当需要手动调整缩进时，可以使用 =indent-rigidly= 命令：
 1. 先选中需要调整缩进的代码;

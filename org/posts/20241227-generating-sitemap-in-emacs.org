@@ -1,9 +1,9 @@
 #+TITLE: Generating sitemap in Emacs
 #+DATE: <2024-12-27 Fri 10:57>
 
-#+BEGIN_PREVIEW
+#+begin_preview
 使用Emacs导出博客时，可以导出Sitemap文件，可以很方便的生成最近的文章信息或者归档列表。通过配置Sitemap导出时的参数，定制化的生成不同形式的Sitemap文件。
-#+END_PREVIEW
+#+end_preview
 
 * :sitemap-filename
 导出的文件名，默认为 =sitemap.org= ，对应导出 =sitemap.html= 文件。

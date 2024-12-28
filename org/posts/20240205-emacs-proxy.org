@@ -1,14 +1,9 @@
 #+TITLE: Emacs Proxy
 #+DATE: <2024-02-05 Mon 08:20>
 
-#+BEGIN_PREVIEW
 Proxy servers are commonly used to provide gateways through firewalls or as caches serving some more-or-less local network. Each protocol (HTTP, FTP, etc.) can have a different gateway server. Proxying is conventionally configured commonly amongst different programs through environment variables of the form /protocol-proxy/, where /protocol/ is one of the supported network protocols (http, ftp, etc.). The library recognized such variables in either upper or lower case.
-#+END_PREVIEW
 
 * System Proxy
-:PROPERTIES:
-:CUSTOM_ID: system-proxy
-:END:
 
 #+begin_src bash
 export http_proxy=http://username:password@proxy.xxx.com:8080
@@ -16,9 +11,6 @@ export https_proxy=${http_proxy}
 #+end_src
 
 * URL Proxy Services
-:PROPERTIES:
-:CUSTOM_ID: url-proxy-services
-:END:
 
 Proxies are supported by URL package, by setting ~url-proxy-services~ to an assoc list mapping url services and the proxy servers that support them.
 
@@ -39,9 +31,6 @@ If the proxy services need to be authorized, we need to customize ~url-http-prox
 #+end_src
 
 * Socks Proxy
-:PROPERTIES:
-:CUSTOM_ID: socks-proxy
-:END:
 
 Enable socks proxy:
 

@@ -1,13 +1,13 @@
 #+TITLE: sdcv
 #+DATE: <2024-12-09 Mon 15:48>
 
-#+BEGIN_PREVIEW
+#+begin_preview
 [[https://github.com/Dushistov/sdcv][sdcv]] is a simple, cross-platform, text-based utility for working with dictionaries in [[https://stardict-4.sourceforge.net/][StarDict]] format.
+#+end_preview
 
 StarDict dictionaries can be downloaded from https://www.nchrs.xyz/stardict/index.html.
 
 The [[https://github.com/jamescherti/quick-sdcv.el][quick-sdcv]] package serves as a lightweight Emacs interface for the sdcv command-line interface, which is the console version of the StarDict dictionary application.
-#+END_PREVIEW
 
 #+begin_src elisp
 (use-package quick-sdcv

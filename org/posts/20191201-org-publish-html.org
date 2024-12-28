@@ -1,18 +1,13 @@
 #+TITLE: Publishing Org-mode files to HTML
 #+DATE: <2019-12-01 Sun 23:03>
 
-#+BEGIN_PREVIEW
 #+BEGIN_QUOTE
 Emacs is the best editor in the world.
 #+END_QUOTE
 
 This is a guide to show how to publish a static blog with Org mode.
-#+END_PREVIEW
 
 * Basics
-:PROPERTIES:
-:CUSTOM_ID: basics
-:END:
 
 Create your blog files and css files.
 
@@ -26,9 +21,6 @@ Create your blog files and css files.
 #+end_src
 
 * Publishing the org project
-:PROPERTIES:
-:CUSTOM_ID: publishing-the-org-project
-:END:
 
 #+begin_src emacs-lisp
 (require 'ox-publish)

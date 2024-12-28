@@ -1,13 +1,11 @@
 #+TITLE: Generate RSS For Blog
 #+DATE: <2024-02-08 Thu 11:44>
 
-#+BEGIN_PREVIEW
 I'm not sure how many people still use RSS, but I still want to have a RSS feed for my blog though I don't use RSS myself either.
 
 From what I known, many people recommend using [[https://github.com/benedicthw/ox-rss][ox-rss.el]] to generate RSS XML from blog files. The ox-rss.el is a org-export backed derived from the HTML backend and it exports org files to an RSS XML file. But ox-rss.el is not part of [[https://orgmode.org/worg/org-contrib/index.html][org-contrib]] right now.
 
 Luckily, Python has many modules which can generate and parse RSS feeds ([[https://github.com/lkiesow/python-feedgen][python-feedgen]], [[https://github.com/kurtmckee/feedparser][feedparser]], [[https://github.com/svpino/rfeed][rfeed]], etc.). I love Python, it is easy to use. So I decided to use python-feedgen to generate an RSS XML file from HTML files of my blog.
-#+END_PREVIEW
 
 * Getting Posts List
 

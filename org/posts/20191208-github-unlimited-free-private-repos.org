@@ -1,9 +1,7 @@
 #+TITLE: GitHub: Announcing unlimited free private repos
 #+DATE: <2019-12-08 Sun 23:03>
 
-#+BEGIN_PREVIEW
 [[https://github.com/][GitHub]] is announcing unlimited free private repos and unified Enterprise offering.
-#+END_PREVIEW
 
 - GitHub Free now includes unlimited private repositories. For the first time, developers can use GitHub for their private projects with up to three collaborators per repository for free. Many developers want to use private repos to apply for a job, work on a side project, or try something out in private before releasing it publicly. Starting today, those scenarios, and many more, are possible on GitHub at no cost. Public repositories are still free (of course—no changes there) and include unlimited collaborators.
 - GitHub Enterprise is the new unified product for Enterprise Cloud (formerly GitHub Business Cloud) and Enterprise Server (formerly GitHub Enterprise). Organizations that want the flexibility to use GitHub in a cloud or self-hosted configuration can now access both at one per-seat price. And with GitHub Connect, these products can be securely linked, providing a hybrid option so developers can work seamlessly across both environments.

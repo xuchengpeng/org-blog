@@ -1,9 +1,7 @@
 #+TITLE: Emacs本地变量
 #+DATE: <2023-12-29 Fri 09:39>
 
-#+BEGIN_PREVIEW
 一般情况下，我们在 =init.el= 中设置一些变量可以全局生效，如果想针对不同的目录、不同的mode设置不同的变量，可以借助Emcas提供的Local Variables机制。
-#+END_PREVIEW
 
 * Per-Directory Local Variables
 

@@ -1,11 +1,9 @@
 #+TITLE: Emacs tokyonight-themes
 #+DATE: <2024-02-01 Thu 08:28>
 
-#+BEGIN_PREVIEW
 #+begin_quote
 A clean dark Visual Studio Code theme that celebrates the lights of Downtown [[https://www.google.com/search?q=tokyo+night&newwindow=1&sxsrf=ACYBGNRiOGCstG_Xohb8CgG5UGwBRpMIQg:1571032079139&source=lnms&tbm=isch&sa=X&ved=0ahUKEwiayIfIhpvlAhUGmuAKHbfRDaIQ_AUIEigB&biw=1280&bih=666&dpr=2][Tokyo at night]].
 #+end_quote
-#+END_PREVIEW
 
 Tokyo Night theme was firstly published as a plugin for Visual Studio Code, now it has many [[https://github.com/enkia/tokyo-night-vscode-theme#other-ports][other ports]].
 

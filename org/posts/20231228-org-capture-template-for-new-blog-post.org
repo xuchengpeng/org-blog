@@ -1,7 +1,6 @@
 #+TITLE: 为新建博客文章增加Org Capture模板
 #+DATE: <2023-12-28 Thu 13:04>
 
-#+BEGIN_PREVIEW
 =dotemacs-org-post-file= 函数会在博客文件夹对应的年份目录下新建文章；
 
 #+begin_src emacs-lisp
@@ -17,7 +16,6 @@
          (function dotemacs-org-post-file)
          "" :jump-to-captured t :immediate-finish t)))
 #+end_src
-#+END_PREVIEW
 
 此外，这里会调用 [[https://github.com/minad/tempel][tempel]] 自动增加文章头部，org-mode中 =blog-title= 的定义如下：
 

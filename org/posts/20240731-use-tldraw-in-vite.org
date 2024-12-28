@@ -1,9 +1,7 @@
 #+TITLE: Use tldraw in Vite
 #+DATE: <2024-07-31 Wed 11:28>
 
-#+BEGIN_PREVIEW
 [[https://vitejs.dev/][Vite]] is a build tool that aims to provide a faster and leaner development experience for modern web projects.
-#+END_PREVIEW
 
 Is consists of two major parts:
 - A dev server that provides rich feature enhancements over native ES modules, for example extremly fast Hot Module Replacement(HMR).
