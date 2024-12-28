@@ -3,7 +3,7 @@
 #+OPTIONS: toc:nil
 
 #+begin_export html
-<script src="/js/search.js"></script>
+<script async src="/js/search.js"></script>
 <div class="search">
   <input type="text" class="search-input" placeholder="Searching..."/>
   <span class="search-icon search-start">&#128269;</span>

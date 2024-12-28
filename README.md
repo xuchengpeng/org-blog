@@ -8,7 +8,7 @@
 <link rel=\"icon\" type=\"image/png\" sizes=\"16x16\" href=\"/favicon-16x16.png\">
 <link rel=\"manifest\" href=\"/site.webmanifest\">
 <link rel=\"stylesheet\" type=\"text/css\" href=\"/css/style.css\">
-<script src=\"/js/copycode.js\"></script>"
+<script async src=\"/js/copycode.js\"></script>"
       dotemacs-org-html-preamble "
 <div class=\"header-wrapper\">
   <div class=\"site-header\">
@@ -22,7 +22,7 @@
 </div>"
       dotemacs-org-html-postamble "
 <a href=\"#top\" class=\"top-link\" id=\"top-link\" style=\"visibility: hidden; opacity: 0;\">Top &#8593;</a>
-<script src=\"/js/scroll-to-top.js\"></script>
+<script async src=\"/js/scroll-to-top.js\"></script>
 <div class=\"footer-wrapper\">
   <div class=\"site-footer\">&copy xuchengpeng. <a href=\"/feed.xml\">RSS Feed</a></div>
 </div>")
@@ -32,9 +32,9 @@ Generate rss automatically:
 
 ``` elisp
 (with-eval-after-load 'ox-publish
-  (defun dotemacs-generate-rss (project &optional force async)
+  (defun +org-generate-rss (project &optional force async)
     (let ((default-directory dotemacs-org-blog-dir))
       (dotemacs-call-process "python" "rss.py"))
     (message "dotemacs generate rss in %s" dotemacs-org-blog-dir))
-  (advice-add 'org-publish-project :after #'dotemacs-generate-rss))
+  (advice-add 'org-publish-project :after #+org-generate-rss))
 ```
