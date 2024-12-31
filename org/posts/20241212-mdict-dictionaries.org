@@ -1,9 +1,7 @@
 #+TITLE: MDict Dictionaries
 #+DATE: <2024-12-12 Thu 15:53>
 
-#+begin_preview
 A collections of website archives where you can download MDict dictionaries.
-#+end_preview
 
 [[https://downloads.freemdict.com][FreeMdict]]
 
