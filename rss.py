@@ -40,7 +40,7 @@ for html in htmls:
         for line in description_lines:
             description += line
             description += "\n"
-            if len(description) >= 500:
+            if len(description) >= 200:
                 break
         fe = fg.add_entry()
         fe.title(soup.title.string)
