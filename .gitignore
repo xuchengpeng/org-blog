@@ -1,5 +1,4 @@
 public/
 __pycache__
 .venv/
-sitemap-archives.org
-sitemap-preview.org
+org/posts/index.org

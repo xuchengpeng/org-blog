@@ -1,7 +1,0 @@
-#+TITLE: Archives
-#+DATE: <2019-12-01 Sun 10:18>
-#+OPTIONS: toc:nil
-
-#+include: ./sitemap-archives.org :lines "5-"
-
-Old posts([[https://xuchengpeng.github.io/hugo-blog][hugo-blog]], [[https://xuchengpeng.github.io/hexo-blog][hexo-blog]]) were writen in markdown, they were published by [[https://gohugo.io][Hugo]] or [[https://hexo.io][Hexo]], now they are archived.

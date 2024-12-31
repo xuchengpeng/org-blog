@@ -9,6 +9,8 @@ htmls = []
 for root, dirs, files in os.walk(os.getcwd() + "/public/posts"):
     relpath = os.path.relpath(root)
     for filename in fnmatch.filter(files, "*.html"):
+        if filename == "index.html":
+            continue
         filename = os.path.join(relpath, filename)
         filename = filename.replace("\\", "/")
         htmls.append(filename)

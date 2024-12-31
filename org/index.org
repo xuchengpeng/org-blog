@@ -10,6 +10,6 @@
 
 #+end_center
 
-* Recent
+* Recent Posts
 
-#+include: ./sitemap-preview.org::*posts :lines "-25" :only-contents t
+#+include: posts/index.org :lines "4-14"
