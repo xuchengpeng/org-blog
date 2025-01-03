@@ -32,7 +32,7 @@ for html in htmls:
     with open(file=html, encoding="UTF-8") as file:
         url = "https://xuchengpeng.cn/" + html.replace("public/", "", 1)
         soup = BeautifulSoup(file, "html.parser")
-        description = soup.find("div", class_="content").text
+        description = soup.find("main", class_="content").text
         # delete blank lines
         # description = "\n".join([line for line in description.split("\n") if line.strip()])
         description_lines = [line for line in description.split("\n") if line.strip()]
