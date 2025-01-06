@@ -4,6 +4,9 @@
 一般情况下，我们在 =init.el= 中设置一些变量可以全局生效，如果想针对不同的目录、不同的mode设置不同的变量，可以借助Emcas提供的Local Variables机制。
 
 * Per-Directory Local Variables
+:PROPERTIES:
+:CUSTOM_ID: per-directory-local-variables
+:END:
 
 为一个目录定义本地变量时，在目录下的 =.dir-locals.el= 中增加配置，该目录以及子目录的所有文件打开时配置会生效，未打开和之前已打开的不会生效。
 
@@ -22,6 +25,9 @@
 #+end_src
 
 * Specifying File Variables
+:PROPERTIES:
+:CUSTOM_ID: specifying-file-variables
+:END:
 
 为某个文件设置本地变量时，一般有两种形式。
 
@@ -69,12 +75,16 @@ Emacs将使用它能找到的最终 =major mode= 定义，所以在旧的Emacs�
 可以使用命令 *M-x normal-mode* 来重置文件的本地变量和 =major-mode= 。
 
 * Safety of File Variables
+:PROPERTIES:
+:CUSTOM_ID: safety-of-file-variables
+:END:
 
 文件局部变量很危险，当你访问别人的文件时，你无法知道它的局部变量列表会对Emacs做什么。
 
 因此每当Emacs遇到未知安全的文件局部变量值时，它会显示文件的整个局部变量列表，在设置之前请求确认。
 
 Local Variables: https://www.gnu.org/software/emacs/manual/html_node/emacs/Variables.html
+
 Safety of File Variables: https://www.gnu.org/software/emacs/manual/html_node/emacs/Safe-File-Variables.html
 
 #+include: ../comments.inc

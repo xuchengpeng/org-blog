@@ -6,6 +6,9 @@ REST is acronym for REpresentational State Transfer. It is architectural style f
 Like any other architectural style, REST also does have it's own [[https://restfulapi.net/rest-architectural-constraints/][6 guiding constraints]] which must be satisfied if an interface needs to be referred as *RESTful*. These principles are listed below.
 
 ** Guiding Principles of REST
+:PROPERTIES:
+:CUSTOM_ID: guiding-principles-of-rest
+:END:
 
 1. *Client-server* - By separating the user interface concerns from the data
    storage concerns, we improve the portability of the user interface across
@@ -37,6 +40,9 @@ Like any other architectural style, REST also does have it's own [[https://restf
    pre-implemented.
 
 ** Resource
+:PROPERTIES:
+:CUSTOM_ID: resource
+:END:
 
 The key abstraction of information in REST is a *resource*. Any information that can be named can be a resource: a document or image, a temporal service, a collection of other resources, a non-virtual object (e.g. a person), and so on. REST uses a *resource identifier* to identify the particular resource involved in an interaction between components.
 
@@ -78,6 +84,9 @@ CDATA-encoded href attribute."
 #+END_QUOTE
 
 ** Resource Methods
+:PROPERTIES:
+:CUSTOM_ID: resource-methods
+:END:
 
 Other important thing associated with REST is *resource methods* to be used to
 perform the desired transition. A large number of people wrongly relate resource
@@ -104,6 +113,9 @@ Another thing which will help you while building RESTful APIs is that
 not by arrays of original resource representations because query is not a substitute for identification of resources.
 
 ** REST and HTTP are not same !!
+:PROPERTIES:
+:CUSTOM_ID: rest-and-http-are-not-same
+:END:
 
 A lot of people prefer to compare HTTP with REST. *REST and HTTP are not same*.
 

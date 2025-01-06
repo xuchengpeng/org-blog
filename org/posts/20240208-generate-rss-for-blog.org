@@ -8,6 +8,9 @@ From what I known, many people recommend using [[https://github.com/benedicthw/o
 Luckily, Python has many modules which can generate and parse RSS feeds ([[https://github.com/lkiesow/python-feedgen][python-feedgen]], [[https://github.com/kurtmckee/feedparser][feedparser]], [[https://github.com/svpino/rfeed][rfeed]], etc.). I love Python, it is easy to use. So I decided to use python-feedgen to generate an RSS XML file from HTML files of my blog.
 
 * Getting Posts List
+:PROPERTIES:
+:CUSTOM_ID: getting-posts-list
+:END:
 
 I published all of blog files into a =public= directory, firstly I need to filter all necessary HTML files.
 
@@ -26,6 +29,9 @@ htmls.sort(reverse=True)
 #+end_src
 
 * Parsing HTML
+:PROPERTIES:
+:CUSTOM_ID: parsing-html
+:END:
 
 [[https://www.crummy.com/software/BeautifulSoup/][Beautiful Soup]] is a powerful library that make it easy to scrape information from HTML files. I need to scrape =title= and page =content= from HTML files, and remove all blank lines in =content=.
 
@@ -40,6 +46,9 @@ description = "\n".join([line for line in description.split("\n") if line.strip(
 #+end_src
 
 * Generating RSS XML
+:PROPERTIES:
+:CUSTOM_ID: generating-rss-xml
+:END:
 
 It is easy to [[https://github.com/lkiesow/python-feedgen#create-a-feed][create a feed]] and [[https://github.com/lkiesow/python-feedgen#generate-the-feed][generate a feed]] by following the [[https://lkiesow.github.io/python-feedgen/][documentation]]. The most important elements are =title=, =link= and =description=. 
 

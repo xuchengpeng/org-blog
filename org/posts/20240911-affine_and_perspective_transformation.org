@@ -18,7 +18,11 @@ $$R=\begin{bmatrix} a_{1} & b_{1} \\ a_{2} & b_{2} \end{bmatrix},t=\begin{bmatri
 
 矩阵 $T$ 就是仿射变换的变换矩阵，$R$ 为线性变换矩阵，$t$ 为平移矩阵，简单来说，仿射变换就是线性变换+平移。变换后直线依然是直线，平行线依然是平行线，直线间的相对位置关系不变，因此非共线的三个对应点便可确定唯一的一个仿射变换，线性变换 4 个自由度 + 平移 2 个自由度 →仿射变换自由度为 6。
 
-[[./affine_and_perspective_transformation.jpg]]
+#+begin_export html
+<figure>
+<img src="./affine_and_perspective_transformation.jpg" alt="affine_and_perspective_transformation.jpg">
+</figure>
+#+end_export
 
 其实平移、旋转、缩放和翻转等变换就是对应了不同的仿射变换矩阵。
 

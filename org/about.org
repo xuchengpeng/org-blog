@@ -11,6 +11,9 @@
 #+end_center
 
 * Resume
+:PROPERTIES:
+:CUSTOM_ID: resume
+:END:
 
 | Company | Role                                               | Date           |
 |---------+----------------------------------------------------+----------------|

@@ -8,6 +8,9 @@ Emacs is the best editor in the world.
 This is a guide to show how to publish a static blog with Org mode.
 
 * Basics
+:PROPERTIES:
+:CUSTOM_ID: basics
+:END:
 
 Create your blog files and css files.
 
@@ -21,6 +24,9 @@ Create your blog files and css files.
 #+end_src
 
 * Publishing the org project
+:PROPERTIES:
+:CUSTOM_ID: publishing-the-org-project
+:END:
 
 #+begin_src emacs-lisp
 (require 'ox-publish)

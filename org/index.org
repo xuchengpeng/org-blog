@@ -11,10 +11,16 @@
 #+end_center
 
 * Recent Posts
+:PROPERTIES:
+:CUSTOM_ID: recent-posts
+:END:
 
 #+include: posts/index.org :lines "4-14"
 
 * Projects
+:PROPERTIES:
+:CUSTOM_ID: projects
+:END:
 
 | Title                | Description                                       | Reference |
 |----------------------+---------------------------------------------------+-----------|
