@@ -438,6 +438,7 @@ td.org-center {
 .org-error { color: #a60000; font-weight: bold; }
 .org-function-name { color: #721045; }
 .org-keyword { color: #531ab6; }
+.org-operator { color: #000000; }
 .org-preprocessor { color: #a0132f; }
 .org-string { color: #3548cf; }
 .org-type { color: #005f5f; }
@@ -453,3 +454,5 @@ td.org-center {
 .org-regexp { color: #3548cf; }
 .org-regexp-grouping-backslash { color: #721045;}
 .org-regexp-grouping-construct { color: #00663f; }
+.org-tex-math { color: #3548cf; }
+.org-tex-verbatim { color: #8f0075; }
