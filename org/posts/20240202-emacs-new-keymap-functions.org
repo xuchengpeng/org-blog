@@ -26,7 +26,7 @@ Protesilaos Stavrou posted a video on [[https://www.youtube.com/watch?v=gojOZ3k1
 
 Here is the example, we can have =C-z= as a prefix, =C-z b= as a nested key maps for buffer-related commands, and =C-z f= for file-related commands.
 
-#+begin_src elisp
+#+begin_src emacs-lisp
 ;; Read this to learn about key binding conventions so that you know
 ;; which keys are safe for users:
 ;;

@@ -107,7 +107,7 @@ pre {
   font-family: 'Cousine', monospace;
   font-size: 0.9375em;
   line-height: 1.5em;
-  padding: 0.875em;
+  padding: 1em;
   border: 1px solid #f6f6f8;
   border-radius: 3px;
   background-color: #f6f6f8;
@@ -117,6 +117,20 @@ pre {
 
 pre:hover {
   overflow: auto;
+}
+
+pre:before {
+  display: block;
+  position: absolute;
+  color: #111;
+  background-color: #e0e0e0;
+  font-size: 1em;
+  line-height: 1.4em;
+  top: 0;
+  right: 0;
+  padding: 0 .5em;
+  border-bottom-left-radius: 8px;
+  border: 0;
 }
 
 /* table */
@@ -456,3 +470,70 @@ td.org-center {
 .org-regexp-grouping-construct { color: #00663f; }
 .org-tex-math { color: #3548cf; }
 .org-tex-verbatim { color: #8f0075; }
+
+pre.src-bash:before { content: "Bash"; }
+pre.src-emacs-lisp:before { content: "Emacs Lisp"; }
+pre.src-R:before { content: "R"; }
+pre.src-cpp:before { content: "C++"; }
+pre.src-c:before { content: "C"; }
+pre.src-C:before { content: "C"; }
+pre.src-html:before { content: "HTML"; }
+pre.src-javascript:before, pre.src-js:before { content: "Javascript"; }
+pre.src-abc:before { content: "ABC"; }
+pre.src-asymptote:before { content: "Asymptote"; }
+pre.src-awk:before { content: "Awk"; }
+pre.src-calc:before { content: "Calc"; }
+pre.src-clojure:before { content: "Clojure"; }
+pre.src-comint:before { content: "Comint"; }
+pre.src-css:before { content: "CSS"; }
+pre.src-D:before { content: "D"; }
+pre.src-ditaa:before { content: "Ditaa"; }
+pre.src-dot:before { content: "Dot"; }
+pre.src-ebnf:before { content: "EBNF"; }
+pre.src-forth:before { content: "Forth"; }
+pre.src-fortran:before { content: "Fortran"; }
+pre.src-go:before { content: "Go"; }
+pre.src-gnuplot:before { content: "Gnuplot"; }
+pre.src-haskell:before { content: "Haskell"; }
+pre.src-io:before { content: "Io"; }
+pre.src-java:before { content: "Java"; }
+pre.src-latex:before { content: "LaTeX"; }
+pre.src-ledger:before { content: "Ledger"; }
+pre.src-lilypond:before { content: "Lilypond"; }
+pre.src-lisp:before { content: "Lisp"; }
+pre.src-makefile:before { content: "Make"; }
+pre.src-matlab:before { content: "Matlab"; }
+pre.src-maxima:before { content: "Maxima"; }
+pre.src-mscgen:before { content: "Mscgen"; }
+pre.src-caml:before { content: "Caml"; }
+pre.src-octave:before { content: "Octave"; }
+pre.src-org:before { content: "Org"; }
+pre.src-perl:before { content: "Perl"; }
+pre.src-picolisp:before { content: "Picolisp"; }
+pre.src-plantuml:before { content: "PlantUML"; }
+pre.src-python:before { content: "Python"; }
+pre.src-ruby:before { content: "Ruby"; }
+pre.src-sass:before { content: "Sass"; }
+pre.src-scala:before { content: "Scala"; }
+pre.src-scheme:before { content: "Scheme"; }
+pre.src-screen:before { content: "Screen"; }
+pre.src-sed:before { content: "Sed"; }
+pre.src-sh:before { content: "Shell"; }
+pre.src-shell:before { content: "Shell"; }
+pre.src-shen:before { content: "Shen"; }
+pre.src-sql:before { content: "SQL"; }
+pre.src-sqlite:before { content: "SQLite"; }
+pre.src-stan:before { content: "Stan"; }
+pre.src-vala:before { content: "Vala"; }
+pre.src-axiom:before { content: "Axiom"; }
+pre.src-browser:before { content: "HTML"; }
+pre.src-cypher:before { content: "Cypher"; }
+pre.src-elixir:before { content: "Elixir"; }
+pre.src-ipython:before { content: "IPython"; }
+pre.src-kotlin:before { content: "Kotlin"; }
+pre.src-mongo:before { content: "MongoDB"; }
+pre.src-prolog:before { content: "Prolog"; }
+pre.src-typescript:before, pre.src-tsx:before { content: "Typescript"; }
+pre.src-rust:before { content: "Rust"; }
+pre.src-toml:before { content: "Toml"; }
+pre.src-yaml:before { content: "Yaml"; }

@@ -20,7 +20,7 @@ export https_proxy=${http_proxy}
 
 Proxies are supported by URL package, by setting ~url-proxy-services~ to an assoc list mapping url services and the proxy servers that support them.
 
-#+begin_src elisp
+#+begin_src emacs-lisp
 (setq url-proxy-services
       '(("http"     . "proxy.example.com:8080")
         ("https"    . "proxy.example.com:8080")
@@ -29,7 +29,7 @@ Proxies are supported by URL package, by setting ~url-proxy-services~ to an asso
 
 If the proxy services need to be authorized, we need to customize ~url-http-proxy-basic-auth-storage~.
 
-#+begin_src elisp
+#+begin_src emacs-lisp
 (setq url-http-proxy-basic-auth-storage
       (list (list "proxy.example.com:8080"
                   (cons "Input your LDAP UID !"
@@ -43,7 +43,7 @@ If the proxy services need to be authorized, we need to customize ~url-http-prox
 
 Enable socks proxy:
 
-#+begin_src elisp
+#+begin_src emacs-lisp
 (setq url-gateway-method 'socks
       socks-server '("Default Server" "socks.proxy.com" 1080 5)
       socks-noproxy '("localhost"))
@@ -53,7 +53,7 @@ If the ~socks-server~ need to be authorized, ~socks-username~ and ~socks-passwor
 
 Disable socks proxy:
 
-#+begin_src elisp
+#+begin_src emacs-lisp
 (setq url-gateway-method 'native
       socks-server nil
       socks-noproxy nil)

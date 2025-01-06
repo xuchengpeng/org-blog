@@ -7,7 +7,7 @@ StarDict dictionaries can be downloaded from https://www.nchrs.xyz/stardict/inde
 
 The [[https://github.com/jamescherti/quick-sdcv.el][quick-sdcv]] package serves as a lightweight Emacs interface for the sdcv command-line interface, which is the console version of the StarDict dictionary application.
 
-#+begin_src elisp
+#+begin_src emacs-lisp
 (use-package quick-sdcv
   :ensure t
   :commands (quick-sdcv-search-input quick-sdcv-search-at-point)

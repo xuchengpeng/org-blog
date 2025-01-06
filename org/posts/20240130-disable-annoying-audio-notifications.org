@@ -7,7 +7,7 @@ To get a visual signal instead, set =visual-bell= with =t= Emacs should flash th
 
 We can also customize =ring-bell-function= to just flash the modeline.
 
-#+begin_src elisp
+#+begin_src emacs-lisp
 ;;;###autoload
 (defun dotemacs-ring-bell-fn ()
   "Blink the mode-line."

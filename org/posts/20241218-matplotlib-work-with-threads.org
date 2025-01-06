@@ -5,7 +5,7 @@ Matplotlib is not thread-safe: in fact, there are known race conditions that aff
 
 You may be able to work on separate figures from separate threads. However, you must in that case use a non-interactive backend (typically Agg), because most GUI backends require being run from the main thread as well.
 
-#+begin_src elisp
+#+begin_src python
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt

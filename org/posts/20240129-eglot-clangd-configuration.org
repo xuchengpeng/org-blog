@@ -11,7 +11,7 @@
 
 解决这个问题的办法就需要在clangd启动时指定 =compile_commands.json= 所在的目录，方法有很多种。
 
-#+begin_src elisp
+#+begin_src emacs-lisp
 (with-eval-after-load 'eglot
   (add-to-list 'eglot-server-programs
                `((c-mode c-ts-mode c++-mode c++-ts-mode objc-mode)
@@ -22,7 +22,7 @@
 
 此时就可以使用 =.dir-locals.el=[fn:2] 文件来对每个工程来配置。
 
-#+begin_src elisp
+#+begin_src emacs-lisp
 ((nil . ((eglot-server-programs
           . (((c-mode c-ts-mode c++-mode c++-ts-mode objc-mode)
               . ("clangd"

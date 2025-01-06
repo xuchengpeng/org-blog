@@ -3,14 +3,14 @@
 
 In Emacs Lisp, =find-font= function return a font-entity matching with FONT-SPEC. So we can make a helper function.
 
-#+begin_src elisp
+#+begin_src emacs-lisp
 (defun font-available-p (font-name)
   (find-font (font-spec :name font-name)))
 #+end_src
 
 Before setting a font, we can check with this helper function.
 
-#+begin_src elisp
+#+begin_src emacs-lisp
 (when (font-available-p "Fira Code")
   (set-face-attribute 'default nil :font (font-spec :family "Fira Code" :size 17)))
 #+end_src

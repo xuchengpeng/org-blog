@@ -17,7 +17,7 @@ If you like it, clone the theme, and add support for your plugins into the theme
 
 For example, add support for git-gutter-fr package.
 
-#+begin_src elisp
+#+begin_src emacs-lisp
 (tokyonight-themes-with-colors
   (custom-set-faces
     `(git-gutter-fr:added ((,c :foreground ,green)))
@@ -31,7 +31,7 @@ If you want to change the color palettes, we have a option for palette overrides
 
 For example, change the blue and cyan color for tokyonight-day-theme.
 
-#+begin_src elisp
+#+begin_src emacs-lisp
 (setq tokyonight-day-palette-overrides
       '((blue . "#2e7de9")
         (cyan . "#007197")))

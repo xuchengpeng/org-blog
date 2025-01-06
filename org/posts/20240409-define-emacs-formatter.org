@@ -7,7 +7,7 @@ The =reformatter-define= macro expands to code which generates =xxx-buffer= and 
 
 For example, we can use [[https://github.com/mvdan/sh][shfmt]] to format shell scripts.
 
-#+begin_src elisp
+#+begin_src emacs-lisp
 (with-eval-after-load 'sh-script
   (reformatter-define shfmt
     :program "shfmt"

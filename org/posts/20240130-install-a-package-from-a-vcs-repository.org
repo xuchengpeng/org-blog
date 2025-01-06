@@ -5,7 +5,7 @@ Most of time the packages we need to install are already available in some of th
 
 For example:
 
-#+begin_src elisp
+#+begin_src emacs-lisp
 (package-vc-install "https://github.com/clojure-emacs/clojure-ts-mode")
 #+end_src
 

@@ -3,7 +3,7 @@
 
 可变参模板的英文为Variadic Templates，是C++11标准引入的，可变参模板允许模板定义中含有0到多个模板参数。
 
-#+begin_src C
+#+begin_src cpp
 template <typename... T>
 void myvtfunct(T... args)
 {
@@ -16,7 +16,7 @@ typename后面的3个点代表参数包，然后才修饰T。T后面带了3个�
 
 可变参函数模板的展开一般是用递归函数。
 
-#+begin_src C
+#+begin_src cpp
 template <typename T, typename... U>
 void myvtfunct(T firstarg, U... otherargs)
 {
@@ -31,7 +31,7 @@ void myvtfunct()
 
 在C++17标准中，引入了编译期间if语句，在if后面又增加了一个constexpr关键字，这个关键字代表常量或编译期求值。通过编译期间if语句，可以把上述递归终止函数省略。
 
-#+begin_src C
+#+begin_src cpp
 template <typename T, typename... U>
 void myvtfunct(T firstarg, U... otherargs)
 {
@@ -44,7 +44,7 @@ void myvtfunct(T firstarg, U... otherargs)
 
 可变参函数模板也可以重载。
 
-#+begin_src C
+#+begin_src cpp
 template <typename... T>
 void myfunc(T... arg)
 {

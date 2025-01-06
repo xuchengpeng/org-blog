@@ -1,6 +1,6 @@
 # org-blog
 
-```elisp
+```emacs-lisp
 (setq dotemacs-org-blog-dir "d:/github/org-blog/"
       dotemacs-org-html-head "
 <link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"/apple-touch-icon.png\">
@@ -30,7 +30,7 @@
 
 Generate rss automatically:
 
-``` elisp
+```emacs-lisp
 (with-eval-after-load 'ox-publish
   (defun +org-generate-rss (project &optional force async)
     (let ((default-directory dotemacs-org-blog-dir))

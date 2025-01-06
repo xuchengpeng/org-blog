@@ -51,7 +51,7 @@ line-length = 120
 
 在Emacs中使用[[https://www.gnu.org/software/emacs/manual/html_node/eglot/][Eglot]]作为LSP客户端，在 =.dir-locals.el= 中增加配置：
 
-#+begin_src elisp
+#+begin_src emacs-lisp
 ((python-base-mode . ((python-indent-offset . 4)
                       (python-indent-guess-indent-offset-verbose . nil)
                       (python-shell-interpreter . "python")

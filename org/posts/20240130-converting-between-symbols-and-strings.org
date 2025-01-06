@@ -5,7 +5,7 @@ Sometimes you might need to convert a symbol to string in Emacs Lisp. You start 
 
 With Emacs Lisp, you can do it like this.
 
-#+begin_src elisp
+#+begin_src emacs-lisp
 (symbol-name 'some-symbol)
 ; ==> "some-symbol"
 (intern "some-symbol")

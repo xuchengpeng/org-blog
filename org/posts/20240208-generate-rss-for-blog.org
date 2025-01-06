@@ -54,7 +54,7 @@ It is easy to [[https://github.com/lkiesow/python-feedgen#create-a-feed][create 
 
 This blog is published by org, here is a trick to generate rss automatically.
 
-#+begin_src elisp
+#+begin_src emacs-lisp
 (with-eval-after-load 'ox-publish
   (defun dotemacs-generate-rss (project &optional force async)
     (let ((default-directory dotemacs-org-site-dir))

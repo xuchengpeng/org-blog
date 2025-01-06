@@ -9,7 +9,7 @@ From Emacs 29, it supports [[https://git.savannah.gnu.org/cgit/emacs.git/commit/
 
 Here I make a helper function to adjust transparency.
 
-#+begin_src elisp
+#+begin_src emacs-lisp
 (defun dotemacs-adjust-transparency (frame incr)
   "Adjust the background transparency of FRAME by increment INCR."
   (let* ((oldalpha (or (frame-parameter frame 'alpha-background) 100))
