@@ -8,8 +8,7 @@
 <link rel=\"icon\" type=\"image/png\" sizes=\"16x16\" href=\"/favicon-16x16.png\">
 <link rel=\"manifest\" href=\"/site.webmanifest\">
 <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css?family=Open+Sans|Cousine&display=swap\">
-<link rel=\"stylesheet\" type=\"text/css\" href=\"/css/style.css\">
-<script defer src=\"/js/copycode.js\"></script>"
+<link rel=\"stylesheet\" type=\"text/css\" href=\"/css/style.css\">"
       dotemacs-org-html-preamble "
 <div class=\"header-wrapper\">
   <div class=\"site-header\">
