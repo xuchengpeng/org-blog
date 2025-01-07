@@ -328,30 +328,14 @@ td.org-center {
   color: #333;
 }
 
-.org-src-container {
-  position: relative;
-}
-
-/* Copy Code button */
-.org-src-container button {
-  display: none;
-  position: absolute;
-  top: 2px;
-  right: 2px;
-}
-
-.org-src-container:hover button {
-  display: block;
-  cursor: pointer;
-}
-
 /* Search box */
 .search {
   display: none;
+  position: relative;
   width: 100%;
   height: 30px;
   padding: 10px 0;
-  z-index: 1
+  z-index: 99;
 }
 
 .search .search-icon {
@@ -412,6 +396,10 @@ td.org-center {
 
 .search .search-results .result-item .result-item-detail a {
   text-transform: none !important;
+}
+
+.org-src-container {
+  position: relative;
 }
 
 .org-builtin { color: #8f0075; }
