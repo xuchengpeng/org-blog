@@ -7,25 +7,23 @@
 <link rel=\"icon\" type=\"image/png\" sizes=\"32x32\" href=\"/favicon-32x32.png\">
 <link rel=\"icon\" type=\"image/png\" sizes=\"16x16\" href=\"/favicon-16x16.png\">
 <link rel=\"manifest\" href=\"/site.webmanifest\">
+<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">
+<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>
 <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css?family=Open+Sans|Cousine&display=swap\">
 <link rel=\"stylesheet\" type=\"text/css\" href=\"/css/style.css\">"
       dotemacs-org-html-preamble "
-<div class=\"header-wrapper\">
-  <div class=\"site-header\">
+<div class=\"site-header\">
   <a class=\"site-title\" href=\"/\">Chuck</a>
   <div class=\"site-nav\">
     <a class=\"nav-link\" href=\"/posts/\">Posts</a>
     <a class=\"nav-link\" href=\"/about.html\">About</a>
     <a class=\"nav-link\" href=\"/search.html\">&#x1F50D;&#xFE0E;</a>
   </div>
-  </div>
 </div>"
       dotemacs-org-html-postamble "
 <a href=\"#top\" class=\"top-link\" id=\"top-link\" style=\"visibility: hidden; opacity: 0;\">Top &#8593;</a>
 <script async src=\"/js/scroll-to-top.js\"></script>
-<div class=\"footer-wrapper\">
-  <div class=\"site-footer\">&copy xuchengpeng. <a href=\"/feed.xml\">RSS Feed</a></div>
-</div>")
+<div class=\"site-footer\">&copy Chuck.<a href=\"/feed.xml\" style=\"margin-left: 0.5em\">RSS Feed</a></div>")
 ```
 
 Generate rss automatically:

@@ -2,15 +2,13 @@ body {
   font-family: "Open Sans", Arial, sans-serif;
   font-size: 16px;
   line-height: 1.5em;
-  margin: 0;
-  padding: 0;
-}
-
-#content {
   max-width: 900px;
   margin: 0 auto;
-  padding: 20px 10px;
-  position: relative;
+  padding: 0 0.5em;
+}
+
+main {
+  padding: 1em 0;
 }
 
 /* header line */
@@ -220,45 +218,30 @@ td.org-center {
   background: #666;
 }
 
-.header-wrapper {
-  border-top: 5px solid #424242;
-  border-bottom: 1px solid #e8e8e8;
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #e8e8e8;
   border-image: linear-gradient(to right, #147, #f66) 30 30;
   min-height: 55px;
   position: relative;
 }
 
-.footer-wrapper {
-  border-top: 1px solid #e8e8e8;
-  border-image: linear-gradient(to right, #147, #f66) 30 30;
-}
-
-.site-header {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.site-title {
-  font-size: 2em;
-  line-height: 1.6875em;
-}
-
 .site-title,
 .site-title:visited {
+  font-size: 2em;
+  line-height: 1.5em;
   color: #111
 }
 
 .site-nav {
-  line-height: 3.375em;
+  font-size: 1em;
+  line-height: 1.5em;
 }
 
 .site-nav .nav-link {
   color: #111;
-  line-height: 1.5
 }
 
 .site-nav .nav-link:not(:last-child) {
@@ -266,12 +249,14 @@ td.org-center {
 }
 
 .site-footer {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 10px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid #e8e8e8;
+  border-image: linear-gradient(to right, #147, #f66) 30 30;
+  min-height: 44px;
   font-size: 0.9375em;
   color: #111;
-  text-align: center;
 }
 
 .top-link {
@@ -427,19 +412,6 @@ td.org-center {
 
 .search .search-results .result-item .result-item-detail a {
   text-transform: none !important;
-}
-
-/* Mobile UI */
-@media screen and (max-width: 600px) {
-  .title {
-    font-size: 2em;
-    white-space: nowrap;
-    overflow: auto;
-  }
-
-  pre {
-    overflow: auto;
-  }
 }
 
 .org-builtin { color: #8f0075; }
