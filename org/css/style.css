@@ -122,9 +122,9 @@ pre:hover {
 pre:before {
   display: block;
   position: absolute;
-  color: #111;
-  background-color: #e0e0e0;
-  font-size: 1em;
+  color: #fff;
+  background-color: #b3b3b3;
+  font-size: 0.85em;
   line-height: 1.4em;
   top: 0;
   right: 0;
@@ -204,17 +204,16 @@ td.org-center {
 }
 
 ::-webkit-scrollbar {
+  height: 8px;
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
   background: #fff;
-  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb {
   background: #c0c0c0;
-  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
