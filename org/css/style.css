@@ -448,7 +448,7 @@ td.org-center {
 .org-constant { color: #0000b0; }
 .org-c-annotation { color: #0000b0; }
 .org-doc { color: #2a5045; }
-.org-error { color: #a60000; font-weight: bold; }
+.org-error { color: #a60000; }
 .org-function-name { color: #721045; }
 .org-keyword { color: #531ab6; }
 .org-operator { color: #000000; }
@@ -456,7 +456,7 @@ td.org-center {
 .org-string { color: #3548cf; }
 .org-type { color: #005f5f; }
 .org-variable-name { color: #005e8b; }
-.org-warning { color: #884900; font-weight: bold; }
+.org-warning { color: #884900; }
 .org-warning-1 { color: #884900; }
 .org-css-property { color: #531ab6; }
 .org-css-selector { color: #721045; }
