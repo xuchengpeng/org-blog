@@ -220,6 +220,7 @@ td.org-center {
 
 .site-header {
   display: flex;
+  flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
   border-bottom: 2px solid #e8e8e8;
@@ -232,31 +233,34 @@ td.org-center {
 .site-title:visited {
   font-size: 2em;
   line-height: 1.5em;
-  color: #111
+  color: #000;
 }
 
 .site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  justify-content: center;
+  align-items: center;
   font-size: 1em;
   line-height: 1.5em;
 }
 
-.site-nav .nav-link {
-  color: #111;
-}
-
-.site-nav .nav-link:not(:last-child) {
-  margin-right: 0.5em
+.site-nav a {
+  color: #000;
 }
 
 .site-footer {
   display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
   justify-content: center;
   align-items: center;
   border-top: 1px solid #e8e8e8;
   border-image: linear-gradient(to right, #147, #f66) 30 30;
   min-height: 44px;
   font-size: 0.9375em;
-  color: #111;
+  color: #000;
 }
 
 .top-link {
@@ -375,7 +379,7 @@ td.org-center {
   text-align: left;
   border: 1px solid #555;
   border-radius: 2px;
-  background: #fafafa
+  background: #fff;
 }
 
 .search .search-results .result-title {
