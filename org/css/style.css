@@ -93,7 +93,7 @@ blockquote {
 /* code */
 code {
   font-family: 'Cousine', monospace;
-  font-size: 0.9375em;
+  font-size: 0.95em;
   line-height: 1.5em;
   padding: 1px 4px;
   border: 1px solid #eff0f2;
@@ -103,7 +103,7 @@ code {
 
 pre {
   font-family: 'Cousine', monospace;
-  font-size: 0.9375em;
+  font-size: 0.95em;
   line-height: 1.5em;
   padding: 1em;
   border: 1px solid #f6f6f8;
@@ -259,7 +259,7 @@ td.org-center {
   border-top: 1px solid #e8e8e8;
   border-image: linear-gradient(to right, #147, #f66) 30 30;
   min-height: 44px;
-  font-size: 0.9375em;
+  font-size: 0.95em;
   color: #000;
 }
 
@@ -325,11 +325,12 @@ td.org-center {
   line-height: 1;
 }
 
-/* Footnotes */
+#footnotes {
+  font-size: 0.95em;
+}
+
 .footpara {
   display: inline;
-  font-size: 0.9375em;
-  color: #333;
 }
 
 /* Search box */
