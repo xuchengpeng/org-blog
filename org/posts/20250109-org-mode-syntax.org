@@ -1,0 +1,263 @@
+#+TITLE: Org Mode Syntax
+#+DATE: <2025-01-09 Thu 14:50>
+
+* Basics
+
+** Biggest heading
+
+New chapter.
+
+*** Bigger heading
+
+New section.
+
+**** Big heading
+
+New sub-section.
+
+**** Text breaks
+
+By entering two consecutive backslashes,
+you can force to break lines \\
+without starting a new paragraph.
+
+For an horizontal line, insert at least 5 dashes: this is some text above an
+horizontal rule
+-----
+and some text below it.
+
+**** Numbered headings
+
+You can create numbered headings up to a certain level by setting an option:
+
+#+begin_src org
+,#+OPTIONS: H:4
+#+end_src
+
+** Lists
+
+Org markup allows you to create bulleted or numbered lists. It allows any
+combination of the two list types.
+
+*** Unordered lists
+
+Itemized lists are marked with bullets. They are convenient to:
+
+- organize data, and
+- make the document
+  + prettier, and
+  + easier to read.
+
+Create them with a minus or a plus sign.
+
+*** Ordered lists
+
+Enumerated lists are marked with numbers or letters:
+
+1. First element
+   1) First sub-item
+   2) Last sub-item
+2. Second element
+
+You can have ordered lists with jumping numbers:
+
+1. [@1] First
+2. [@2] Second
+5. [@5] Jump to 5th
+
+*** Definition lists
+
+- Definition list ::
+     List containing definitions.
+
+- Term to define ::
+     Explication of the term.
+
+*** Checkboxes
+- [ ] First item not checked
+- [-] Second item half done
+  - [X] Another first
+  - [ ] Another second
+- [X] Third item checked
+
+** Miscellaneous effects
+
+*** Include Org files
+
+You can include another Org file and skip its title by using the ~:lines~ argument
+to ~#+INCLUDE~:
+
+#+begin_src org
+,#+INCLUDE: chapter1.org :lines "2-"
+#+end_src
+
+#+begin_note
+File inclusion, through INCLUDE keywords, is an *export-only feature*.
+#+end_note
+
+*** Inline HTML
+
+You can include raw HTML in your Org documents and it will get kept as HTML
+when it's exported. XXX
+
+#+HTML_BEGIN: <pre style="color:red">
+Text can be preformatted (in a fixed-width font).
+#+HTML_END: </pre>
+
+#+begin_example
+,#+begin_info
+,*Info example* \\
+Did you know...
+,#+end_info
+#+end_example
+
+*** Inline LaTeX
+
+You can also use raw LaTeX. XXX
+
+#+LaTeX_BEGIN: \begin{verbatim}
+Text can be preformatted (in a fixed-width font).
+#+LaTeX_END: \end{verbatim}
+
+*** Centered text
+
+#+begin_center
+This text is centered!
+#+end_center
+
+** Code blocks
+
+*** COMMENT Syntax highlighting
+
+#+begin_src cpp :eval no
+/*
+ * Application that displays a "Hello" message to the standard output.
+ */
+int main(int arc, char **argv)
+{
+  printf("Hello, %s!\n", (argc>1) ? argv[1] : "World");
+  return 0;
+}
+#+end_src
+
+** Notes at the footer
+
+It is possible to define named footnotes[fn:myfootnote], or ones with
+automatic anchors[fn:2].
+
+** Formatting text
+
+*** Quotations
+
+Use the ~quote~ block to typeset quoted text.
+
+#+begin_quote
+Everything should be made as simple as possible,
+but not any simpler -- Albert Einstein
+#+end_quote
+
+In a ~verse~ environment, there is an implicit line break at the end of each
+line, and indentation and vertical space are preserved:
+
+#+begin_verse
+Everything should be made as simple as possible,
+but not any simpler -- Albert Einstein
+#+end_verse
+
+** Mathematical formulae
+
+You can embed LaTeX math formatting in Org mode files using the following
+syntax:
+
+- For *inline math* expressions, use ~\(...\)~: \(x^2\) or \(1 < 2\).
+
+  It's /not/ advised to use the constructs ~$...$~ (both for Org and MathJax).
+
+- Centered display equation (the /Euler theorem/):
+
+  \[
+  \int_0^\infty e^{-x^2} dx = {{\sqrt{\pi}} \over {2}}
+  \]
+
+  The use of ~\[...\]~ is for mathematical expressions which you want to make
+  *stand out, on their own lines*.
+
+  LaTeX allows to inline such ~\[...\]~ constructs (/quadratic formula/):
+  \[ \frac{-b \pm \sqrt{b^2 - 4 a c}}{2a} \]
+
+  *Double dollar signs (~$$~) should not be used*.
+
+** Comments
+
+It's possible to add comments in the document.
+
+# This Org comment here won't be displayed.
+
+** Tables
+
+#+CAPTION: An example of table
+| Header 1    | Header 2      | Header 3 |
+|-------------+---------------+----------|
+| Top left    | Top middle    |          |
+|             |               | Right    |
+| Bottom left | Bottom middle |          |
+
+#+CAPTION: Table with alignment
+|          <r> |     <c>      | <l>          |
+|            1 |      2       | 3            |
+|        right |    center    | left         |
+| xxxxxxxxxxxx | xxxxxxxxxxxx | xxxxxxxxxxxx |
+
+** Images
+
+#+CAPTION: Affine and perspective transformation
+[[./affine_and_perspective_transformation.jpg]]
+
+** Links
+   :PROPERTIES:
+   :CUSTOM_ID: links
+   :END:
+
+*** Hyperlinks
+
+See the [[http://orgmode.org/][Org mode Web site]].
+
+* Org miscellaneous
+
+** Dates
+
+Timestamps: [2014-01-16 Thu] and <2014-01-16 Thu>.
+
+** DONE [#A] Buy GTD book                                               :online:
+   :LOGBOOK:
+   - State "TODO"        ->  "DONE"       [2014-01-16 Thu 09:52]
+   :END:
+
+By default, ~DONE~ actions will be collapsed.
+
+** TODO [#A] Read GTD book
+   SCHEDULED: <2014-09-11 Thu>
+
+** TODO [#B] Apply GTD methodoloy
+   DEADLINE: <2014-12-01 Mon>
+   :PROPERTIES:
+   :HTML_CONTAINER_CLASS:    hsCollapsed
+   :END:
+
+* Org macros
+
+#+MACRO: color @@html:<span style="color: $1">$2</span>@@
+
+{{{color(blue, This text is colored in blue.)}}}
+
+{{{color(red, This other text is in red.)}}}
+
+Find more macros on [[https://github.com/fniessen/org-macros][GitHub]].
+
+* Footnotes
+
+[fn:myfootnote] Extensively used in large documents.
+
+[fn:2] footnotes 2
+
+#+include: ../comments.inc
