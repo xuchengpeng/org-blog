@@ -77,11 +77,6 @@ p {
   margin: 1em 0;
 }
 
-/* img */
-img {
-  max-width: 100%;
-}
-
 /* blockquote */
 blockquote {
   color: #585858;
@@ -133,6 +128,16 @@ pre:before {
 
 dt {
   font-weight: bold;
+}
+
+figure {
+  margin: 1em auto;
+  padding: 0;
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
 }
 
 /* table */
