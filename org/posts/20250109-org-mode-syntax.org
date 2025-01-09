@@ -127,8 +127,6 @@ This text is centered!
 
 ** Code blocks
 
-*** COMMENT Syntax highlighting
-
 #+begin_src cpp :eval no
 /*
  * Application that displays a "Hello" message to the standard output.
