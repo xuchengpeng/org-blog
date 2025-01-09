@@ -38,10 +38,10 @@ for html in htmls:
         description_lines = [line for line in description.split("\n") if line.strip()]
         description = ""
         for line in description_lines:
+            if len(description.encode("utf-8")) + len(line.encode("utf-8")) > 200:
+                break
             description += line
             description += "\n"
-            if len(description) >= 200:
-                break
         fe = fg.add_entry()
         fe.title(soup.title.string)
         fe.link(href=url)
