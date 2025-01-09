@@ -131,6 +131,10 @@ pre:before {
   border: 0;
 }
 
+dt {
+  font-weight: bold;
+}
+
 /* table */
 table {
   border-top: 2px solid;
