@@ -90,10 +90,7 @@ code {
   font-family: 'Cousine', monospace;
   font-size: 0.95em;
   line-height: 1.5em;
-  padding: 1px 4px;
-  border: 1px solid #eff0f2;
-  border-radius: 3px;
-  background-color: #eff0f2;
+  padding: 0 0.2em;
 }
 
 pre {
@@ -101,9 +98,9 @@ pre {
   font-size: 0.95em;
   line-height: 1.5em;
   padding: 1em;
-  border: 1px solid #f6f6f8;
+  border: none;
   border-radius: 3px;
-  background-color: #f6f6f8;
+  background-color: #f3f3f3;
   margin: 1em 0;
   overflow: hidden;
 }
