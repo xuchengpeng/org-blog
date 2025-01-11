@@ -19,13 +19,12 @@ pacman --noconfirm -S --needed \
     mingw-w64-x86_64-librsvg \
     mingw-w64-x86_64-libwebp \
     mingw-w64-x86_64-lcms2 \
-    mingw-w64-x86_64-jansson \
     mingw-w64-x86_64-libxml2 \
     mingw-w64-x86_64-zlib \
     mingw-w64-x86_64-harfbuzz \
     mingw-w64-x86_64-libgccjit \
     mingw-w64-x86_64-sqlite3 \
-    mingw-w64-x86_64-tree-sitter
+    mingw-w64-x86_64-libtree-sitter
 #+end_src
 
 Then, use git to clone the repository, we also need autotools to generate the configure script.
@@ -65,7 +64,6 @@ cp -v /mingw64/bin/libffi-*.dll ${install_dir}/bin
 cp -v /mingw64/bin/libfontconfig-*.dll ${install_dir}/bin
 cp -v /mingw64/bin/libfreetype-*.dll ${install_dir}/bin
 cp -v /mingw64/bin/libfribidi-*.dll ${install_dir}/bin
-cp -v /mingw64/bin/libgccjit*.dll ${install_dir}/bin
 cp -v /mingw64/bin/libgcc_s_seh-*.dll ${install_dir}/bin
 cp -v /mingw64/bin/libgdk_pixbuf-*.dll ${install_dir}/bin
 cp -v /mingw64/bin/libgif-*.dll ${install_dir}/bin
@@ -105,7 +103,7 @@ cp -v /mingw64/bin/libstdc++-*.dll ${install_dir}/bin
 cp -v /mingw64/bin/libtasn1-*.dll ${install_dir}/bin
 cp -v /mingw64/bin/libthai-*.dll ${install_dir}/bin
 cp -v /mingw64/bin/libtiff-*.dll ${install_dir}/bin
-cp -v /mingw64/bin/libtree-sitter.dll ${install_dir}/bin
+cp -v /mingw64/bin/libtree-sitter-*.dll ${install_dir}/bin/libtree-sitter.dll
 cp -v /mingw64/bin/libunistring-*.dll ${install_dir}/bin
 cp -v /mingw64/bin/libwebp-*.dll ${install_dir}/bin
 cp -v /mingw64/bin/libwebpdemux-*.dll ${install_dir}/bin
@@ -116,6 +114,7 @@ cp -v /mingw64/bin/libzstd.dll ${install_dir}/bin
 cp -v /mingw64/bin/wasmtime.dll ${install_dir}/bin
 cp -v /mingw64/bin/zlib*.dll ${install_dir}/bin
 
+cp -v /mingw64/bin/libgccjit*.dll ${install_dir}/bin
 mkdir -p ${install_dir}/lib/gcc
 cp -v /mingw64/lib/{crtbegin,crtend,dllcrt2}.o ${install_dir}/lib/gcc
 cp -v /mingw64/lib/lib{advapi32,gcc_s,kernel32,mingw32,mingwex,moldname,msvcrt,pthread,shell32,user32}.a ${install_dir}/lib/gcc
