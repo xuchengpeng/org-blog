@@ -8,9 +8,19 @@ Proxy servers are commonly used to provide gateways through firewalls or as cach
 :CUSTOM_ID: system-proxy
 :END:
 
+Add these lines to =.bashrc=:
+
 #+begin_src bash
 export http_proxy=http://username:password@proxy.xxx.com:8080
 export https_proxy=${http_proxy}
+#+end_src
+
+Or add these line to =init.el=:
+
+#+begin_src emacs-lisp
+(setenv "http_proxy" "http://user:pass@proxy.server:port")
+(setenv "https_proxy" "https://user:pass@proxy.server:port")
+(setenv "no_proxy" "localhost,127.0.0.1,.local")
 #+end_src
 
 * URL Proxy Services
@@ -24,7 +34,7 @@ Proxies are supported by URL package, by setting ~url-proxy-services~ to an asso
 (setq url-proxy-services
       '(("http"     . "proxy.example.com:8080")
         ("https"    . "proxy.example.com:8080")
-	      ("no_proxy" . "^.*example.com")))
+        ("no_proxy" . "^.*example.com")))
 #+end_src
 
 If the proxy services need to be authorized, we need to customize ~url-http-proxy-basic-auth-storage~.
