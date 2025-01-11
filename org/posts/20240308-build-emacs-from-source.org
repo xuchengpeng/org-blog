@@ -5,6 +5,8 @@ Windows 11 features [[https://docs.microsoft.com/en-us/windows/wsl/tutorials/gui
 
 This is a guide to show how to build Emacs from source for Linux.
 
+* Install Essential Packages
+
 Firstly, install essential packages in WSL2 Ubuntu 22.04.
 
 #+begin_src shell
@@ -18,12 +20,14 @@ Native compilation support is enabled by default with emacs 30, install =libgccj
 apt-get install libgccjit0 libgccjit-13-dev
 #+end_src
 
+* Tree-sitter Support
+
 And in Emacs 29, support for tree-sitter is built-in. Now build tree-sitter from source code.
 
 #+begin_src shell
 git clone https://github.com/tree-sitter/tree-sitter.git
 cd tree-sitter
-git checkout v0.24.3
+git checkout v0.24.6
 make
 make install
 #+end_src
@@ -33,6 +37,8 @@ Now tree-sitter library has been installed into =/usr/local/lib=.
 #+begin_src shell
 export LD_LIBRARY_PATH=/usr/local/lib/
 #+end_src
+
+* Install Emacs
 
 Now build emacs with pgtk and tree-sitter.
 
@@ -45,6 +51,8 @@ make -j 8
 make install
 #+end_src
 
+* Install libvterm
+
 Build [[https://www.leonerd.org.uk/code/libvterm/][libvterm]] if you need to use [[https://github.com/akermu/emacs-libvterm][vterm]] on Linux.
 
 #+begin_src shell
@@ -53,5 +61,17 @@ cd libvterm-0.3.3
 make
 make install
 #+end_src
+
+* FAQs
+
+When run emacs with WSL Ubuntu 24.04, [[https://github.com/microsoft/wslg/issues/1244][Ubuntu 24.04 Wayland falling back to X11]].
+
+Due to a bug of systemd fixed in 24.04, you must do :
+
+#+begin_src shell
+ln -sf  /mnt/wslg/runtime-dir/wayland-* $XDG_RUNTIME_DIR/
+#+end_src
+
+Or use an autostart conf: https://github.com/viruscamp/wslg-links.
 
 #+include: ../comments.inc
