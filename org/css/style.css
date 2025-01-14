@@ -1,5 +1,12 @@
+:root {
+  --font-sans: "IBM Plex Sans", Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+  --color-bg: #fff;
+  --color-text: #000;
+}
+
 body {
-  font-family: "IBM Plex Sans", Arial, sans-serif;
+  font-family: var(--font-sans);
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5em;
@@ -25,42 +32,42 @@ h1 {
   font-size: 2em;
   line-height: 1.5em;
   margin: 0.8em 0;
-  color: #000000;
+  color: var(--color-text);
 }
 
 h2 {
   font-size: 1.5em;
   line-height: 1.5em;
   margin: 0.8em 0;
-  color: #000000;
+  color: var(--color-text);
 }
 
 h3 {
   font-size: 1.3em;
   line-height: 1.5em;
   margin: 0.8em 0;
-  color: #000000;
+  color: var(--color-text);
 }
 
 h4 {
   font-size: 1.1em;
   line-height: 1.5em;
   margin: 0.8em 0;
-  color: #000000;
+  color: var(--color-text);
 }
 
 h5 {
   font-size: 1.1em;
   line-height: 1.5em;
   margin: 0.8em 0;
-  color: #000000;
+  color: var(--color-text);
 }
 
 h6 {
   font-size: 1.1em;
   line-height: 1.5em;
   margin: 0.8em 0;
-  color: #000000;
+  color: var(--color-text);
 }
 
 a {
@@ -88,21 +95,21 @@ blockquote {
 
 /* code */
 code {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 0.95em;
   line-height: 1.5em;
   padding: 0 0.2em;
 }
 
 pre {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 0.95em;
   line-height: 1.5em;
   padding: 1em;
+  margin: 1em 0;
   border: none;
   border-radius: 3px;
   background-color: #f3f3f3;
-  margin: 1em 0;
   overflow: hidden;
 }
 
@@ -240,7 +247,7 @@ td.org-center {
 .site-title:visited {
   font-size: 2em;
   line-height: 1.5em;
-  color: #000;
+  color: var(--color-text);
 }
 
 .site-nav {
@@ -254,7 +261,7 @@ td.org-center {
 }
 
 .site-nav a {
-  color: #000;
+  color: var(--color-text);
 }
 
 .site-footer {
@@ -267,7 +274,7 @@ td.org-center {
   border-image: linear-gradient(to right, #147, #f66) 30 30;
   min-height: 44px;
   font-size: 0.95em;
-  color: #000;
+  color: var(--color-text);
 }
 
 .top-link {
@@ -291,7 +298,7 @@ td.org-center {
   border-radius: 3px;
   background: red;
   color: white;
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 0.85em;
   line-height: 1em;
   padding: 0.1em 0.3em;
@@ -302,7 +309,7 @@ td.org-center {
   border-radius: 3px;
   background: green;
   color: white;
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 0.85em;
   line-height: 1em;
   padding: 0.1em 0.3em;
@@ -311,11 +318,11 @@ td.org-center {
 
 .priority {
   color: orange;
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: var(--font-mono);
 }
 
 .tag {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 0.8em;
   font-weight: normal;
 }
@@ -391,7 +398,7 @@ td.org-center {
 }
 
 .search .search-results .result-title {
-  color: #000;
+  color: var(--color-text);
   padding: 10px 10px;
 }
 
@@ -400,7 +407,7 @@ td.org-center {
 }
 
 .search .search-results .result-item .result-item-title {
-  color: #000;
+  color: var(--color-text);
   font-size: 20px;
   font-weight: bold;
   line-height: 30px;
