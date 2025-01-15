@@ -7,7 +7,7 @@
 
 body {
   font-family: var(--font-sans);
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
   line-height: 1.5em;
   max-width: 900px;
@@ -370,7 +370,7 @@ td.org-center {
   float: left;
   width: 80%;
   height: 30px;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 30px;
   margin: 0;
   padding-left: 10px;
@@ -411,6 +411,10 @@ td.org-center {
   font-size: 20px;
   font-weight: bold;
   line-height: 30px;
+}
+
+.search .search-results .result-item .result-item-detail {
+  font-size: 17px;
 }
 
 .search .search-results .result-item .result-item-detail a {
@@ -515,3 +519,10 @@ pre.src-typescript:before, pre.src-tsx:before { content: "Typescript"; }
 pre.src-rust:before { content: "Rust"; }
 pre.src-toml:before { content: "Toml"; }
 pre.src-yaml:before { content: "Yaml"; }
+
+@media screen and (max-width: 600px) {
+  body {
+    font-size: 16px;
+    line-height: 1.5em;
+  }
+}
