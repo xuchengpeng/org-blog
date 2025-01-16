@@ -257,7 +257,7 @@ td.org-center {
   justify-content: center;
   align-items: center;
   font-size: 1em;
-  line-height: 1.5em;
+  line-height: 0;
 }
 
 .site-nav a {
@@ -274,6 +274,7 @@ td.org-center {
   border-image: linear-gradient(to right, #147, #f66) 30 30;
   min-height: 44px;
   font-size: 0.95em;
+  line-height: 1.5em;
   color: var(--color-text);
 }
 
@@ -283,13 +284,13 @@ td.org-center {
   bottom: 30px;
   right: 30px;
   z-index: 99;
-  border-radius: 10px;
+  border-radius: 30px;
   color: #222;
-  background: #d6d6d6;
-  width: 64px;
-  height: 32px;
-  line-height: 2;
+  background: #dedede;
+  width: 42px;
+  height: 42px;
   text-align: center;
+  align-content: center;
   transition: visibility .5s, opacity .8s linear
 }
 

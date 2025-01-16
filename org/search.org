@@ -6,8 +6,8 @@
 <script async src="/js/search.js"></script>
 <div class="search">
   <input type="text" class="search-input" placeholder="Searching..."/>
-  <span class="search-icon search-start">&#x1F50D;&#xFE0E;</span>
-  <span class="search-icon search-clear">&#x2716;&#xFE0E;</span>
+  <span class="search-icon search-start"><img src="/img/search.svg" alt="&#x1F50D;&#xFE0E;" style="height: 1em;"/></span>
+  <span class="search-icon search-clear"><img src="/img/close.svg" alt="&#x2716;&#xFE0E;" style="height: 1em;"/></span>
   <br>
   <div class="search-results"></div>
 </div>
