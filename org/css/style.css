@@ -7,8 +7,8 @@
 
 body {
   font-family: var(--font-sans);
-  font-size: 18px;
   font-weight: 400;
+  font-size: 18px;
   line-height: 1.5em;
   max-width: 900px;
   margin: 0 auto;
@@ -350,6 +350,7 @@ td.org-center {
 
 /* Search box */
 .search {
+  font-family: var(--font-sans);
   display: none;
   position: relative;
   width: 100%;
@@ -371,7 +372,7 @@ td.org-center {
   float: left;
   width: 80%;
   height: 30px;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 30px;
   margin: 0;
   padding-left: 10px;
@@ -415,7 +416,7 @@ td.org-center {
 }
 
 .search .search-results .result-item .result-item-detail {
-  font-size: 17px;
+  font-size: 16px;
 }
 
 .search .search-results .result-item .result-item-detail a {
