@@ -99,6 +99,9 @@ code {
   font-size: 0.95em;
   line-height: 1.5em;
   padding: 0 0.2em;
+  border: none;
+  border-radius: 3px;
+  background-color: #f0f0f0;
 }
 
 pre {
@@ -109,7 +112,7 @@ pre {
   margin: 1em 0;
   border: none;
   border-radius: 3px;
-  background-color: #f3f3f3;
+  background-color: #f2f2f2;
   overflow: hidden;
 }
 
