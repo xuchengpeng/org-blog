@@ -18,19 +18,20 @@ htmls.sort()
 
 author = {"name": "Chuck", "email": "330476629@qq.com"}
 china = timezone("Asia/Shanghai")
+base_url = "https://xuchengpeng.cn/"
 
 fg = FeedGenerator()
 fg.title("Chuck")
 fg.author(author)
-fg.link(href="https://xuchengpeng.cn/feed.xml", rel="self")
-fg.link(href="https://xuchengpeng.cn/", rel="alternate")
+fg.link(href=base_url+"feed.xml", rel="self")
+fg.link(href=base_url, rel="alternate")
 fg.description("Valar Morghulis. Valar Dohaeris.")
 fg.language("en")
 fg.lastBuildDate(datetime.now(china))
 
 for html in htmls:
     with open(file=html, encoding="UTF-8") as file:
-        url = "https://xuchengpeng.cn/" + html.replace("public/", "", 1)
+        url = base_url + html.replace("public/", "", 1)
         soup = BeautifulSoup(file, "html.parser")
         description = soup.find("main", class_="content").text
         # delete blank lines
