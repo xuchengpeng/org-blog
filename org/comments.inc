@@ -3,9 +3,9 @@
   <br>
   <script src="https://giscus.app/client.js"
     data-repo="xuchengpeng/xuchengpeng.github.io"
-    data-repo-id="R_kgDONhnWdw"
+    data-repo-id="R_kgDONhnKaQ"
     data-category="Comments"
-    data-category-id="DIC_kwDONhnWd84Cleth"
+    data-category-id="DIC_kwDONhnKac4CmRAA"
     data-mapping="pathname"
     data-strict="0"
     data-reactions-enabled="1"
