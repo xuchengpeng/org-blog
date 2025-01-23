@@ -46,7 +46,7 @@ for html in htmls:
         fe = fg.add_entry()
         fe.title(soup.title.string)
         fe.link(href=url)
-        fe.description(description)
+        fe.description(description if description else soup.title.string)
         fe.author(author)
         fe.guid(url)
         fe.pubDate(datetime.fromtimestamp(os.path.getmtime(html), china))

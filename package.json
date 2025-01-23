@@ -1,6 +1,7 @@
 {
   "devDependencies": {
     "cssnano": "^7.0.6",
+    "html-minifier": "^4.0.0",
     "postcss": "^8.5.1",
     "postcss-cli": "^11.0.0",
     "uglify-js": "^3.19.3"
@@ -8,6 +9,7 @@
   "scripts": {
     "minify-css": "postcss org/css/style.css > public/css/style.css",
     "minify-js": "uglifyjs org/js/scroll-to-top.js -c -m -o public/js/scroll-to-top.js && uglifyjs org/js/search.js -c -m -o public/js/search.js",
-    "minify": "npm run minify-css && npm run minify-js"
+    "minify-html": "html-minifier -c html-minifier.conf --file-ext html --input-dir public --output-dir public",
+    "minify": "npm run minify-css && npm run minify-js && npm rum minify-html"
   }
 }
