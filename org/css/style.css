@@ -156,6 +156,18 @@ img {
   max-width: 100%;
 }
 
+details {
+  margin: 1em 0;
+}
+
+details > summary {
+  cursor: pointer;
+}
+
+details > summary > p {
+  display: inline;
+}
+
 /* table */
 table {
   border-top: 2px solid;
