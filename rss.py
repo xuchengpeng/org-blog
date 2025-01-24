@@ -4,6 +4,7 @@ from datetime import datetime
 from pytz import timezone
 import os
 import fnmatch
+import re
 
 htmls = []
 for root, dirs, files in os.walk(os.getcwd() + "/public/posts"):
@@ -42,13 +43,19 @@ for html in htmls:
             if len(description.encode("utf-8")) + len(line.encode("utf-8")) > 200:
                 break
             description += line
-            description += "\n"
+            description += " "
         fe = fg.add_entry()
         fe.title(soup.title.string)
         fe.link(href=url)
         fe.description(description if description else soup.title.string)
         fe.author(author)
         fe.guid(url)
-        fe.pubDate(datetime.fromtimestamp(os.path.getmtime(html), china))
+        match = re.search(r'\d{4}\d{2}\d{2}', html)
+        if match:
+            date = datetime.strptime(match.group(), "%Y%m%d")
+            pub_date = datetime(date.year, date.month, date.day, tzinfo=china)
+        else:
+            pub_date = datetime.fromtimestamp(os.path.getmtime(html), china)
+        fe.pubDate(pub_date)
 
 fg.rss_file("public/feed.xml")
