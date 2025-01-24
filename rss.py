@@ -51,5 +51,4 @@ for html in htmls:
         fe.guid(url)
         fe.pubDate(datetime.fromtimestamp(os.path.getmtime(html), china))
 
-fg.rss_str(pretty=True)
 fg.rss_file("public/feed.xml")
