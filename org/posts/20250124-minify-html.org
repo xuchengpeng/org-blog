@@ -8,7 +8,21 @@ htmlnano基于[[https://github.com/posthtml/posthtml][PostHTML]],可作为PostHT
 首先安装htmlnano：
 
 #+begin_src shell
-npm install --save-dev htmlnano posthtml posthtml-cli
+npm install --save-dev htmlnano terser posthtml posthtml-cli
+#+end_src
+
+添加PostHTML的配置文件 =posthtmlrc.json= ：
+
+#+begin_src json
+{
+  "root": "public",
+  "input": "**/*.html",
+  "output": "public",
+  "allInOutput": true,
+  "plugins": {
+    "htmlnano": {}
+  }
+}
 #+end_src
 
 添加htmlnano的配置文件 =htmlnanorc.json= ：
@@ -27,7 +41,7 @@ htmlnano支持一些预设值：
 此时我们可以使用命令行对public文件夹下的所有html文件进行压缩：
 
 #+begin_src shell
-npx posthtml '**/*.html' -o public -a -r public -u htmlnano
+npx posthtml -c posthtmlrc.json
 #+end_src
 
 #+include: ../comments.inc
