@@ -1,7 +1,7 @@
 #+TITLE: Minify CSS and JavaScript
 #+DATE: <2025-01-07 Tue 10:55>
 
-发布博客时，压缩[[https://developer.mozilla.org/zh-CN/docs/Web/CSS][CSS]]和[[https://developer.mozilla.org/zh-CN/docs/Web/JavaScript][JavaScript]]文件的大小，能提升网页的加载速度，这里介绍使用[[https://github.com/cssnano/cssnano][cssnano]]和[[https://github.com/mishoo/UglifyJS][UglifyJS]]工具来压缩。
+发布博客时，压缩[[https://developer.mozilla.org/zh-CN/docs/Web/CSS][CSS]]和[[https://developer.mozilla.org/zh-CN/docs/Web/JavaScript][JavaScript]]文件的大小，能提升网页的加载速度，这里介绍使用[[https://github.com/cssnano/cssnano][cssnano]]和[[https://github.com/terser/terser][Terser]]工具来压缩。
 
 * 压缩CSS
 :PROPERTIES:
@@ -33,16 +33,16 @@ npx postcss input.css > output.css
 :CUSTOM_ID: compress-javascript
 :END:
 
-首先安装UglifyJS:
+首先安装Terser:
 
 #+begin_src shell
-npm install --save-dev uglify-js
+npm install --save-dev terser
 #+end_src
 
 使用以下命令进行JavaScript文件的压缩：
 
 #+begin_src shell
-npx uglifyjs input.js -c -m -o output.js
+npx terser input.js -c -m -o output.js
 #+end_src
 
 #+include: ../comments.inc
