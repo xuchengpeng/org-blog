@@ -544,6 +544,7 @@ pre.src-typescript:before, pre.src-tsx:before { content: "Typescript"; }
 pre.src-rust:before { content: "Rust"; }
 pre.src-toml:before { content: "Toml"; }
 pre.src-yaml:before { content: "Yaml"; }
+pre.src-json::before { content: "Json"; }
 
 @media screen and (max-width: 600px) {
   body {
