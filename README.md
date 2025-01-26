@@ -4,7 +4,7 @@
 (setq dotemacs-org-blog-dir "/path/to/org-blog/")
 ```
 
-Generate RSS, minify CSS and JavaScript automatically:
+Generate RSS and minify CSS/JavaScript/HTML automatically:
 
 ```emacs-lisp
 (with-eval-after-load 'ox-publish
