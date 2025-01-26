@@ -3,7 +3,7 @@
 
 之前的文章里我们介绍了如何[[file:20250107-minify-css-and-js.org][压缩CSS和JavaScript]]，这里将对博客发布前的HTML文件进行压缩，这里我们选择使用[[https://github.com/posthtml/htmlnano][htmlnano]]对HTML进行压缩。
 
-htmlnano基于[[https://github.com/posthtml/posthtml][PostHTML]],可作为PostHTML的插件使用，灵感来自于[[https://github.com/cssnano/cssnano][cssnano]]。
+htmlnano基于[[https://github.com/posthtml/posthtml][PostHTML]]，可作为PostHTML的插件使用，灵感来自于[[https://github.com/cssnano/cssnano][cssnano]]。
 
 首先安装htmlnano：
 

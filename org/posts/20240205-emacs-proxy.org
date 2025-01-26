@@ -15,7 +15,7 @@ export http_proxy=http://username:password@proxy.xxx.com:8080
 export https_proxy=${http_proxy}
 #+end_src
 
-Or add these line to =init.el=:
+Or add these lines to =init.el=:
 
 #+begin_src emacs-lisp
 (setenv "http_proxy" "http://user:pass@proxy.server:port")
@@ -30,14 +30,25 @@ Or add these line to =init.el=:
 
 Proxies are supported by URL package, by setting ~url-proxy-services~ to an assoc list mapping url services and the proxy servers that support them.
 
+#+begin_details
+#+begin_summary
+Customize =url-proxy-services=:
+#+end_summary
+
 #+begin_src emacs-lisp
 (setq url-proxy-services
       '(("http"     . "proxy.example.com:8080")
         ("https"    . "proxy.example.com:8080")
         ("no_proxy" . "^.*example.com")))
 #+end_src
+#+end_details
 
 If the proxy services need to be authorized, we need to customize ~url-http-proxy-basic-auth-storage~.
+
+#+begin_details
+#+begin_summary
+Customize =url-http-proxy-basic-auth-storage=:
+#+end_summary
 
 #+begin_src emacs-lisp
 (setq url-http-proxy-basic-auth-storage
@@ -45,28 +56,37 @@ If the proxy services need to be authorized, we need to customize ~url-http-prox
                   (cons "Input your LDAP UID !"
                         (base64-encode-string "LOGIN:PASSWORD")))))
 #+end_src
+#+end_details
 
 * Socks Proxy
 :PROPERTIES:
 :CUSTOM_ID: socks-proxy
 :END:
 
-Enable socks proxy:
+#+begin_details
+#+begin_summary
+Enable socks proxy
+#+end_summary
 
 #+begin_src emacs-lisp
 (setq url-gateway-method 'socks
       socks-server '("Default Server" "socks.proxy.com" 1080 5)
       socks-noproxy '("localhost"))
 #+end_src
+#+end_details
 
 If the ~socks-server~ need to be authorized, ~socks-username~ and ~socks-password~ need to be customized.
 
-Disable socks proxy:
+#+begin_details
+#+begin_summary
+Disable socks proxy
+#+end_summary
 
 #+begin_src emacs-lisp
 (setq url-gateway-method 'native
       socks-server nil
       socks-noproxy nil)
 #+end_src
+#+end_details
 
 #+include: ../comments.inc
