@@ -1,4 +1,4 @@
-window.onload = function () {
+function initSearch() {
 var elSearchBox = document.querySelector(".search"),
     elSearchBtn = document.querySelector(".search-start"),
     elSearchClear = document.querySelector(".search-clear"),
@@ -127,3 +127,5 @@ document.addEventListener("keydown", (function(e) {
 }
 ));
 }
+
+window.addEventListener("load", initSearch)

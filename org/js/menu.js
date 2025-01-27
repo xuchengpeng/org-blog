@@ -1,5 +1,5 @@
-var mybutton = document.getElementById("top-link");
-window.onscroll = function () {
+function showTopLink() {
+  var mybutton = document.getElementById("top-link");
   if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
     mybutton.style.visibility = "visible";
     mybutton.style.opacity = "1";
@@ -7,4 +7,5 @@ window.onscroll = function () {
     mybutton.style.visibility = "hidden";
     mybutton.style.opacity = "0";
   }
-};
+}
+window.addEventListener("scroll", showTopLink)
