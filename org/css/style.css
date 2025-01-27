@@ -544,4 +544,8 @@ pre.src-json::before { content: "Json"; }
     font-size: 16px;
     line-height: 1.5em;
   }
+
+  pre {
+    overflow: auto;
+  }
 }
