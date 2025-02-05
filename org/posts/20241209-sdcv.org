@@ -8,14 +8,18 @@ StarDict dictionaries can be downloaded from https://www.nchrs.xyz/stardict/inde
 The [[https://github.com/jamescherti/quick-sdcv.el][quick-sdcv]] package serves as a lightweight Emacs interface for the sdcv command-line interface, which is the console version of the StarDict dictionary application.
 
 #+begin_src emacs-lisp
-(use-package quick-sdcv
-  :ensure t
-  :commands (quick-sdcv-search-input quick-sdcv-search-at-point)
-  :config
-  (setq quick-sdcv-program "/path/to/sdcv"
-        quick-sdcv-dictionary-data-dir "/path/to/sdcv/dict/")
-  (add-hook 'quick-sdcv-mode-hook #'visual-line-mode)
-  (keymap-set quick-sdcv-mode-map "q" #'quit-window))
+  (use-package quick-sdcv
+    :ensure t
+    :commands (quick-sdcv-search-input quick-sdcv-search-at-point)
+    :config
+    (setq quick-sdcv-program "/path/to/sdcv"
+          quick-sdcv-dictionary-data-dir "/path/to/sdcv/dict/")
+    (add-hook 'quick-sdcv-mode-hook #'visual-line-mode)
+    (keymap-set quick-sdcv-mode-map "b" #'backward-page)
+    (keymap-set quick-sdcv-mode-map "f" #'forward-page)
+    (keymap-set quick-sdcv-mode-map "n" #'next-line)
+    (keymap-set quick-sdcv-mode-map "p" #'previous-line)
+    (keymap-set quick-sdcv-mode-map "q" #'quit-window))
 #+end_src
 
 #+include: ../comments.inc
