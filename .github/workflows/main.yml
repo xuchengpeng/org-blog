@@ -33,7 +33,7 @@ jobs:
       - name: build
         run: |
           git clone --depth=1 https://github.com/xuchengpeng/.emacs.d.git $HOME/.emacs.d
-          emacs --batch --load $HOME/.emacs.d/init.el --eval "(setq user-full-name \"Chuck\" dotemacs-org-blog-dir \"$PWD\")" --eval "(org-publish \"blog\" t nil)"
+          emacs --batch --load $HOME/.emacs.d/init.el --eval "(setq dotemacs-org-blog-dir \"$PWD\")" --eval "(org-publish \"blog\" t nil)"
           python rss.py
           npm run minify
       - name: Setup Pages

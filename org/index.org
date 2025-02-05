@@ -1,5 +1,7 @@
-#+DATE: <2019-12-28 Sat 23:03>
 #+TITLE: Chuck
+#+DATE: <2019-12-28 Sat 23:03>
+#+DESCRIPTION: This is Chuck's personal website, powered by Emacs & Org mode.
+#+KEYWORDS: blog, reading, technology, programming
 #+OPTIONS: toc:nil title:nil
 
 #+begin_center
