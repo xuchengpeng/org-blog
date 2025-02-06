@@ -5,12 +5,9 @@
 Emacs is the best editor in the world.
 #+END_QUOTE
 
-This is a guide to show how to publish a static blog with Org mode.
+This is a guide to describe how to publish Org mode files to HTML.
 
 * Basics
-:PROPERTIES:
-:CUSTOM_ID: basics
-:END:
 
 Create your blog files and css files.
 
@@ -30,9 +27,6 @@ Example of file directory structure
 #+end_details
 
 * Publishing the org project
-:PROPERTIES:
-:CUSTOM_ID: publishing-the-org-project
-:END:
 
 #+begin_details
 #+begin_summary
@@ -83,5 +77,20 @@ Configuration of =org-publish-project-alist=
 #+end_details
 
 Then run =org-publish-project= to generate html files to =~/blog/public= folder.
+
+* Update
+
+- 2023-05-22 Put all org publish configurations in [[https://github.com/xuchengpeng/.emacs.d/blob/main/lisp/init-org.el][init-org.el]].
+- 2023-12-27 Add head, header and footer options.
+- 2023-12-28 Export with HTML5 and toc by default.
+- 2024-12-25 Add default meta description and keywords.
+- 2024-12-27 Export with stable IDs and preview contents.
+- 2024-12-31 Remove preview contents.
+- 2025-01-03 Prefer HTML5 semantic elements.
+- 2025-01-06 Export the CSS selectors only.
+- 2025-01-07 Publish head, header and footer from HTML assets.
+- 2025-01-08 Export checkbox with html type.
+- 2025-01-27 Include chinese characters while generating stable IDs.
+- 2025-02-05 Remove default meta description and keywords, customize meta tags in post files.
 
 #+include: ../comments.inc
