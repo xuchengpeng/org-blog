@@ -82,11 +82,12 @@ Then run =org-publish-project= to generate html files to =~/blog/public= folder.
 
 - 2023-05-22 Put all org publish configurations in [[https://github.com/xuchengpeng/.emacs.d/blob/main/lisp/init-org.el][init-org.el]].
 - 2023-12-27 Add head, header and footer options.
-- 2023-12-28 Export with HTML5 and toc by default.
-- 2024-12-25 Add default meta description and keywords.
-- 2024-12-27 Export with stable IDs and preview contents.
-- 2024-12-31 Remove preview contents.
-- 2025-01-03 Prefer HTML5 semantic elements.
+- 2023-12-28 Export with HTML5 and toc by default, customize headline-levels.
+- 2024-02-18 Export ico files.
+- 2024-12-25 Add default meta description and keywords, export webmanifest files.
+- 2024-12-27 Export with stable IDs and preview contents automatically.
+- 2024-12-31 Remove preview contents, generate posts page automatically.
+- 2025-01-03 Prefer HTML5 semantic elements, export txt files.
 - 2025-01-06 Export the CSS selectors only.
 - 2025-01-07 Publish head, header and footer from HTML assets.
 - 2025-01-08 Export checkbox with html type.
