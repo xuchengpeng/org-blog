@@ -6,7 +6,7 @@
     "postcss-cli": "^11.0.0",
     "posthtml": "^0.16.6",
     "posthtml-cli": "^0.10.0",
-    "terser": "^5.37.0"
+    "terser": "^5.38.1"
   },
   "scripts": {
     "minify-css": "postcss org/css/style.css > public/css/style.css",
