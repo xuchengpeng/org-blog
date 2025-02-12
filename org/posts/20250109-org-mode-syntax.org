@@ -98,11 +98,13 @@ File inclusion, through INCLUDE keywords, is an *export-only feature*.
 *** Inline HTML
 
 You can include raw HTML in your Org documents and it will get kept as HTML
-when it's exported. XXX
+when it's exported.
 
-#+HTML_BEGIN: <pre style="color:red">
+#+begin_export html
+<pre style="color:red">
 Text can be preformatted (in a fixed-width font).
-#+HTML_END: </pre>
+</pre>
+#+end_export
 
 #+begin_example
 ,#+begin_info
@@ -111,13 +113,15 @@ Did you know...
 ,#+end_info
 #+end_example
 
-*** Inline LaTeX
+*** LaTeX
 
-You can also use raw LaTeX. XXX
+You can also use raw LaTeX.
 
-#+LaTeX_BEGIN: \begin{verbatim}
+#+begin_src latex
+\begin{verbatim}
 Text can be preformatted (in a fixed-width font).
-#+LaTeX_END: \end{verbatim}
+\end{verbatim}
+#+end_src
 
 *** Centered text
 
@@ -144,6 +148,18 @@ It is possible to define named footnotes[fn:myfootnote], or ones with
 automatic anchors[fn:2].
 
 ** Formatting text
+
+*** Text styles
+
+Normal text.
+
+/Italic text./
+
+*Bold text.*
+
+_Underline text._
+
++Delete text.+
 
 *** Quotations
 
@@ -199,6 +215,16 @@ details > summary > p {
 }
 #+end_src
 #+end_details
+
+*** Aside
+
+Salamanders are a group of amphibians with a lizard-like appearance, including short legs and a tail in both larval and adult forms.
+
+#+begin_aside
+The Rough-skinned Newt defends itself with a deadly neurotoxin.
+#+end_aside
+
+Several species of salamander inhabit the temperate rainforest of the Pacific Northwest, including the Ensatina, the Northwestern Salamander and the Rough-skinned Newt. Most salamanders are nocturnal, and hunt for insects, worms and other small creatures.
 
 ** Mathematical formulae
 

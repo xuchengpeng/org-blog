@@ -363,6 +363,17 @@ td.org-center {
   display: inline;
 }
 
+.underline {
+  text-decoration: underline;
+}
+
+aside {
+  width: 40%;
+  padding-left: 0.5em;
+  margin-left: 0.5em;
+  float: right;
+}
+
 /* Search box */
 .search {
   font-family: var(--font-sans);
