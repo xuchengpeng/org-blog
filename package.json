@@ -2,11 +2,11 @@
   "devDependencies": {
     "cssnano": "^7.0.6",
     "htmlnano": "^2.1.1",
-    "postcss": "^8.5.1",
+    "postcss": "^8.5.2",
     "postcss-cli": "^11.0.0",
     "posthtml": "^0.16.6",
     "posthtml-cli": "^0.10.0",
-    "terser": "^5.38.1"
+    "terser": "^5.38.2"
   },
   "scripts": {
     "minify-css": "postcss org/css/style.css > public/css/style.css",
