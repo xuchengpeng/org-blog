@@ -380,6 +380,7 @@ aside {
   padding-left: 0.5em;
   margin-left: 0.5em;
   float: right;
+  border-left: 1px solid #585858;
 }
 
 /* Search box */
