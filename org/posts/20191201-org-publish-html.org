@@ -30,7 +30,7 @@ Example of file directory structure
 
 #+begin_details
 #+begin_summary
-Configuration of =org-publish-project-alist=
+Example configuration of =org-publish-project-alist=
 #+end_summary
 
 #+begin_src emacs-lisp
@@ -94,5 +94,6 @@ Then run =org-publish-project= to generate html files to =~/blog/public= folder.
 - 2025-01-27 Include chinese characters while generating stable IDs.
 - 2025-02-05 Remove default meta description and keywords, customize meta tags in post files.
 - 2025-02-13 Change date style of post list.
+- 2025-02-14 Don't use babel during export.
 
 #+include: ../comments.inc
