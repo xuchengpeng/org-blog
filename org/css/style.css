@@ -1,7 +1,7 @@
 :root {
   --font-sans: "Open Sans", sans-serif;
   --font-serif: Merriweather, "LXGW WenKai", serif;
-  --font-mono: monospace;
+  --font-mono: "Courier New", monospace;
   --color-bg: #fff;
   --color-text: #000;
 }
