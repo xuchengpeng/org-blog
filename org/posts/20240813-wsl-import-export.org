@@ -3,48 +3,25 @@
 
 默认情况WSL会安装在C盘，可以将其迁移到其他盘，这里使用WSL提供的导入和导出命令。
 
-#+begin_details
-#+begin_summary
-关闭所有的WSL，查询要导出的名称
-#+end_summary
-
-#+begin_src bash
-PS > wsl --shutdown
-PS > wsl -l -v
-  NAME            STATE           VERSION
-  Ubuntu-22.04    Stopped         2
-#+end_src
-#+end_details
-
-#+begin_details
-#+begin_summary
-将要导出的WSL保存到D盘
-#+end_summary
-
-#+begin_src bash
-PS > wsl --export Ubuntu-22.04 D:\Ubuntu-22.04.tar
-#+end_src
-#+end_details
-
-#+begin_details
-#+begin_summary
-注销原有的WSL
-#+end_summary
-
-#+begin_src bash
-PS > wsl --unregister Ubuntu-22.04
-#+end_src
-#+end_details
-
-#+begin_details
-#+begin_summary
-在D盘安装WSL
-#+end_summary
-
-#+begin_src bash
-PS > wsl --import Ubuntu-22.04 D:\WSL\Ubuntu-22.04 D:\Ubuntu-22.04.tar
-#+end_src
-#+end_details
+1. 关闭所有的WSL，查询要导出的名称。
+   #+begin_src shell
+   PS > wsl --shutdown
+   PS > wsl -l -v
+     NAME            STATE           VERSION
+     Ubuntu-22.04    Stopped         2
+   #+end_src
+2. 将要导出的WSL保存到D盘。
+   #+begin_src shell
+   PS > wsl --export Ubuntu-22.04 D:\Ubuntu-22.04.tar
+   #+end_src
+3. 注销原有的WSL。
+   #+begin_src shell
+   PS > wsl --unregister Ubuntu-22.04
+   #+end_src
+4. 在D盘安装WSL。
+   #+begin_src shell
+   PS > wsl --import Ubuntu-22.04 D:\WSL\Ubuntu-22.04 D:\Ubuntu-22.04.tar
+   #+end_src
 
 #+include: ../comments.inc
 
