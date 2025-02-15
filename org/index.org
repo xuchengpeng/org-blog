@@ -5,22 +5,15 @@
 #+OPTIONS: toc:nil title:nil
 
 #+begin_center
-莫听穿林打叶声，何妨吟啸且徐行。竹杖芒鞋轻胜马，谁怕？一蓑烟雨任平生。
-
+莫听穿林打叶声，何妨吟啸且徐行。竹杖芒鞋轻胜马，谁怕？一蓑烟雨任平生。\\
 料峭春风吹酒醒，微冷，山头斜照却相迎。回首向来萧瑟处，归去，也无风雨也无晴。
 #+end_center
 
 * Recent Posts
-:PROPERTIES:
-:CUSTOM_ID: recent-posts
-:END:
 
 #+include: posts/index.org :lines "4-14"
 
 * Projects
-:PROPERTIES:
-:CUSTOM_ID: projects
-:END:
 
 | Title                | Description                                       | Reference |
 |----------------------+---------------------------------------------------+-----------|
