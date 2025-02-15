@@ -258,6 +258,7 @@ td.org-center {
 }
 
 .site-header {
+  font-family: var(--font-sans);
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
@@ -270,6 +271,7 @@ td.org-center {
 
 .site-title,
 .site-title:visited {
+  font-weight: bold;
   font-size: 2em;
   line-height: 1.5em;
   color: var(--color-text);
@@ -290,6 +292,7 @@ td.org-center {
 }
 
 .site-footer {
+  font-family: var(--font-sans);
   display: flex;
   flex-wrap: wrap;
   gap: 0.5em;
