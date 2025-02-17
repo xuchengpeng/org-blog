@@ -96,4 +96,46 @@ Then run =org-publish-project= to generate html files to =~/blog/public= folder.
 - 2025-02-13 Change date style of post list.
 - 2025-02-14 Don't use babel during export.
 
+* Other Org mode blogs
+
+- https://taingram.org/blog/org-mode-blog.html
+- https://ogbe.net/blog/blogging_with_org
+- https://ochicken.net/
+- http://professor.ufabc.edu.br/~m.sambinelli/
+- https://nicolas.petton.fr/blog/blogging-with-org-mode.html
+- https://bastibe.de/
+- https://writepermission.com/
+
+#+begin_details
+#+begin_summary
+More examples
+#+end_summary
+
+- https://orgmode.org/worg/org-blog-wiki.html
+- https://www.danliden.com/posts/20211203-this-site.html
+- https://www.faijdherbe.net/org-publish.html
+- https://systemcrafters.net/publishing-websites-with-org-mode/building-the-site/
+- https://miikanissi.com/blog/website-with-emacs/
+- https://www.leonrische.me/pages/org_html_export.html
+- https://pank.eu/blog/blog-setup.html
+- https://kennyballou.com/blog/2022/05/org-mode-publishing/index.html
+- https://sbr.pm/posts/2020-03-22-org-mode-website.html
+- https://taxodium.ink/org-publish-blog.html
+- https://rkallos.com/blog/2017-01-02-static-site-generation-with-org-mode.html
+- https://gongzhitaao.org/orgcss/
+- https://www.zhangjiee.com/blog/2019/build-site-with-org-mode.html
+- https://elilif.github.io/articles/2024-02-21-all-in-emacs-blog.html
+- https://julienblanchard.com/posts/building-a-website-with-org-mode.html
+- https://www.thethingsengine.org/org2xhtml.html
+- https://github.com/alphapapa/unpackaged.el#export-to-html-with-useful-anchors
+- https://jeffkreeftmeijer.com/ox-html-stable-ids/
+- https://github.com/jeffkreeftmeijer/ox-html-stable-ids.el
+- https://randyridenour.net/posts/2024-12-17-blogging-with-org-mode.html
+- https://github.com/rgb-24bit/org-html-theme-list
+- https://github.com/fniessen/org-html-themes
+- https://olmon.gitlab.io/org-themes/
+- https://staff.fnwi.uva.nl/p.vanormondt/index.html
+- https://meganrenae21.github.io/Meg-in-Progress/index.html
+#+end_details
+
 #+include: ../comments.inc
