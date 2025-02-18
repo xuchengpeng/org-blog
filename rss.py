@@ -17,7 +17,7 @@ for root, dirs, files in os.walk(os.getcwd() + "/public/posts"):
         htmls.append(filename)
 htmls.sort()
 
-author = {"name": "Chuck", "email": "330476629@qq.com"}
+author = {"name": "Chuck", "email": "chuckxcp@qq.com"}
 china = timezone("Asia/Shanghai")
 base_url = "https://xuchengpeng.cn/"
 
