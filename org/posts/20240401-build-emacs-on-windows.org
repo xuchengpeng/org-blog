@@ -5,11 +5,6 @@ On Windows, we can build GNU Emacs with [[https://www.msys2.org/][MSYS2]] and [[
 
 First, install some necessary packages. The packages include the base developer tools, the compiler toolchain, several image libraries, and XML library, the GnuTLS library, zlib for decompressing text, HarfBuzz for use as the shaping engine, libgccjit for native-compilation support, SQLite3 for accessing SQL databases, and the tree-sitter library used by some major modes. You can select only part of the libraries if you don't need them all.
 
-#+begin_details
-#+begin_summary
-Install mingw-w64 packages
-#+end_summary
-
 #+begin_src bash
 pacman --noconfirm -S --needed \
     base-devel \
@@ -31,27 +26,15 @@ pacman --noconfirm -S --needed \
     mingw-w64-x86_64-sqlite3 \
     mingw-w64-x86_64-libtree-sitter
 #+end_src
-#+end_details
 
 Then, use git to clone the repository, we also need autotools to generate the configure script.
-
-#+begin_details
-#+begin_summary
-Install git
-#+end_summary
 
 #+begin_src bash
 pacman --noconfirm -S git autotools
 git config --global core.autocrlf false
 #+end_src
-#+end_details
 
 You now have a complete build environment for Emacs.
-
-#+begin_details
-#+begin_summary
-Install Emacs
-#+end_summary
 
 #+begin_src bash
 mkdir /c/emacs
@@ -65,7 +48,6 @@ NPROC=$(nproc)
 make -j${NPROC}
 make install
 #+end_src
-#+end_details
 
 After building and installing, we need to copy necessary DLLs into Emacs's bin directory if we run Emacs outside the mingw64 shell.
 
