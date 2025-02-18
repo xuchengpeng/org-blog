@@ -24,7 +24,10 @@ I have already redefine [[https://github.com/xuchengpeng/.emacs.d/blob/91cdc6fcb
 
 Protesilaos Stavrou posted a video on [[https://www.youtube.com/watch?v=gojOZ3k1mmk][nested key maps]]. The video shows how to define a prefix key in Emacs 29 using built-in functionality. The idea is to organise our keys in an efficient way. Using this method, we can have nested key maps as well, meaning that the prefix key can have access to the contents of another map which holds more key bindings. The video also shows us how to describe the keymaps with [[https://github.com/justbur/emacs-which-key][which-key]].
 
+#+begin_details
+#+begin_summary
 Here is the example, we can have =C-z= as a prefix, =C-z b= as a nested key maps for buffer-related commands, and =C-z f= for file-related commands.
+#+end_summary
 
 #+begin_src emacs-lisp
 ;; Read this to learn about key binding conventions so that you know
@@ -69,5 +72,6 @@ Here is the example, we can have =C-z= as a prefix, =C-z b= as a nested key maps
 ;; the map's symbol.
 (keymap-set global-map "C-z" test-prefix-map)
 #+end_src
+#+end_details
 
 #+include: ../comments.inc

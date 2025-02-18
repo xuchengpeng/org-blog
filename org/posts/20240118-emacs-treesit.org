@@ -12,7 +12,10 @@
 
 为某一个编程语言添加tree-sitter支持时，运行 =M-x treesit-install-language-grammar= 命令，会先clone语言解析器的仓库，然后在进行编译安装。
 
+#+begin_details
+#+begin_summary
 通过设定 =treesit-language-source-alist= 变量来定义每种语言解析器的仓库地址，这样在进行命令安装时就不需要再输入仓库地址。
+#+end_summary
 
 #+begin_src emacs-lisp
 ;; M-x `treesit-install-language-grammar` to install language grammar.
@@ -52,6 +55,7 @@
         (yaml . ("https://github.com/ikatyang/tree-sitter-yaml"))
         (zig . ("https://github.com/GrayJack/tree-sitter-zig"))))
 #+end_src
+#+end_details
 
 Emacs会先在 =treesit-extra-load-path= 目录查找语言解析器，然后在 =~/.emacs.d/tree-sitter/= 目录查找语言解析器。
 
@@ -92,7 +96,10 @@ nil
      (treesit-available-p))
 #+end_src
 
+#+begin_details
+#+begin_summary
 Emacs内置了一些语言解析器，通过 =<LANGUAGE>-ts-mode= 可以打开tree-sitter支持。
+#+end_summary
 
 #+begin_src emacs-lisp
 (setq major-mode-remap-alist
@@ -116,6 +123,7 @@ Emacs内置了一些语言解析器，通过 =<LANGUAGE>-ts-mode= 可以打开tr
 (add-to-list 'auto-mode-alist '("\\.tsx\\'" . tsx-ts-mode))
 (add-to-list 'auto-mode-alist '("\\.ya?ml\\'" . yaml-ts-mode))
 #+end_src
+#+end_details
 
 还有其它很多语言没有内置支持，可以使用 =treesit-parser-create= 来手动开启。
 
