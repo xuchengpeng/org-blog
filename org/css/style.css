@@ -1,6 +1,6 @@
 :root {
-  --font-sans: Montserrat, sans-serif;
-  --font-serif: Merriweather, "LXGW WenKai", serif;
+  --font-sans: Montserrat, "Noto Sans SC", sans-serif;
+  --font-serif: Merriweather, "LXGW WenKai", "Noto Serif SC", serif;
   --font-mono: "Courier New", monospace;
   --color-bg: #fff;
   --color-text: #000;
