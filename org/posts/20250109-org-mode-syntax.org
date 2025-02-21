@@ -92,7 +92,7 @@ to ~#+INCLUDE~:
 #+end_src
 
 #+begin_note
-File inclusion, through INCLUDE keywords, is an *export-only feature*.
+File inclusion, through INCLUDE keywords, is an export-only feature.
 #+end_note
 
 *** Inline HTML
@@ -151,15 +151,7 @@ automatic anchors[fn:2].
 
 *** Text styles
 
-Normal text.
-
-/Italic text./
-
-*Bold text.*
-
-_Underline text._
-
-+Delete text.+
+Normal text. /Italic text./ *Bold text.* _Underline text._ +Stroke text.+
 
 *** Quotations
 
@@ -247,7 +239,7 @@ syntax:
   LaTeX allows to inline such ~\[...\]~ constructs (/quadratic formula/):
   \[ \frac{-b \pm \sqrt{b^2 - 4 a c}}{2a} \]
 
-  *Double dollar signs (~$$~) should not be used*.
+  Double dollar signs (~$$~) should /not/ be used.
 
 ** Comments
 
@@ -265,10 +257,10 @@ It's possible to add comments in the document.
 | Bottom left | Bottom middle |          |
 
 #+CAPTION: Table with alignment
-|          <r> |     <c>      | <l>          |
-|            1 |      2       | 3            |
-|        right |    center    | left         |
-| xxxxxxxxxxxx | xxxxxxxxxxxx | xxxxxxxxxxxx |
+|      <r> |   <c>    | <l>      |
+|        1 |    2     | 3        |
+|    right |  center  | left     |
+| xxxxxxxx | xxxxxxxx | xxxxxxxx |
 
 ** Images
 
@@ -297,14 +289,11 @@ Timestamps: [2014-01-16 Thu] and <2014-01-16 Thu>.
 
 By default, ~DONE~ actions will be collapsed.
 
-** TODO [#A] Read GTD book
+** TODO [#A] Read GTD book                                         :reading:
    SCHEDULED: <2014-09-11 Thu>
 
 ** TODO [#B] Apply GTD methodoloy
    DEADLINE: <2014-12-01 Mon>
-   :PROPERTIES:
-   :HTML_CONTAINER_CLASS:    hsCollapsed
-   :END:
 
 * Org macros
 

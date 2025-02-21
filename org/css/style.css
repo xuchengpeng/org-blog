@@ -590,7 +590,7 @@ pre.src-json::before { content: "Json"; }
   #table-of-contents {
     position: fixed;
     font-size: 0.95em;
-    line-height: 1.4em;
+    line-height: 1.5em;
     width: calc(((100vw - 900px) / 2) - 60px);
     height: 70vh;
     right: 0;
