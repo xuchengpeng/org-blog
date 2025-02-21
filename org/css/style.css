@@ -606,4 +606,9 @@ pre.src-json::before { content: "Json"; }
     padding: 0.1em 0;
     border-left: 1px dotted #585858;
   }
+
+  #table-of-contents ul {
+    list-style: none;
+    padding-inline-start: 1em;
+  }
 }
