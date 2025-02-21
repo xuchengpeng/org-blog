@@ -572,3 +572,38 @@ pre.src-json::before { content: "Json"; }
     overflow: auto;
   }
 }
+
+#table-of-contents {
+  font-size: 1em;
+  line-height: 1.4em;
+}
+
+#table-of-contents a {
+  color: #333;
+}
+
+#table-of-contents a:hover {
+  color: #147;
+}
+
+@media screen and (min-width: 1200px) {
+  #table-of-contents {
+    position: fixed;
+    font-size: 0.95em;
+    line-height: 1.4em;
+    width: calc(((100vw - 900px) / 2) - 60px);
+    height: 70vh;
+    right: 0;
+    top: 15vh;
+    overflow: hidden;
+  }
+
+  #table-of-contents:hover {
+    overflow: auto;
+  }
+
+  #table-of-contents #text-table-of-contents {
+    padding: 0.1em 0;
+    border-left: 1px dotted #585858;
+  }
+}
