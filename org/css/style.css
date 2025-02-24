@@ -579,7 +579,7 @@ pre.src-json::before { content: "Json"; }
 }
 
 #table-of-contents a {
-  color: #333;
+  color: #111;
 }
 
 #table-of-contents a:hover {
