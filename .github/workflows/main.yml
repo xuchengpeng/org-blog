@@ -29,7 +29,7 @@ jobs:
       - run: npm install
       - uses: purcell/setup-emacs@master
         with:
-          version: release-snapshot
+          version: 30.1
       - name: build
         run: |
           git clone --depth=1 https://github.com/xuchengpeng/.emacs.d.git $HOME/.emacs.d
