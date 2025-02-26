@@ -151,7 +151,7 @@ automatic anchors[fn:2].
 
 *** Text styles
 
-Normal text. /Italic text./ *Bold text.* _Underline text._ +Stroke text.+
+Regular text. /Italic text./ *Bold text.* _Underline text._ +Stroke text.+
 
 *** Quotations
 
@@ -174,20 +174,20 @@ but not any simpler -- Albert Einstein
 
 #+begin_details
 #+begin_summary
-This is a summary
+Here is summary
 #+end_summary
 
-Here is details.
+Here are details.
 - d1.
 - d2.
 
 #+begin_src org
 ,#+begin_details
 ,#+begin_summary
-This is a summary
+Here is summary
 ,#+end_summary
 
-Here is details.
+Here are details.
 - d1.
 - d2.
 ,#+end_details
@@ -210,13 +210,13 @@ details > summary > p {
 
 *** Aside
 
-Salamanders are a group of amphibians with a lizard-like appearance, including short legs and a tail in both larval and adult forms.
+Here is a paragraph before aside paragraph: Salamanders are a group of amphibians with a lizard-like appearance, including short legs and a tail in both larval and adult forms.
 
 #+begin_aside
-The Rough-skinned Newt defends itself with a deadly neurotoxin.
+Here is aside paragraph: Time flies, enjoy life.
 #+end_aside
 
-Several species of salamander inhabit the temperate rainforest of the Pacific Northwest, including the Ensatina, the Northwestern Salamander and the Rough-skinned Newt. Most salamanders are nocturnal, and hunt for insects, worms and other small creatures.
+Here is a paragraph after aside paragraph: Several species of salamander inhabit the temperate rainforest of the Pacific Northwest, including the Ensatina, the Northwestern Salamander and the Rough-skinned Newt. Most salamanders are nocturnal, and hunt for insects, worms and other small creatures.
 
 ** Mathematical formulae
 
