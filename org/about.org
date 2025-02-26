@@ -8,9 +8,6 @@
 #+end_center
 
 * Resume
-:PROPERTIES:
-:CUSTOM_ID: resume
-:END:
 
 | Company | Role                                               | Date           |
 |---------+----------------------------------------------------+----------------|
@@ -18,5 +15,3 @@
 | Huawei  | Team Leader, Software Architect, Software Engineer | 2015 - Present |
 | sznari  | Software Engineer                                  | 2011 - 2014    |
 | HUST    | Bachelor's Degree, Computer Science                | 2006 - 2010    |
-
-#+include: ./comments.inc
