@@ -9,6 +9,6 @@ For example, change the font of all org mode buffers when openning:
 (add-hook 'org-mode-hook (lambda () (buffer-face-set :family "LXGW WenKai Mono" :height 140)))
 #+end_src
 
-The argument should be a face name or a property list of face attributes and values. If more than on face is listed, that specifies an aggregate face, like in a face text property. Font face attributes are family, height, weight, slant, etc.
+The argument should be a face name or a property list of face attributes and values. If more than one face is listed, that specifies an aggregate face, like in a face text property. Font face attributes are family, height, weight, slant, etc.
 
 #+include: ../comments.inc
