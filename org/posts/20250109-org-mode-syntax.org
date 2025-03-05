@@ -1,5 +1,8 @@
 #+TITLE: Org Mode Syntax
+#+SUBTITLE: Your life in plain text
 #+DATE: <2025-01-09 Thu 14:50>
+
+A GNU Emacs major mode for keeping notes, authoring documents, computational notebooks, literate programming, maintaining to-do lists, planning projects, and more — in a fast and effective plain text system.
 
 * Basics
 
