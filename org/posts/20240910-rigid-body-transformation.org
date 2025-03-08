@@ -1,5 +1,7 @@
 #+TITLE: 刚体变换
+#+AUTHOR: Chuck
 #+DATE: <2024-09-10 Tue 15:01>
+#+INCLUDE: ../org-macros.setup
 
 三维空间坐标的刚体变换可分为旋转和平移两个步骤，用 $R_{A}^{B} = \begin{bmatrix} u_{x}  & v_{x} & w_{x} \\ u_{y}  & v_{y} & w_{y} \\ u_{z}  & v_{z} & w_{z} \end{bmatrix}$ 表示旋转矩阵，用 $t_{A}^{B} = \begin{bmatrix} t_{x} \\ t_{y} \\ t_{z} \end{bmatrix}$ 表示平移矩阵。
 
@@ -40,5 +42,7 @@ T_{A}^{C} &= T_{B}^{C} \ast T_{A}^{B} \\
 &= \begin{bmatrix} R_{B}^{C}R_{A}^{B} & R_{B}^{C}t_{A}^{B} + t_{B}^{C} \\ 0 & 1 \end{bmatrix}
 \end{aligned}
 \end{split}
+
+{{{post-meta}}}
 
 #+include: ../comments.inc

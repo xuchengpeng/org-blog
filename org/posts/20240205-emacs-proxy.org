@@ -1,5 +1,7 @@
 #+TITLE: Emacs Proxy
+#+AUTHOR: Chuck
 #+DATE: <2024-02-05 Mon 08:20>
+#+INCLUDE: ../org-macros.setup
 
 Proxy servers are commonly used to provide gateways through firewalls or as caches serving some more-or-less local network. Each protocol (HTTP, FTP, etc.) can have a different gateway server. Proxying is conventionally configured commonly amongst different programs through environment variables of the form /protocol-proxy/, where /protocol/ is one of the supported network protocols (http, ftp, etc.). The library recognized such variables in either upper or lower case.
 
@@ -88,5 +90,7 @@ Disable socks proxy
       socks-noproxy nil)
 #+end_src
 #+end_details
+
+{{{post-meta}}}
 
 #+include: ../comments.inc

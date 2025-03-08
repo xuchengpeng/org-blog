@@ -1,5 +1,7 @@
 #+TITLE: Define Emacs Formatter
+#+AUTHOR: Chuck
 #+DATE: <2024-04-09 Tue 16:53>
+#+INCLUDE: ../org-macros.setup
 
 Steve Purcell has created a package [[https://github.com/purcell/emacs-reformatter][reformatter]], which can define commands to format the current Emacs buffer.
 
@@ -13,5 +15,7 @@ For example, we can use [[https://github.com/mvdan/sh][shfmt]] to format shell s
     :program "shfmt"
     :args `("-i" ,(number-to-string sh-basic-offset))))
 #+end_src
+
+{{{post-meta}}}
 
 #+include: ../comments.inc

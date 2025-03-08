@@ -1,5 +1,7 @@
 #+TITLE: Eglot: clangd配置
+#+AUTHOR: Chuck
 #+DATE: <2024-01-29 Mon 14:42>
+#+INCLUDE: ../org-macros.setup
 
 [[https://joaotavora.github.io/eglot/][Eglot]]是Emacs内置的[[https://microsoft.github.io/language-server-protocol/][LSP]]客户端。Eglot内置已支持大量的LSP服务端[fn:1]。
 
@@ -38,5 +40,7 @@ CompileFlags:
 
 [fn:1] 内置支持的LSP服务端参见eglot-server-programs参数。
 [fn:2] [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Directory-Variables.html][Per-Directory Local Variables]]
+
+{{{post-meta}}}
 
 #+include: ../comments.inc

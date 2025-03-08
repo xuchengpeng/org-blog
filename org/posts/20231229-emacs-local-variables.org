@@ -1,5 +1,7 @@
 #+TITLE: Emacs本地变量
+#+AUTHOR: Chuck
 #+DATE: <2023-12-29 Fri 09:39>
+#+INCLUDE: ../org-macros.setup
 
 一般情况下，我们在 =init.el= 中设置一些变量可以全局生效，如果想针对不同的目录、不同的mode设置不同的变量，可以借助Emcas提供的Local Variables[fn:1]机制。
 
@@ -76,6 +78,8 @@ Emacs将使用它能找到的最终 =major mode= 定义，所以在旧的Emacs�
 
 [fn:1] Local Variables: https://www.gnu.org/software/emacs/manual/html_node/emacs/Variables.html
 [fn:2] Safety of File Variables: https://www.gnu.org/software/emacs/manual/html_node/emacs/Safe-File-Variables.html
+
+{{{post-meta}}}
 
 #+include: ../comments.inc
 

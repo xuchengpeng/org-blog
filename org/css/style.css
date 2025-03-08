@@ -396,6 +396,14 @@ aside {
   border-left: 1px solid #585858;
 }
 
+.post-meta {
+  font-size: 0.95em;
+  line-height: 1.5em;
+  font-style: italic;
+  color: #585858;
+  margin: 1em auto;
+}
+
 /* Search box */
 .search {
   font-family: var(--font-serif);

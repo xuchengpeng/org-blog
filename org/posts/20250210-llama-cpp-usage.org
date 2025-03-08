@@ -1,5 +1,7 @@
 #+TITLE: llama.cpp使用
+#+AUTHOR: Chuck
 #+DATE: <2025-02-10 Mon 13:35>
+#+INCLUDE: ../org-macros.setup
 
 前面的一篇文章介绍了[[file:20250208-ollama-run-deepseek-r1.org][Ollama运行DeepSeek-R1]]，实际上Ollama的后端使用的是[[https://github.com/ggerganov/llama.cpp][llama.cpp]]。
 
@@ -33,5 +35,7 @@ llama.cpp还提供了 =llama-cli= 工具，可以直接在命令行中和模型�
     :host "localhost:11435"
     :models '(DeepSeek-R1))
 #+end_src
+
+{{{post-meta}}}
 
 #+include: ../comments.inc

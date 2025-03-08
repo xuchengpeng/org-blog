@@ -1,5 +1,7 @@
 #+TITLE: Safe Local Variable Directories
+#+AUTHOR: Chuck
 #+DATE: <2024-11-25 Mon 15:46>
+#+INCLUDE: ../org-macros.setup
 
 =safe-local-variable-directories= was introduced in Emacs 30.1. A list of directories where local variables are always enabled.
 
@@ -8,5 +10,7 @@ Directory-local variables loaded from these directories, such as the variables i
 The names of the directories in the list must be absolute, and must end in a slash.
 
 Remote directories can be included if the variable =enable-remote-dir-locals= is non-nil.
+
+{{{post-meta}}}
 
 #+include: ../comments.inc

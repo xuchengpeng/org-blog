@@ -1,5 +1,7 @@
 #+TITLE: Publishing Org-mode files to HTML
+#+AUTHOR: Chuck
 #+DATE: <2019-12-01 Sun 23:03>
+#+INCLUDE: ../org-macros.setup
 
 #+BEGIN_QUOTE
 Emacs is the best editor in the world.
@@ -80,6 +82,7 @@ Then run =org-publish-project= to generate html files to =~/blog/public= folder.
 
 * Update
 
+- 2025-03-08 Insert post-meta for blog post.
 - 2025-02-14 Don't use babel during export.
 - 2025-02-13 Change date style of post list.
 - 2025-02-05 Remove default meta description and keywords, customize meta tags in post files.
@@ -137,5 +140,7 @@ More examples
 - http://professor.ufabc.edu.br/~m.sambinelli/
 - https://nicolas.petton.fr/blog/blogging-with-org-mode.html
 #+end_details
+
+{{{post-meta}}}
 
 #+include: ../comments.inc

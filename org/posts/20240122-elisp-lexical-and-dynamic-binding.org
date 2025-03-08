@@ -1,5 +1,7 @@
 #+TITLE: Elisp: Lexical and Dynamic Binding
+#+AUTHOR: Chuck
 #+DATE: <2024-01-22 Mon 15:20>
+#+INCLUDE: ../org-macros.setup
 
 在Lexical Binding下使用let绑定本地变量时，这些变量仅在let被包围的body中有效。在其他的代码中，它们有其他的含义，所以如果你在body中调用其他的函数，这些let绑定的本地变量对这些函数不可见。
 
@@ -30,5 +32,7 @@
 (let ((x 2))
   (getx))   ;; ==> 2
 #+end_src
+
+{{{post-meta}}}
 
 #+include: ../comments.inc

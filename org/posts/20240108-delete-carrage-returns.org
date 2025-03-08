@@ -1,5 +1,7 @@
 #+TITLE: 删除文件中的Windows换行符
+#+AUTHOR: Chuck
 #+DATE: <2024-01-08 Mon 08:03>
+#+INCLUDE: ../org-macros.setup
 
 在Windows中创建的文件如果使用了Windows换行符，那么在Linux中打开时每一行行末会显示 ~^M~ 。
 
@@ -15,5 +17,7 @@
     (while (search-forward "\r" nil :noerror)
       (replace-match ""))))
 #+end_src
+
+{{{post-meta}}}
 
 #+include: ../comments.inc

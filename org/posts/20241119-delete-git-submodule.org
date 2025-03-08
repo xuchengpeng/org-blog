@@ -1,5 +1,7 @@
 #+TITLE: 删除Git Submodule
+#+AUTHOR: Chuck
 #+DATE: <2024-11-19 Tue 15:40>
+#+INCLUDE: ../org-macros.setup
 
 Git子模块的删除相对比较麻烦，需要执行多个步骤才能清理干净。
 
@@ -8,5 +10,7 @@ Git子模块的删除相对比较麻烦，需要执行多个步骤才能清理�
 + 删除 =.git/config= 中对应的子模块内容；
 + 删除 =.git/modules/= 下对应的子模块目录；
 + =git rm --cached submodule_name= 。
+
+{{{post-meta}}}
 
 #+include: ../comments.inc

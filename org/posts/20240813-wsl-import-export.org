@@ -1,5 +1,7 @@
 #+TITLE: WSL导入导出
+#+AUTHOR: Chuck
 #+DATE: <2024-08-13 Tue 12:36>
+#+INCLUDE: ../org-macros.setup
 
 默认情况WSL会安装在C盘，可以将其迁移到其他盘，这里使用WSL提供的导入和导出命令。
 
@@ -22,6 +24,8 @@
    #+begin_src shell
    PS > wsl --import Ubuntu-22.04 D:\WSL\Ubuntu-22.04 D:\Ubuntu-22.04.tar
    #+end_src
+
+{{{post-meta}}}
 
 #+include: ../comments.inc
 

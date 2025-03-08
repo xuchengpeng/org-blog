@@ -1,14 +1,13 @@
 #+TITLE: Aspell: Personal Dictionaries
+#+AUTHOR: Chuck
 #+DATE: <2024-01-23 Tue 14:29>
+#+INCLUDE: ../org-macros.setup
 
 [[http://aspell.net/][GNU Aspell]] 是一个用来替换ispell的免费开源拼写检查器。
 
 Aspell除了可以安装官方提供的字典外，还可以自定义字典。
 
-* Format of Personal Dictionary
-:PROPERTIES:
-:CUSTOM_ID: format-of-personal-dictionary
-:END:
+* 个人词典格式
 
 个人词典的文件名格式为 =.aspell.<lang>.pws= ，这个文件分为两部分。
 
@@ -16,16 +15,15 @@ Aspell除了可以安装官方提供的字典外，还可以自定义字典。
 
 第二部分为单词列表，一个单词占用一行。
 
-* Format of Personal Replacement Dictionary
-:PROPERTIES:
-:CUSTOM_ID: format-of-personal-replacement-dictionary
-:END:
+* 个人替换词典格式
 
 个人替换词典的文件名格式为： =.aspell.<lang>.prepl= ，这个文件分为两部分。
 
 第一部分为文件头第一行： =personal_repl-1.1 lang num [encoding]= ，num当前未使用一直为0，encoding为可选项。
 
 第二部分为单词替换列表，一对替换组合占用一行，格式如： =misspelled_word correction= 。
+
+{{{post-meta}}}
 
 #+include: ../comments.inc
 

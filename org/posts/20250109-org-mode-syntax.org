@@ -1,6 +1,8 @@
 #+TITLE: Org Mode Syntax
 #+SUBTITLE: Your life in plain text
+#+AUTHOR: Chuck
 #+DATE: <2025-01-09 Thu 14:50>
+#+INCLUDE: ../org-macros.setup
 
 A GNU Emacs major mode for keeping notes, authoring documents, computational notebooks, literate programming, maintaining to-do lists, planning projects, and more — in a fast and effective plain text system.
 
@@ -311,5 +313,7 @@ By default, ~DONE~ actions will be collapsed.
 [fn:myfootnote] Extensively used in large documents.
 
 [fn:2] footnotes 2
+
+{{{post-meta}}}
 
 #+include: ../comments.inc

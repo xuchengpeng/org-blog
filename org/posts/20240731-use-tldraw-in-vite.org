@@ -1,5 +1,7 @@
 #+TITLE: Use tldraw in Vite
+#+AUTHOR: Chuck
 #+DATE: <2024-07-31 Wed 11:28>
+#+INCLUDE: ../org-macros.setup
 
 [[https://vitejs.dev/][Vite]] is a build tool that aims to provide a faster and leaner development experience for modern web projects.
 
@@ -53,5 +55,7 @@ export default App
 #+end_src
 
 You may run =npm run build= to build the app, and run =npm run preview= to test it.
+
+{{{post-meta}}}
 
 #+include: ../comments.inc

@@ -1,5 +1,7 @@
 #+TITLE: Emacs代码缩进
+#+AUTHOR: Chuck
 #+DATE: <2023-12-28 Thu 20:28>
+#+INCLUDE: ../org-macros.setup
 
 Emacs自带的 ~electric-indent-mode~ 或者第三方插件 [[https://github.com/Malabarba/aggressive-indent-mode][aggressive-indent-mode]] 可以自动进行代码缩进。
 
@@ -7,5 +9,7 @@ Emacs自带的 ~electric-indent-mode~ 或者第三方插件 [[https://github.com
 1. 先选中需要调整缩进的代码;
 2. 执行 ~M-x indent-rigidly~ ；
 3. 此时使用 ~<left>~ 或 ~<right>~ 可每次左右缩进一个字符，使用 ~Shift+<left>~ 或 ~Shift+<right>~ 可每次左右缩进4个字符。
+
+{{{post-meta}}}
 
 #+include: ../comments.inc

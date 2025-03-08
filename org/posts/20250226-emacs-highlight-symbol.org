@@ -1,5 +1,7 @@
 #+TITLE: Emacs中符号高亮
+#+AUTHOR: Chuck
 #+DATE: <2025-02-26 Wed 13:11>
+#+INCLUDE: ../org-macros.setup
 
 日常都是使用[[https://github.com/wolray/symbol-overlay][symbol-overlay]]包在编程时进行符号高亮，James Cherti介绍了[[https://www.jamescherti.com/emacs-symbol-highlighting-built-in-functions/][Emacs内置功能实现符号高亮]]的方法，核心是使用Emacs内置的[[https://www.gnu.org/software/emacs/manual/html_node/emacs/Highlight-Interactively.html][hi-lock]]包来实现。
 
@@ -18,5 +20,7 @@
 #+end_src
 
 Mickey Petersen之前也在Mastering Emacs介绍了[[https://www.masteringemacs.org/article/highlighting-by-word-line-regexp][单词/句子/正则表达式匹配高亮]]的使用方法，Emacs已内置了快捷键来快速使用这些功能，这些功能也是hi-lock包提供的。
+
+{{{post-meta}}}
 
 #+include: ../comments.inc
