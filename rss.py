@@ -50,9 +50,9 @@ for html in htmls:
         fe.description(description if description else soup.title.string)
         fe.author(author)
         fe.guid(url)
-        match = re.search(r'\d{4}\d{2}\d{2}', html)
+        match = re.search(r'\d{4}-\d{2}-\d{2}', html)
         if match:
-            date = datetime.strptime(match.group(), "%Y%m%d")
+            date = datetime.strptime(match.group(), "%Y-%m-%d")
             pub_date = datetime(date.year, date.month, date.day, tzinfo=china)
         else:
             pub_date = datetime.fromtimestamp(os.path.getmtime(html), china)

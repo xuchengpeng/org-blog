@@ -3,7 +3,7 @@
 #+DATE: <2025-02-10 Mon 13:35>
 #+INCLUDE: ../org-macros.setup
 
-前面的一篇文章介绍了[[file:20250208-ollama-run-deepseek-r1.org][Ollama运行DeepSeek-R1]]，实际上Ollama的后端使用的是[[https://github.com/ggerganov/llama.cpp][llama.cpp]]。
+前面的一篇文章介绍了[[file:2025-02-08-ollama-run-deepseek-r1.org][Ollama运行DeepSeek-R1]]，实际上Ollama的后端使用的是[[https://github.com/ggerganov/llama.cpp][llama.cpp]]。
 
 llama.cpp使用纯C/C++实现，具备非常高效的性能，支持很多种硬件架构和指令集，并且提供了很多预编译好的工具，包括量化工具，Hugging Face上很多的模型都是使用llama.cpp进行量化的。
 
