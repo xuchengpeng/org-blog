@@ -6,12 +6,3 @@
 莫听穿林打叶声，何妨吟啸且徐行。竹杖芒鞋轻胜马，谁怕？一蓑烟雨任平生。\\
 料峭春风吹酒醒，微冷，山头斜照却相迎。回首向来萧瑟处，归去，也无风雨也无晴。
 #+end_center
-
-* Resume
-
-| Company | Role                                               | Date           |
-|---------+----------------------------------------------------+----------------|
-| Yinwang | Software Architect, Software Engineer              | 2025 - Present |
-| Huawei  | Team Leader, Software Architect, Software Engineer | 2015 - Present |
-| sznari  | Software Engineer                                  | 2011 - 2014    |
-| HUST    | Bachelor's Degree, Computer Science                | 2006 - 2010    |
