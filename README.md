@@ -4,14 +4,12 @@
 (setq dotemacs-org-blog-dir "/path/to/org-blog/")
 ```
 
-Generate RSS and minify CSS/JavaScript/HTML automatically:
+Generate RSS and minify CSS/JavaScript/HTML after publishing:
 
 ```emacs-lisp
-(with-eval-after-load 'ox-publish
-  (defun +org-generate-rss (project &optional force async)
-    (let ((default-directory dotemacs-org-blog-dir))
-      (dotemacs-call-process "python" "rss.py")
-      (dotemacs-call-process "npm" "run" "minify"))
-    (message "dotemacs generate rss in %s" dotemacs-org-blog-dir))
-  (advice-add 'org-publish-project :after #+org-generate-rss))
+(defun +org-generate-rss (project &optional force async)
+  (let ((default-directory dotemacs-org-blog-dir))
+    (dotemacs-call-process "python" "rss.py")
+    (dotemacs-call-process "npm" "run" "minify")))
+(advice-add 'org-publish-project :after #+org-generate-rss)
 ```
