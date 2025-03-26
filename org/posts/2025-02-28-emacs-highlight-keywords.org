@@ -1,7 +1,6 @@
 #+TITLE: Emacs中高亮关键字
 #+AUTHOR: Chuck
 #+DATE: <2025-02-28 Fri 08:32>
-#+INCLUDE: ../org-macros.setup
 
 日常编码或者阅读其他代码时经常会使用或看到TODO/FIXME等关键字，之前是使用[[https://github.com/tarsius/hl-todo][hl-todo]]来进行高亮，hl-todo中还提供了很多其它功能，我基本上只使用了高亮关键字的功能。
 
@@ -27,7 +26,5 @@ James Cherti介绍了[[https://www.jamescherti.com/emacs-highlight-keywords-like
 
   (add-hook 'prog-mode-hook #'+highlight-keywords-mode)
 #+end_src
-
-{{{post-meta}}}
 
 #+include: ../comments.inc

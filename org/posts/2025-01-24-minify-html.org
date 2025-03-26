@@ -1,7 +1,6 @@
 #+TITLE: Minify HTML
 #+AUTHOR: Chuck
 #+DATE: <2025-01-24 Fri 10:26>
-#+INCLUDE: ../org-macros.setup
 
 之前的文章里我们介绍了如何[[file:2025-01-07-minify-css-and-js.org][压缩CSS和JavaScript]]，这里将对博客发布前的HTML文件进行压缩，这里我们选择使用[[https://github.com/posthtml/htmlnano][htmlnano]]对HTML进行压缩。
 
@@ -45,7 +44,5 @@ htmlnano支持一些预设值：
 #+begin_src shell
 npx posthtml -c posthtmlrc.json
 #+end_src
-
-{{{post-meta}}}
 
 #+include: ../comments.inc

@@ -1,7 +1,6 @@
 #+TITLE: Org Mode Archiving
 #+AUTHOR: Chuck
 #+DATE: <2025-02-18 Tue 11:06>
-#+INCLUDE: ../org-macros.setup
 
 When a project represented by a (sub)tree is finished, you may want to move the tree out of the way and to stop it from contributing to the agenda. Archiving is important to keep your working files compact and global searches like the construction of agenda views fast.
 
@@ -10,7 +9,5 @@ The most common archiving action is to move a project tree to another file, the 
 If you want to just switch off certain subtrees without moving them to a different file for agenda views, you can use the ~ARCHIVE~ tag. A headline that is marked with the ~ARCHIVE~ tag stays at its location in the outline tree.
 
 The archived (sub)trees will not be shown in agenda views by default, type ~v a~ or ~v A~ to toggle archived (sub)trees.
-
-{{{post-meta}}}
 
 #+include: ../comments.inc

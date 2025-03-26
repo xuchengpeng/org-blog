@@ -1,7 +1,6 @@
 #+TITLE: Emacs treesit
 #+AUTHOR: Chuck
 #+DATE: <2024-01-18 Thu 09:30>
-#+INCLUDE: ../org-macros.setup
 
 [[https://tree-sitter.github.io/tree-sitter/][tree-sitter]] 是一个解析器生成工具和增量解析库。它可以为源文件构建语法树，当源文件修改时可以高效的更新语法树。
 
@@ -135,7 +134,4 @@ Emacs内置了一些语言解析器，通过 =<LANGUAGE>-ts-mode= 可以打开tr
                                     (treesit-parser-create 'elisp))))
 #+end_src
 
-{{{post-meta}}}
-
 #+include: ../comments.inc
-

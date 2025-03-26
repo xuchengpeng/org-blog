@@ -1,7 +1,6 @@
 #+TITLE: Math Equation With Org Mode
 #+AUTHOR: Chuck
 #+DATE: <2024-02-29 Thu 13:06>
-#+INCLUDE: ../org-macros.setup
 
 [[https://www.latex-project.org][LaTeX]] math snippets can be displayed on HTML pages which exported with org-mode. The default is to use the [[https://www.mathjax.org][MathJax]].
 
@@ -40,7 +39,5 @@ Here comes with some complex examples.
   \nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} & = \vec{\mathbf{0}} \newline
   \nabla \cdot \vec{\mathbf{B}} & = 0
 \end{eqnarray}
-
-{{{post-meta}}}
 
 #+include: ../comments.inc

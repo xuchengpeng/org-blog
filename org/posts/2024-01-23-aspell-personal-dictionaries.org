@@ -1,7 +1,6 @@
 #+TITLE: Aspell: Personal Dictionaries
 #+AUTHOR: Chuck
 #+DATE: <2024-01-23 Tue 14:29>
-#+INCLUDE: ../org-macros.setup
 
 [[http://aspell.net/][GNU Aspell]] 是一个用来替换ispell的免费开源拼写检查器。
 
@@ -23,7 +22,4 @@ Aspell除了可以安装官方提供的字典外，还可以自定义字典。
 
 第二部分为单词替换列表，一对替换组合占用一行，格式如： =misspelled_word correction= 。
 
-{{{post-meta}}}
-
 #+include: ../comments.inc
-

@@ -1,7 +1,6 @@
 #+TITLE: 在Emacs中记笔记
 #+AUTHOR: Chuck
 #+DATE: <2025-03-19 Wed 09:48>
-#+INCLUDE: ../org-macros.setup
 
 以前在Emacs中记笔记主要使用Org mode配置Capture模板，将笔记记录在指定的文件中，这种方式很简陋，慢慢的指定的文件内容会很臃肿，笔记管理上没有实现文件分类管理等，而且也会拖慢Agenda的速度。
 
@@ -67,7 +66,5 @@ Denote is a simple note-taking tool for Emacs. It is based on the idea that note
 #+end_src
 
 这里的笔记文件查找和内容搜索我直接简单封装了两个函数，还可以直接使用大佬提供的[[https://github.com/protesilaos/consult-denote][consult-denote]]包。
-
-{{{post-meta}}}
 
 #+include: ../comments.inc

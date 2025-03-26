@@ -1,7 +1,6 @@
 #+TITLE: Emacs根据时间切换主题
 #+AUTHOR: Chuck
 #+DATE: <2024-01-05 Fri 12:26>
-#+INCLUDE: ../org-macros.setup
 
 每小时运行一次，早上6点和晚上18点自动切换主题。
 
@@ -21,7 +20,5 @@
 #+end_src
 
 自动切换主题的包：[[https://github.com/guidoschmidt/circadian.el][circadian.el]]
-
-{{{post-meta}}}
 
 #+include: ../comments.inc

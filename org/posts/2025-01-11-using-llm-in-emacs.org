@@ -1,7 +1,6 @@
 #+TITLE: 在Emacs中使用大型语言模型
 #+AUTHOR: Chuck
 #+DATE: <2025-01-11 Sat 16:14>
-#+INCLUDE: ../org-macros.setup
 
 Emacs有不少LLM的客户端，这里我们选择[[https://github.com/karthink/gptel][gptel]]，在 =init.el= 中添加以下代码：
 
@@ -41,7 +40,5 @@ gptel的 ~:key~ 属性支持设置为一个函数来返回key，另外一种通�
                         :stream nil)
         gptel-use-curl nil)
 #+end_src
-
-{{{post-meta}}}
 
 #+include: ../comments.inc

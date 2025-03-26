@@ -1,7 +1,6 @@
 #+TITLE: 为新建博客文章增加Org Capture模板
 #+AUTHOR: Chuck
 #+DATE: <2023-12-28 Thu 13:04>
-#+INCLUDE: ../org-macros.setup
 
 =dotemacs-org-post-file= 函数会在博客文件夹对应的年份目录下新建文章；
 
@@ -27,7 +26,4 @@
 
 然后，就可以愉快的写作啦！
 
-{{{post-meta}}}
-
 #+include: ../comments.inc
-

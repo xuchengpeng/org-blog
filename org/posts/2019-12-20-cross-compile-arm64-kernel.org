@@ -1,7 +1,6 @@
 #+TITLE: 交叉编译ARM64内核
 #+AUTHOR: Chuck
 #+DATE: <2019-12-20 Fri 23:03>
-#+INCLUDE: ../org-macros.setup
 
 介绍如何使用编译器交叉编译ARM64内核。
 
@@ -31,7 +30,5 @@ make -j8 ARCH=arm64 CROSS_COMPILE=~/gcc-linaro-7.3.1-2018.05-x86_64_aarch64-linu
 
 代码根目录下会生成 =vmlinux= ， =arch/arm64/boot= 目录下会生成 =Image= 和
 =Image.gz= 。
-
-{{{post-meta}}}
 
 #+include: ../comments.inc

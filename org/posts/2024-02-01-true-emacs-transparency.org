@@ -1,7 +1,6 @@
 #+TITLE: True Emacs Transparency
 #+AUTHOR: Chuck
 #+DATE: <2024-02-01 Thu 14:37>
-#+INCLUDE: ../org-macros.setup
 
 Before Emacs 29, we can set the =alpha= frame parameter to adjust the opacity of the frame. The issue with =alpha= is that is set the opacity of the entire window, which means both text foreground and background become transparent together. But what we want is the text remains opaque while the background becomes transparent.
 
@@ -22,7 +21,5 @@ Here I make a helper function to adjust transparency.
 (keymap-global-set "C-M-9" (lambda () (interactive) (dotemacs-adjust-transparency nil 2)))
 (keymap-global-set "C-M-0" (lambda () (interactive) (set-frame-parameter nil 'alpha-background 100)))
 #+end_src
-
-{{{post-meta}}}
 
 #+include: ../comments.inc

@@ -1,7 +1,6 @@
 #+TITLE: Ollama运行DeepSeek-R1
 #+AUTHOR: Chuck
 #+DATE: <2025-02-08 Sat 15:17>
-#+INCLUDE: ../org-macros.setup
 
 [[https://ollama.com/][Ollama]] 是一个用于构建大型语言模型应用的工具，它提供了一个简洁易用的命令行界面和服务器，让你能够轻松下载、运行和管理各种开源LLM。
 
@@ -40,7 +39,5 @@
     :stream nil
     :models '(DeepSeek-R1-Distill-Qwen-7B-Q4_K_M:latest))
 #+end_src
-
-{{{post-meta}}}
 
 #+include: ../comments.inc

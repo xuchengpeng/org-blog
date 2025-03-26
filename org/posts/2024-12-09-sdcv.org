@@ -1,7 +1,6 @@
 #+TITLE: sdcv
 #+AUTHOR: Chuck
 #+DATE: <2024-12-09 Mon 15:48>
-#+INCLUDE: ../org-macros.setup
 
 [[https://github.com/Dushistov/sdcv][sdcv]] is a simple, cross-platform, text-based utility for working with dictionaries in [[https://stardict-4.sourceforge.net/][StarDict]] format.
 
@@ -23,7 +22,5 @@ The [[https://github.com/jamescherti/quick-sdcv.el][quick-sdcv]] package serves 
     (keymap-set quick-sdcv-mode-map "p" #'previous-line)
     (keymap-set quick-sdcv-mode-map "q" #'quit-window))
 #+end_src
-
-{{{post-meta}}}
 
 #+include: ../comments.inc

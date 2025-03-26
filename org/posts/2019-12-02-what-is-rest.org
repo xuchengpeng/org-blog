@@ -1,7 +1,6 @@
 #+TITLE: What is REST
 #+AUTHOR: Chuck
 #+DATE: <2019-12-02 Mon 23:03>
-#+INCLUDE: ../org-macros.setup
 
 REST is acronym for REpresentational State Transfer. It is architectural style for *distributed hypermedia systems* and was first presented by Roy Fielding in 2000 in his famous [[https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm][dissertation]].
 
@@ -148,7 +147,5 @@ References:
 
 http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven
 https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm
-
-{{{post-meta}}}
 
 #+include: ../comments.inc

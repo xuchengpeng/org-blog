@@ -1,7 +1,6 @@
 #+TITLE: Emacs中Python开发
 #+AUTHOR: Chuck
 #+DATE: <2024-12-19 Thu 15:57>
-#+INCLUDE: ../org-macros.setup
 
 在Emacs中开发Python的指南，包含虚拟环境、LSP、Python项目配置、Emacs工程配置。
 
@@ -59,7 +58,5 @@ line-length = 120
                       (python-shell-interpreter . "python")
                       (python-shell-virtualenv-root . "/path/to/project/.venv/"))))
 #+end_src
-
-{{{post-meta}}}
 
 #+include: ../comments.inc

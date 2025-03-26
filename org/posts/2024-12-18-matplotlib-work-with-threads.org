@@ -1,7 +1,6 @@
 #+TITLE: Matplotlib: Work with threads
 #+AUTHOR: Chuck
 #+DATE: <2024-12-18 Wed 15:55>
-#+INCLUDE: ../org-macros.setup
 
 Matplotlib is not thread-safe: in fact, there are known race conditions that affect certain artists. Hence, if you work with threads, it is your responsibility to set up the proper locks to serialize access to Matplotlib artists.
 
@@ -15,7 +14,5 @@ import matplotlib.pyplot as plt
 plt.savefig("1.jpg")
 plt.close()
 #+end_src
-
-{{{post-meta}}}
 
 #+include: ../comments.inc

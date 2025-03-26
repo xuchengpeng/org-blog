@@ -1,7 +1,6 @@
 #+TITLE: Emacs tokyonight-themes
 #+AUTHOR: Chuck
 #+DATE: <2024-02-01 Thu 08:28>
-#+INCLUDE: ../org-macros.setup
 
 #+begin_quote
 A clean dark Visual Studio Code theme that celebrates the lights of Downtown [[https://www.google.com/search?q=tokyo+night&newwindow=1&sxsrf=ACYBGNRiOGCstG_Xohb8CgG5UGwBRpMIQg:1571032079139&source=lnms&tbm=isch&sa=X&ved=0ahUKEwiayIfIhpvlAhUGmuAKHbfRDaIQ_AUIEigB&biw=1280&bih=666&dpr=2][Tokyo at night]].
@@ -38,7 +37,5 @@ For example, change the blue and cyan color for tokyonight-day-theme.
       '((blue . "#2e7de9")
         (cyan . "#007197")))
 #+end_src
-
-{{{post-meta}}}
 
 #+include: ../comments.inc

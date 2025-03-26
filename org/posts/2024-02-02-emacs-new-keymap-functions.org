@@ -1,7 +1,6 @@
 #+TITLE: Emacs New Keymap Functions
 #+AUTHOR: Chuck
 #+DATE: <2024-02-02 Fri 09:47>
-#+INCLUDE: ../org-macros.setup
 
 Emacs 29 comes with new functions for defining and manipulating keystrokes.
 
@@ -75,7 +74,5 @@ Here is the example, we can have =C-z= as a prefix, =C-z b= as a nested key maps
 (keymap-set global-map "C-z" test-prefix-map)
 #+end_src
 #+end_details
-
-{{{post-meta}}}
 
 #+include: ../comments.inc

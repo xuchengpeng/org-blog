@@ -1,7 +1,6 @@
 #+TITLE: Converting Between Symbols and Strings
 #+AUTHOR: Chuck
 #+DATE: <2024-01-30 Tue 11:55>
-#+INCLUDE: ../org-macros.setup
 
 Sometimes you might need to convert a symbol to string in Emacs Lisp. You start looking for functions like =symbol-to-string= and =string-to-symbol= but, they do not exist.
 
@@ -13,7 +12,5 @@ With Emacs Lisp, you can do it like this.
 (intern "some-symbol")
 ; ==> some-symbol
 #+end_src
-
-{{{post-meta}}}
 
 #+include: ../comments.inc

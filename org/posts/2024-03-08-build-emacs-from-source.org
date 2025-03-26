@@ -1,7 +1,6 @@
 #+TITLE: Build Emacs From Source
 #+AUTHOR: Chuck
 #+DATE: <2024-03-08 Fri 15:36>
-#+INCLUDE: ../org-macros.setup
 
 Windows 11 features [[https://docs.microsoft.com/en-us/windows/wsl/tutorials/gui-apps][built-in support for running Linux GUI applications]]. Emacs 29 has became a real GTK application, gone with the blurry fonts problem.
 
@@ -72,7 +71,5 @@ ln -sf /mnt/wslg/runtime-dir/wayland-* $XDG_RUNTIME_DIR/
 #+end_src
 
 Or use an autostart conf: https://github.com/viruscamp/wslg-links.
-
-{{{post-meta}}}
 
 #+include: ../comments.inc

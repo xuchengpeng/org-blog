@@ -1,7 +1,6 @@
 #+TITLE: Generate RSS For Blog
 #+AUTHOR: Chuck
 #+DATE: <2024-02-08 Thu 11:44>
-#+INCLUDE: ../org-macros.setup
 
 I'm not sure how many people still use RSS, but I still want to have a RSS feed for my blog though I don't use RSS myself either.
 
@@ -64,7 +63,5 @@ This blog is published by org, here is a trick to generate rss automatically.
     (message "dotemacs generate rss in %s" dotemacs-org-site-dir))
   (advice-add 'org-publish-project :after #'dotemacs-generate-rss))
 #+end_src
-
-{{{post-meta}}}
 
 #+include: ../comments.inc

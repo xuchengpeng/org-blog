@@ -271,6 +271,7 @@ td.org-center {
   font-family: var(--font-sans);
   display: flex;
   flex-wrap: nowrap;
+  gap: 1em;
   justify-content: space-between;
   align-items: center;
   border-bottom: 2px solid #e8e8e8;
@@ -304,9 +305,9 @@ td.org-center {
 .site-footer {
   font-family: var(--font-sans);
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.5em;
-  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 1em;
+  justify-content: space-between;
   align-items: center;
   border-top: 1px solid #e8e8e8;
   border-image: linear-gradient(to right, #147, #f66) 30 30;
@@ -394,14 +395,6 @@ aside {
   margin-left: 0.5em;
   float: right;
   border-left: 1px solid #585858;
-}
-
-.post-meta {
-  font-size: 0.95em;
-  line-height: 1.5em;
-  font-style: italic;
-  color: #585858;
-  margin: 1em auto;
 }
 
 /* Search box */

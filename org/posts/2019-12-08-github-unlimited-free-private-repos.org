@@ -1,7 +1,6 @@
 #+TITLE: GitHub: Announcing unlimited free private repos
 #+AUTHOR: Chuck
 #+DATE: <2019-12-08 Sun 23:03>
-#+INCLUDE: ../org-macros.setup
 
 [[https://github.com/][GitHub]] is announcing unlimited free private repos and unified Enterprise offering.
 
@@ -9,7 +8,5 @@
 - GitHub Enterprise is the new unified product for Enterprise Cloud (formerly GitHub Business Cloud) and Enterprise Server (formerly GitHub Enterprise). Organizations that want the flexibility to use GitHub in a cloud or self-hosted configuration can now access both at one per-seat price. And with GitHub Connect, these products can be securely linked, providing a hybrid option so developers can work seamlessly across both environments.
 
 [[https://github.com/pricing][Learn more]]
-
-{{{post-meta}}}
 
 #+include: ../comments.inc

@@ -1,7 +1,6 @@
 #+TITLE: 强大的Org Capture
 #+AUTHOR: Chuck
 #+DATE: <2024-01-05 Fri 08:41>
-#+INCLUDE: ../org-macros.setup
 
 Capture让你快速的保存笔记，并且让你的工作流中很少被打断。
 
@@ -116,7 +115,4 @@ Capture的配置比较复杂，主要是Capture templates。
 [fn:2] https://orgmode.org/manual/Template-elements.html
 [fn:3] https://orgmode.org/manual/Template-expansion.html
 
-{{{post-meta}}}
-
 #+include: ../comments.inc
-

@@ -1,7 +1,6 @@
 #+TITLE: Minify CSS and JavaScript
 #+AUTHOR: Chuck
 #+DATE: <2025-01-07 Tue 10:55>
-#+INCLUDE: ../org-macros.setup
 
 发布博客时，压缩[[https://developer.mozilla.org/zh-CN/docs/Web/CSS][CSS]]和[[https://developer.mozilla.org/zh-CN/docs/Web/JavaScript][JavaScript]]文件的大小，能提升网页的加载速度，这里介绍使用[[https://github.com/cssnano/cssnano][cssnano]]和[[https://github.com/terser/terser][Terser]]工具来压缩。
 
@@ -46,7 +45,5 @@ npm install --save-dev terser
 #+begin_src shell
 npx terser input.js -c -m -o output.js
 #+end_src
-
-{{{post-meta}}}
 
 #+include: ../comments.inc
