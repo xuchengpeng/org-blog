@@ -311,8 +311,8 @@ td.org-center {
   align-items: center;
   border-top: 1px solid #e8e8e8;
   border-image: linear-gradient(to right, #147, #f66) 30 30;
-  min-height: 44px;
-  font-size: 0.95em;
+  min-height: 50px;
+  font-size: 0.9em;
   line-height: 1.5em;
   color: var(--color-text);
 }
