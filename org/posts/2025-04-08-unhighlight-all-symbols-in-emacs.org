@@ -1,0 +1,9 @@
+#+TITLE: Emacs中去光亮所有符号
+#+AUTHOR: Chuck
+#+DATE: <2025-04-08 Tue 16:33>
+
+之前的文章介绍了如何在[[file:2025-02-26-emacs-highlight-symbol.org][Emacs中高亮符号]]，一般运行 ~M-x unhighlight-regexp~ 来选择其中一个符号去高亮。
+
+那么如何去高亮当前Buffer中所有的符号呢？方法是运行 ~C-u M-x unhighlight-regexp~ 。
+
+#+include: ../comments.inc

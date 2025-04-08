@@ -1,4 +1,4 @@
-#+TITLE: Emacs中符号高亮
+#+TITLE: Emacs中高亮符号
 #+AUTHOR: Chuck
 #+DATE: <2025-02-26 Wed 13:11>
 
