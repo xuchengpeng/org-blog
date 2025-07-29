@@ -114,11 +114,16 @@ a:hover {
   text-decoration: underline;
 }
 
-p {
-  margin: 1em 0;
+.content {
+  color: rgb(var(--content));
 }
 
-blockquote {
+.content a {
+  color: rgb(var(--link));
+  text-decoration: none;
+}
+
+.content blockquote {
   margin: 1em 0;
   padding-inline-start: 1em;
   border-inline-start: 3px solid rgb(var(--secondary));
@@ -132,7 +137,8 @@ code {
   padding: 0 0.2em;
   border: none;
   border-radius: 3px;
-  background-color: #f0f0f0;
+  color: rgb(var(--content));
+  background: rgb(var(--code-bg));
 }
 
 pre {
@@ -143,7 +149,7 @@ pre {
   margin: 1em 0;
   border: none;
   border-radius: 3px;
-  background-color: #f2f2f2;
+  background: rgb(var(--code-bg));
   overflow: hidden;
 }
 
@@ -154,8 +160,8 @@ pre:hover {
 pre:before {
   display: block;
   position: absolute;
-  color: #fff;
-  background-color: #b3b3b3;
+  color: rgb(var(--content));
+  background-color: rgb(var(--tertiary));
   font-size: 0.85em;
   line-height: 1.4em;
   top: 0;
@@ -204,11 +210,11 @@ thead {
 }
 
 table td + td, table th + th {
-  border-left: 1px solid gray;
+  border-left: 1px solid rgb(var(--border));
 }
 
 table tr {
-  border-top: 1px solid gray;
+  border-top: 1px solid rgb(var(--border));
 }
 
 th, td {
@@ -404,7 +410,7 @@ aside {
   padding-left: 0.5em;
   margin-left: 0.5em;
   float: right;
-  border-left: 1px solid #585858;
+  border-left: 1px solid rgb(var(--secondary));
 }
 
 #search-box input {
