@@ -1,5 +1,7 @@
 #+TITLE: Publishing Org-mode files to HTML
 #+AUTHOR: Chuck
+#+DESCRIPTION: This is a guide to describe how to publish Org mode files to HTML.
+#+KEYWORDS: Emacs, Org-mode
 #+DATE: <2019-12-01 Sun 23:03>
 
 #+BEGIN_QUOTE
@@ -81,6 +83,7 @@ Then run =org-publish-project= to generate html files to =~/blog/public= folder.
 
 * Update
 
+- 2025-07-29 Search with [[https://www.fusejs.io/][Fuse.js]].
 - 2025-03-08 Insert post-meta for blog post.
 - 2025-02-14 Don't use babel during export.
 - 2025-02-13 Change date style of post list.

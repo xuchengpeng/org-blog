@@ -34,7 +34,7 @@ jobs:
         run: |
           git clone --depth=1 https://github.com/xuchengpeng/.emacs.d.git $HOME/.emacs.d
           emacs --batch --load $HOME/.emacs.d/init.el --eval "(setq dotemacs-org-blog-dir \"$PWD\")" --eval "(org-publish \"blog\" t nil)"
-          python rss.py
+          python index.py
           npm run minify
       - name: Setup Pages
         uses: actions/configure-pages@v5

@@ -7,9 +7,9 @@
 Generate RSS and minify CSS/JavaScript/HTML after publishing:
 
 ```emacs-lisp
-(defun +org-generate-rss (project &optional force async)
+(defun +org-publish-project (project &optional force async)
   (let ((default-directory dotemacs-org-blog-dir))
-    (dotemacs-call-process "python" "rss.py")
+    (dotemacs-call-process "python" "index.py")
     (dotemacs-call-process "npm" "run" "minify")))
-(advice-add 'org-publish-project :after #+org-generate-rss)
+(advice-add 'org-publish-project :after #+org-publish-project)
 ```

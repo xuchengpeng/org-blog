@@ -3,13 +3,12 @@
 #+OPTIONS: toc:nil
 
 #+begin_export html
-<script async src="/js/search.js"></script>
-<div class="search">
-  <input type="text" class="search-input" placeholder="Searching..."/>
-  <span class="search-icon search-start"><img src="/img/search.svg" alt="&#x1F50D;&#xFE0E;" style="height: 1em;"/></span>
-  <span class="search-icon search-clear"><img src="/img/close.svg" alt="&#x2716;&#xFE0E;" style="height: 1em;"/></span>
-  <br>
-  <div class="search-results"></div>
+<div id="search-box">
+  <input id="search-input" autofocus placeholder="Searching..."
+         aria-label="search" type="search" autocomplete="off" maxlength="64">
+  <ul id="search-results" aria-label="search results"></ul>
 </div>
+<script defer src="https://cdn.jsdelivr.net/npm/fuse.js@7.1.0/dist/fuse.min.js"></script>
+<script defer src="/js/search.js"></script>
 #+end_export
 
