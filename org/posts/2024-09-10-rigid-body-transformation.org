@@ -42,4 +42,3 @@ T_{A}^{C} &= T_{B}^{C} \ast T_{A}^{B} \\
 \end{aligned}
 \end{split}
 
-#+include: ../comments.inc

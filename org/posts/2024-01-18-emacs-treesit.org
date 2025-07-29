@@ -134,4 +134,3 @@ Emacs内置了一些语言解析器，通过 =<LANGUAGE>-ts-mode= 可以打开tr
                                     (treesit-parser-create 'elisp))))
 #+end_src
 
-#+include: ../comments.inc

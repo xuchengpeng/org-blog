@@ -10,4 +10,3 @@ A collections of website archives where you can download MDict dictionaries.
 
 [[https://al.chirmyram.com/rep/Doc/%E6%AC%A7%E8%B7%AF%E8%AF%8D%E5%85%B8%E5%BA%93][chirmyram]]
 
-#+include: ../comments.inc

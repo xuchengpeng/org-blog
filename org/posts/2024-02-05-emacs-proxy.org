@@ -90,4 +90,3 @@ Disable socks proxy
 #+end_src
 #+end_details
 
-#+include: ../comments.inc

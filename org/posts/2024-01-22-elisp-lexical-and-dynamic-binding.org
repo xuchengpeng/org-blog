@@ -32,4 +32,3 @@
   (getx))   ;; ==> 2
 #+end_src
 
-#+include: ../comments.inc

@@ -15,4 +15,3 @@ For example, we can use [[https://github.com/mvdan/sh][shfmt]] to format shell s
     :args `("-i" ,(number-to-string sh-basic-offset))))
 #+end_src
 
-#+include: ../comments.inc

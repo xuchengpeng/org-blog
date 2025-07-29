@@ -35,4 +35,3 @@ llama.cpp还提供了 =llama-cli= 工具，可以直接在命令行中和模型�
     :models '(DeepSeek-R1))
 #+end_src
 
-#+include: ../comments.inc

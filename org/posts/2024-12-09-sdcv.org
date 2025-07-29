@@ -23,4 +23,3 @@ The [[https://github.com/jamescherti/quick-sdcv.el][quick-sdcv]] package serves 
     (keymap-set quick-sdcv-mode-map "q" #'quit-window))
 #+end_src
 
-#+include: ../comments.inc

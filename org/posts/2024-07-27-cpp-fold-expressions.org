@@ -83,4 +83,3 @@ void print_val_left_b(T... args)
 print_val_left_b(10, "abc", 30, "def");  // 10abc30def
 #+end_src
 
-#+include: ../comments.inc

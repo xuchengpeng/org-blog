@@ -27,4 +27,3 @@ James Cherti介绍了[[https://www.jamescherti.com/emacs-highlight-keywords-like
   (add-hook 'prog-mode-hook #'+highlight-keywords-mode)
 #+end_src
 
-#+include: ../comments.inc

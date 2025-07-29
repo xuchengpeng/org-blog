@@ -131,4 +131,3 @@ cp -v /mingw64/bin/zlib*.dll ${install_dir}/lib/gcc
 #+end_src
 #+end_details
 
-#+include: ../comments.inc

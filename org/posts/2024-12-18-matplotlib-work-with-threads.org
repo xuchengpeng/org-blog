@@ -15,4 +15,3 @@ plt.savefig("1.jpg")
 plt.close()
 #+end_src
 
-#+include: ../comments.inc

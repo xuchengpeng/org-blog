@@ -87,4 +87,3 @@ Org导出HTML的时候，ID是通过 =org-export-get-reference= 生成的，并�
 #+end_src
 #+end_details
 
-#+include: ../comments.inc

@@ -55,4 +55,3 @@ export default App
 
 You may run =npm run build= to build the app, and run =npm run preview= to test it.
 
-#+include: ../comments.inc

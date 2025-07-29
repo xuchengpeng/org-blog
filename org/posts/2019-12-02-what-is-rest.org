@@ -148,4 +148,3 @@ References:
 http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven
 https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm
 
-#+include: ../comments.inc

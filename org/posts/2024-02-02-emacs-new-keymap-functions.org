@@ -75,4 +75,3 @@ Here is the example, we can have =C-z= as a prefix, =C-z b= as a nested key maps
 #+end_src
 #+end_details
 
-#+include: ../comments.inc

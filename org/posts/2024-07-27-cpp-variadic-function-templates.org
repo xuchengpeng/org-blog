@@ -63,4 +63,3 @@ void myfunc(int arg)
 
 一般来讲，当调用一个普通函数和调用实例化后的函数模板都合适的时候，编译器会优先选择普通函数。
 
-#+include: ../comments.inc

@@ -31,4 +31,3 @@
   
   去高亮当前Buffer中所有的已高亮符号。
 
-#+include: ../comments.inc

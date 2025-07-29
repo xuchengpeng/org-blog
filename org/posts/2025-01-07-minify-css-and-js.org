@@ -46,4 +46,3 @@ npm install --save-dev terser
 npx terser input.js -c -m -o output.js
 #+end_src
 
-#+include: ../comments.inc

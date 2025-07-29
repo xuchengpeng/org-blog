@@ -9,4 +9,3 @@
 
 [[https://github.com/pricing][Learn more]]
 
-#+include: ../comments.inc

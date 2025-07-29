@@ -78,4 +78,3 @@ Emacs将使用它能找到的最终 =major mode= 定义，所以在旧的Emacs�
 [fn:1] Local Variables: https://www.gnu.org/software/emacs/manual/html_node/emacs/Variables.html
 [fn:2] Safety of File Variables: https://www.gnu.org/software/emacs/manual/html_node/emacs/Safe-File-Variables.html
 
-#+include: ../comments.inc

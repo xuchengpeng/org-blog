@@ -22,4 +22,3 @@ Here I make a helper function to adjust transparency.
 (keymap-global-set "C-M-0" (lambda () (interactive) (set-frame-parameter nil 'alpha-background 100)))
 #+end_src
 
-#+include: ../comments.inc

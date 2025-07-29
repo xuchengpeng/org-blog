@@ -23,4 +23,3 @@ We can also customize =ring-bell-function= to just flash the modeline.
       visible-bell t)
 #+end_src
 
-#+include: ../comments.inc

@@ -21,4 +21,3 @@
 
 自动切换主题的包：[[https://github.com/guidoschmidt/circadian.el][circadian.el]]
 
-#+include: ../comments.inc

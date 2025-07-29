@@ -64,4 +64,3 @@ This blog is published by org, here is a trick to generate rss automatically.
   (advice-add 'org-publish-project :after #'dotemacs-generate-rss))
 #+end_src
 
-#+include: ../comments.inc

@@ -72,4 +72,3 @@ ln -sf /mnt/wslg/runtime-dir/wayland-* $XDG_RUNTIME_DIR/
 
 Or use an autostart conf: https://github.com/viruscamp/wslg-links.
 
-#+include: ../comments.inc

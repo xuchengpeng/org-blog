@@ -313,4 +313,3 @@ By default, ~DONE~ actions will be collapsed.
 
 [fn:2] footnotes 2
 
-#+include: ../comments.inc

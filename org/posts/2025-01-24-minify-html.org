@@ -45,4 +45,3 @@ htmlnano支持一些预设值：
 npx posthtml -c posthtmlrc.json
 #+end_src
 
-#+include: ../comments.inc

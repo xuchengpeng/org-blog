@@ -12,4 +12,3 @@ For example, change the font of all org mode buffers when openning:
 
 The argument should be a face name or a property list of face attributes and values. If more than one face is listed, that specifies an aggregate face, like in a face text property. Font face attributes are family, height, weight, slant, etc.
 
-#+include: ../comments.inc

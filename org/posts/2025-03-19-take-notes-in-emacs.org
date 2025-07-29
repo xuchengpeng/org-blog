@@ -67,4 +67,3 @@ Denote is a simple note-taking tool for Emacs. It is based on the idea that note
 
 这里的笔记文件查找和内容搜索我直接简单封装了两个函数，还可以直接使用大佬提供的[[https://github.com/protesilaos/consult-denote][consult-denote]]包。
 
-#+include: ../comments.inc

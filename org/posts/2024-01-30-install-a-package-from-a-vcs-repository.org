@@ -22,4 +22,3 @@ By default, this function installs the last revision of the package available fr
 
 Optional argument =BACKEND= specifies the VC backend to use for cloning the package's repository. If =BACKEND= is nil, the function uses =package-vc-heuristic-alist= to guess the backend.
 
-#+include: ../comments.inc

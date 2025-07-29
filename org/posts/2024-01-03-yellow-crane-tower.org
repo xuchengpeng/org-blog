@@ -22,5 +22,4 @@
 #+end_verse
 #+end_center
 
-#+include: ../comments.inc
 

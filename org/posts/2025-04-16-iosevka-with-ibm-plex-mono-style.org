@@ -43,4 +43,3 @@ css = "normal"
 
 构建完成后，字体文件保存在 ~dist~ 目录下。
 
-#+include: ../comments.inc

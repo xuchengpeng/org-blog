@@ -115,4 +115,3 @@ Capture的配置比较复杂，主要是Capture templates。
 [fn:2] https://orgmode.org/manual/Template-elements.html
 [fn:3] https://orgmode.org/manual/Template-expansion.html
 
-#+include: ../comments.inc

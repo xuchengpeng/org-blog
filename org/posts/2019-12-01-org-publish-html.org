@@ -140,4 +140,3 @@ More examples
 - https://nicolas.petton.fr/blog/blogging-with-org-mode.html
 #+end_details
 
-#+include: ../comments.inc

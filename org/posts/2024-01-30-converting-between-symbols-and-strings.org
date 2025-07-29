@@ -13,4 +13,3 @@ With Emacs Lisp, you can do it like this.
 ; ==> some-symbol
 #+end_src
 
-#+include: ../comments.inc

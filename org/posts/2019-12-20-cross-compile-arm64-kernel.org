@@ -31,4 +31,3 @@ make -j8 ARCH=arm64 CROSS_COMPILE=~/gcc-linaro-7.3.1-2018.05-x86_64_aarch64-linu
 代码根目录下会生成 =vmlinux= ， =arch/arm64/boot= 目录下会生成 =Image= 和
 =Image.gz= 。
 
-#+include: ../comments.inc

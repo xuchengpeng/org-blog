@@ -20,4 +20,3 @@
 
 Mickey Petersen之前也在Mastering Emacs介绍了[[https://www.masteringemacs.org/article/highlighting-by-word-line-regexp][单词/句子/正则表达式匹配高亮]]的使用方法，Emacs已内置了快捷键来快速使用这些功能，这些功能也是hi-lock包提供的。
 
-#+include: ../comments.inc

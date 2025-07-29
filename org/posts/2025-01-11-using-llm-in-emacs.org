@@ -41,4 +41,3 @@ gptel的 ~:key~ 属性支持设置为一个函数来返回key，另外一种通�
         gptel-use-curl nil)
 #+end_src
 
-#+include: ../comments.inc

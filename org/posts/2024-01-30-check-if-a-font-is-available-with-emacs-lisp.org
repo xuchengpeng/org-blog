@@ -16,4 +16,3 @@ Before setting a font, we can check with this helper function.
   (set-face-attribute 'default nil :font (font-spec :family "Fira Code" :size 17)))
 #+end_src
 
-#+include: ../comments.inc

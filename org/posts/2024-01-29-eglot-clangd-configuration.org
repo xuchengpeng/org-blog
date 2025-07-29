@@ -40,4 +40,3 @@ CompileFlags:
 [fn:1] 内置支持的LSP服务端参见eglot-server-programs参数。
 [fn:2] [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Directory-Variables.html][Per-Directory Local Variables]]
 
-#+include: ../comments.inc

@@ -26,4 +26,3 @@
 
 然后，就可以愉快的写作啦！
 
-#+include: ../comments.inc

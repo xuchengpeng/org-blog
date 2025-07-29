@@ -16,4 +16,3 @@
            "#+TITLE: \n#+AUTHOR: \n#+DATE: %T\n" :jump-to-captured t)))
 #+end_src
 
-#+include: ../comments.inc

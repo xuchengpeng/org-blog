@@ -22,4 +22,3 @@
 阁中帝子今何在？槛外长江空自流。
 #+end_verse
 
-#+include: ../comments.inc

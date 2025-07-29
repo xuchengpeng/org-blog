@@ -17,4 +17,3 @@
       (replace-match ""))))
 #+end_src
 
-#+include: ../comments.inc

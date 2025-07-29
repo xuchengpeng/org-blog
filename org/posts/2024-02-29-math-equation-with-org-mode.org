@@ -40,4 +40,3 @@ Here comes with some complex examples.
   \nabla \cdot \vec{\mathbf{B}} & = 0
 \end{eqnarray}
 
-#+include: ../comments.inc

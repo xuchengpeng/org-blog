@@ -57,4 +57,3 @@
 
 默认设置为 =alphabetically= ，按字母排序；还可以设置为 =chronologically= 或 =anti-chronologically= 按照日期或者日期逆序排序，日期通过 =org-publish-find-date= 获取。
 
-#+include: ../comments.inc

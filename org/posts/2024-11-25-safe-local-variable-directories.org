@@ -10,4 +10,3 @@ The names of the directories in the list must be absolute, and must end in a sla
 
 Remote directories can be included if the variable =enable-remote-dir-locals= is non-nil.
 
-#+include: ../comments.inc

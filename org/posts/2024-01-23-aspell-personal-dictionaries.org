@@ -22,4 +22,3 @@ Aspell除了可以安装官方提供的字典外，还可以自定义字典。
 
 第二部分为单词替换列表，一对替换组合占用一行，格式如： =misspelled_word correction= 。
 
-#+include: ../comments.inc

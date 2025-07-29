@@ -38,4 +38,3 @@ For example, change the blue and cyan color for tokyonight-day-theme.
         (cyan . "#007197")))
 #+end_src
 
-#+include: ../comments.inc
