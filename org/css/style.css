@@ -7,6 +7,9 @@
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   font-family: var(--font-serif);
   font-weight: 400;
   font-size: 18px;
@@ -17,6 +20,7 @@ body {
 }
 
 main {
+  flex: auto;
   padding: 1em 0;
 }
 
@@ -597,15 +601,15 @@ pre.src-json::before { content: "Json"; }
   color: #147;
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1400px) {
   #table-of-contents {
     position: fixed;
     font-size: 0.95em;
     line-height: 1.5em;
     width: calc(((100vw - 900px) / 2) - 60px);
-    height: 70vh;
+    height: 80vh;
     right: 0;
-    top: 15vh;
+    top: 10vh;
     overflow: hidden;
   }
 
