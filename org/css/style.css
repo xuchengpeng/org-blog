@@ -314,20 +314,16 @@ figcaption {
 }
 
 ::-webkit-scrollbar {
-  height: 8px;
   width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #fff;
+  background: rgba(var(--secondary), 0.2);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #c0c0c0;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #666;
+  background: rgba(var(--secondary), 0.5);
 }
 
 .site-header {
@@ -709,7 +705,7 @@ aside {
     position: fixed;
     font-size: 0.95em;
     line-height: 1.5em;
-    width: calc(((100vw - 900px) / 2) - 60px);
+    width: calc(((100vw - var(--main-width)) / 2) - 60px);
     height: 80vh;
     right: 0;
     top: 10vh;
