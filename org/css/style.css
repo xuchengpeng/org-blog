@@ -2,6 +2,7 @@
   --font-sans: Montserrat, "Noto Sans SC", sans-serif;
   --font-serif: Merriweather, "LXGW WenKai", "Noto Serif SC", serif;
   --font-mono: "Courier New", monospace;
+  --main-width: 900px;
   --radius: 4px;
   --theme: 255, 255, 255;
   --primary: 15, 23, 42;
@@ -13,6 +14,12 @@
   --link: 37, 99, 235;
 }
 
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -21,14 +28,7 @@ body {
   font-weight: 400;
   font-size: 18px;
   line-height: 1.5em;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0 0.5em;
-}
-
-main {
-  flex: auto;
-  padding: 1em 0;
+  margin: 0;
 }
 
 .title {
@@ -108,14 +108,18 @@ h6 {
 a {
   color: rgb(var(--link));
   text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .content {
+  flex: auto;
   color: rgb(var(--content));
+  max-width: var(--main-width);
+  width: 100%;
+  margin: 0 auto;
+  padding: 1em;
 }
 
 .content a {
@@ -128,6 +132,10 @@ a:hover {
   padding-inline-start: 1em;
   border-inline-start: 3px solid rgb(var(--secondary));
   font-style: italic;
+}
+
+.org-src-container, pre {
+  position: relative;
 }
 
 code {
@@ -151,24 +159,34 @@ pre {
   border-radius: 3px;
   background: rgb(var(--code-bg));
   overflow: hidden;
+
+  &:hover {
+    overflow: auto;
+  }
 }
 
-pre:hover {
-  overflow: auto;
-}
-
-pre:before {
-  display: block;
+.copy-code {
+  visibility: hidden;
   position: absolute;
-  color: rgb(var(--content));
-  background-color: rgb(var(--tertiary));
-  font-size: 0.85em;
-  line-height: 1.4em;
   top: 0;
   right: 0;
-  padding: 0 .5em;
-  border-bottom-left-radius: 8px;
-  border: 0;
+  z-index: 10;
+  cursor: pointer;
+  border: 0 solid;
+  border-top-right-radius: var(--radius);
+  border-bottom-left-radius: var(--radius);
+  color: rgb(var(--content));
+  background-color: rgb(var(--tertiary));
+  font-family: var(--font-mono);
+  font-size: 0.8em;
+  line-height: 1.5;
+  padding-block: 0.2em;
+  width: 6em;
+  user-select: none;
+}
+
+:is(.org-src-container:hover, pre:hover) .copy-code {
+  visibility: visible;
 }
 
 figure {
@@ -302,28 +320,31 @@ figcaption {
   border-image: linear-gradient(to right, #147, #f66) 30 30;
   min-height: 55px;
   position: relative;
-}
+  max-width: var(--main-width);
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+  padding: 0 1em;
 
-.site-title,
-.site-title:visited {
-  font-weight: bold;
-  font-size: 2em;
-  line-height: 1.5em;
-  color: rgb(var(--primary));
-}
+  & .site-title {
+    font-weight: bold;
+    font-size: 2em;
+    line-height: 1.5em;
+    color: rgb(var(--primary));
+  }
 
-.site-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1em;
-  justify-content: center;
-  align-items: center;
-  font-size: 1em;
-  line-height: 1.5em;
-}
+  & .site-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: center;
+    align-items: center;
+    font-size: 1em;
+    line-height: 1.5em;
 
-.site-nav a {
-  color: rgb(var(--primary));
+    & a {
+      color: rgb(var(--primary));
+    }
+  }
 }
 
 .site-footer {
@@ -338,7 +359,19 @@ figcaption {
   min-height: 50px;
   font-size: 0.9em;
   line-height: 1.5em;
-  color: rgb(var(--primary));
+  max-width: var(--main-width);
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+  padding: 1em;
+  color: rgb(var(--secondary));
+
+  & a {
+    color: inherit;
+
+    &:hover {
+      color: rgb(var(--link));
+    }
+  }
 }
 
 .top-link {
@@ -480,10 +513,6 @@ aside {
   }
 }
 
-.org-src-container {
-  position: relative;
-}
-
 .org-builtin { color: #8f0075; }
 .org-comment { color: #595959; }
 .org-comment-delimiter { color: #595959; }
@@ -511,74 +540,6 @@ aside {
 .org-regexp-grouping-construct { color: #00663f; }
 .org-tex-math { color: #3548cf; }
 .org-tex-verbatim { color: #8f0075; }
-
-pre.src-bash:before { content: "Bash"; }
-pre.src-emacs-lisp:before { content: "Emacs Lisp"; }
-pre.src-R:before { content: "R"; }
-pre.src-cpp:before { content: "C++"; }
-pre.src-c:before { content: "C"; }
-pre.src-C:before { content: "C"; }
-pre.src-html:before { content: "HTML"; }
-pre.src-javascript:before, pre.src-js:before { content: "Javascript"; }
-pre.src-abc:before { content: "ABC"; }
-pre.src-asymptote:before { content: "Asymptote"; }
-pre.src-awk:before { content: "Awk"; }
-pre.src-calc:before { content: "Calc"; }
-pre.src-clojure:before { content: "Clojure"; }
-pre.src-comint:before { content: "Comint"; }
-pre.src-css:before { content: "CSS"; }
-pre.src-D:before { content: "D"; }
-pre.src-ditaa:before { content: "Ditaa"; }
-pre.src-dot:before { content: "Dot"; }
-pre.src-ebnf:before { content: "EBNF"; }
-pre.src-forth:before { content: "Forth"; }
-pre.src-fortran:before { content: "Fortran"; }
-pre.src-go:before { content: "Go"; }
-pre.src-gnuplot:before { content: "Gnuplot"; }
-pre.src-haskell:before { content: "Haskell"; }
-pre.src-io:before { content: "Io"; }
-pre.src-java:before { content: "Java"; }
-pre.src-latex:before { content: "LaTeX"; }
-pre.src-ledger:before { content: "Ledger"; }
-pre.src-lilypond:before { content: "Lilypond"; }
-pre.src-lisp:before { content: "Lisp"; }
-pre.src-makefile:before { content: "Make"; }
-pre.src-matlab:before { content: "Matlab"; }
-pre.src-maxima:before { content: "Maxima"; }
-pre.src-mscgen:before { content: "Mscgen"; }
-pre.src-caml:before { content: "Caml"; }
-pre.src-octave:before { content: "Octave"; }
-pre.src-org:before { content: "Org"; }
-pre.src-perl:before { content: "Perl"; }
-pre.src-picolisp:before { content: "Picolisp"; }
-pre.src-plantuml:before { content: "PlantUML"; }
-pre.src-python:before { content: "Python"; }
-pre.src-ruby:before { content: "Ruby"; }
-pre.src-sass:before { content: "Sass"; }
-pre.src-scala:before { content: "Scala"; }
-pre.src-scheme:before { content: "Scheme"; }
-pre.src-screen:before { content: "Screen"; }
-pre.src-sed:before { content: "Sed"; }
-pre.src-sh:before { content: "Shell"; }
-pre.src-shell:before { content: "Shell"; }
-pre.src-shen:before { content: "Shen"; }
-pre.src-sql:before { content: "SQL"; }
-pre.src-sqlite:before { content: "SQLite"; }
-pre.src-stan:before { content: "Stan"; }
-pre.src-vala:before { content: "Vala"; }
-pre.src-axiom:before { content: "Axiom"; }
-pre.src-browser:before { content: "HTML"; }
-pre.src-cypher:before { content: "Cypher"; }
-pre.src-elixir:before { content: "Elixir"; }
-pre.src-ipython:before { content: "IPython"; }
-pre.src-kotlin:before { content: "Kotlin"; }
-pre.src-mongo:before { content: "MongoDB"; }
-pre.src-prolog:before { content: "Prolog"; }
-pre.src-typescript:before, pre.src-tsx:before { content: "Typescript"; }
-pre.src-rust:before { content: "Rust"; }
-pre.src-toml:before { content: "Toml"; }
-pre.src-yaml:before { content: "Yaml"; }
-pre.src-json::before { content: "Json"; }
 
 @media screen and (max-width: 600px) {
   body {
