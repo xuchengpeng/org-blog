@@ -4,6 +4,8 @@
   "output": "public",
   "allInOutput": true,
   "plugins": {
-    "htmlnano": {}
+    "htmlnano": {
+      "minifySvg": false
+    }
   }
 }

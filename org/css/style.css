@@ -14,10 +14,34 @@
   --link: 37, 99, 235;
 }
 
+.dark {
+  --theme: 30, 41, 59;
+  --primary: 255, 255, 255;
+  --secondary: 148, 163, 184;
+  --tertiary: 100, 116, 139;
+  --content: 203, 213, 225;
+  --code-bg: 51, 65, 85;
+  --border: 71, 85, 105;
+  --link: 96, 165, 250;
+}
+
 *,
 ::after,
 ::before {
   box-sizing: border-box;
+}
+
+html {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
+}
+
+html.dark svg#moon {
+  display: none;
+}
+
+html:not(.dark) svg#sun {
+  display: none;
 }
 
 body {
@@ -28,6 +52,7 @@ body {
   font-weight: 400;
   font-size: 18px;
   line-height: 1.5em;
+  color: rgb(var(--primary));
   background: rgb(var(--theme));
   margin: 0;
 }
@@ -258,18 +283,6 @@ img {
     padding: 0.5em 0.3em;
     border: 1px solid rgb(var(--border));
   }
-
-  & .org-left {
-    text-align: left;
-  }
-
-  & .org-center {
-    text-align: center;
-  }
-
-  & .org-right {
-    text-align: right;
-  }
 }
 
 caption.t-above {
@@ -288,9 +301,16 @@ figcaption {
   margin-top: 0.3em;
 }
 
+.org-left {
+  text-align: left;
+}
+
 .org-center {
   text-align: center;
-  margin: 1em 0;
+}
+
+.org-right {
+  text-align: right;
 }
 
 ::-webkit-scrollbar {
@@ -318,8 +338,6 @@ figcaption {
   line-height: 3em;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 2px solid #e8e8e8;
-  border-image: linear-gradient(to right, #147, #f66) 30 30;
   position: relative;
   max-width: var(--main-width);
   margin-inline-start: auto;
@@ -331,6 +349,10 @@ figcaption {
     font-size: 2em;
     line-height: 1.5em;
     color: rgb(var(--primary));
+
+    &:hover {
+      text-decoration-color: rgb(var(--link));
+    }
   }
 
   & .site-nav {
@@ -366,6 +388,7 @@ figcaption {
       background: 0 0;
       border: 0;
       cursor: pointer;
+      color: rgb(var(--primary));
 
       &:hover {
         color: rgb(var(--link));
@@ -454,7 +477,7 @@ figcaption {
   padding: 0.3em 0.3em;
   float: right;
   margin-right: 0.5em;
-  border: 1px solid #bbb;
+  border: 1px solid rgb(var(--border));
   border-radius: 3px;
   background-clip: padding-box;
   color: #333;
@@ -536,33 +559,90 @@ aside {
   }
 }
 
-.org-builtin { color: #8f0075; }
-.org-comment { color: #595959; }
-.org-comment-delimiter { color: #595959; }
-.org-constant { color: #0000b0; }
-.org-c-annotation { color: #0000b0; }
-.org-doc { color: #2a5045; }
-.org-error { color: #a60000; }
-.org-function-name { color: #721045; }
-.org-keyword { color: #531ab6; }
-.org-operator { color: #000000; }
-.org-preprocessor { color: #a0132f; }
-.org-string { color: #3548cf; }
-.org-type { color: #005f5f; }
-.org-variable-name { color: #005e8b; }
-.org-warning { color: #884900; }
-.org-warning-1 { color: #884900; }
-.org-css-property { color: #531ab6; }
-.org-css-selector { color: #721045; }
-.org-sgml-namespace { color: #8f0075; }
-.org-sh-escaped-newline { color: #3548cf; }
-.org-sh-heredoc { color: #3548cf; }
-.org-sh-quoted-exec { color: #8f0075; }
-.org-regexp { color: #3548cf; }
-.org-regexp-grouping-backslash { color: #721045;}
-.org-regexp-grouping-construct { color: #00663f; }
-.org-tex-math { color: #3548cf; }
-.org-tex-verbatim { color: #8f0075; }
+.org-builtin, .org-sgml-namespace, .org-sh-quoted-exec, .org-tex-verbatim {
+  color: #8f0075;
+  &:is(.dark *) {
+    color: #f78fe7;
+  }
+}
+.org-comment, .org-comment-delimiter {
+  color: #595959;
+  &:is(.dark *) {
+    color: #989898;
+  }
+}
+.org-constant, .org-c-annotation {
+  color: #0000b0;
+  &:is(.dark *) {
+    color: #00bcff;
+  }
+}
+.org-doc {
+  color: #2a5045;
+  &:is(.dark *) {
+    color: #9ac8e0;
+  }
+}
+.org-error {
+  color: #a60000;
+  &:is(.dark *) {
+    color: #ff5f59;
+  }
+}
+.org-function-name, .org-css-selector, .org-regexp-grouping-backslash {
+  color: #721045;
+  &:is(.dark *) {
+    color: #feacd0;
+  }
+}
+.org-keyword, .org-css-property {
+  color: #531ab6;
+  &:is(.dark *) {
+    color: #b6a0ff;
+  }
+}
+.org-operator {
+  color: #000000;
+  &:is(.dark *) {
+    color: #ffffff;
+  }
+}
+.org-preprocessor {
+  color: #a0132f;
+  &:is(.dark *) {
+    color: #ff7f86;
+  }
+}
+.org-string, .org-sh-escaped-newline, .org-sh-heredoc, .org-regexp, .org-tex-math {
+  color: #3548cf;
+  &:is(.dark *) {
+    color: #79a8ff;
+  }
+}
+.org-type {
+  color: #005f5f;
+  &:is(.dark *) {
+    color: #6ae4b9;
+  }
+}
+.org-variable-name {
+  color: #005e8b;
+  &:is(.dark *) {
+    color: #00d3d0;
+  }
+}
+.org-warning, .org-warning-1 {
+  color: #884900;
+  &:is(.dark *) {
+    color: #fec43f;
+  }
+}
+.org-regexp-grouping-construct {
+  color: #00663f;
+  &:is(.dark *) {
+    color: #00c06f;
+  }
+}
 
 @media screen and (max-width: 600px) {
   body {
