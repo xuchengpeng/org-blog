@@ -28,6 +28,7 @@ body {
   font-weight: 400;
   font-size: 18px;
   line-height: 1.5em;
+  background: rgb(var(--theme));
   margin: 0;
 }
 
@@ -314,11 +315,11 @@ figcaption {
   display: flex;
   flex-wrap: nowrap;
   gap: 1em;
+  line-height: 3em;
   justify-content: space-between;
   align-items: center;
   border-bottom: 2px solid #e8e8e8;
   border-image: linear-gradient(to right, #147, #f66) 30 30;
-  min-height: 55px;
   position: relative;
   max-width: var(--main-width);
   margin-inline-start: auto;
@@ -341,8 +342,34 @@ figcaption {
     font-size: 1em;
     line-height: 1.5em;
 
-    & a {
-      color: rgb(var(--primary));
+    & .main-menu {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 1em;
+
+      & a {
+        color: rgb(var(--primary));
+        text-decoration: none;
+        &:hover {
+          color: rgb(var(--link));
+        }
+      }
+    }
+
+    & button {
+      font-size: 1em;
+      line-height: 1;
+      margin: 0;
+      padding: 0;
+      background: 0 0;
+      border: 0;
+      cursor: pointer;
+
+      &:hover {
+        color: rgb(var(--link));
+      }
     }
   }
 }
@@ -354,11 +381,7 @@ figcaption {
   gap: 1em;
   justify-content: space-between;
   align-items: center;
-  border-top: 1px solid #e8e8e8;
-  border-image: linear-gradient(to right, #147, #f66) 30 30;
-  min-height: 50px;
-  font-size: 0.9em;
-  line-height: 1.5em;
+  font-size: smaller;
   max-width: var(--main-width);
   margin-inline-start: auto;
   margin-inline-end: auto;
