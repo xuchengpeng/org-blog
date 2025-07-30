@@ -1,0 +1,18 @@
+#+TITLE: CSS Combinators
+#+AUTHOR: Chuck
+#+DESCRIPTION: A combinator is a sign that explains the relationship between selectors.
+#+KEYWORDS: Web, CSS
+#+DATE: <2025-05-17 Sat 16:20>
+
+A combinator is a sign that explains the relationship between selectors.
+
+The table below shows the different combinators in CSS:
+
+| Name                          | Sign           | Example     | Example description                                                           |
+|-------------------------------+----------------+-------------+-------------------------------------------------------------------------------|
+| Child combinator              | >              | div > p     | Selects every <p> element that are direct children of a <div> element         |
+| Descendant combinator         | (single space) | div p       | Selects all <p> elements inside <div> elements                                |
+| Namespace separator           | \vert          | ns \vert h2 | Selects all <h2> elements in namespace ns                                     |
+| Next-sibling combinator       | +              | div + p     | Selects the first <p> element that is placed immediately after <div> elements |
+| Selector list                 | ,              | div, p      | Selects all <div> elements and all <p> elements                               |
+| Subsequent-sibling combinator | ~              | p ~ ul      | Selects all <ul> elements that are preceded by a <p> element                  |
