@@ -608,9 +608,13 @@ pre.src-json::before { content: "Json"; }
 
   & a {
     color: rgb(var(--content));
-
+    text-decoration: none;
     &:hover {
       color: rgb(var(--link));
+    }
+    &.active {
+      color: rgb(var(--link));
+      font-weight: bold;
     }
   }
 
