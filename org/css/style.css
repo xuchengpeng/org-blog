@@ -171,10 +171,6 @@ pre:before {
   border: 0;
 }
 
-dt {
-  font-weight: bold;
-}
-
 figure {
   margin: 1em auto;
   padding: 0;
@@ -194,6 +190,34 @@ img {
     & > p {
       display: inline;
     }
+  }
+}
+
+.content {
+  & ul, & ol {
+    margin: 1em 0;
+    padding-inline-start: 1.5em;
+  }
+
+  & li {
+    margin: 0.5em 0;
+  }
+
+  & ul ul, & ul ol, & ol ul, & ol ol {
+    margin: 0.75em 0;
+  }
+
+  & dl {
+    margin: 1em 0;
+  }
+
+  & dt {
+    color: rgb(var(--primary));
+    font-weight: bold;
+  }
+
+  & dd {
+    margin-inline-start: 1.5em;
   }
 }
 
@@ -566,14 +590,46 @@ pre.src-json::before { content: "Json"; }
 #table-of-contents {
   font-size: 1em;
   line-height: 1.5em;
-}
+  margin: 1em 0;
 
-#table-of-contents a {
-  color: #111;
-}
+  h2 {
+    font-size: 1.2em;
+  }
 
-#table-of-contents a:hover {
-  color: #147;
+  & #text-table-of-contents {
+    font-size: 0.875em;
+    padding: 1em 0 1em 1em;
+    border-left: 1px dotted rgb(var(--border));
+  }
+
+  & a {
+    color: rgb(var(--content));
+
+    &:hover {
+      color: rgb(var(--link));
+    }
+  }
+
+  & ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  & li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  & ul ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  & li ul {
+    margin-inline-start: 1em;
+  }
 }
 
 @media screen and (min-width: 1400px) {
@@ -586,19 +642,9 @@ pre.src-json::before { content: "Json"; }
     right: 0;
     top: 10vh;
     overflow: hidden;
-  }
 
-  #table-of-contents:hover {
-    overflow: auto;
-  }
-
-  #table-of-contents #text-table-of-contents {
-    padding: 0.1em 0;
-    border-left: 1px dotted #585858;
-  }
-
-  #table-of-contents ul {
-    list-style: none;
-    padding-inline-start: 1em;
+    &:hover {
+      overflow: auto;
+    }
   }
 }
