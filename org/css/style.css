@@ -350,9 +350,13 @@ figcaption {
   border-radius: 64px;
   padding: 12px;
   line-height: 0;
-  color: #222;
-  background: #dedede;
+  color: rgb(var(--secondary));
+  background: rgb(var(--tertiary));
   transition: visibility .5s, opacity .8s linear;
+
+  &:hover {
+    color: rgb(var(--primary));
+  }
 }
 
 /* GTD Style */
