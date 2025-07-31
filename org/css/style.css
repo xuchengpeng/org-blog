@@ -51,7 +51,7 @@ body {
   font-family: var(--font-serif);
   font-weight: 400;
   font-size: 18px;
-  line-height: 1.5em;
+  line-height: 1.5;
   color: rgb(var(--primary));
   background: rgb(var(--theme));
   margin: 0;
@@ -61,20 +61,18 @@ body {
   font-family: var(--font-sans);
   font-size: 2em;
   font-weight: bold;
-  line-height: 1.5em;
-  margin-top: 1em;
-  margin-bottom: 0.6em;
-  padding: 0;
+  line-height: 1.5;
+  margin-top: 1.5em;
+  margin-bottom: 0.8em;
 }
 
 .subtitle {
   font-family: var(--font-sans);
   font-size: 1.2em;
   font-weight: bold;
-  line-height: 1.5em;
-  margin-top: 1em;
-  margin-bottom: 1em;
-  padding: 0;
+  line-height: 1.5;
+  margin-top: 1.5em;
+  margin-bottom: 0.7em;
 }
 
 :is(h1, h2, h3, h4, h5, h6) {
@@ -148,7 +146,7 @@ a {
 code {
   font-family: var(--font-mono);
   font-size: 0.95em;
-  line-height: 1.5em;
+  line-height: 1.5;
   padding: 0 0.2em;
   border: none;
   border-radius: 3px;
@@ -159,7 +157,7 @@ code {
 pre {
   font-family: var(--font-mono);
   font-size: 0.95em;
-  line-height: 1.5em;
+  line-height: 1.5;
   padding: 1em;
   margin: 1em 0;
   border: none;
@@ -323,7 +321,7 @@ figcaption {
 
   & .site-title {
     font-size: 2em;
-    line-height: 1.5em;
+    line-height: 1.5;
     color: rgb(var(--primary));
 
     &:hover {
@@ -338,7 +336,7 @@ figcaption {
     justify-content: center;
     align-items: center;
     font-size: 1em;
-    line-height: 1.5em;
+    line-height: 1.5;
 
     & .main-menu {
       display: flex;
@@ -421,7 +419,7 @@ figcaption {
   color: white;
   font-family: var(--font-mono);
   font-size: 0.85em;
-  line-height: 1em;
+  line-height: 1;
   padding: 0.1em 0.3em;
   background-clip: padding-box;
 }
@@ -432,7 +430,7 @@ figcaption {
   color: white;
   font-family: var(--font-mono);
   font-size: 0.85em;
-  line-height: 1em;
+  line-height: 1;
   padding: 0.1em 0.3em;
   background-clip: padding-box;
 }
@@ -446,7 +444,7 @@ figcaption {
   font-family: var(--font-mono);
   font-size: 0.8em;
   font-weight: normal;
-  line-height: 1em;
+  line-height: 1;
 }
 
 .tag span {
@@ -623,7 +621,7 @@ aside {
 @media screen and (max-width: 600px) {
   body {
     font-size: 16px;
-    line-height: 1.5em;
+    line-height: 1.5;
   }
 
   pre {
@@ -633,7 +631,7 @@ aside {
 
 #table-of-contents {
   font-size: 1em;
-  line-height: 1.5em;
+  line-height: 1.5;
   margin: 1em 0;
 
   & h2 {
@@ -684,7 +682,7 @@ aside {
   #table-of-contents {
     position: fixed;
     font-size: 0.95em;
-    line-height: 1.5em;
+    line-height: 1.5;
     width: calc(((100vw - var(--main-width)) / 2) - 60px);
     height: 80vh;
     right: 0;
