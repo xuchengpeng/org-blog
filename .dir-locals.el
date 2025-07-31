@@ -1,1 +1,2 @@
-((css-base-mode . ((css-indent-offset . 2))))
+((nil . ((css-indent-offset . 2)
+         (js-indent-level . 2))))
