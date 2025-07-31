@@ -264,6 +264,61 @@ img {
   }
 }
 
+.content .underline {
+  text-decoration: underline;
+}
+
+.content aside {
+  width: 40%;
+  padding-left: 0.5em;
+  margin-left: 0.5em;
+  float: right;
+  border-left: 1px solid rgb(var(--secondary));
+}
+
+/* GTD Style */
+.content :is(.todo, .done) {
+  border-radius: var(--radius);
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  line-height: 1;
+  padding: 0.1em 0.3em;
+  background-clip: padding-box;
+}
+
+.content .todo {
+  background: red;
+  color: white;
+}
+
+.content .done {
+  background: green;
+  color: white;
+}
+
+.content .priority {
+  color: orange;
+  font-family: var(--font-mono);
+}
+
+.content .tag {
+  font-family: var(--font-mono);
+  font-size: 0.8em;
+  font-weight: normal;
+  line-height: 1;
+
+  & span {
+    padding: 0.3em 0.3em;
+    float: right;
+    margin-right: 0.5em;
+    border: 1px solid rgb(var(--border));
+    border-radius: var(--radius);
+    background-clip: padding-box;
+    color: rgb(var(--content));
+    background-color: rgb(var(--code-bg));
+  }
+}
+
 caption.t-above {
   caption-side: top;
 }
@@ -448,70 +503,12 @@ mjx-container[jax="CHTML"][display="true"] {
   overflow: auto hidden;
 }
 
-/* GTD Style */
-.todo {
-  border-radius: 3px;
-  background: red;
-  color: white;
-  font-family: var(--font-mono);
-  font-size: 0.85em;
-  line-height: 1;
-  padding: 0.1em 0.3em;
-  background-clip: padding-box;
-}
-
-.done {
-  border-radius: 3px;
-  background: green;
-  color: white;
-  font-family: var(--font-mono);
-  font-size: 0.85em;
-  line-height: 1;
-  padding: 0.1em 0.3em;
-  background-clip: padding-box;
-}
-
-.priority {
-  color: orange;
-  font-family: var(--font-mono);
-}
-
-.tag {
-  font-family: var(--font-mono);
-  font-size: 0.8em;
-  font-weight: normal;
-  line-height: 1;
-}
-
-.tag span {
-  padding: 0.3em 0.3em;
-  float: right;
-  margin-right: 0.5em;
-  border: 1px solid rgb(var(--border));
-  border-radius: 3px;
-  background-clip: padding-box;
-  color: #333;
-  background-color: #eee;
-}
-
 #footnotes {
   font-size: 0.95em;
 }
 
 .footpara {
   display: inline;
-}
-
-.underline {
-  text-decoration: underline;
-}
-
-aside {
-  width: 40%;
-  padding-left: 0.5em;
-  margin-left: 0.5em;
-  float: right;
-  border-left: 1px solid rgb(var(--secondary));
 }
 
 #search-box input {
