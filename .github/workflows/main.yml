@@ -36,6 +36,7 @@ jobs:
           emacs --batch --load $HOME/.emacs.d/init.el --eval "(setq dotemacs-org-blog-dir \"$PWD\")" --eval "(org-publish \"blog\" t nil)"
           python index.py
           npm run minify
+          rm -f ./public/css/style.css ./public/js/appearance.js ./public/js/code.js ./public/js/menu.js ./public/js/scroll.js ./public/js/search.js
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact

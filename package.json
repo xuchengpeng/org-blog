@@ -9,8 +9,8 @@
     "terser": "^5.43.1"
   },
   "scripts": {
-    "minify-css": "postcss org/css/style.css -o public/css/style.css",
-    "minify-js": "terser org/js/appearance.js -c -m -o public/js/appearance.js && terser org/js/code.js -c -m -o public/js/code.js && terser org/js/scroll.js -c -m -o public/js/scroll.js && terser org/js/search.js -c -m -o public/js/search.js",
+    "minify-css": "postcss public/css/style.css -o public/css/main.bundle.min.css",
+    "minify-js": "terser public/js/appearance.js -c -m -o public/js/appearance.min.js && terser public/js/menu.js public/js/code.js public/js/scroll.js -c -m -o public/js/main.bundle.min.js && terser public/js/search.js -c -m -o public/js/search.min.js",
     "minify-html": "posthtml -c posthtmlrc.json",
     "minify": "npm run minify-css && npm run minify-js && npm rum minify-html"
   }
