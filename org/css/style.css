@@ -444,6 +444,10 @@ figcaption {
   display: block !important;
 }
 
+mjx-container[jax="CHTML"][display="true"] {
+  overflow: auto hidden;
+}
+
 /* GTD Style */
 .todo {
   border-radius: 3px;
