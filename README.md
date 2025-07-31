@@ -4,7 +4,7 @@
 (setq dotemacs-org-blog-dir "/path/to/org-blog/")
 ```
 
-Generate RSS and minify CSS/JavaScript/HTML after publishing:
+Generate `index.json` and minify CSS/JavaScript/HTML after publishing:
 
 ```emacs-lisp
 (defun +org-publish-project (project &optional force async)
