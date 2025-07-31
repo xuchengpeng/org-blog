@@ -1,0 +1,38 @@
+#+TITLE: DIY Modus Themes
+#+AUTHOR: Chuck
+#+DESCRIPTION: Each Modus theme specifies a color palette that declares named color values and semantic color mappings. Both of those subsets can be overridden, thus refashioning the theme.
+#+KEYWORDS: Emacs, Themes
+#+DATE: <2025-07-01 Tue 10:23>
+
+Each Modus theme specifies a color palette that declares named color values and semantic color mappings. Both of those subsets can be overridden, thus refashioning the theme. Overrides are either shared, by being stored in the user option ~modus-themes-common-palette-overrides~, or they are specific to the theme they name. In the latter case, the naming scheme of each palette variable is ~THEME-NAME-palette-overrides~.
+
+* Make mode line borderless
+
+#+begin_src emacs-lisp
+;; Remove the border
+(setq modus-themes-common-palette-overrides
+      '((border-mode-line-active unspecified)
+        (border-mode-line-inactive unspecified)))
+
+;; Or make border color same as background color
+(setq modus-themes-common-palette-overrides
+      '((border-mode-line-active bg-mode-line-active)
+        (border-mode-line-inactive bg-mode-line-inactive)))
+#+end_src
+
+* Make fringe invisible
+
+#+begin_src emacs-lisp
+(setq modus-themes-common-palette-overrides
+      '((fringe unspecified)))
+#+end_src
+
+* Make line number less intense
+
+#+begin_src emacs-lisp
+(setq modus-themes-common-palette-overrides
+      '((fg-line-number-inactive fg-dim)
+        (fg-line-number-active fg-main)
+        (bg-line-number-inactive unspecified)
+        (bg-line-number-active unspecified)))
+#+end_src
