@@ -198,6 +198,12 @@ figure {
   margin: 1em auto;
   padding: 0;
   text-align: center;
+
+  & figcaption {
+    font-size: 0.875em;
+    line-height: 1.5;
+    margin-top: 0.3em;
+  }
 }
 
 img {
@@ -262,6 +268,18 @@ img {
     padding: 0.5em 0.3em;
     border: 1px solid rgb(var(--border));
   }
+
+  & caption {
+    margin-bottom: 0.3em;
+  }
+
+  & caption.t-above {
+    caption-side: top;
+  }
+
+  & caption.t-bottom {
+    caption-side: bottom;
+  }
 }
 
 .content .underline {
@@ -317,22 +335,6 @@ img {
     color: rgb(var(--content));
     background-color: rgb(var(--code-bg));
   }
-}
-
-caption.t-above {
-  caption-side: top;
-}
-
-caption.t-bottom {
-  caption-side: bottom;
-}
-
-caption {
-  margin-bottom: 0.3em;
-}
-
-figcaption {
-  margin-top: 0.3em;
 }
 
 .org-left {
