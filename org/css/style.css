@@ -111,8 +111,8 @@ h6 {
 }
 
 a {
-  color: rgb(var(--link));
   text-decoration: none;
+  word-break: break-all;
   &:hover {
     text-decoration: underline;
   }
