@@ -1,4 +1,6 @@
 #+TITLE: 读《未来简史》
+#+DESCRIPTION: 从智人到智神。
+#+KEYWORDS: Reading
 #+DATE: <2025-01-02 Thu 10:59>
 
 从智人到智神。
