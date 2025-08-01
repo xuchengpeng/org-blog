@@ -1,0 +1,12 @@
+#+TITLE: Emacs Garbage Collection
+#+AUTHOR: Chuck
+#+DESCRIPTION: gcmh(aka "Garbage Collection Magic Hack") is useful and easy to handle garbage collection for GNU Emacs.
+#+KEYWORDS: Emacs, Garbage Collection
+#+DATE: <2025-08-01 Fri 14:36>
+
+[[https://gitlab.com/koral/gcmh][gcmh]](aka "Garbage Collection Magic Hack") is useful and easy to handle garbage collection for GNU Emacs.
+
+Enforce a sneaky Garbage Collection strategy to minimize GC interference with the activity. During normal use a high GC threshold is set. When idling GC is triggered and a low threshold is set.
+
+A more detailed explanation of the rationale behind this can be found at [[https://akrl.sdf.org/][here]].
+
