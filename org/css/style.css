@@ -337,6 +337,19 @@ img {
   }
 }
 
+.content .footnotes {
+  font-size: 1.5em;
+}
+
+.content .footdef {
+  font-size: 0.9em;
+
+  & .footpara {
+    display: inline;
+  }
+}
+
+
 .org-left {
   text-align: left;
 }
@@ -503,14 +516,6 @@ img {
 
 mjx-container[jax="CHTML"][display="true"] {
   overflow: auto hidden;
-}
-
-#footnotes {
-  font-size: 0.95em;
-}
-
-.footpara {
-  display: inline;
 }
 
 #search-box input {
