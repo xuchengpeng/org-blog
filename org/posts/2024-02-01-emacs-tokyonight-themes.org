@@ -1,5 +1,7 @@
 #+TITLE: Emacs tokyonight-themes
 #+AUTHOR: Chuck
+#+DESCRIPTION: A clean dark Visual Studio Code theme that celebrates the lights of Downtown Tokyo at night.
+#+KEYWORDS: Emacs, Themes
 #+DATE: <2024-02-01 Thu 08:28>
 
 #+begin_quote
@@ -13,6 +15,18 @@ Rawley make a [[https://github.com/rawleyfowler/tokyo-theme.el][tokyo-theme.el]]
 So I want to make it for myself, [[https://github.com/xuchengpeng/tokyonight-themes][here it is]]. The theme templates were taken from [[https://github.com/protesilaos/modus-themes][modus-themes]], and the color palettes were taken from [[https://github.com/folke/tokyonight.nvim][tokyonight.nvim]], these two themes are very popular and awesome with GNU Emacs or [[https://github.com/neovim/neovim][Neovim]].
 
 This theme has four color palettes, as same sa tokyonight.nvim. I have add support with some popular packages which I often use with GNU Emacs, like Corfu, vertico, orderless, dired, diff-hl, hl-todo, multiple-cursors, symbol-overlay, vundo and so on.
+
+Install manually from source:
+
+#+begin_src bash
+git clone https://github.com/xuchengpeng/tokyonight-themes.git ~/.emacs.d/tokyonight-themes
+#+end_src
+
+#+begin_src emacs-lisp
+(add-to-list 'load-path "~/.emacs.d/tokyonight-themes")
+(require 'tokyonight-themes)
+(load-theme 'tokyonight-moon :no-confirm)  ; Or tokyonight-day, tokyonight-storm, tokyonight-night
+#+end_src
 
 If you like it, clone the theme, and add support for your plugins into the theme code. Also, you can use theme colors in code with ~tokyonight-themes-with-colors~.
 
