@@ -17,28 +17,43 @@ function scrollTop() {
 }
 
 function smartToc() {
-  var elements = document.querySelectorAll("#table-of-contents a");
-  window.addEventListener("scroll", function () {
-    if (window.innerWidth < 1024) {
-      return;
-    }
-    if (window.scrollY <= 50) {
-      document.querySelectorAll("#table-of-contents a.active").forEach((activeElement) => {
-        activeElement.classList.remove("active");
+  function update({toc, tocLinks}) {
+    if (window.scrollY == 0) {
+      toc.querySelectorAll("a.active").forEach((activeLink) => {
+        activeLink.classList.remove("active");
       });
       return;
     }
-    elements.forEach((element) => {
-      const boundingRect = document.getElementById(element.getAttribute("href").substring(1)).getBoundingClientRect();
+    tocLinks.forEach((tocLink) => {
+      const boundingRect = document.getElementById(tocLink.getAttribute("href").substring(1)).getBoundingClientRect();
       if (boundingRect.top <= 50 && boundingRect.bottom >= 0) {
-        document.querySelectorAll("#table-of-contents a.active").forEach((activeElement) => {
-          if (activeElement.getAttribute("href") == element.getAttribute("href")) {
+        toc.querySelectorAll("a.active").forEach((activeLink) => {
+          if (activeLink.getAttribute("href") == tocLink.getAttribute("href")) {
             return;
           }
-          activeElement.classList.remove("active");
+          activeLink.classList.remove("active");
         });
-        element.classList.add("active");
+        tocLink.classList.add("active");
       }
     });
-  });
+  }
+
+  function init() {
+    if (window.innerWidth < 1024) {
+      return;
+    }
+    const toc = document.querySelector("#table-of-contents");
+    if (!toc) {
+      return;
+    }
+    const tocLinks = toc.querySelectorAll("a");
+    if (tocLinks.length == 0) {
+      return;
+    }
+
+    window.addEventListener("scroll", () => update({toc, tocLinks}), { passive: true });
+    window.addEventListener("hashchange", () => update({toc, tocLinks}), { passive: true });
+  }
+
+  init();
 }
