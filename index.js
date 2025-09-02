@@ -6,7 +6,7 @@ async function parseHtmls() {
   const entries = [];
 
   try {
-    for (const dir of ["posts", "notes"]) {
+    for (const dir of ["posts"]) {
       const inputDir = './public/' + dir;
       const files = await fs.readdir(inputDir);
       for (const file of files) {
@@ -33,7 +33,7 @@ async function parseHtmls() {
     }
     await fs.writeFile('./public/index.json', JSON.stringify(entries), 'utf8');
   } catch (dirErr) {
-    console.error(`Error accessing directory ${inputDir}:`, dirErr.message);
+    console.error(`Error accessing directory:`, dirErr.message);
   }
 }
 
