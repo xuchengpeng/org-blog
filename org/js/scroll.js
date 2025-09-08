@@ -13,7 +13,7 @@ function scrollTop() {
       toplink.style.visibility = "hidden";
       toplink.style.opacity = "0";
     }
-  });
+  }, { passive: true });
 }
 
 function smartToc() {
