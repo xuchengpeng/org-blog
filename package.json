@@ -2,12 +2,12 @@
   "dependencies": {
     "cheerio": "^1.1.2",
     "cssnano": "^7.1.1",
-    "htmlnano": "^2.1.2",
+    "htmlnano": "^2.1.4",
     "postcss": "^8.5.6",
     "postcss-cli": "^11.0.1",
     "posthtml": "^0.16.6",
     "posthtml-cli": "^0.10.0",
-    "terser": "^5.43.1"
+    "terser": "^5.44.0"
   },
   "scripts": {
     "minify-css": "postcss public/css/style.css -o public/css/main.bundle.min.css",
