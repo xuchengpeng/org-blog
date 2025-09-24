@@ -2,7 +2,7 @@
   "dependencies": {
     "cheerio": "^1.1.2",
     "cssnano": "^7.1.1",
-    "htmlnano": "^2.1.4",
+    "htmlnano": "^2.1.5",
     "postcss": "^8.5.6",
     "postcss-cli": "^11.0.1",
     "posthtml": "^0.16.6",
