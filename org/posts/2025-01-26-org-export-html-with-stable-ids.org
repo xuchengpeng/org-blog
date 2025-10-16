@@ -10,6 +10,7 @@ Org导出HTML的时候，ID是通过 =org-export-get-reference= 生成的，并�
 
 对 =org-export-get-reference= 做一些修改，优先从设定的 =CUSTOM_ID= 属性生成ID，否则就使用元素的 =:raw-value= 来生成ID，这样更有字面含义，生成的ID都缓存在文档的 =:internal-references= 属性中，当同一个文档内有重复的ID时提示错误，这个时候可以通过手动设定 =CUSTOM_ID= 来解决这种问题。
 
+#+attr_html: :open t
 #+begin_details
 #+begin_summary
 +org-export-stable-ids-get-reference
@@ -53,6 +54,7 @@ Org导出HTML的时候，ID是通过 =org-export-get-reference= 生成的，并�
 
 对 =org-html--reference= 做一些修改，所有生成ID的地方都调用 =org-export-get-reference= 。
 
+#+attr_html: :open t
 #+begin_details
 #+begin_summary
 +org-html-stable-ids-reference
@@ -70,6 +72,7 @@ Org导出HTML的时候，ID是通过 =org-export-get-reference= 生成的，并�
 
 我们只在项目导出的时候应用这个功能，因此对 =org-publish= 做一些修改。
 
+#+attr_html: :open t
 #+begin_details
 #+begin_summary
 +org-publish

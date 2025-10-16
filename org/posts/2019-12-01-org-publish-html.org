@@ -14,6 +14,7 @@ This is a guide to describe how to publish Org mode files to HTML.
 
 Create your blog files and css files.
 
+#+attr_html: :open t
 #+begin_details
 #+begin_summary
 Example of file directory structure
@@ -31,6 +32,7 @@ Example of file directory structure
 
 * Publishing the org project
 
+#+attr_html: :open t
 #+begin_details
 #+begin_summary
 Example configuration of =org-publish-project-alist=
