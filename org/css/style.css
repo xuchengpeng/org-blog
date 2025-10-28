@@ -1,7 +1,39 @@
+@font-face {
+    font-family: 'Berkeley Mono';
+    src: url(/fonts/TX-02-Regular.woff2) format("woff2");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap
+}
+
+@font-face {
+    font-family: 'Berkeley Mono';
+    src: url(/fonts/TX-02-Oblique.woff2) format("woff2");
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap
+}
+
+@font-face {
+    font-family: 'Berkeley Mono';
+    src: url(/fonts/TX-02-Bold.woff2) format("woff2");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap
+}
+
+@font-face {
+    font-family: 'Berkeley Mono';
+    src: url(/fonts/TX-02-BoldOblique.woff2) format("woff2");
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap
+}
+
 :root {
-  --font-sans: Montserrat, "Noto Sans SC", sans-serif;
-  --font-serif: Merriweather, "LXGW WenKai", "Noto Serif SC", serif;
-  --font-mono: "Courier New", monospace;
+  --font-sans: "Berkeley Mono", "Noto Sans SC", sans-serif;
+  --font-serif: "Berkeley Mono", "LXGW WenKai", "Noto Serif SC", serif;
+  --font-mono: "Berkeley Mono", "Courier New", monospace;
   --main-width: 900px;
   --radius: 4px;
   --theme: 255, 255, 255;
