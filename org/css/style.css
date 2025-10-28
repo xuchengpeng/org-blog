@@ -84,7 +84,7 @@ body {
   min-height: 100vh;
   font-family: var(--font-serif);
   font-weight: 400;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.5;
   color: rgb(var(--primary));
   background: rgb(var(--theme));
@@ -697,11 +697,6 @@ mjx-container[jax="CHTML"][display="true"] {
 }
 
 @media screen and (max-width: 600px) {
-  body {
-    font-size: 16px;
-    line-height: 1.5;
-  }
-
   pre {
     overflow: auto;
   }
@@ -714,10 +709,10 @@ mjx-container[jax="CHTML"][display="true"] {
 
   & h2 {
     font-size: 1.2em;
+    margin: 0;
   }
 
   & #text-table-of-contents {
-    font-size: 0.875em;
     padding: 1em 0 1em 1em;
     border-left: 1px dotted rgb(var(--border));
   }
@@ -759,12 +754,10 @@ mjx-container[jax="CHTML"][display="true"] {
 @media screen and (min-width: 1400px) {
   #table-of-contents {
     position: fixed;
-    font-size: 0.95em;
-    line-height: 1.5;
     width: calc(((100vw - var(--main-width)) / 2) - 60px);
     height: 80vh;
     right: 0;
-    top: 10vh;
+    top: 12vh;
     overflow: hidden;
 
     &:hover {
