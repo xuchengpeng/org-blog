@@ -514,7 +514,7 @@ img {
   gap: 1em;
   justify-content: space-between;
   align-items: center;
-  font-size: smaller;
+  font-size: 0.875em;
   max-width: var(--main-width);
   margin-inline-start: auto;
   margin-inline-end: auto;
