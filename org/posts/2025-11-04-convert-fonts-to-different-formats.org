@@ -1,0 +1,18 @@
+#+TITLE: Convert Fonts to Different Formats
+#+AUTHOR: Chuck
+#+DESCRIPTION: fontTools is a family of libraries and utilities for manipulating fonts in Python.
+#+KEYWORDS: Emacs, TX-02, Berkeley Mono
+#+DATE: <2025-11-04 Tue 15:02>
+
+[[https://github.com/fonttools/fonttools][fontTools]] is a family of libraries and utilities for manipulating fonts in Python.
+
+#+begin_src bash
+$ pip install fonttools[woff]
+$ python
+>>> from fontTools.ttLib import TTFont
+>>> f = TTFont("TX-02-Regular.ttf")
+>>> f.flavor="woff"
+>>> f.save("TX-02-Regular.woff")
+>>> f.flavor="woff2"
+>>> f.save("TX-02-Regular.woff2")
+#+end_src
