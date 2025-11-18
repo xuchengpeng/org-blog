@@ -15,17 +15,17 @@
 
 * Projects
 
-| Title                | Description                                       | Link   |
-|----------------------+---------------------------------------------------+--------|
-| .emacs.d             | A clean and fast Emacs Configuration.             | [[https://github.com/xuchengpeng/.emacs.d][github]] |
-| build-emacs-windows  | Build Emacs for Windows with MSYS2 and MinGW-w64. | [[https://github.com/xuchengpeng/build-emacs-windows][github]] |
-| IosevkaSS14          | Iosevka with JetBrains Mono style.                | [[https://github.com/xuchengpeng/IosevkaSS14][github]] |
-| mingw-build-binaries | MinGW-W64 compiler binaries.                      | [[https://github.com/xuchengpeng/mingw-builds-binaries][github]] |
-| tokyonight-themes    | Tokyo Night themes for GNU Emacs.                 | [[https://github.com/xuchengpeng/tokyonight-themes][github]] |
-| nvim                 | My neovim configuration.                          | [[https://github.com/xuchengpeng/nvim][github]] |
-| hugo-blog            | My old hugo bolg.                                 | [[https://xuchengpeng.github.io/hugo-blog/][site]]   |
-| hexo-blog            | My old hexo blog.                                 | [[https://xuchengpeng.github.io/hexo-blog][site]]   |
-| elpa-mirror          | A mirror of ELPA and MELPA.                       | [[https://github.com/xuchengpeng/elpa-mirror][github]] |
-| mirror-elpa          | Scripts to mirror ELPA and MELPA everyday.        | [[https://github.com/xuchengpeng/mirror-elpa][github]] |
-| emacs.d              | My old Emacs configuration.                       | [[https://github.com/xuchengpeng/emacs.d][github]] |
-| Rime                 | My Rime configuration.                            | [[https://github.com/xuchengpeng/Rime][github]] |
+| Title                | Description                                                        | Link   |
+|----------------------+--------------------------------------------------------------------+--------|
+| .emacs.d             | A clean and fast Emacs Configuration.                              | [[https://github.com/xuchengpeng/.emacs.d][github]] |
+| build-emacs-windows  | Build Emacs for Windows with MSYS2 and MinGW-w64.                  | [[https://github.com/xuchengpeng/build-emacs-windows][github]] |
+| IosevkaSS14          | Iosevka with JetBrains Mono style.                                 | [[https://github.com/xuchengpeng/IosevkaSS14][github]] |
+| mingw-build-binaries | MinGW-W64 compiler binaries.                                       | [[https://github.com/xuchengpeng/mingw-builds-binaries][github]] |
+| catppuccin-themes    | Catppuccin themes for GNU Emacs, build on top of the modus-themes. | [[https://github.com/xuchengpeng/catppuccin-themes][github]] |
+| tokyonight-themes    | Tokyo Night themes for GNU Emacs.                                  | [[https://github.com/xuchengpeng/tokyonight-themes][github]] |
+| nvim                 | My neovim configuration.                                           | [[https://github.com/xuchengpeng/nvim][github]] |
+| hugo-x               | A powerful, lightweight theme for Hugo.                            | [[https://github.com/xuchengpeng/hugo-x][github]] |
+| org-blog             | A blog which published by Org-mode.                                | [[https://github.com/xuchengpeng/xuchengpeng.github.io][github]] |
+| elpa-mirror          | A mirror of ELPA and MELPA.                                        | [[https://github.com/xuchengpeng/elpa-mirror][github]] |
+| mirror-elpa          | Scripts to mirror ELPA and MELPA everyday.                         | [[https://github.com/xuchengpeng/mirror-elpa][github]] |
+| emacs.d              | My old Emacs configuration.                                        | [[https://github.com/xuchengpeng/emacs.d][github]] |
