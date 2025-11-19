@@ -1,0 +1,11 @@
+#+TITLE: Install WSL From Image
+#+AUTHOR: Chuck
+#+DESCRIPTION: You do not need access to the Microsoft Store to use this installation method and the images can be self-hosted on an internal network.
+#+KEYWORDS: Linux, WSL
+#+DATE: <2025-11-19 Wed 11:13>
+
+Ubuntu images for WSL can be downloaded directly from [[https://releases.ubuntu.com/][releases.ubuntu.com]].
+
+To download Ubuntu 24.04 LTS (Noble Numbat), go to [[https://releases.ubuntu.com/noble][releases.ubuntu.com/noble]] and select the WSL image. The image has a ~.wsl~ extension.
+
+Run ~wsl --install --from-file ubuntu-24.04.3-wsl-amd64.wsl --location D:\WSL\Ubuntu-24.04\ --name Ubuntu-24.04~ to install the image.
