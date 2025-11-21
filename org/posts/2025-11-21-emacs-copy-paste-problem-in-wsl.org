@@ -1,0 +1,12 @@
+#+TITLE: Emacs Copy/Paste Problem in WSL
+#+AUTHOR: Chuck
+#+DESCRIPTION: Fix messy chinese characters copy/paste between Emacs(in WSL) and Windows.
+#+KEYWORDS: Emacs, Linux, WSL
+#+DATE: <2025-11-21 Fri 16:10>
+
+Fix messy chinese characters copy/paste between Emacs(in WSL) and Windows.
+
+#+begin_src emacs-lisp
+(set-clipboard-coding-system 'gbk)
+(setq select-active-regions nil)
+#+end_src
