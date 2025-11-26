@@ -31,9 +31,9 @@
 }
 
 :root {
-  --font-sans: "Berkeley Mono", "Noto Sans SC", sans-serif;
-  --font-serif: "Berkeley Mono", "LXGW WenKai", "Noto Serif SC", serif;
-  --font-mono: "Berkeley Mono", "Courier New", monospace;
+  --font-sans: "Berkeley Mono", "LXGW WenKai", sans-serif;
+  --font-serif: "Berkeley Mono", "LXGW WenKai", serif;
+  --font-mono: "Berkeley Mono", "Courier New", "LXGW WenKai", monospace;
   --main-width: 900px;
   --radius: 4px;
   --theme: 255, 255, 255;
