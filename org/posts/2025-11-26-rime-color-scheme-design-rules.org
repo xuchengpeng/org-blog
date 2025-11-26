@@ -1,0 +1,43 @@
+#+TITLE: RIME Color Scheme Design Rules
+#+AUTHOR: Chuck
+#+DESCRIPTION: Design rules of RIME’s color scheme with beautiful traditional chinese colors.
+#+KEYWORDS: Themes, RIME
+#+DATE: <2025-11-26 Wed 11:27>
+
+[[https://github.com/rime][RIME]] is a modular, extensible input method engine in cross-platform C++ code, built on top of open-source technologies.
+
+For light schemes:
+- color\under{}format: rgba
+- text\under{}color: 0x000000 # 默认文字颜色
+- comment\under{}text\under{}color: 0x717171 # 注释文字颜色，0x8E8E8E的反色
+- label\under{}color: 0x8E8E8E # 标签文字颜色
+- back\under{}color: 0xFFFFFF # 候选窗背景色
+- border\under{}color: 0xE7E7E7 # 候选窗边框颜色
+- hilited\under{}candidate\under{}text\under{}color: 0xC02C38 # 高亮候选文字颜色，根据个人喜好选择
+- hilited\under{}candidate\under{}back\under{}color: 0xC02C3826 # 高亮候选背景颜色，高亮候选文字颜色不透明度20%，alpha值约为38/0x26
+- hilited\under{}label\under{}color: 0xC02C38 # 高亮候选的标签颜色，与高亮候选文字颜色一致
+- hilited\under{}comment\under{}text\under{}color: 0xC02C38 # 高亮候选的注释颜色，与高亮候选文字颜色一致
+- candidate\under{}text\under{}color: 0x454545 # 候选文字颜色
+- candidate\under{}back\under{}color: 0xFFFFFF # 非高亮候选背景颜色
+
+For dark schemes:
+- color\under{}format: rgba
+- text\under{}color: 0xFFFFFF # 默认文字颜色
+- comment\under{}text\under{}color: 0x8E8E8E # 注释文字颜色
+- label\under{}color: 0x717171 # 标签文字颜色
+- back\under{}color: 0x000000 # 候选窗背景色
+- border\under{}color: 0x000000 # 候选窗边框颜色
+- hilited\under{}candidate\under{}text\under{}color: 0xFFFFFF # 高亮候选文字颜色
+- hilited\under{}candidate\under{}back\under{}color: 0xC02C38 # 高亮候选背景颜色，与亮色主题中高亮候选文字颜色一致
+- hilited\under{}label\under{}color: 0xFFFFFF # 高亮候选的标签颜色，与高亮候选文字颜色一致
+- hilited\under{}comment\under{}text\under{}color: 0xFFFFFF # 高亮候选的注释颜色，与高亮候选文字颜色一致
+- candidate\under{}text\under{}color: 0xBABABA # 候选文字颜色，0x454545的反色
+- candidate\under{}back\under{}color: 0x000000 # 非高亮候选背景颜色
+
+I like traditional chinese colors very much, here are many choices:
+- https://colors.ichuantong.cn/
+- https://zhongguose.com/
+- https://colors.masantu.com/
+- https://boxingp.github.io/traditional-chinese-colors/
+
+Customize color schemes refer to this [[https://github.com/rime/weasel/wiki/%E5%AE%9A%E5%88%B6%E5%B0%8F%E7%8B%BC%E6%AF%AB%E9%85%8D%E8%89%B2][wiki]].
