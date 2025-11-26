@@ -26,6 +26,7 @@
 | nvim                 | My neovim configuration.                                           | [[https://github.com/xuchengpeng/nvim][github]] |
 | hugo-x               | A powerful, lightweight theme for Hugo.                            | [[https://github.com/xuchengpeng/hugo-x][github]] |
 | org-blog             | A blog which published by Org-mode.                                | [[https://github.com/xuchengpeng/xuchengpeng.github.io][github]] |
+| rime                 | RIME configuration.                                                | [[https://github.com/xuchengpeng/rime][github]] |
 | elpa-mirror          | A mirror of ELPA and MELPA.                                        | [[https://github.com/xuchengpeng/elpa-mirror][github]] |
 | mirror-elpa          | Scripts to mirror ELPA and MELPA everyday.                         | [[https://github.com/xuchengpeng/mirror-elpa][github]] |
 | emacs.d              | My old Emacs configuration.                                        | [[https://github.com/xuchengpeng/emacs.d][github]] |
