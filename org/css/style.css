@@ -33,7 +33,7 @@
 :root {
   --font-sans: "Berkeley Mono", "LXGW WenKai", sans-serif;
   --font-serif: "Berkeley Mono", "LXGW WenKai", serif;
-  --font-mono: "Berkeley Mono", "Courier New", "LXGW WenKai", monospace;
+  --font-mono: "Berkeley Mono", "LXGW WenKai", monospace;
   --main-width: 900px;
   --radius: 4px;
   --theme: 255, 255, 255;
