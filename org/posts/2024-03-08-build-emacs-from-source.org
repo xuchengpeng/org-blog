@@ -1,6 +1,7 @@
 #+TITLE: Build Emacs From Source
 #+AUTHOR: Chuck
 #+DATE: <2024-03-08 Fri 15:36>
+#+DESCRIPTION: A guide to build emacs from source on Linux.
 
 Windows 11 features [[https://docs.microsoft.com/en-us/windows/wsl/tutorials/gui-apps][built-in support for running Linux GUI applications]]. Emacs 29 has became a real GTK application, gone with the blurry fonts problem.
 
@@ -44,7 +45,7 @@ Now build emacs with pgtk and tree-sitter.
 git clone https://git.savannah.gnu.org/git/emacs.git -b emacs-30
 cd emacs
 ./autogen.sh
-./configure --prefix=/usr/local/emacs --with-native-compilation=aot --with-pgtk --with-tree-sitter --without-pop
+./configure --prefix=/usr/local/emacs --with-native-compilation=aot --with-pgtk --with-tree-sitter --without-compress-install --without-pop
 make -j 8
 make install
 #+end_src
