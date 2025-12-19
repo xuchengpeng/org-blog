@@ -1,0 +1,17 @@
+#+TITLE: Ubuntu Phased Updates
+#+AUTHOR: Chuck
+#+DESCRIPTION: Phased updates are software updates that are gradually rolled out to users rather than all users getting the updates at the same time.
+#+KEYWORDS: Linux, Ubuntu
+#+DATE: <2025-12-19 Fri 10:19>
+
+Phased updates are software updates that are gradually rolled out to users rather than all users getting the updates at the same time.
+
+In an update system that doesn't use phased updates, all users are immediately offered an update as soon as it is made available. When phased updates are used, only some users get an update when it is first released. As time passes, more and more users get the update, until the update is finally "fully phased" and everyone is offered the update.
+
+Turn off update phasing in two ways:
+- Add following contents into ~/etc/apt/apt.conf.d/99phased-updates~ file.
+  #+begin_src bash
+  Update-Manager::Always-Include-Phased-Updates "true";
+  APT::Get::Always-Include-Phased-Updates "true";
+  #+end_src
+- Use command ~apt -o APT::Get::Always-Include-Phased-Updates=true upgrade~ to upgrade.
