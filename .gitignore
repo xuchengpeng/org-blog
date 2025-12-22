@@ -1,3 +1,5 @@
+.elpa/
+.org-timestamps/
 public/
 org/posts/index.org
 org/notes/index.org

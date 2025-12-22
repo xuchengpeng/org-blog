@@ -29,8 +29,7 @@ jobs:
           version: 30.2
       - name: build
         run: |
-          git clone --depth=1 https://github.com/xuchengpeng/.emacs.d.git $HOME/.emacs.d
-          emacs --batch --load $HOME/.emacs.d/init.el --eval "(setq dotemacs-org-blog-dir \"$PWD\")" --eval "(org-publish \"blog\" t nil)"
+          emacs -Q --script build-site.el
           npm run index
           npm run minify
           rm -f ./public/css/style.css ./public/js/appearance.js ./public/js/code.js ./public/js/menu.js ./public/js/scroll.js ./public/js/search.js
