@@ -2,10 +2,5 @@
   "root": "public",
   "input": "**/*.html",
   "output": "public",
-  "allInOutput": true,
-  "plugins": {
-    "htmlnano": {
-      "minifySvg": false
-    }
-  }
+  "allInOutput": true
 }
