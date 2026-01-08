@@ -20,6 +20,7 @@
 | .emacs.d             | A clean and fast Emacs Configuration.                              | [[https://github.com/xuchengpeng/.emacs.d][github]]     |
 | build-emacs-windows  | Build Emacs for Windows with MSYS2 and MinGW-w64.                  | [[https://github.com/xuchengpeng/build-emacs-windows][github]]     |
 | IosevkaSS14          | Iosevka with JetBrains Mono style.                                 | [[https://github.com/xuchengpeng/IosevkaSS14][github]]     |
+| IosevkaSS15          | Iosevka with IBM Plex Mono style.                                  | [[https://github.com/xuchengpeng/IosevkaSS15][github]]     |
 | mingw-build-binaries | MinGW-W64 compiler binaries.                                       | [[https://github.com/xuchengpeng/mingw-builds-binaries][github]]     |
 | catppuccin-themes    | Catppuccin themes for GNU Emacs, build on top of the modus-themes. | [[https://github.com/xuchengpeng/catppuccin-themes][github]]     |
 | tokyonight-themes    | Tokyo Night themes for GNU Emacs.                                  | [[https://github.com/xuchengpeng/tokyonight-themes][github]]     |
