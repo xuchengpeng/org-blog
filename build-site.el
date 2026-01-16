@@ -23,7 +23,8 @@
 (unless package-archive-contents
   (package-refresh-contents))
 
-(package-install 'htmlize)
+(unless (package-installed-p 'htmlize)
+  (package-install 'htmlize))
 
 (require 'ox-publish)
 
