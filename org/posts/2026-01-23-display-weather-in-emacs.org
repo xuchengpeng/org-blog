@@ -35,8 +35,9 @@
              (when (buffer-live-p buffer)
                (kill-buffer buffer)))
             ((cl-search "finished" event)
-             (setq +echo-bar--weather-string
-                   (replace-regexp-in-string "[ \t\n\r]+" "" (with-current-buffer buffer (buffer-string))))
+             (let ((result (replace-regexp-in-string "[ \t\n\r]+" "" (with-current-buffer buffer (buffer-string)))))
+               (when (length< result 30)
+                 (setq +echo-bar--weather-string result)))
              (when (buffer-live-p buffer)
                (kill-buffer buffer)))))))))
   (run-at-time nil 1800 #'+echo-bar--weather-update)
