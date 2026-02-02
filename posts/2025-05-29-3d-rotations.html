@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3D Rotations</title>
+<meta name="description" content="A basic 3D rotation (also called elemental rotation) is a rotation about one of the axes of a coordinate system.">
+<meta name="keywords" content="Computer Vision">
+<meta name="generator" content="Org Mode">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" type="text/css" href="/css/main.bundle.min.css">
+<script type="text/javascript" src="/js/appearance.min.js"></script>
+<script defer="" type="text/javascript" src="/js/main.bundle.min.js"></script>
+<script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+</head>
+<body>
+<header id="preamble" class="status">
+<div class="site-header">
+  <a class="site-title" href="/">Chuck</a>
+  <div class="site-nav">
+    <div id="menu-list" class="main-menu">
+      <a href="/posts/">Posts</a>
+      <a href="/about.html">About</a>
+    </div>
+    <button aria-label="Search" onclick="window.location.href='/search.html';">
+      <svg width="20" height="20" viewBox="0 0 24 24">
+        <path fill="currentcolor" d="M23.822 20.88l-6.353-6.354c.93-1.465 1.467-3.2 1.467-5.059.001-5.219-4.247-9.467-9.468-9.467s-9.468 4.248-9.468 9.468c0 5.221 4.247 9.469 9.468 9.469 1.768 0 3.421-.487 4.839-1.333l6.396 6.396 3.119-3.12zm-20.294-11.412c0-3.273 2.665-5.938 5.939-5.938 3.275 0 5.94 2.664 5.94 5.938 0 3.275-2.665 5.939-5.94 5.939-3.274 0-5.939-2.664-5.939-5.939z"></path>
+      </svg>
+    </button>
+    <button id="appearance-switcher" aria-label="Appearance Switcher">
+      <svg id="moon" width="20" height="20" viewBox="0 0 512 512">
+        <path fill="currentcolor" d="M32 256C32 132.2 132.3 32 255.8 32c11.36.0 29.7 1.668 40.9 3.746 9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3 9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480 132.1 480 32 379.6 32 256z">
+        </path>
+      </svg>
+      <svg id="sun" width="20" height="20" viewBox="0 0 512 512">
+        <path fill="currentcolor" d="M256 159.1c-53.02.0-95.1 42.98-95.1 95.1s41.2 96.9 95.1 96.9 95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347l-63.2-91.9 63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89 164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6 12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256 2.74 347.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7 19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109 109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69.0-127.1-57.31-127.1-127.1.0-70.69 57.31-127.1 127.1-127.1S383.1 186.2 383.1 256c0 70.7-56.4 127.1-127.1 127.1z">
+        </path>
+      </svg>
+    </button>
+    <button id="menu-button" aria-label="Menu">
+      <svg width="20" height="20" viewBox="0 0 448 512">
+        <path fill="currentcolor" d="M0 96C0 78.33 14.33 64 32 64H416c17.7.0 32 14.33 32 32 0 17.7-14.3 32-32 32H32C14.33 128 0 113.7.0 96zM0 256c0-17.7 14.33-32 32-32H416c17.7.0 32 14.3 32 32s-14.3 32-32 32H32c-17.67.0-32-14.3-32-32zM416 448H32c-17.67.0-32-14.3-32-32s14.33-32 32-32H416c17.7.0 32 14.3 32 32s-14.3 32-32 32z">
+        </path>
+      </svg>
+    </button>
+  </div>
+</div>
+</header>
+<main id="content" class="content">
+<header>
+<h1 class="title">3D Rotations</h1>
+</header><p>
+A basic 3D rotation (also called elemental rotation) is a rotation about one of the axes of a coordinate system. The following three basic rotation matrices rotate vectors by an angle θ about the x-, y-, or z-axis, in three dimensions, using the <a href="https://en.wikipedia.org/wiki/Right-hand_rule">right-hand rule</a>—which codifies their alternating signs.
+</p>
+
+
+<figure>
+<img src="./left-and-right-hand-rule.svg" alt="left-and-right-hand-rule.svg" class="org-svg">
+
+<figcaption><span class="figure-number">Figure 1: </span>Left and right hand rule</figcaption>
+</figure>
+
+<p>
+For <b>left-hand</b> rule, the turn is <b>clockwise</b>, and for <b>right-hand</b> rule, the turn is <b>counter-clockwise</b>.
+</p>
+
+\begin{split}
+R_x(\theta) &= \begin{bmatrix} 1 & 0 & 0 \newline 0 & \cos\theta & -\sin\theta \newline 0 & \sin\theta & \cos\theta \end{bmatrix} \newline
+R_y(\theta) &= \begin{bmatrix} \cos\theta & 0 & \sin\theta \newline 0 & 1 & 0 \newline -\sin\theta & 0 & \cos\theta \end{bmatrix} \newline
+R_z(\theta) &= \begin{bmatrix} \cos\theta & -\sin\theta & 0 \newline \sin\theta & \cos\theta & 0 \newline 0 & 0 & 1 \end{bmatrix}
+\end{split}
+
+<p>
+Other 3D rotation matrices can be obtained from these three using matrix multiplication. For example, a rotation whose yaw, pitch and roll angles are \(\alpha\), \(\beta\) and \(\gamma\). It is an intrinsic rotation whose Tait–Bryan angles are \(\alpha\), \(\beta\), \(\gamma\), about axes \(z\), \(y\), \(x\), respectively.
+</p>
+
+<p>
+<a href="https://en.wikipedia.org/wiki/Euler_angles">Euler angles</a> can be defined by elemental geometry or by composition of rotations. The geometrical definition demonstrates that three consecutive elemental rotations (rotations about the axes of a coordinate system) are always sufficient to reach any target frame.
+</p>
+
+<p>
+The three elemental rotations may be extrinsic (rotations about the axes xyz of the original coordinate system, which is assumed to remain motionless), or intrinsic (rotations about the axes of the rotating coordinate system XYZ, solidary with the moving body, which changes its orientation with respect to the extrinsic frame after each elemental rotation).
+</p>
+
+<p>
+Without considering the possibility of using two different conventions for the definition of the rotation axes (intrinsic or extrinsic), there exist twelve possible sequences of rotation axes, divided in two groups:
+</p>
+<ul class="org-ul">
+<li><b>Proper Euler angles</b> (z-x-z, x-y-x, y-z-y, z-y-z, x-z-x, y-x-y)</li>
+<li><b>Tait–Bryan angles</b> (x-y-z, y-z-x, z-x-y, x-z-y, z-y-x, y-x-z)</li>
+</ul>
+
+
+<figure>
+<img src="./EulerG.png" alt="EulerG.png">
+
+<figcaption><span class="figure-number">Figure 2: </span>A rotation represented by Euler angles (\(\alpha, \beta, \gamma\)) = (−60°, 30°, 45°), using z-x-z intrinsic rotations.</figcaption>
+</figure>
+
+
+<figure>
+<img src="./EulerX.png" alt="EulerX.png">
+
+<figcaption><span class="figure-number">Figure 3: </span>The same rotation represented by (\(\gamma, \beta, \alpha\)) = (45°, 30°, −60°), using z-x-z extrinsic rotations.</figcaption>
+</figure>
+</main>
+<footer id="postamble" class="status">
+<div class="site-footer">
+  <p>&copy 2026 Chuck</p>
+  <p>Powered by <a href="https://www.gnu.org/software/emacs/">Emacs</a></p>
+</div>
+<a href="#top" class="top-link" id="top-link" style="visibility: hidden; opacity: 0;">
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" width="24px" viewBox="0 -960 960 960" fill="currentcolor">
+    <path d="M440-160v-487L216-423l-56-57 320-320 320 320-56 57-224-224v487h-80Z"></path>
+  </svg>
+</a>
+</footer>
+</body>
+</html>

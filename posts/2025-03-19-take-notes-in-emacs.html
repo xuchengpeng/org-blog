@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>在Emacs中记笔记</title>
+<meta name="generator" content="Org Mode">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" type="text/css" href="/css/main.bundle.min.css">
+<script type="text/javascript" src="/js/appearance.min.js"></script>
+<script defer="" type="text/javascript" src="/js/main.bundle.min.js"></script>
+</head>
+<body>
+<header id="preamble" class="status">
+<div class="site-header">
+  <a class="site-title" href="/">Chuck</a>
+  <div class="site-nav">
+    <div id="menu-list" class="main-menu">
+      <a href="/posts/">Posts</a>
+      <a href="/about.html">About</a>
+    </div>
+    <button aria-label="Search" onclick="window.location.href='/search.html';">
+      <svg width="20" height="20" viewBox="0 0 24 24">
+        <path fill="currentcolor" d="M23.822 20.88l-6.353-6.354c.93-1.465 1.467-3.2 1.467-5.059.001-5.219-4.247-9.467-9.468-9.467s-9.468 4.248-9.468 9.468c0 5.221 4.247 9.469 9.468 9.469 1.768 0 3.421-.487 4.839-1.333l6.396 6.396 3.119-3.12zm-20.294-11.412c0-3.273 2.665-5.938 5.939-5.938 3.275 0 5.94 2.664 5.94 5.938 0 3.275-2.665 5.939-5.94 5.939-3.274 0-5.939-2.664-5.939-5.939z"></path>
+      </svg>
+    </button>
+    <button id="appearance-switcher" aria-label="Appearance Switcher">
+      <svg id="moon" width="20" height="20" viewBox="0 0 512 512">
+        <path fill="currentcolor" d="M32 256C32 132.2 132.3 32 255.8 32c11.36.0 29.7 1.668 40.9 3.746 9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3 9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480 132.1 480 32 379.6 32 256z">
+        </path>
+      </svg>
+      <svg id="sun" width="20" height="20" viewBox="0 0 512 512">
+        <path fill="currentcolor" d="M256 159.1c-53.02.0-95.1 42.98-95.1 95.1s41.2 96.9 95.1 96.9 95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347l-63.2-91.9 63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89 164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6 12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256 2.74 347.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7 19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109 109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69.0-127.1-57.31-127.1-127.1.0-70.69 57.31-127.1 127.1-127.1S383.1 186.2 383.1 256c0 70.7-56.4 127.1-127.1 127.1z">
+        </path>
+      </svg>
+    </button>
+    <button id="menu-button" aria-label="Menu">
+      <svg width="20" height="20" viewBox="0 0 448 512">
+        <path fill="currentcolor" d="M0 96C0 78.33 14.33 64 32 64H416c17.7.0 32 14.33 32 32 0 17.7-14.3 32-32 32H32C14.33 128 0 113.7.0 96zM0 256c0-17.7 14.33-32 32-32H416c17.7.0 32 14.3 32 32s-14.3 32-32 32H32c-17.67.0-32-14.3-32-32zM416 448H32c-17.67.0-32-14.3-32-32s14.33-32 32-32H416c17.7.0 32 14.3 32 32s-14.3 32-32 32z">
+        </path>
+      </svg>
+    </button>
+  </div>
+</div>
+</header>
+<main id="content" class="content">
+<header>
+<h1 class="title">在Emacs中记笔记</h1>
+</header><p>
+以前在Emacs中记笔记主要使用Org mode配置Capture模板，将笔记记录在指定的文件中，这种方式很简陋，慢慢的指定的文件内容会很臃肿，笔记管理上没有实现文件分类管理等，而且也会拖慢Agenda的速度。
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span class="org-keyword">setq</span> org-default-notes-file (expand-file-name <span class="org-string">"notes.org"</span> org-directory)
+      org-capture-templates
+      `((<span class="org-string">"n"</span> <span class="org-string">"Notes"</span> entry
+         (file+headline <span class="org-string">"notes.org"</span> <span class="org-string">"Notes"</span>)
+         <span class="org-string">"* %u %?\n%i\n%a"</span>)
+        (<span class="org-string">"j"</span> <span class="org-string">"Journal"</span> entry
+         (file+olp+datetree ,(expand-file-name <span class="org-string">"journal.org"</span> org-directory))
+         <span class="org-string">"* %U %?</span><span class="org-string"><span class="org-warning">\</span></span><span class="org-string">%i\n%a"</span>)))
+</pre>
+</div>
+
+<blockquote>
+<p>
+Denote is a simple note-taking tool for Emacs. It is based on the idea that notes should follow a predictable and descriptive file-naming scheme. The file name must offer a clear indication of what the note is about, without reference to any other metadata. Denote basically streamlines the creation of such files while providing facilities to link between them.
+</p>
+</blockquote>
+
+<p>
+<a href="https://github.com/protesilaos/denote">Denote</a>是Protesilaos Stavrou大佬开发的一个记笔记的工具，它没有额外其他依赖，支持所有的文件类型，创建笔记的时候可以灵活的进行管理，后续的搜索功能也很方便。
+</p>
+
+<p>
+安装完Denote后，配置 <code>denote-directory</code> 指定笔记存放的目录，直接运行 <code>denote</code> 命令，默认会提示输入标题，再提示输入关键字，最后就会在笔记目录下创建格式如 <code>DATE--TITLE__KEYWORDS.EXT</code> 的笔记文件。
+</p>
+
+<p>
+可以通过配置 <code>denote-file-type</code> 设定笔记文件的类型，默认是org，或者在 <code>denote-prompts</code> 中增加 <code>file-type</code> ，这样在每次创建笔记时都可以单独指定类型，直接运行 <code>denote-type</code> 或 <code>denote-create-note-using-type</code> 也有一样的效果。
+</p>
+
+<p>
+如果想要对笔记进行分类分目录管理，在 <code>denote-prompts</code> 中增加 <code>subdirectory</code> ，创建笔记的时候会提示进行目录的选择，包含 <code>denote-directory</code> 目录和它所有的子目录，子目录需要自己提前创建，Denote不会自己创建子目录；也可以直接运行 <code>denote-subdirectory</code> 或 <code>denote-create-note-in-subdirectory</code> 来选择子文件夹新建笔记。
+</p>
+
+<p>
+以下是使用Denote的简单配置，更高级的功能大佬的<a href="https://protesilaos.com/emacs/denote">使用文档</a>里面写的非常详细，待继续发掘。
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span class="org-keyword">use-package</span> denote
+  <span class="org-builtin">:ensure</span> t
+  <span class="org-builtin">:hook</span> (dired-mode . denote-dired-mode)
+  <span class="org-builtin">:init</span>
+  (<span class="org-keyword">defun</span> <span class="org-function-name">+denote-find</span> ()
+    <span class="org-doc">"Find in denote directory."</span>
+    (<span class="org-keyword">interactive</span>)
+    (<span class="org-keyword">require</span> '<span class="org-constant">denote</span>)
+    (consult-fd denote-directory nil))
+
+  (<span class="org-keyword">defun</span> <span class="org-function-name">+denote-grep</span> ()
+    <span class="org-doc">"Grep in denote directory."</span>
+    (<span class="org-keyword">interactive</span>)
+    (<span class="org-keyword">require</span> '<span class="org-constant">denote</span>)
+    (consult-ripgrep denote-directory nil))
+
+  (<span class="org-keyword">defvar-keymap</span> +denote-map
+    <span class="org-builtin">:doc</span> <span class="org-doc">"Denote map."</span>
+    <span class="org-string">"n"</span> #'denote
+    <span class="org-string">"s"</span> #'denote-subdirectory
+    <span class="org-string">"t"</span> #'denote-type
+    <span class="org-string">"d"</span> #'denote-sort-dired
+    <span class="org-string">"l"</span> #'denote-link
+    <span class="org-string">"L"</span> #'denote-add-links
+    <span class="org-string">"b"</span> #'denote-backlinks
+    <span class="org-string">"r"</span> #'denote-rename-file
+    <span class="org-string">"R"</span> #'denote-rename-file-using-front-matter
+    <span class="org-string">"f"</span> #'+denote-find
+    <span class="org-string">"g"</span> #'+denote-grep)
+  (keymap-global-set <span class="org-string">"C-c n"</span> +denote-map)
+  <span class="org-builtin">:config</span>
+  (<span class="org-keyword">setq</span> denote-directory <span class="org-string">"~/note/"</span>)
+  (denote-rename-buffer-mode 1))
+</pre>
+</div>
+
+<p>
+这里的笔记文件查找和内容搜索我直接简单封装了两个函数，还可以直接使用大佬提供的<a href="https://github.com/protesilaos/consult-denote">consult-denote</a>包。
+</p>
+</main>
+<footer id="postamble" class="status">
+<div class="site-footer">
+  <p>&copy 2026 Chuck</p>
+  <p>Powered by <a href="https://www.gnu.org/software/emacs/">Emacs</a></p>
+</div>
+<a href="#top" class="top-link" id="top-link" style="visibility: hidden; opacity: 0;">
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" width="24px" viewBox="0 -960 960 960" fill="currentcolor">
+    <path d="M440-160v-487L216-423l-56-57 320-320 320 320-56 57-224-224v487h-80Z"></path>
+  </svg>
+</a>
+</footer>
+</body>
+</html>

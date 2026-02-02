@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Org导出HTML时生成稳定的ID</title>
+<meta name="generator" content="Org Mode">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" type="text/css" href="/css/main.bundle.min.css">
+<script type="text/javascript" src="/js/appearance.min.js"></script>
+<script defer="" type="text/javascript" src="/js/main.bundle.min.js"></script>
+</head>
+<body>
+<header id="preamble" class="status">
+<div class="site-header">
+  <a class="site-title" href="/">Chuck</a>
+  <div class="site-nav">
+    <div id="menu-list" class="main-menu">
+      <a href="/posts/">Posts</a>
+      <a href="/about.html">About</a>
+    </div>
+    <button aria-label="Search" onclick="window.location.href='/search.html';">
+      <svg width="20" height="20" viewBox="0 0 24 24">
+        <path fill="currentcolor" d="M23.822 20.88l-6.353-6.354c.93-1.465 1.467-3.2 1.467-5.059.001-5.219-4.247-9.467-9.468-9.467s-9.468 4.248-9.468 9.468c0 5.221 4.247 9.469 9.468 9.469 1.768 0 3.421-.487 4.839-1.333l6.396 6.396 3.119-3.12zm-20.294-11.412c0-3.273 2.665-5.938 5.939-5.938 3.275 0 5.94 2.664 5.94 5.938 0 3.275-2.665 5.939-5.94 5.939-3.274 0-5.939-2.664-5.939-5.939z"></path>
+      </svg>
+    </button>
+    <button id="appearance-switcher" aria-label="Appearance Switcher">
+      <svg id="moon" width="20" height="20" viewBox="0 0 512 512">
+        <path fill="currentcolor" d="M32 256C32 132.2 132.3 32 255.8 32c11.36.0 29.7 1.668 40.9 3.746 9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3 9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480 132.1 480 32 379.6 32 256z">
+        </path>
+      </svg>
+      <svg id="sun" width="20" height="20" viewBox="0 0 512 512">
+        <path fill="currentcolor" d="M256 159.1c-53.02.0-95.1 42.98-95.1 95.1s41.2 96.9 95.1 96.9 95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347l-63.2-91.9 63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89 164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6 12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256 2.74 347.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7 19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109 109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69.0-127.1-57.31-127.1-127.1.0-70.69 57.31-127.1 127.1-127.1S383.1 186.2 383.1 256c0 70.7-56.4 127.1-127.1 127.1z">
+        </path>
+      </svg>
+    </button>
+    <button id="menu-button" aria-label="Menu">
+      <svg width="20" height="20" viewBox="0 0 448 512">
+        <path fill="currentcolor" d="M0 96C0 78.33 14.33 64 32 64H416c17.7.0 32 14.33 32 32 0 17.7-14.3 32-32 32H32C14.33 128 0 113.7.0 96zM0 256c0-17.7 14.33-32 32-32H416c17.7.0 32 14.3 32 32s-14.3 32-32 32H32c-17.67.0-32-14.3-32-32zM416 448H32c-17.67.0-32-14.3-32-32s14.33-32 32-32H416c17.7.0 32 14.3 32 32s-14.3 32-32 32z">
+        </path>
+      </svg>
+    </button>
+  </div>
+</div>
+</header>
+<main id="content" class="content">
+<header>
+<h1 class="title">Org导出HTML时生成稳定的ID</h1>
+</header><p>
+使用Org导出成HTML的时候，文档内部的标题和图片等元素都会生成格式如 <code>orgxxxxxxx</code> 的ID，这个ID从字面上并不能看出来对应那个元素，并且每次文档重新导出时，这个ID都会改变。
+</p>
+
+<p>
+为了使导出的ID具有字面含义，并且每次导出时ID都会稳定保持不变，我们可以为每个标题添加 <code>CUSTOM_ID</code> 属性，这样导出时会优先使用设定的ID，这需要我们为每个标题都手动添加这个属性，而且像图片这种元素就不适用这种方法，我们可以尝试用其他方法自动的生成稳定的ID。
+</p>
+
+<p>
+Org导出HTML的时候，ID是通过 <code>org-export-get-reference</code> 生成的，并且通过 <code>org-html--reference</code> 调用生成到HTML中。
+</p>
+
+<p>
+对 <code>org-export-get-reference</code> 做一些修改，优先从设定的 <code>CUSTOM_ID</code> 属性生成ID，否则就使用元素的 <code>:raw-value</code> 来生成ID，这样更有字面含义，生成的ID都缓存在文档的 <code>:internal-references</code> 属性中，当同一个文档内有重复的ID时提示错误，这个时候可以通过手动设定 <code>CUSTOM_ID</code> 来解决这种问题。
+</p>
+
+<details open="t">
+<summary>
+<p>
++org-export-stable-ids-get-reference
+</p>
+</summary>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span class="org-keyword">defun</span> <span class="org-function-name">+org-html-stable-ids-extract-id</span> (datum)
+  <span class="org-doc">"Extract a reference from a DATUM.
+
+Return DATUM's `:CUSTOM_ID` if set, or generate a reference from its
+`:raw-value` property.  If the DATUM does not have either, return
+nil."</span>
+  (<span class="org-keyword">or</span>
+   (org-element-property <span class="org-builtin">:CUSTOM_ID</span> datum)
+   (<span class="org-keyword">let</span> ((value (org-element-property <span class="org-builtin">:raw-value</span> datum)))
+     (<span class="org-keyword">when</span> value
+       (+org-html-stable-ids-to-kebab-case value)))))
+
+(<span class="org-keyword">defun</span> <span class="org-function-name">+org-html-stable-ids-to-kebab-case</span> (string)
+  <span class="org-doc">"Convert STRING to kebab-case."</span>
+  (downcase
+   (string-trim
+    (replace-regexp-in-string <span class="org-string">"[</span><span class="org-string"><span class="org-negation-char">^</span></span><span class="org-string">A-Za-z0-9\u4e00-\u9fa5]+"</span> <span class="org-string">"-"</span> string)
+    <span class="org-string">"-"</span> <span class="org-string">"-"</span>)))
+
+(<span class="org-keyword">defun</span> <span class="org-function-name">+org-export-stable-ids-get-reference</span> (datum info)
+  <span class="org-doc">"Return a reference for DATUM with INFO.
+
+    Raise an error if the ID was used in the document before."</span>
+  (<span class="org-keyword">let</span> ((cache (plist-get info <span class="org-builtin">:internal-references</span>))
+            (id (+org-html-stable-ids-extract-id datum)))
+        (<span class="org-keyword">or</span> (car (rassq datum cache))
+            (<span class="org-keyword">if</span> (assoc id cache)
+                    (<span class="org-warning">user-error</span> <span class="org-string">"Duplicate ID: %s"</span> id)
+              (<span class="org-keyword">when</span> id
+                    (<span class="org-keyword">push</span> (cons id datum) cache)
+                    (plist-put info <span class="org-builtin">:internal-references</span> cache)
+                    id)))))
+</pre>
+</div>
+</details>
+
+<p>
+对 <code>org-html--reference</code> 做一些修改，所有生成ID的地方都调用 <code>org-export-get-reference</code> 。
+</p>
+
+<details open="t">
+<summary>
+<p>
++org-html-stable-ids-reference
+</p>
+</summary>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span class="org-keyword">defun</span> <span class="org-function-name">+org-html-stable-ids-reference</span> (datum info <span class="org-type">&amp;optional</span> named-only)
+  <span class="org-doc">"Call `org-export-get-reference` to get a reference for DATUM with INFO.
+
+If `NAMED-ONLY` is non-nil, return nil."</span>
+  (<span class="org-keyword">unless</span> named-only
+    (org-export-get-reference datum info)))
+</pre>
+</div>
+</details>
+
+<p>
+我们只在项目导出的时候应用这个功能，因此对 <code>org-publish</code> 做一些修改。
+</p>
+
+<details open="t">
+<summary>
+<p>
++org-publish
+</p>
+</summary>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span class="org-keyword">defun</span> <span class="org-function-name">+org-publish</span> (oldfun project <span class="org-type">&amp;optional</span> force async)
+  (advice-add #'org-export-get-reference <span class="org-builtin">:override</span> #'+org-export-stable-ids-get-reference)
+  (advice-add #'org-html--reference <span class="org-builtin">:override</span> #'+org-html-stable-ids-reference)
+  (funcall oldfun project force async)
+  (advice-remove #'org-export-get-reference #'+org-export-stable-ids-get-reference)
+  (advice-remove #'org-html--reference #'+org-html-stable-ids-reference))
+
+(advice-add #'org-publish <span class="org-builtin">:around</span> #'+org-publish)
+</pre>
+</div>
+</details>
+</main>
+<footer id="postamble" class="status">
+<div class="site-footer">
+  <p>&copy 2026 Chuck</p>
+  <p>Powered by <a href="https://www.gnu.org/software/emacs/">Emacs</a></p>
+</div>
+<a href="#top" class="top-link" id="top-link" style="visibility: hidden; opacity: 0;">
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" width="24px" viewBox="0 -960 960 960" fill="currentcolor">
+    <path d="M440-160v-487L216-423l-56-57 320-320 320 320-56 57-224-224v487h-80Z"></path>
+  </svg>
+</a>
+</footer>
+</body>
+</html>

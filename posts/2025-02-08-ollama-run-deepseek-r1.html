@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ollama运行DeepSeek-R1</title>
+<meta name="generator" content="Org Mode">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" type="text/css" href="/css/main.bundle.min.css">
+<script type="text/javascript" src="/js/appearance.min.js"></script>
+<script defer="" type="text/javascript" src="/js/main.bundle.min.js"></script>
+</head>
+<body>
+<header id="preamble" class="status">
+<div class="site-header">
+  <a class="site-title" href="/">Chuck</a>
+  <div class="site-nav">
+    <div id="menu-list" class="main-menu">
+      <a href="/posts/">Posts</a>
+      <a href="/about.html">About</a>
+    </div>
+    <button aria-label="Search" onclick="window.location.href='/search.html';">
+      <svg width="20" height="20" viewBox="0 0 24 24">
+        <path fill="currentcolor" d="M23.822 20.88l-6.353-6.354c.93-1.465 1.467-3.2 1.467-5.059.001-5.219-4.247-9.467-9.468-9.467s-9.468 4.248-9.468 9.468c0 5.221 4.247 9.469 9.468 9.469 1.768 0 3.421-.487 4.839-1.333l6.396 6.396 3.119-3.12zm-20.294-11.412c0-3.273 2.665-5.938 5.939-5.938 3.275 0 5.94 2.664 5.94 5.938 0 3.275-2.665 5.939-5.94 5.939-3.274 0-5.939-2.664-5.939-5.939z"></path>
+      </svg>
+    </button>
+    <button id="appearance-switcher" aria-label="Appearance Switcher">
+      <svg id="moon" width="20" height="20" viewBox="0 0 512 512">
+        <path fill="currentcolor" d="M32 256C32 132.2 132.3 32 255.8 32c11.36.0 29.7 1.668 40.9 3.746 9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3 9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480 132.1 480 32 379.6 32 256z">
+        </path>
+      </svg>
+      <svg id="sun" width="20" height="20" viewBox="0 0 512 512">
+        <path fill="currentcolor" d="M256 159.1c-53.02.0-95.1 42.98-95.1 95.1s41.2 96.9 95.1 96.9 95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347l-63.2-91.9 63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89 164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6 12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256 2.74 347.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7 19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109 109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69.0-127.1-57.31-127.1-127.1.0-70.69 57.31-127.1 127.1-127.1S383.1 186.2 383.1 256c0 70.7-56.4 127.1-127.1 127.1z">
+        </path>
+      </svg>
+    </button>
+    <button id="menu-button" aria-label="Menu">
+      <svg width="20" height="20" viewBox="0 0 448 512">
+        <path fill="currentcolor" d="M0 96C0 78.33 14.33 64 32 64H416c17.7.0 32 14.33 32 32 0 17.7-14.3 32-32 32H32C14.33 128 0 113.7.0 96zM0 256c0-17.7 14.33-32 32-32H416c17.7.0 32 14.3 32 32s-14.3 32-32 32H32c-17.67.0-32-14.3-32-32zM416 448H32c-17.67.0-32-14.3-32-32s14.33-32 32-32H416c17.7.0 32 14.3 32 32s-14.3 32-32 32z">
+        </path>
+      </svg>
+    </button>
+  </div>
+</div>
+</header>
+<main id="content" class="content">
+<header>
+<h1 class="title">Ollama运行DeepSeek-R1</h1>
+</header><nav id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#安装ollama">安装Ollama</a></li>
+<li><a href="#安装deepseek-r1">安装DeepSeek-R1</a></li>
+<li><a href="#使用deepseek-r1">使用DeepSeek-R1</a></li>
+</ul>
+</div>
+</nav>
+<p>
+<a href="https://ollama.com/">Ollama</a> 是一个用于构建大型语言模型应用的工具，它提供了一个简洁易用的命令行界面和服务器，让你能够轻松下载、运行和管理各种开源LLM。
+</p>
+
+<p>
+<a href="https://github.com/deepseek-ai/DeepSeek-R1">DeepSeek-R1</a> is DeepSeek’s first-generation reasoning models, achieving performance comparable to OpenAI-o1 across math, code, and reasoning tasks.
+</p>
+<section id="outline-container-安装ollama" class="outline-2">
+<h2 id="安装ollama">安装Ollama</h2>
+<div class="outline-text-2" id="text-安装ollama">
+<p>
+从<a href="https://github.com/ollama/ollama/releases">Ollama Releases</a>下载对应操作系统和版本的安装包，按照官方<a href="https://github.com/ollama/ollama/blob/main/docs/README.md">指导文档</a>进行安装。
+</p>
+
+<p>
+安装完成后修改 <code>OLLAMA_MODELS</code> 环境变量，指定后续模型文件的安装目录。
+</p>
+
+<p>
+通过运行 <code>ollama serve</code> 命令启动Ollama，下面就可以安装和使用LLM了。
+</p>
+</div>
+</section>
+<section id="outline-container-安装deepseek-r1" class="outline-2">
+<h2 id="安装deepseek-r1">安装DeepSeek-R1</h2>
+<div class="outline-text-2" id="text-安装deepseek-r1">
+<ul class="org-ul">
+<li>快捷安装
+<ul class="org-ul">
+<li>通过运行 <code>ollama run deepseek-r1:7b</code> 命令来快速安装和运行模型，这里可以指定不同的模型版本。</li>
+</ul></li>
+<li>手动安装
+<ul class="org-ul">
+<li>也可以手动安装<a href="https://huggingface.co/">Hugging Face</a>上下载的其他模型，从<a href="https://huggingface.co/bartowski/DeepSeek-R1-Distill-Qwen-7B-GGUF">DeepSeek-R1-Distill-Qwen-7B-GGUF</a>下载模型，这里存在很多量化的模型版本，这里可以选择下载默认的 <code>DeepSeek-R1-Distill-Qwen-7B-Q4_K_M.gguf</code> 。</li>
+<li>创建 <code>Modelfile</code> 文件，添加 <code>FROM DeepSeek-R1-Distill-Qwen-7B-Q4_K_M.gguf</code> 到文件中并保存。</li>
+<li>运行 <code>ollama create DeepSeek-R1-Distill-Qwen-7B-Q4_K_M -f ./Modelfile</code> 命令来安装模型。</li>
+</ul></li>
+</ul>
+
+<p>
+安装完成后通过 <code>ollama list</code> 命令查看已安装的模型列表。
+</p>
+</div>
+</section>
+<section id="outline-container-使用deepseek-r1" class="outline-2">
+<h2 id="使用deepseek-r1">使用DeepSeek-R1</h2>
+<div class="outline-text-2" id="text-使用deepseek-r1">
+<p>
+通过运行 <code>ollama run DeepSeek-R1-Distill-Qwen-7B-Q4_K_M:latest</code> 命令启动，在命令行直接进行对话。
+</p>
+
+<p>
+也可以通过很多Web和桌面应用来使用DeepSeek-R1，比如<a href="https://github.com/open-webui/open-webui">Open WebUI</a>。
+</p>
+
+<p>
+在Emacs中，可以通过<a href="https://github.com/karthink/gptel">gptel</a>来对接Ollama，添加以下代码注册DeepSeek-R1模型。
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(gptel-make-ollama <span class="org-string">"Ollama"</span>
+  <span class="org-builtin">:host</span> <span class="org-string">"localhost:11434"</span>
+  <span class="org-builtin">:stream</span> nil
+  <span class="org-builtin">:models</span> '(DeepSeek-R1-Distill-Qwen-7B-Q4_K_M:latest))
+</pre>
+</div>
+</div>
+</section>
+</main>
+<footer id="postamble" class="status">
+<div class="site-footer">
+  <p>&copy 2026 Chuck</p>
+  <p>Powered by <a href="https://www.gnu.org/software/emacs/">Emacs</a></p>
+</div>
+<a href="#top" class="top-link" id="top-link" style="visibility: hidden; opacity: 0;">
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" width="24px" viewBox="0 -960 960 960" fill="currentcolor">
+    <path d="M440-160v-487L216-423l-56-57 320-320 320 320-56 57-224-224v487h-80Z"></path>
+  </svg>
+</a>
+</footer>
+</body>
+</html>
