@@ -1,2 +1,2 @@
-User-agent: *
-Disallow: /about.html
+user-agent: *
+disallow: /about.html
