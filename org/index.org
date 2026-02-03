@@ -27,7 +27,7 @@
 | tokyonight-themes    | Tokyo Night themes for GNU Emacs.                                  | [[https://github.com/xuchengpeng/tokyonight-themes][github]]     |
 | nvim                 | My neovim configuration.                                           | [[https://github.com/xuchengpeng/nvim][github]]     |
 | hugo-x               | A powerful, lightweight theme for Hugo.                            | [[https://github.com/xuchengpeng/hugo-x][github]]     |
-| org-blog             | A blog which published by Org-mode.                                | [[https://github.com/xuchengpeng/org-blog][github]]     |
+| org-blog             | A blog published with GNU Emacs and Org-mode.                      | [[https://github.com/xuchengpeng/org-blog][github]]     |
 | rime                 | RIME configuration.                                                | [[https://github.com/xuchengpeng/rime][github]]     |
 | elpa-mirror          | A mirror of ELPA and MELPA.                                        | [[https://github.com/xuchengpeng/elpa-mirror][github]]     |
 | mirror-elpa          | Scripts to mirror ELPA and MELPA everyday.                         | [[https://github.com/xuchengpeng/mirror-elpa][github]]     |
