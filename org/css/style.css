@@ -556,6 +556,10 @@ mjx-container[jax="CHTML"][display="true"] {
   overflow: auto hidden;
 }
 
+.mjx-dialog {
+  margin: auto;
+}
+
 #search-box input {
   padding: 0.2em 0.6em;
   width: 100%;
