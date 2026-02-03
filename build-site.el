@@ -113,42 +113,46 @@ If `NAMED-ONLY` is non-nil, return nil."
     (insert-file-contents file)
     (buffer-string)))
 
-(setq org-publish-project-alist
-      (list
-       (list "blog-posts"
-             :base-directory "./org/posts"
-             :base-extension "org"
-             :recursive t
-             :publishing-function 'org-html-publish-to-html
-             :publishing-directory "./public/posts"
-             :html-head (+org-blog-file-contents "html/head.html")
-             :html-preamble (+org-blog-file-contents "html/header.html")
-             :html-postamble (+org-blog-file-contents "html/footer.html")
-             :html-mathjax-options '((path "https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"))
-             :html-mathjax-template "<script id=\"MathJax-script\" async src=\"%PATH\"></script>"
-             :auto-sitemap t
-             :sitemap-filename "index.org"
-             :sitemap-title "Posts"
-             :sitemap-format-entry '+org-publish-sitemap-format-entry
-             :sitemap-function '+org-publish-sitemap
-             :sitemap-sort-files 'anti-chronologically)
-       (list "blog-pages"
-             :base-directory "./org"
-             :base-extension "org"
-             :recursive nil
-             :publishing-function 'org-html-publish-to-html
-             :publishing-directory "./public"
-             :html-head (+org-blog-file-contents "html/head.html")
-             :html-preamble (+org-blog-file-contents "html/header.html")
-             :html-postamble (+org-blog-file-contents "html/footer.html")
-             :html-mathjax-options '((path "https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"))
-             :html-mathjax-template "<script id=\"MathJax-script\" async src=\"%PATH\"></script>"
-             :auto-sitemap nil)
-       (list "blog-static"
-             :base-directory "./org"
-             :base-extension "js\\|css\\|jpg\\|png\\|svg\\|gif\\|ico\\|txt\\|webmanifest\\|woff2"
-             :recursive t
-             :publishing-function 'org-publish-attachment
-             :publishing-directory "./public")))
+(defvar +org-html-head (+org-blog-file-contents "html/head.html"))
+(defvar +org-html-header (+org-blog-file-contents "html/header.html"))
+(defvar +org-html-footer (+org-blog-file-contents "html/footer.html"))
 
-(org-publish-all t)
+(setq org-publish-project-alist
+      `(("blog-posts"
+         :base-directory "./org/posts"
+         :base-extension "org"
+         :recursive t
+         :publishing-function org-html-publish-to-html
+         :publishing-directory "./public/posts"
+         :html-head ,+org-html-head
+         :html-preamble ,+org-html-header
+         :html-postamble ,+org-html-footer
+         :html-mathjax-options ((path "https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"))
+         :html-mathjax-template "<script id=\"MathJax-script\" async src=\"%PATH\"></script>"
+         :auto-sitemap t
+         :sitemap-filename "index.org"
+         :sitemap-title "Posts"
+         :sitemap-format-entry +org-publish-sitemap-format-entry
+         :sitemap-function +org-publish-sitemap
+         :sitemap-sort-files anti-chronologically)
+        ("blog-pages"
+         :base-directory "./org"
+         :base-extension "org"
+         :recursive nil
+         :publishing-function org-html-publish-to-html
+         :publishing-directory "./public"
+         :html-head ,+org-html-head
+         :html-preamble ,+org-html-header
+         :html-postamble ,+org-html-footer
+         :html-mathjax-options ((path "https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"))
+         :html-mathjax-template "<script id=\"MathJax-script\" async src=\"%PATH\"></script>"
+         :auto-sitemap nil)
+        ("blog-static"
+         :base-directory "./org"
+         :base-extension "js\\|css\\|jpg\\|png\\|svg\\|gif\\|ico\\|txt\\|webmanifest\\|woff2"
+         :recursive t
+         :publishing-function org-publish-attachment
+         :publishing-directory "./public")
+        ("blog" :components ("blog-posts" "blog-pages" "blog-static"))))
+
+(org-publish "blog" t)
