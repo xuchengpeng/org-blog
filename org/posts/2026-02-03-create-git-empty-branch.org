@@ -1,0 +1,15 @@
+#+TITLE: Create Git Empty Branch
+#+AUTHOR: Chuck
+#+DESCRIPTION: Create a new unborn branch, named <new-branch>. All tracked files are removed.
+#+KEYWORDS: Linux, Git
+#+DATE: <2026-02-03 Tue 10:06>
+
+Create a new unborn branch, named /<new-branch>/. All tracked files are removed.
+
+#+begin_src bash
+git switch --orphan publish
+git commit --allow-empty -m "empty commit"
+git push -u origin publish
+#+end_src
+
+
