@@ -1,0 +1,25 @@
+#+TITLE: Debian 安装 Google Chrome
+#+AUTHOR: Chuck
+#+DESCRIPTION: 在 Debian 系列的 Linux 发行版如 Ubuntu, Debian, Kali 等安装 Google Chrome 的方法如下。
+#+KEYWORDS: Linux, Debian
+#+DATE: <2026-02-06 Fri 09:39>
+
+在 Debian 系列的 Linux 发行版如 Ubuntu, Debian, Kali 等安装 Google Chrome 的方法如下。
+
+首先下载安装包，并通过命令执行安装，会自动安装依赖。
+
+#+begin_src bash
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo apt install ./google-chrome-stable_current_amd64.deb
+#+end_src
+
+安装完 Chrome 时，会自动将 Chrome 仓库添加到包管理器，使用以下命令可以进行 Chrome 更新。
+
+#+begin_src bash
+sudo apt install google-chrome-stable
+#+end_src
+
+如果想要卸载 Chrome 则执行以下命令。
+#+begin_src bash
+sudo apt purge google-chrome-stable
+#+end_src
