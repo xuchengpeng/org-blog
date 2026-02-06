@@ -9,7 +9,7 @@
 首先以 root 用户登录。
 
 #+begin_src bash
-su i
+su -
 #+end_src
 
 打开 ~/etc/sudoers~ 文件，在 ~root ALL=(ALL:ALL) ALL~ 行下添加当前用户的配置。
