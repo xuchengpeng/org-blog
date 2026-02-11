@@ -1,0 +1,33 @@
+#+TITLE: 修改 Git 提交的作者信息
+#+AUTHOR: Chuck
+#+DESCRIPTION: 要修改 Git 提交（commit）的作者信息，直接使用命令可以对最近一次或历史多次的提交进行修改。
+#+KEYWORDS: Linux, Git
+#+DATE: <2026-02-11 Wed 10:21>
+
+要修改 Git 提交（commit）的作者信息，直接使用命令可以对最近一次或历史多次的提交进行修改。
+
+** 修改最近一次提交
+
+- 指定新作者
+
+  #+begin_src bash
+  git commit --amend --author="name <email@example.com>" --no-edit
+  #+end_src
+
+- 重置为当前作者
+
+  #+begin_src bash
+  git commit --amend --reset-author --no-edit
+  #+end_src
+
+** 修改历史多次提交
+
+#+begin_src bash
+# 1. n 为历史提交数量
+git rebase -i HEAD~n
+# 2. 将需要修改的提交从 pick 改为 edit
+# 3. 依次修改每个提交的作者信息
+git commit --amend --author="name <email@example.com>" --no-edit
+# 4. 完成修改
+git rebase --continue
+#+end_src
