@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>在WSL中使用emacs-rime</title>
-<meta name="description" content="在WSL中使用Emacs时，无法直接使用Windows安装的RIME输入法，当前比较好的方案是在WSL中安装librime，在Emacs中使用emacs-rime作为前端，使用体验比较贴近原生RIME输入法。">
+<title>在 WSL 中使用 emacs-rime</title>
+<meta name="description" content="在 WSL 中使用 Emacs 时，无法直接使用 Windows 安装的 RIME 输入法，当前比较好的方案是在 WSL 中安装 librime ，在 Emacs 中使用 emacs-rime 作为前端，使用体验比较贴近原生 RIME 输入法。">
 <meta name="keywords" content="Emacs, WSL, RIME">
 <meta name="generator" content="Org Mode">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -50,9 +50,9 @@
 </header>
 <main id="content" class="content">
 <header>
-<h1 class="title">在WSL中使用emacs-rime</h1>
+<h1 class="title">在 WSL 中使用 emacs-rime</h1>
 </header><p>
-在WSL中使用Emacs时，无法直接使用Windows安装的RIME输入法，当前比较好的方案是在WSL中安装<a href="https://github.com/rime/librime">librime</a>，在Emacs中使用<a href="https://github.com/DogLooksGood/emacs-rime">emacs-rime</a>作为前端，使用体验比较贴近原生RIME输入法。
+在 WSL 中使用 Emacs 时，无法直接使用 Windows 安装的 RIME 输入法，当前比较好的方案是在 WSL 中安装 <a href="https://github.com/rime/librime">librime</a> ，在 Emacs 中使用 <a href="https://github.com/DogLooksGood/emacs-rime">emacs-rime</a> 作为前端，使用体验比较贴近原生 RIME 输入法。
 </p>
 
 <p>
@@ -76,7 +76,7 @@
                                   <span class="org-builtin">:left-fringe</span> 5
                                   <span class="org-builtin">:right-fringe</span> 5))
   (rime-cursor <span class="org-string">"\u2038"</span>)
-  <span class="org-builtin">:init</span>
+  <span class="org-builtin">:config</span>
   (<span class="org-keyword">defun</span> <span class="org-function-name">+rime-custom-faces</span> (<span class="org-type">&amp;rest</span> _)
     (modus-themes-with-colors
       (custom-set-faces
@@ -86,7 +86,7 @@
        `(rime-comment-face ((,c <span class="org-builtin">:foreground</span> ,comment)))
        `(rime-preedit-face ((,c <span class="org-builtin">:foreground</span> ,fg-main <span class="org-builtin">:underline</span> (<span class="org-builtin">:style</span> dots)))))))
   (add-hook 'modus-themes-after-load-theme-hook #'+rime-custom-faces)
-  <span class="org-builtin">:config</span>
+  (+rime-custom-faces)
   (keymap-set rime-mode-map <span class="org-string">"C-`"</span> #'rime-send-keybinding)
   (<span class="org-keyword">defun</span> <span class="org-function-name">+rime-finalize</span> ()
     (<span class="org-keyword">when</span> rime--lib-loaded
