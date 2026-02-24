@@ -26,6 +26,7 @@
 | catppuccin-themes    | Catppuccin themes for GNU Emacs, build on top of the modus-themes. | [[https://github.com/xuchengpeng/catppuccin-themes][github]] [[https://codeberg.org/xuchengpeng/catppuccin-themes][codeberg]] |
 | tokyonight-themes    | Tokyo Night themes for GNU Emacs.                                  | [[https://github.com/xuchengpeng/tokyonight-themes][github]] [[https://codeberg.org/xuchengpeng/tokyonight-themes][codeberg]] |
 | nvim                 | My neovim configuration.                                           | [[https://github.com/xuchengpeng/nvim][github]] [[https://codeberg.org/xuchengpeng/nvim][codeberg]] |
+| vim                  | My vim basic configuration.                                        | [[https://github.com/xuchengpeng/vim][github]] [[https://codeberg.org/xuchengpeng/vim][codeberg]] |
 | hugo-x               | A powerful, lightweight theme for Hugo.                            | [[https://github.com/xuchengpeng/hugo-x][github]] [[https://codeberg.org/xuchengpeng/hugo-x][codeberg]] |
 | org-blog             | A blog published with GNU Emacs and Org-mode.                      | [[https://github.com/xuchengpeng/org-blog][github]] [[https://codeberg.org/xuchengpeng/org-blog][codeberg]] |
 | rime                 | RIME configuration.                                                | [[https://github.com/xuchengpeng/rime][github]] [[https://codeberg.org/xuchengpeng/rime][codeberg]] |
