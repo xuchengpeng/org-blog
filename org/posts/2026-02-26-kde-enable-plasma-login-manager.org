@@ -1,0 +1,21 @@
+#+TITLE: KDE 启用 Plasma Login Manager
+#+AUTHOR: Chuck
+#+DESCRIPTION: Plasma Login provides a display manager for KDE Plasma, forked from SDDM and with a new frontend providing a greeter, wallpaper plugin integration and System Settings module (KCM).
+#+KEYWORDS: Linux, Arch, KDE, Plasma
+#+DATE: <2026-02-26 Thu 14:28>
+
+#+begin_quote
+Plasma Login provides a display manager for KDE Plasma, forked from [[https://github.com/sddm/sddm][SDDM]] and with a new frontend providing a greeter, wallpaper plugin integration and System Settings module (KCM).
+#+end_quote
+
+随着 KDE Plasma 6.6 的正式发布，可以使用 Plasma Login Manager 作为登录器。
+
+首先，按照以下命令安装和启用：
+
+#+begin_src bash
+sudo pacman -S plasma-login-manager
+sudo systemctl disable sddm.service
+sudo systemctl enable plasmalogin.service
+#+end_src
+
+最后，重启系统就可以使用新的登录器了。
