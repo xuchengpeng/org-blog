@@ -1,5 +1,5 @@
 async function copyCodeToClipboard(button, highlightDiv) {
-  const codeToCopy = highlightDiv.querySelector("pre.src").textContent;
+  const codeToCopy = highlightDiv.querySelector("pre.src").textContent.trim();
   await navigator.clipboard.writeText(codeToCopy);
   button.innerText = "Copied";
   setTimeout(function () {
