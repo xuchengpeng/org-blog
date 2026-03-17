@@ -45,7 +45,7 @@ fprintd-enroll -f right-middle-finger
 
 要在 Plasma Login Manager 中使用指纹登录，需要修改 /etc/pam.d/plasmalogin 配置文件，如果没有就从 /usr/lib/pam.d/plasmalogin 拷贝一个过来。
 
-将 pam_fprintd.so 添加到 auth 认证的开头位置：
+将 pam\under{}fprintd.so 添加到 auth 认证的开头位置：
 
 #+begin_src text
 ...

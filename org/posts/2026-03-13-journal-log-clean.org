@@ -6,7 +6,7 @@
 
 Journal 是 systemd 的日志系统，随着系统长时间的使用，其对应的日志目录 /var/log/journal 下会累计大量的日志文件，占据不少系统存储空间。
 
-使用 journalctl –disk-usage 命令可以查看当前日志占用了多少存储空间。
+使用 ~journalctl -–disk-usage~ 命令可以查看当前日志占用了多少存储空间。
 
 ** 手动清理
 
