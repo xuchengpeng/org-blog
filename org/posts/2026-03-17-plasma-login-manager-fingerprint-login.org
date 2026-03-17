@@ -1,0 +1,66 @@
+#+TITLE: Plasma Login Manager 指纹登录
+#+AUTHOR: Chuck
+#+DESCRIPTION: 在现代 Linux 系统中，基本都是使用 fprint 来便捷的使用指纹识别的功能，其内置的 PAM 模块可以用于用户指纹登录系统。
+#+KEYWORDS: Linux, KDE, Plasma
+#+DATE: <2026-03-17 Tue 10:12>
+
+在现代 Linux 系统中，基本都是使用 [[https://fprint.freedesktop.org/][fprint]] 来便捷的使用指纹识别的功能，其内置的 PAM 模块可以用于用户指纹登录系统。
+
+** 使用前提
+
+通过 lsusb 命令找到指纹识别设备，对比 [[https://fprint.freedesktop.org/supported-devices.html][fprint 的兼容设备清单]]来确定设备是否已支持，不支持的设备就没法使用了。
+
+** 安装
+
+Arch Linux 下使用 sudo pacman -S fprintd libfprint 命令进行安装。
+
+启动 fprintd 服务并设置为开机自启动：
+
+#+begin_src bash
+sudo systemctl start fprintd.service
+sudo systemctl enable fprintd.service
+#+end_src
+
+可能会提示启动依赖的问题，使用命令 sudo systemctl edit –full –force fprintd.service 修改服务配置文件：
+
+#+begin_src ini
+[Install]
+WantedBy=multi-user.target
+#+end_src
+
+使用命令 sudo systemctl daemon-reload 重新加载服务配置文件就可以解决问题了。
+
+** 录入指纹
+
+运行 fprintd-enroll 命令就可以为当前用户录入指纹，默认是录入右手食指指纹，也可以指定录入不同的手指指纹，参考[[https://man.archlinux.org/man/fprintd.1][命令行手册]]。
+
+#+begin_src bash
+fprintd-enroll -f right-index-finger
+fprintd-enroll -f right-middle-finger
+#+end_src
+
+录入完成后，可以使用 fprintd-verify -f /finger/ 来验证指纹，使用 fprintd-delete -f /finger/ 来删除指纹。
+
+** 配置指纹登录
+
+要在 Plasma Login Manager 中使用指纹登录，需要修改 /etc/pam.d/plasmalogin 配置文件，如果没有就从 /usr/lib/pam.d/plasmalogin 拷贝一个过来。
+
+将 pam_fprintd.so 添加到 auth 认证的开头位置：
+
+#+begin_src text
+...
+# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: none
+
+auth        sufficient  pam_fprintd.so
+auth        include     system-login
+-auth       optional    pam_gnome_keyring.so
+-auth       optional    pam_kwallet5.so
+...
+#+end_src
+
+在系统启动登录界面或锁屏界面时，直接敲击回车键，就可以使用指纹认证登录了。
+
+#+begin_quote
+默认情况下指纹登录时不会解锁 KWallet ，使用 KWallet 时会弹出密码输入框进行认证，自动解锁可以参考 [[https://wiki.archlinuxcn.org/wiki/KDE_Wallet#%E7%99%BB%E5%BD%95%E6%97%B6%E8%87%AA%E5%8A%A8%E8%A7%A3%E9%94%81_Kwallet][KWallet Wiki 指导]]。
+#+end_quote
