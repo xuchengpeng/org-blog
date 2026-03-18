@@ -45,18 +45,16 @@ fprintd-enroll -f right-middle-finger
 
 要在 Plasma Login Manager 中使用指纹登录，需要修改 /etc/pam.d/plasmalogin 配置文件，如果没有就从 /usr/lib/pam.d/plasmalogin 拷贝一个过来。
 
-将 pam\under{}fprintd.so 添加到 auth 认证的开头位置：
+添加下面两行配置到开头位置，这样就可以使用密码或者指纹识别进行登录。
 
 #+begin_src text
-...
-# SPDX-License-Identifier: CC0-1.0
-# SPDX-FileCopyrightText: none
+  ...
+  # SPDX-License-Identifier: CC0-1.0
+  # SPDX-FileCopyrightText: none
 
-auth        sufficient  pam_fprintd.so
-auth        include     system-login
--auth       optional    pam_gnome_keyring.so
--auth       optional    pam_kwallet5.so
-...
+  auth        sufficient  pam_unix.so try_first_pass likeauth nullok
+  auth        sufficient  pam_fprintd.so
+  ...
 #+end_src
 
 在系统启动登录界面或锁屏界面时，直接敲击回车键，就可以使用指纹认证登录了。
