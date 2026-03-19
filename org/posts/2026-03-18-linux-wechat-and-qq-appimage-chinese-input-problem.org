@@ -18,3 +18,5 @@ Categories=Network;Chat;
 Comment=WeChat Linux版
 Terminal=false
 #+end_src
+
+Flatpak 安装的 WPS 启动添加同样的环境变量参数，一样可以解决无法中文输入的问题。
