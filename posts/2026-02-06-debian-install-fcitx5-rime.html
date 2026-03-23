@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Debian 安装 fcitx5-rime 输入法</title>
 <meta name="description" content="在 Windows 或 WSL Debian 中都是通过小狼毫和 emacs-rime 来使用 RIME 输入法的，笔记本电脑的 Debian 13 KDE 桌面环境中，就使用当前很流行的 fcitx5-rime 输入法。">
-<meta name="keywords" content="Linux, Debian, RIME">
+<meta name="keywords" content="Linux, Debian, Arch, RIME">
 <meta name="generator" content="Org Mode">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -65,7 +65,16 @@
 </div>
 
 <p>
-fcitx5-rime 的输入法配置文件目录为 <code>$HOME/.local/share/fcitx5/rime</code> ，这里面存放自定义的输入方案配置。
+Arch Linux 的安装命令为：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">sudo pacman -S fcitx5 fcitx5-gtk fcitx5-qt fcitx5-configtool fcitx5-rime rime-double-pinyin
+</pre>
+</div>
+
+<p>
+fcitx5-rime 的输入法配置文件目录为 <code>~/.local/share/fcitx5/rime</code> ，这里面存放自定义的输入方案配置。
 </p>
 
 <p>
@@ -80,9 +89,20 @@ fcitx5-rime 的输入法配置文件目录为 <code>$HOME/.local/share/fcitx5/ri
 重新启动，就可以使用 RIME 输入法了，经过测试终端、Emacs、 Chrome中都可以正常使用。
 </p>
 
+<blockquote>
 <p>
-PS: Do not set <code>GTK_IM_MODULE</code> &amp; <code>QT_IM_MODULE</code> &amp; <code>SDL_IM_MODULE</code>. You could unset <code>GTK_IM_MODULE</code> &amp; <code>QT_IM_MODULE</code> by runing <code>im-config</code> and then selecting "do not set any IM from im-config and use desktop default".
+Do not set <code>GTK_IM_MODULE</code> &amp; <code>QT_IM_MODULE</code> &amp; <code>SDL_IM_MODULE</code>. You could unset <code>GTK_IM_MODULE</code> &amp; <code>QT_IM_MODULE</code> by runing <code>im-config</code> and then selecting "do not set any IM from im-config and use desktop default".
 </p>
+</blockquote>
+
+<p>
+修改输入方案配置后，需要重新部署以生效，可以在输入法界面中点击重新部署按钮，也可以通过命令行重新部署：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">rm ~/.local/share/fcitx5/rime/default.yaml &amp;&amp; fcitx5-remote -r
+</pre>
+</div>
 </main>
 <footer id="postamble" class="status">
 <div class="site-footer">
