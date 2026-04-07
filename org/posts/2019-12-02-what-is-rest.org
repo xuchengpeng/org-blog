@@ -145,7 +145,7 @@ control.And most importantly, every interaction with a resource is stateless.
 All these principles help RESTful applications to be simple, lightweight, and
 fast.
 
-* References
+** References
 
 #+begin_verse
 http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven
