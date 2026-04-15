@@ -1,9 +1,9 @@
 {
   "dependencies": {
     "cheerio": "^1.2.0",
-    "cssnano": "^7.1.4",
+    "cssnano": "^7.1.5",
     "htmlnano": "^3.2.0",
-    "postcss": "^8.5.8",
+    "postcss": "^8.5.9",
     "postcss-cli": "^11.0.1",
     "posthtml": "^0.16.7",
     "posthtml-cli": "^0.10.0",
