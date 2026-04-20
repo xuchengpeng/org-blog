@@ -32,7 +32,7 @@ jobs:
           emacs -Q --script build-site.el
           npm run index
           npm run minify
-          rm -f ./public/css/style.css ./public/js/appearance.js ./public/js/code.js ./public/js/menu.js ./public/js/scroll.js ./public/js/search.js
+          rm -f ./public/css/style.css ./public/js/appearance.js ./public/js/code.js ./public/js/menu.js ./public/js/scroll.js
       - uses: actions/checkout@v6
         with:
           ref: publish
