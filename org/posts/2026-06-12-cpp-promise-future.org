@@ -1,0 +1,33 @@
+#+TITLE: C++ promise和future
+#+AUTHOR: Chuck
+#+DESCRIPTION: C++ 中的 std::promise 和 std::future 用于实现线程间的异步通信。promise 负责“写入/提供”结果，而 future 负责在未来“读取/获取”该结果。两者通过共享状态相连，支持跨线程传递值或异常。
+#+KEYWORDS: Programming, C++
+#+DATE: <2026-06-12 Fri 15:24>
+
+C++ 中的 std::promise 和 std::future 用于实现线程间的异步通信。promise 负责“写入/提供”结果，而 future 负责在未来“读取/获取”该结果。两者通过共享状态相连，支持跨线程传递值或异常。
+
+#+begin_src cpp
+#include <iostream>
+#include <future>
+#include <thread>
+
+int main(int argc, char** argv)
+{
+    std::promise<int32_t> prom;
+    std::future<int32_t> fut = prom.get_future();
+    std::thread thd([&prom]() {
+        std::this_thread::sleep_for(std::chrono::milliseconds(200));
+        prom.set_value(0);
+    });
+    thd.detach();
+    const auto status = fut.wait_for(std::chrono::milliseconds(500));
+    if (status == std::future_status::timeout) {
+        std::cout << "wait timeout\n";
+    } else if (status == std::future_status::ready) {
+        std::cout << "receive value:" << fut.get() << "\n";
+    }
+    return 0;
+}
+#+end_src
+
+如上面的示例代码，如果异步线程执行时间太久没有通过 promise 写入结果，通过 future 等待后就会得到超时状态；如果异步线程在超时时间内通过 promise 返回结果，那么通过 future 就能得到 promise 写入的结果。
