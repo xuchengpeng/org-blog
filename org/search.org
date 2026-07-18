@@ -10,7 +10,7 @@
 </div>
 
 <script type="module">
-import Fuse from 'https://cdn.jsdelivr.net/npm/fuse.js@7.4.2/dist/fuse.min.mjs'
+import Fuse from 'https://cdn.jsdelivr.net/npm/fuse.js@7.5.0/dist/fuse.min.mjs'
 
 var fuse;
 var searchInput = document.getElementById("search-input");
