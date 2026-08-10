@@ -3,11 +3,11 @@
     "cheerio": "^1.2.0",
     "cssnano": "^7.1.9",
     "htmlnano": "^3.4.0",
-    "postcss": "^8.5.19",
+    "postcss": "^8.5.26",
     "postcss-cli": "^11.0.1",
     "posthtml": "^0.16.7",
     "posthtml-cli": "^0.10.0",
-    "terser": "^5.49.0"
+    "terser": "^5.49.2"
   },
   "scripts": {
     "minify-css": "postcss public/css/style.css -o public/css/main.bundle.min.css",
