@@ -149,7 +149,7 @@ If `NAMED-ONLY` is non-nil, return nil."
          :auto-sitemap nil)
         ("blog-static"
          :base-directory "./org"
-         :base-extension "js\\|css\\|jpg\\|png\\|svg\\|gif\\|ico\\|txt\\|webmanifest\\|woff2"
+         :base-extension "js\\|css\\|jpg\\|png\\|svg\\|gif\\|webp\\|ico\\|txt\\|webmanifest\\|woff2"
          :recursive t
          :publishing-function org-publish-attachment
          :publishing-directory "./public")
