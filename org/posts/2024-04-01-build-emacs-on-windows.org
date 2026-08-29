@@ -2,7 +2,9 @@
 #+AUTHOR: Chuck
 #+DATE: <2024-04-01 Mon 18:44>
 
-On Windows, we can build GNU Emacs with [[https://www.msys2.org/][MSYS2]] and [[https://www.mingw-w64.org/][MinGW-w64]]. 
+On Windows, we can build GNU Emacs with [[https://www.msys2.org/][MSYS2]] and [[https://www.mingw-w64.org/][MinGW-w64]].
+
+All of the build commands can be found in [[https://github.com/xuchengpeng/build-emacs-windows][build-emacs-windows]] project.
 
 First, install some necessary packages. The packages include the base developer tools, the compiler toolchain, several image libraries, and XML library, the GnuTLS library, zlib for decompressing text, HarfBuzz for use as the shaping engine, libgccjit for native-compilation support, SQLite3 for accessing SQL databases, and the tree-sitter library used by some major modes. You can select only part of the libraries if you don't need them all.
 
