@@ -1,7 +1,7 @@
 #+TITLE: 在 Emacs 中使用 Ty+Ruff 作为 LSP 服务端
 #+AUTHOR: Chuck
 #+DESCRIPTION: Ty 和 Ruff 都是使用 Rust 语言开发的高性能 Python 开发工具，它们分工不同，可以完美配合，提升开发体验。
-#+KEYWORDS: Emacs, Eglot, LSP, Ty, Ruff
+#+KEYWORDS: Emacs, Python, Eglot, LSP, Ty, Ruff
 #+DATE: <2026-08-29 Sat 17:10>
 
 Ty 和 Ruff 都是使用 Rust 语言开发的高性能 Python 开发工具，它们分工不同，可以完美配合，提升开发体验。
