@@ -3,7 +3,7 @@
 npm install
 npm run dev
 </code></pre> </div> <p> Install tldraw library, run: </p> <div class="org-src-container"> <pre class="src src-shell"><code>npm install tldraw
-</code></pre> </div> <p> Import fonts and CSS for tldraw, edit <code>App.css</code>: </p> <div class="org-src-container"> <pre class="src src-css"><code><span class="org-builtin">@import</span> url(<span class="org-string">"https://fonts.googleapis.com/css2?family=Inter:wght@500;700&amp;display=swap"</span>);
+</code></pre> </div> <p> Import fonts and CSS for tldraw, edit <code>App.css</code>: </p> <div class="org-src-container"> <pre class="src src-css"><code><span class="org-builtin">@import</span> url(<span class="org-string">"https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap"</span>);
 <span class="org-builtin">@import</span> url(<span class="org-string">"tldraw/tldraw.css"</span>);
 
 <span class="org-css-selector">body</span> {
@@ -14,9 +14,9 @@ import './App.css'
 
 function App() {
     return (
-        &lt;div style={{ position: 'fixed', inset: 0 }}&gt;
-            &lt;Tldraw /&gt;
-        &lt;/div&gt;
+        &lt;div style={{ position: 'fixed', inset: 0 }}>
+            &lt;Tldraw />
+        &lt;/div>
     )
 }
 

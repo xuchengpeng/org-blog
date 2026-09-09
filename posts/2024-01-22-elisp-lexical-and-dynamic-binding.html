@@ -7,7 +7,7 @@
 (<span class="org-keyword">setq</span> x 1)
 
 (<span class="org-keyword">let</span> ((x 2))
-  (getx))   <span class="org-comment-delimiter">;; </span><span class="org-comment">==&gt; 1</span>
+  (getx))   <span class="org-comment-delimiter">;; </span><span class="org-comment">==> 1</span>
 </code></pre> </div> <p> 在Dynamic Binding下使用let绑定本地变量时，这些变量在let表达式的整个执行周期内都有效。所以如果你在body中调用其他的函数，这些let绑定的本地变量对这些函数是可见的。 </p> <div class="org-src-container"> <pre class="src src-emacs-lisp"><code><span class="org-comment-delimiter">;;; </span><span class="org-comment">-*- lexical-binding: nil -*-
 </span>(<span class="org-keyword">setq</span> x 0)
 
@@ -17,5 +17,5 @@
 (<span class="org-keyword">setq</span> x 1)
 
 (<span class="org-keyword">let</span> ((x 2))
-  (getx))   <span class="org-comment-delimiter">;; </span><span class="org-comment">==&gt; 2</span>
+  (getx))   <span class="org-comment-delimiter">;; </span><span class="org-comment">==> 2</span>
 </code></pre> </div> </main> <footer id="postamble" class="status"> <div class="site-footer"> <p>&copy 2026 Chuck</p> <p>Powered by <a href="https://www.gnu.org/software/emacs/">Emacs</a></p> </div> <a href="#top" class="top-link" id="top-link" style="opacity:0;visibility:hidden"> <svg xmlns="http://www.w3.org/2000/svg" height="24px" width="24px" viewbox="0 -960 960 960" fill="currentcolor"> <path d="M440-160v-487L216-423l-56-57 320-320 320 320-56 57-224-224v487h-80Z"></path> </svg> </a> </footer> </body></html>

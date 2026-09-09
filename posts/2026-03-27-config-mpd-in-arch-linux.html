@@ -11,7 +11,7 @@ state_file         "~/.local/state/mpd/state"
 }
 </code></pre> </div> <p> 到这里， MPD 服务端就配置完成了，启动服务后就可以通过客户端进行播放音乐。 </p> <div class="org-src-container"> <pre class="src src-bash"><code>systemctl --user start mpd.service
 mpc update <span class="org-comment-delimiter"># </span><span class="org-comment">扫描音乐目录建立数据库
-</span>mpc add &lt;file&gt; <span class="org-comment-delimiter"># </span><span class="org-comment">添加文件或目录下的所有文件到播放队列
+</span>mpc add &lt;file> <span class="org-comment-delimiter"># </span><span class="org-comment">添加文件或目录下的所有文件到播放队列
 </span>mpc clear <span class="org-comment-delimiter"># </span><span class="org-comment">清空播放队列
 </span>mpc play <span class="org-comment-delimiter"># </span><span class="org-comment">开始播放
 </span>mpc stop <span class="org-comment-delimiter"># </span><span class="org-comment">停止播放

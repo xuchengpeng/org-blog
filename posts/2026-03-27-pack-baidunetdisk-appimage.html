@@ -7,7 +7,7 @@ wget https://issuepcdn.baidupcs.com/issue/netdisk/LinuxGuanjia/4.17.8/baidunetdi
 ar x ./baidunetdisk_4.17.8_amd64.deb
 tar xf ./data.tar.bz2 -C $<span class="org-variable-name">APP</span>.AppDir
 </code></pre> </div> <p> 在打包前，需要先创建 AppRun、desktop 和图标： </p> <div class="org-src-container"> <pre class="src src-bash"><code><span class="org-builtin">cd</span> $<span class="org-variable-name">APP</span>.AppDir
-cat &gt;&gt; ./AppRun &lt;&lt; <span class="org-string">'EOF'</span><span class="org-sh-heredoc">
+cat >> ./AppRun &lt;&lt; <span class="org-string">'EOF'</span><span class="org-sh-heredoc">
 #!/bin/sh
 HERE="$(</span><span class="org-sh-quoted-exec">dirname "$(readlink -f "${0}"</span><span class="org-sh-heredoc">)")"
 exec "${HERE}"/opt/baidunetdisk/baidunetdisk --no-sandbox "$@"

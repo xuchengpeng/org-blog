@@ -2,7 +2,7 @@
   <span class="org-doc">"Adjust the background transparency of FRAME by increment INCR."</span>
   (<span class="org-keyword">let*</span> ((oldalpha (<span class="org-keyword">or</span> (frame-parameter frame 'alpha-background) 100))
          (newalpha (+ incr oldalpha)))
-    (<span class="org-keyword">when</span> (<span class="org-keyword">and</span> (&lt;= 0 newalpha) (&gt;= 100 newalpha))
+    (<span class="org-keyword">when</span> (<span class="org-keyword">and</span> (&lt;= 0 newalpha) (>= 100 newalpha))
       (set-frame-parameter frame 'alpha-background newalpha))))
 (keymap-global-set <span class="org-string">"C-M-8"</span> (<span class="org-keyword">lambda</span> () (<span class="org-keyword">interactive</span>) (dotemacs-adjust-transparency nil -2)))
 (keymap-global-set <span class="org-string">"C-M-9"</span> (<span class="org-keyword">lambda</span> () (<span class="org-keyword">interactive</span>) (dotemacs-adjust-transparency nil 2)))
