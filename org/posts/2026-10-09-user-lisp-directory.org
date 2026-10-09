@@ -1,0 +1,9 @@
+#+TITLE: User Lisp Directory
+#+AUTHOR: Chuck
+#+DESCRIPTION: User Lisp Directory 是一个比包管理更简单的机制。
+#+KEYWORDS: Emacs
+#+DATE: <2026-10-09 Fri 09:29>
+
+User Lisp Directory 是一个比包管理更简单的机制。
+
+具体来说，它不会对目录下的文件进行自动依赖和升级，或者任何包构建和注册的能力。这意味着通常情况下， User Lisp Directory 最好使用在你自己写的代码上。尽管如此，它也可以用于其他第三方包或者你自己维护的包。
