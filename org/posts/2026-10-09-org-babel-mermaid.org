@@ -10,7 +10,7 @@ Org Babel 内置的语言已支持 PlantUML，在导出文件时可以生成各�
    #+begin_src bash
    npm install -g @mermaid-js/mermaid-cli
    #+end_src
-2. 安装 [[https://github.com/arnm/ob-mermaid][ob-mermaid]] 包，或者直接下载 ob-mermaid.el 文件保存到 User Lisp Directory 。
+2. 安装 [[https://github.com/xuchengpeng/ob-mermaid][ob-mermaid]] 包，或者直接下载 ob-mermaid.el 文件保存到 User Lisp Directory 。
 3. 确保 ~mmdc~ 在 PATH 路径下，或者指定路径：
    #+begin_src emacs-lisp
    (setq ob-mermaid-cli-path "mmdc")
