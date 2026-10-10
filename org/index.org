@@ -19,12 +19,13 @@
 |-----------------------+---------------------------------------------------+-----------------|
 | .emacs.d              | A clean and fast Emacs Configuration.             | [[https://github.com/xuchengpeng/.emacs.d][github]] [[https://codeberg.org/xuchengpeng/.emacs.d][codeberg]] |
 | build-emacs-windows   | Build Emacs for Windows with MSYS2 and MinGW-w64. | [[https://github.com/xuchengpeng/build-emacs-windows][github]]          |
+| catppuccin-themes     | Catppuccin themes for GNU Emacs.                  | [[https://github.com/xuchengpeng/catppuccin-themes][github]] [[https://codeberg.org/xuchengpeng/catppuccin-themes][codeberg]] |
+| tokyonight-themes     | Tokyo Night themes for GNU Emacs.                 | [[https://github.com/xuchengpeng/tokyonight-themes][github]] [[https://codeberg.org/xuchengpeng/tokyonight-themes][codeberg]] |
+| ob-mermaid            | Org babel language support for mermaid.           | [[https://github.com/xuchengpeng/ob-mermaid][github]] [[https://codeberg.org/xuchengpeng/ob-mermaid][codeberg]] |
 | IosevkaBerkeleyMono   | Iosevka with Berkeley Mono style.                 | [[https://github.com/xuchengpeng/IosevkaBerkeleyMono][github]]          |
 | IosevkaSS14           | Iosevka with JetBrains Mono style.                | [[https://github.com/xuchengpeng/IosevkaSS14][github]]          |
 | IosevkaSS15           | Iosevka with IBM Plex Mono style.                 | [[https://github.com/xuchengpeng/IosevkaSS15][github]]          |
 | mingw-build-binaries  | MinGW-W64 compiler binaries.                      | [[https://github.com/xuchengpeng/mingw-builds-binaries][github]]          |
-| catppuccin-themes     | Catppuccin themes for GNU Emacs.                  | [[https://github.com/xuchengpeng/catppuccin-themes][github]] [[https://codeberg.org/xuchengpeng/catppuccin-themes][codeberg]] |
-| tokyonight-themes     | Tokyo Night themes for GNU Emacs.                 | [[https://github.com/xuchengpeng/tokyonight-themes][github]] [[https://codeberg.org/xuchengpeng/tokyonight-themes][codeberg]] |
 | nvim                  | My neovim configuration.                          | [[https://github.com/xuchengpeng/nvim][github]] [[https://codeberg.org/xuchengpeng/nvim][codeberg]] |
 | vim                   | My vim basic configuration.                       | [[https://github.com/xuchengpeng/vim][github]] [[https://codeberg.org/xuchengpeng/vim][codeberg]] |
 | hugo-x                | A powerful, lightweight theme for Hugo.           | [[https://github.com/xuchengpeng/hugo-x][github]] [[https://codeberg.org/xuchengpeng/hugo-x][codeberg]] |
