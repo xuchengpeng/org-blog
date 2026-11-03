@@ -49,6 +49,12 @@
       org-html-head-include-scripts nil
       org-html-validation-link nil)
 
+(defun +org-html-stable-ids--extract-value (datum)
+  (let ((value (or (org-element-property :raw-value datum)
+                   (org-element-property-raw :value datum))))
+    (unless (org-element-deferred-p value)
+      value)))
+
 (defun +org-html-stable-ids-extract-id (datum)
   "Extract a reference from a DATUM.
 
@@ -57,7 +63,7 @@ Return DATUM's `:CUSTOM_ID` if set, or generate a reference from its
 nil."
   (or
    (org-element-property :CUSTOM_ID datum)
-   (let ((value (org-element-property :raw-value datum)))
+   (let ((value (+org-html-stable-ids--extract-value datum)))
      (when value
        (+org-html-stable-ids-to-kebab-case value)))))
 
