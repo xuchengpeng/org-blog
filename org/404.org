@@ -1,6 +1,6 @@
 #+DATE: <2020-01-01 Wed 09:00>
 #+TITLE: 404 Page
-#+OPTIONS: toc:nil
+#+OPTIONS: toc:nil date:nil
 
 #+begin_export html
 <p>

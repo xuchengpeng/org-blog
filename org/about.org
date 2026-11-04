@@ -1,5 +1,5 @@
 #+TITLE: About
 #+DATE: <2023-12-27 Wed 10:18>
-#+OPTIONS: toc:nil
+#+OPTIONS: toc:nil date:nil
 
 On the way...

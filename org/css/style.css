@@ -95,6 +95,11 @@ body {
   margin: 0;
 }
 
+.main {
+  display: flex;
+  flex: auto;
+}
+
 .title {
   font-family: var(--font-sans);
   font-size: 2em;
@@ -113,41 +118,6 @@ body {
   margin-bottom: 0.7em;
 }
 
-:is(h1, h2, h3, h4, h5, h6) {
-  font-family: var(--font-sans);
-  color: rgb(var(--primary));
-}
-
-h1 {
-  font-size: 2em;
-  margin: 1.5em 0 0.8em;
-}
-
-h2 {
-  font-size: 1.5em;
-  margin: 1.5em 0 0.75em;
-}
-
-h3 {
-  font-size: 1.25em;
-}
-
-h4 {
-  font-size: 1em;
-}
-
-h5 {
-  font-size: 0.875em;
-}
-
-h6 {
-  font-size: 0.75em;
-}
-
-:is(h3, h4, h5, h6) {
-  margin: 1.5em 0 0.7em;
-}
-
 p {
   margin: 1em 0;
 }
@@ -159,25 +129,20 @@ a {
   }
 }
 
-.content {
-  flex: auto;
-  color: rgb(var(--content));
-  max-width: var(--main-width);
-  width: 100%;
-  margin: 0 auto;
-  padding: 1em;
+figure {
+  margin: 1em auto;
+  padding: 0;
+  text-align: center;
+
+  & figcaption {
+    font-size: 0.875em;
+    line-height: 1.5;
+    margin-top: 0.3em;
+  }
 }
 
-.content a {
-  color: rgb(var(--link));
-  text-decoration: none;
-}
-
-.content blockquote {
-  margin: 1em 0;
-  padding-inline-start: 1em;
-  border-inline-start: 3px solid rgb(var(--secondary));
-  font-style: italic;
+img {
+  max-width: 100%;
 }
 
 .org-src-container,
@@ -242,35 +207,80 @@ pre {
   visibility: visible;
 }
 
-figure {
-  margin: 1em auto;
-  padding: 0;
-  text-align: center;
-
-  & figcaption {
-    font-size: 0.875em;
-    line-height: 1.5;
-    margin-top: 0.3em;
-  }
+.article {
+  flex: 1;
+  max-width: var(--main-width);
+  width: 100%;
+  margin: 0 auto;
+  padding: 2em 1em;
 }
 
-img {
-  max-width: 100%;
-}
-
-.content details {
+.article :is(.article-header, .article-footer) {
   margin: 1em 0;
+}
 
-  & > summary {
-    cursor: pointer;
+.article .article-content {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  margin: 1.5em 0;
+  color: rgb(var(--content));
 
-    & > p {
-      display: inline;
-    }
+  & > .content {
+    flex: 1;
+    min-width: 0;
+    max-width: 100%;
   }
 }
 
-.content {
+.article h1 {
+  font-size: 2em;
+  margin: 1.5em 0 0.8em;
+}
+
+.article h2 {
+  font-size: 1.5em;
+  margin: 1.5em 0 0.75em;
+}
+
+.article h3 {
+  font-size: 1.25em;
+}
+
+.article h4 {
+  font-size: 1em;
+}
+
+.article h5 {
+  font-size: 0.875em;
+}
+
+.article h6 {
+  font-size: 0.75em;
+}
+
+.article :is(h3, h4, h5, h6) {
+  margin: 1.5em 0 0.7em;
+}
+
+.article :is(h1, h2, h3, h4, h5, h6) {
+  font-family: var(--font-sans);
+  color: rgb(var(--primary));
+}
+
+.article a {
+  color: rgb(var(--link));
+  text-decoration: none;
+}
+
+.article blockquote {
+  margin: 1em 0;
+  padding-inline-start: 1em;
+  border-inline-start: 3px solid rgb(var(--secondary));
+  font-style: italic;
+}
+
+.article {
   & ul,
   & ol {
     margin: 1em 0;
@@ -295,14 +305,28 @@ img {
   & dt {
     color: rgb(var(--primary));
     font-weight: bold;
+    margin-top: 0.75em;
   }
 
   & dd {
-    margin-inline-start: 2em;
+    margin-top: 0.5em;
+    padding-inline-start: 2em;
   }
 }
 
-.content table {
+.article .footnotes {
+  font-size: 1.5em;
+}
+
+.article .footdef {
+  font-size: 0.9em;
+
+  & .footpara {
+    display: inline;
+  }
+}
+
+.article table {
   display: block;
   overflow: auto;
   border-collapse: collapse;
@@ -334,11 +358,46 @@ img {
   }
 }
 
-.content .underline {
+.article .article-title {
+  margin-top: 0;
+  margin-bottom: 0;
+
+  & a {
+    color: rgb(var(--primary));
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+      text-decoration-color: rgb(var(--link));
+    }
+  }
+}
+
+.article .article-meta {
+  color: rgb(var(--secondary));
+  font-size: 0.875em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8em;
+  margin: 0.1em 0;
+}
+
+.article details {
+  margin: 1em 0;
+
+  & > summary {
+    cursor: pointer;
+
+    & > p {
+      display: inline;
+    }
+  }
+}
+
+.article .underline {
   text-decoration: underline;
 }
 
-.content aside {
+.article aside {
   width: 40%;
   padding-left: 0.5em;
   margin-left: 0.5em;
@@ -347,7 +406,7 @@ img {
 }
 
 /* GTD Style */
-.content :is(.todo, .done) {
+.article :is(.todo, .done) {
   border-radius: var(--radius);
   font-family: var(--font-mono);
   font-size: 0.85em;
@@ -356,22 +415,22 @@ img {
   background-clip: padding-box;
 }
 
-.content .todo {
+.article .todo {
   background: red;
   color: white;
 }
 
-.content .done {
+.article .done {
   background: green;
   color: white;
 }
 
-.content .priority {
+.article .priority {
   color: orange;
   font-family: var(--font-mono);
 }
 
-.content .tag {
+.article .tag {
   font-family: var(--font-mono);
   font-size: 0.8em;
   font-weight: normal;
@@ -386,18 +445,6 @@ img {
     background-clip: padding-box;
     color: rgb(var(--content));
     background-color: rgb(var(--code-bg));
-  }
-}
-
-.content .footnotes {
-  font-size: 1.5em;
-}
-
-.content .footdef {
-  font-size: 0.9em;
-
-  & .footpara {
-    display: inline;
   }
 }
 

@@ -101,7 +101,7 @@ If `NAMED-ONLY` is non-nil, return nil."
 
 (defun +org-publish-sitemap (title list)
   (concat "#+TITLE: " title "\n"
-          "#+OPTIONS: toc:nil\n\n"
+          "#+OPTIONS: toc:nil date:nil\n\n"
           (org-list-to-org list)))
 
 (defun +org-publish-sitemap-format-entry (entry style project)
@@ -124,18 +124,83 @@ If `NAMED-ONLY` is non-nil, return nil."
 (defvar +org-html-header (+org-blog-file-contents "html/header.html"))
 (defvar +org-html-footer (+org-blog-file-contents "html/footer.html"))
 
+(org-export-define-derived-backend '+org-html 'html
+  :translate-alist '((template . +org-html-template)))
+
+(defun +org-html-template (contents info)
+  "Return complete document string after HTML conversion.
+CONTENTS is the transcoded contents string.  INFO is a plist
+holding export options."
+  (concat
+   "<!DOCTYPE html>\n"
+   "<html lang=\"en\" class=\"scroll-smooth\">\n"
+   "<head>\n"
+   "<meta charset=\"utf-8\">\n"
+   "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n"
+   (format "<title>%s</title>\n" (org-export-data (plist-get info :title) info))
+   (format "<meta name=\"description\" content=\"%s\"/>\n" (org-export-data (plist-get info :description) info))
+   (format "<meta name=\"keywords\" content=\"%s\"/>\n" (org-export-data (plist-get info :keywords) info))
+   +org-html-head
+   (when (and (memq (plist-get info :with-latex) '(mathjax t))
+              (org-element-map (plist-get info :parse-tree)
+                  '(latex-fragment latex-environment) #'identity info t nil t))
+     "<script id=\"MathJax-script\" async src=\"https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js\"></script>\n")
+   "</head>\n"
+   "<body>\n"
+   "<header class=\"header\">\n"
+   +org-html-header
+   "</header>\n"
+   "<main class=\"main\">\n"
+   "<article class=\"article\">\n"
+   (when (plist-get info :with-title)
+     (concat
+      "<div class=\"article-header\">\n"
+      (format "<h1 class=\"article-title\">%s</h1>\n" (org-export-data (plist-get info :title) info))
+      "<div class=\"article-meta\">\n"
+      (when (plist-get info :with-date)
+        (format "<span>%s</span>\n" (org-export-data (org-export-get-date info "%d %B %Y") info)))
+      (when (org-string-nw-p (plist-get info :keywords))
+        (mapconcat
+         #'(lambda (key)
+             (format "<span>#%s</span>\n" key))
+         (string-split (plist-get info :keywords) "," t " +")))
+      "</div>\n"
+      "</div>\n"))
+   "<div class=\"article-content\">\n"
+   "<div class=\"content\">\n"
+   contents
+   "</div>\n"
+   "</div>\n"
+   "</article>\n"
+   "</main>\n"
+   "<footer class=\"footer\">\n"
+   +org-html-footer
+   "</footer>\n"
+   "</body>\n"
+   "</html>"))
+
+(defun +org-html-publish-to-html (plist filename pub-dir)
+  "Publish an org file to HTML.
+
+FILENAME is the filename of the Org file to be published.  PLIST
+is the property list for the given project.  PUB-DIR is the
+publishing directory.
+
+Return output file name."
+  (org-publish-org-to '+org-html filename
+		              (concat (when (> (length org-html-extension) 0) ".")
+			                  (or (plist-get plist :html-extension)
+				                  org-html-extension
+				                  "html"))
+		              plist pub-dir))
+
 (setq org-publish-project-alist
       `(("blog-posts"
          :base-directory "./org/posts"
          :base-extension "org"
          :recursive t
-         :publishing-function org-html-publish-to-html
+         :publishing-function +org-html-publish-to-html
          :publishing-directory "./public/posts"
-         :html-head ,+org-html-head
-         :html-preamble ,+org-html-header
-         :html-postamble ,+org-html-footer
-         :html-mathjax-options ((path "https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"))
-         :html-mathjax-template "<script id=\"MathJax-script\" async src=\"%PATH\"></script>"
          :auto-sitemap t
          :sitemap-filename "index.org"
          :sitemap-title "Posts"
@@ -146,13 +211,8 @@ If `NAMED-ONLY` is non-nil, return nil."
          :base-directory "./org"
          :base-extension "org"
          :recursive nil
-         :publishing-function org-html-publish-to-html
+         :publishing-function +org-html-publish-to-html
          :publishing-directory "./public"
-         :html-head ,+org-html-head
-         :html-preamble ,+org-html-header
-         :html-postamble ,+org-html-footer
-         :html-mathjax-options ((path "https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"))
-         :html-mathjax-template "<script id=\"MathJax-script\" async src=\"%PATH\"></script>"
          :auto-sitemap nil)
         ("blog-static"
          :base-directory "./org"
