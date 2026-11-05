@@ -1,0 +1,64 @@
+#+TITLE: 定义一个新的 Org 导出后端
+#+AUTHOR: Chuck
+#+DESCRIPTION: 介绍如何在使用 Org 导出为 HTML 的时候使用自定义的后端。
+#+KEYWORDS: Emacs, Org, HTML
+#+DATE: <2026-11-05 Thu 09:13>
+
+我的博客是使用 ox-publish 将 Org 文件导出为 HTML的，默认使用 Org-mode 的 HTML 导出后端，生成固定页面样式的文件。如果想要在页面增加新的元素或者自定义元素的格式，就需要自己写一个导出后端，根据自己定义的模板来生成。
+
+Org 中使用 ~org-export-define-backend~ 来定义导出后端，由于已经存在了内置的 HTML 导出后端，可以使用 ~org-export-define-derived-backend~ 来定义导出后端，这样可以继承已有的 HTML 导出后端，只需要在 translate-alist 中增加需要修改的部分即可。
+
+下面提供一个简单的示例，示例中定义了 ~+org-html~ 导出后端，继承自 ~html~ 导出后端，并且通过 menu-entry 将导出功能添加到 ~org-export-dispatch~ 中：
+
+#+begin_src emacs-lisp
+  (org-export-define-derived-backend
+      '+org-html 'html
+    :translate-alist '((template . +org-html-template))
+    :menu-entry '(?h "Export to HTML"
+                     ((?b "+org-html to buffer" +org-html-export-as-html)
+                      (?f "+org-html to file" +org-html-export-to-html))))
+
+  (defun +org-html-template (contents info)
+    "Return complete document string after HTML conversion.
+  CONTENTS is the transcoded contents string.  INFO is a plist
+  holding export options."
+    (concat
+     "<!DOCTYPE html>\n"
+     "<html lang=\"en\" class=\"scroll-smooth\">\n"
+     "<head>\n"
+     "<meta charset=\"utf-8\">\n"
+     "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n"
+     (format "<title>%s</title>\n" (org-export-data (plist-get info :title) info))
+     "<link rel=\"stylesheet\" href=\"https://orgmode.org/worg/style/worg.css\">\n"
+     "<style> body { max-width: 72rem; width: 100%; margin: 0 auto; padding: 1em; } </style>"
+     (when (and (memq (plist-get info :with-latex) '(mathjax t))
+                (org-element-map (plist-get info :parse-tree)
+                    '(latex-fragment latex-environment) #'identity info t nil t))
+       "<script id=\"MathJax-script\" async src=\"https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js\"></script>\n")
+     "</head>\n"
+     "<body>\n"
+     "<header>\n"
+     (format "<h1>%s</h1>\n" (org-export-data (plist-get info :title) info))
+     "</header>\n"
+     "<main>\n"
+     contents
+     "</main>\n"
+     "<footer>\n"
+     "<p>Powered by <a href=\"https://www.gnu.org/software/emacs/\">Emacs</a></p>\n"
+     "</footer>\n"
+     "</body>\n"
+     "</html>"))
+
+  (defun +org-html-export-as-html (&optional async subtreep visible-only body-only ext-plist)
+    "Export current buffer to a HTML buffer."
+    (interactive)
+    (org-export-to-buffer '+org-html "*+org-html export*"
+      async subtreep visible-only body-only ext-plist
+      (lambda () (set-auto-mode t))))
+
+  (defun +org-html-export-to-html (&optional async subtreep visible-only body-only ext-plist)
+    "Export current buffer to a HTML file."
+    (let* ((file (org-export-output-file-name ".html" subtreep)))
+      (org-export-to-file '+org-html file
+        async subtreep visible-only body-only ext-plist)))
+#+end_src
