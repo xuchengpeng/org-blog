@@ -125,7 +125,8 @@ If `NAMED-ONLY` is non-nil, return nil."
 (defvar +org-html-footer (+org-blog-file-contents "html/footer.html"))
 
 (org-export-define-derived-backend '+org-html 'html
-  :translate-alist '((template . +org-html-template)))
+  :translate-alist '((template . +org-html-template)
+                     (inner-template . +org-html-inner-template)))
 
 (defun +org-html-template (contents info)
   "Return complete document string after HTML conversion.
@@ -150,6 +151,18 @@ holding export options."
    "<header class=\"header\">\n"
    +org-html-header
    "</header>\n"
+   contents
+   "<footer class=\"footer\">\n"
+   +org-html-footer
+   "</footer>\n"
+   "</body>\n"
+   "</html>"))
+
+(defun +org-html-inner-template (contents info)
+  "Return body of document string after HTML conversion.
+CONTENTS is the transcoded contents string.  INFO is a plist
+holding export options."
+  (concat
    "<main class=\"main\">\n"
    "<article class=\"article\">\n"
    (when (plist-get info :with-title)
@@ -167,17 +180,16 @@ holding export options."
       "</div>\n"
       "</div>\n"))
    "<div class=\"article-content\">\n"
+   (when-let* ((depth (plist-get info :with-toc))
+               (toc (org-html-toc depth info)))
+     (format "<div class=\"table-of-contents\"><div class=\"toc\">%s</div></div>\n" toc))
    "<div class=\"content\">\n"
    contents
+   (org-html-footnote-section info)
    "</div>\n"
    "</div>\n"
    "</article>\n"
-   "</main>\n"
-   "<footer class=\"footer\">\n"
-   +org-html-footer
-   "</footer>\n"
-   "</body>\n"
-   "</html>"))
+   "</main>\n"))
 
 (defun +org-html-publish-to-html (plist filename pub-dir)
   "Publish an org file to HTML.

@@ -34,7 +34,8 @@
   --font-sans: "Berkeley Mono", "LXGW WenKai", sans-serif;
   --font-serif: "Berkeley Mono", "LXGW WenKai", serif;
   --font-mono: "Berkeley Mono", "LXGW WenKai", monospace;
-  --main-width: 900px;
+  --main-width: 72rem;
+  --spacing: 0.25em;
   --radius: 4px;
   --theme: 255, 255, 255;
   --primary: 15, 23, 42;
@@ -230,6 +231,20 @@ pre {
     flex: 1;
     min-width: 0;
     max-width: 100%;
+  }
+
+  @media (min-width: 1024px) {
+    flex-direction: row;
+
+    & > .table-of-contents {
+      order: 1;
+      width: calc(var(--spacing) * 64);
+      padding-left: calc(var(--spacing) * 4);
+      & > .toc {
+        position: sticky;
+        top: 4em;
+      }
+    }
   }
 }
 
@@ -776,12 +791,6 @@ mjx-container[jax="CHTML"][display="true"] {
   }
 }
 
-@media screen and (max-width: 600px) {
-  pre {
-    overflow: auto;
-  }
-}
-
 #table-of-contents {
   font-size: 1em;
   line-height: 1.5;
@@ -828,20 +837,5 @@ mjx-container[jax="CHTML"][display="true"] {
 
   & li ul {
     margin-inline-start: 1em;
-  }
-}
-
-@media screen and (min-width: 1400px) {
-  #table-of-contents {
-    position: fixed;
-    width: calc(((100vw - var(--main-width)) / 2) - 60px);
-    height: 80vh;
-    right: 0;
-    top: 12vh;
-    overflow: hidden;
-
-    &:hover {
-      overflow: auto;
-    }
   }
 }
