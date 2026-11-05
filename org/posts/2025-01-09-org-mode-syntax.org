@@ -2,6 +2,7 @@
 #+SUBTITLE: Your life in plain text
 #+AUTHOR: Chuck
 #+DATE: <2025-01-09 Thu 14:50>
+#+KEYWORDS: Emacs, Org
 
 A GNU Emacs major mode for keeping notes, authoring documents, computational notebooks, literate programming, maintaining to-do lists, planning projects, and more — in a fast and effective plain text system.
 

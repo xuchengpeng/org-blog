@@ -1,6 +1,7 @@
 #+TITLE: Iosevka with IBM Plex Mono style
 #+AUTHOR: Chuck
 #+DATE: <2025-04-16 Wed 11:44>
+#+KEYWORDS: Themes
 
 [[https://github.com/be5invis/Iosevka][Iosevka]] [ˌjɔˈseβ.kʰa] is an /open-source, sans-serif + slab-serif, monospace + quasi‑proportional/ typeface family, designed for /writing code/, using in /terminals/, and preparing /technical documents/.
 

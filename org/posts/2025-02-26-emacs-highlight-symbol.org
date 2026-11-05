@@ -1,6 +1,7 @@
-#+TITLE: Emacs中高亮符号
+#+TITLE: Emacs 中高亮符号
 #+AUTHOR: Chuck
 #+DATE: <2025-02-26 Wed 13:11>
+#+KEYWORDS: Emacs
 
 日常都是使用[[https://github.com/wolray/symbol-overlay][symbol-overlay]]包在编程时进行符号高亮，James Cherti介绍了[[https://www.jamescherti.com/emacs-symbol-highlighting-built-in-functions/][Emacs内置功能实现符号高亮]]的方法，核心是使用Emacs内置的[[https://www.gnu.org/software/emacs/manual/html_node/emacs/Highlight-Interactively.html][hi-lock]]包来实现。
 

@@ -1,6 +1,7 @@
 #+TITLE: Safe Local Variable Directories
 #+AUTHOR: Chuck
 #+DATE: <2024-11-25 Mon 15:46>
+#+KEYWORDS: Emacs
 
 =safe-local-variable-directories= was introduced in Emacs 30.1. A list of directories where local variables are always enabled.
 

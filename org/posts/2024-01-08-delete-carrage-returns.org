@@ -1,6 +1,7 @@
-#+TITLE: 删除文件中的Windows换行符
+#+TITLE: 删除文件中的 Windows 换行符
 #+AUTHOR: Chuck
 #+DATE: <2024-01-08 Mon 08:03>
+#+KEYWORDS: Emacs, Windows
 
 在Windows中创建的文件如果使用了Windows换行符，那么在Linux中打开时每一行行末会显示 ~^M~ 。
 

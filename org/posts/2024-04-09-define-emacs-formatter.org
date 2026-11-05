@@ -1,6 +1,7 @@
 #+TITLE: Define Emacs Formatter
 #+AUTHOR: Chuck
 #+DATE: <2024-04-09 Tue 16:53>
+#+KEYWORDS: Emacs
 
 Steve Purcell has created a package [[https://github.com/purcell/emacs-reformatter][reformatter]], which can define commands to format the current Emacs buffer.
 

@@ -1,6 +1,7 @@
 #+TITLE: Aspell: Personal Dictionaries
 #+AUTHOR: Chuck
 #+DATE: <2024-01-23 Tue 14:29>
+#+KEYWORDS: Aspell
 
 [[http://aspell.net/][GNU Aspell]] 是一个用来替换ispell的免费开源拼写检查器。
 

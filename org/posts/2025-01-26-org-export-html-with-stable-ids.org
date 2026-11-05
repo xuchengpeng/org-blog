@@ -1,6 +1,7 @@
-#+TITLE: Org导出HTML时生成稳定的ID
+#+TITLE: Org 导出 HTML 时生成稳定的 ID
 #+AUTHOR: Chuck
 #+DATE: <2025-01-26 Sun 16:33>
+#+KEYWORDS: Emacs, Org, HTML
 
 使用Org导出成HTML的时候，文档内部的标题和图片等元素都会生成格式如 =orgxxxxxxx= 的ID，这个ID从字面上并不能看出来对应那个元素，并且每次文档重新导出时，这个ID都会改变。
 

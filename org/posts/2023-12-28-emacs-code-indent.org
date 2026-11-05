@@ -1,6 +1,7 @@
-#+TITLE: Emacs代码缩进
+#+TITLE: Emacs 代码缩进
 #+AUTHOR: Chuck
 #+DATE: <2023-12-28 Thu 20:28>
+#+KEYWORDS: Emacs
 
 Emacs自带的 ~electric-indent-mode~ 或者第三方插件 [[https://github.com/Malabarba/aggressive-indent-mode][aggressive-indent-mode]] 可以自动进行代码缩进。
 
