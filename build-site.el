@@ -124,9 +124,10 @@ If `NAMED-ONLY` is non-nil, return nil."
 (defvar +org-html-header (+org-blog-file-contents "html/header.html"))
 (defvar +org-html-footer (+org-blog-file-contents "html/footer.html"))
 
-(org-export-define-derived-backend '+org-html 'html
-  :translate-alist '((template . +org-html-template)
-                     (inner-template . +org-html-inner-template)))
+(org-export-define-derived-backend
+ '+org-html 'html
+ :translate-alist '((template . +org-html-template)
+                    (inner-template . +org-html-inner-template)))
 
 (defun +org-html-template (contents info)
   "Return complete document string after HTML conversion.
@@ -169,15 +170,16 @@ holding export options."
      (concat
       "<div class=\"article-header\">\n"
       (format "<h1 class=\"article-title\">%s</h1>\n" (org-export-data (plist-get info :title) info))
-      "<div class=\"article-meta\">\n"
-      (when (plist-get info :with-date)
-        (format "<span>%s</span>\n" (org-export-data (org-export-get-date info "%d %B %Y") info)))
-      (when (org-string-nw-p (plist-get info :keywords))
-        (mapconcat
-         #'(lambda (key)
-             (format "<span>#%s</span>\n" key))
-         (string-split (plist-get info :keywords) "," t " +")))
-      "</div>\n"
+      (when-let* ((meta (concat
+                         (when (plist-get info :with-date)
+                           (format "<span>%s</span>\n" (org-export-data (org-export-get-date info "%d %B %Y") info)))
+                         (when (org-string-nw-p (plist-get info :keywords))
+                           (mapconcat
+                            #'(lambda (key)
+                                (format "<span>#%s</span>\n" key))
+                            (string-split (plist-get info :keywords) "," t " +"))))))
+        (when (org-string-nw-p meta)
+          (format "<div class=\"article-meta\">%s</div>\n" meta)))
       "</div>\n"))
    "<div class=\"article-content\">\n"
    (when-let* ((depth (plist-get info :with-toc))
