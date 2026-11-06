@@ -1,7 +1,7 @@
 #+TITLE: 贝塞尔曲面
 #+AUTHOR: Chuck
 #+DESCRIPTION: 贝塞尔曲面是贝塞尔曲线向二维参数空间的扩展，通常通过两个方向的张量积（Tensor Product）定义。
-#+KEYWORDS: Computer Vision
+#+FILETAGS: :ComputerVision:
 #+DATE: <2026-02-05 Thu 08:55>
 
 贝塞尔曲面是[[file:2026-02-04-bezier-curve.org][贝塞尔曲线]]向二维参数空间的扩展，通常通过两个方向的张量积（Tensor Product）定义。

@@ -1,7 +1,7 @@
 #+TITLE: Weekly Things 1
 #+AUTHOR: Chuck
 #+DESCRIPTION: 动物哲学；科学；alist；plist。
-#+KEYWORDS: Reading, 鲁迅, Emacs
+#+FILETAGS: :Reading:鲁迅:Emacs:
 #+DATE: <2026-11-05 Thu 08:13>
 
 * Reading

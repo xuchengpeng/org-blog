@@ -1,7 +1,7 @@
 #+TITLE: 修复 Windows Terminal 中 Git Bash 闪烁问题
 #+AUTHOR: Chuck
 #+DESCRIPTION: 在 Windows Terminal 中使用 Git Bash 时，经常会出现整个终端闪烁，非常影响使用体验。
-#+KEYWORDS: Git, Windows
+#+FILETAGS: :Git:Windows:
 #+DATE: <2026-02-26 Thu 16:47>
 
 在 Windows Terminal 中使用 Git Bash 时，经常会出现整个终端闪烁，非常影响使用体验。

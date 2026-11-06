@@ -1,7 +1,7 @@
 #+TITLE: 修改 Git 提交的作者信息
 #+AUTHOR: Chuck
 #+DESCRIPTION: 要修改 Git 提交（commit）的作者信息，直接使用命令可以对最近一次或历史多次的提交进行修改。
-#+KEYWORDS: Linux, Git
+#+FILETAGS: :Linux:Git:
 #+DATE: <2026-02-11 Wed 10:21>
 
 要修改 Git 提交（commit）的作者信息，直接使用命令可以对最近一次或历史多次的提交进行修改。

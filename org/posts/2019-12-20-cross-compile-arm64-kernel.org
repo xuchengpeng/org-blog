@@ -1,7 +1,7 @@
 #+TITLE: 交叉编译 ARM64 内核
 #+AUTHOR: Chuck
 #+DATE: <2019-12-20 Fri 23:03>
-#+KEYWORDS: Linux, ARM64
+#+FILETAGS: :Linux:ARM64:
 
 介绍如何使用编译器交叉编译ARM64内核。
 

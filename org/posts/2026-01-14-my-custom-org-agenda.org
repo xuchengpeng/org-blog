@@ -1,7 +1,7 @@
 #+TITLE: My Custom Org Agenda
 #+AUTHOR: Chuck
 #+DESCRIPTION: By setting the org-agenda-custom-commands variable, we can define our own agenda views that only include necessary information.
-#+KEYWORDS: Emacs, Org
+#+FILETAGS: :Emacs:Org:
 #+DATE: <2026-01-14 Wed 11:07>
 
 By setting the ~org-agenda-custom-commands~ variable, we can define our own agenda views that only include necessary information.

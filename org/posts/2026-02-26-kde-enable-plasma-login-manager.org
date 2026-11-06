@@ -1,7 +1,7 @@
 #+TITLE: KDE 启用 Plasma Login Manager
 #+AUTHOR: Chuck
 #+DESCRIPTION: Plasma Login provides a display manager for KDE Plasma, forked from SDDM and with a new frontend providing a greeter, wallpaper plugin integration and System Settings module (KCM).
-#+KEYWORDS: Linux, Arch, KDE, Plasma
+#+FILETAGS: :Linux:Arch:KDE:Plasma:
 #+DATE: <2026-02-26 Thu 14:28>
 
 #+begin_quote

@@ -1,7 +1,7 @@
 #+TITLE: Plasma Login Manager 指纹登录
 #+AUTHOR: Chuck
 #+DESCRIPTION: 在现代 Linux 系统中，基本都是使用 fprint 来便捷的使用指纹识别的功能，其内置的 PAM 模块可以用于用户指纹登录系统。
-#+KEYWORDS: Linux, KDE, Plasma
+#+FILETAGS: :Linux:KDE:Plasma:
 #+DATE: <2026-03-17 Tue 10:12>
 
 在现代 Linux 系统中，基本都是使用 [[https://fprint.freedesktop.org/][fprint]] 来便捷的使用指纹识别的功能，其内置的 PAM 模块可以用于用户指纹登录系统。

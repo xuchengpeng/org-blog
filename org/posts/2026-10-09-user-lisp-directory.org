@@ -1,7 +1,7 @@
 #+TITLE: User Lisp Directory
 #+AUTHOR: Chuck
 #+DESCRIPTION: User Lisp Directory 是一个比包管理更简单的机制。
-#+KEYWORDS: Emacs
+#+FILETAGS: :Emacs:
 #+DATE: <2026-10-09 Fri 09:29>
 
 User Lisp Directory 是一个比包管理更简单的机制。

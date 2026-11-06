@@ -1,6 +1,7 @@
 #+TITLE: llama.cpp使用
 #+AUTHOR: Chuck
 #+DATE: <2025-02-10 Mon 13:35>
+#+FILETAGS: LLM
 
 前面的一篇文章介绍了[[file:2025-02-08-ollama-run-deepseek-r1.org][Ollama运行DeepSeek-R1]]，实际上Ollama的后端使用的是[[https://github.com/ggerganov/llama.cpp][llama.cpp]]。
 

@@ -1,7 +1,7 @@
 #+TITLE: Arch Linux 中从源码编译 Emacs
 #+AUTHOR: Chuck
 #+DESCRIPTION: 这里介绍在 Arch Linux 环境中从源码编译安装 Emacs 的经验。
-#+KEYWORDS: Emacs, Linux, Arch
+#+FILETAGS: :Emacs:Linux:Arch:
 #+DATE: <2026-02-09 Mon 13:12>
 
 这里介绍在 Arch Linux 环境中从源码编译安装 Emacs 的经验。

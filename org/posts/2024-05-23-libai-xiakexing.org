@@ -1,6 +1,6 @@
 #+TITLE: 李白《侠客行》
 #+DATE: <2024-05-23 Thu 08:43>
-#+KEYWORDS: Poetry, 李白
+#+FILETAGS: :Poetry:李白:
 
 #+begin_center
 #+begin_verse

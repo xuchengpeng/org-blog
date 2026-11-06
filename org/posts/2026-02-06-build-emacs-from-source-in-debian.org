@@ -1,7 +1,7 @@
 #+TITLE: Debian 中从源码编译 Emacs
 #+AUTHOR: Chuck
 #+DESCRIPTION: 介绍在 Debian 13 KDE 桌面环境中从源码编译 Emacs 的经验。
-#+KEYWORDS: Emacs, Linux, Debian
+#+FILETAGS: :Emacs:Linux:Debian:
 #+DATE: <2026-02-06 Fri 17:13>
 
 以下介绍在 Debian 13 KDE 桌面环境中从源码编译 Emacs 的经验。

@@ -1,7 +1,7 @@
 #+TITLE: 苏轼《饮湖上初晴后雨》
 #+AUTHOR: Chuck
 #+DESCRIPTION: 《饮湖上初晴后雨》是宋代文学家苏轼的组诗作品。这两首诗写于诗人任杭州通判期间，旨在赞美西湖美景。
-#+KEYWORDS: Poetry
+#+FILETAGS: :Poetry:
 #+DATE: <2025-08-08 Fri 13:09>
 
 - 其一 ::

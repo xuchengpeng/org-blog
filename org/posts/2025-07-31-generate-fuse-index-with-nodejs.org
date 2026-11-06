@@ -1,7 +1,7 @@
 #+TITLE: Generate Fuse index with Node.js
 #+AUTHOR: Chuck
 #+DESCRIPTION: With Node.js, use Cheerio to manipulate HTML, then select elements to generate Fuse index.
-#+KEYWORDS: Fuse, Node.js, Cheerio
+#+FILETAGS: :Fuse:Node.js:Cheerio:
 #+DATE: <2025-07-31 Thu 19:27>
 
 [[https://github.com/cheeriojs/cheerio][Cheerio]] is a fast, flexible, and elegant library for parsing and manipulating HTML and XML. [[https://www.fusejs.io/][Fuse.js]] is a lightweight fuzzy-search, in JavaScript, with zero dependencies.

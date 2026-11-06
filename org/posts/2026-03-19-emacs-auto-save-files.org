@@ -1,7 +1,7 @@
 #+TITLE: Emacs 自动保存文件
 #+AUTHOR: Chuck
 #+DESCRIPTION: 目前比较流行的 Emacs 自动保存文件的包有 super-save 和 buffer-guardian.el 等。
-#+KEYWORDS: Emacs
+#+FILETAGS: :Emacs:
 #+DATE: <2026-03-19 Thu 17:00>
 
 目前比较流行的 Emacs 自动保存文件的包有 [[https://github.com/bbatsov/super-save][super-save]] 和 [[https://github.com/jamescherti/buffer-guardian.el][buffer-guardian.el]] 等。

@@ -1,7 +1,7 @@
 #+TITLE: MDict Dictionaries
 #+AUTHOR: Chuck
 #+DATE: <2024-12-12 Thu 15:53>
-#+KEYWORDS: MDict
+#+FILETAGS: :MDict:
 
 A collections of website archives where you can download MDict dictionaries.
 

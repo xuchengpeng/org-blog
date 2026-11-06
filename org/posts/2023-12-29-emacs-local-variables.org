@@ -1,7 +1,7 @@
 #+TITLE: Emacs 本地变量
 #+AUTHOR: Chuck
 #+DATE: <2023-12-29 Fri 09:39>
-#+KEYWORDS: Emacs
+#+FILETAGS: :Emacs:
 
 一般情况下，我们在 =init.el= 中设置一些变量可以全局生效，如果想针对不同的目录、不同的mode设置不同的变量，可以借助Emcas提供的Local Variables[fn:1]机制。
 

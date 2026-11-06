@@ -1,7 +1,7 @@
 #+TITLE: What is REST
 #+AUTHOR: Chuck
 #+DESCRIPTION: REST is acronym for REpresentational State Transfer. It is architectural style for distributed hypermedia systems and was first presented by Roy Fielding in 2000 in his famous dissertation.
-#+KEYWORDS: REST, HTTP
+#+FILETAGS: :REST:HTTP:
 #+DATE: <2019-12-02 Mon 23:03>
 
 REST is acronym for REpresentational State Transfer. It is architectural style for *distributed hypermedia systems* and was first presented by Roy Fielding in 2000 in his famous [[https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm][dissertation]].

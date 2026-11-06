@@ -1,6 +1,6 @@
 #+TITLE: 苏轼《定风波》
 #+DATE: <2024-04-03 Wed 10:52>
-#+KEYWORDS: Poetry, 苏轼
+#+FILETAGS: :Poetry:苏轼:
 
 #+begin_quote
 三月七日，沙湖道中遇雨。雨具先去，同行皆狼狈，余独不觉，已而遂晴，故作此词。

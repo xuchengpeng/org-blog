@@ -1,7 +1,7 @@
 #+TITLE: Debian 安装 fcitx5-rime 输入法
 #+AUTHOR: Chuck
 #+DESCRIPTION: 在 Windows 或 WSL Debian 中都是通过小狼毫和 emacs-rime 来使用 RIME 输入法的，笔记本电脑的 Debian 13 KDE 桌面环境中，就使用当前很流行的 fcitx5-rime 输入法。
-#+KEYWORDS: Linux, Debian, Arch, RIME
+#+FILETAGS: :Linux:Debian:Arch:RIME:
 #+DATE: <2026-02-06 Fri 14:59>
 
 在 Windows 或 WSL Debian 中都是通过小狼毫和 emacs-rime 来使用 RIME 输入法的，笔记本电脑的 Debian 13 KDE 桌面环境中，就使用当前很流行的 fcitx5-rime 输入法。

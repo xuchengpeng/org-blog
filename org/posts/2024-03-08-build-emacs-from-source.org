@@ -2,7 +2,7 @@
 #+AUTHOR: Chuck
 #+DATE: <2024-03-08 Fri 15:36>
 #+DESCRIPTION: A guide to build emacs from source on Linux.
-#+KEYWORDS: Emacs, Linux
+#+FILETAGS: :Emacs:Linux:
 
 Windows 11 features [[https://docs.microsoft.com/en-us/windows/wsl/tutorials/gui-apps][built-in support for running Linux GUI applications]]. Emacs 29 has became a real GTK application, gone with the blurry fonts problem.
 

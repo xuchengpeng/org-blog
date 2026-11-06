@@ -1,7 +1,7 @@
 #+TITLE: Linux WeChat 和 QQ AppImage 中文输入问题
 #+AUTHOR: Chuck
 #+DESCRIPTION: AppImage 程序因其打包机制通常与宿主机输入法框架（如 Fcitx5 或 IBus）隔离。要在 AppImage 中使用中文输入法，关键在于运行程序手动显式加载 fcitx 环境。
-#+KEYWORDS: Linux, RIME
+#+FILETAGS: :Linux:RIME:
 #+DATE: <2026-03-18 Wed 09:06>
 
 AppImage 程序因其打包机制通常与宿主机输入法框架（如 Fcitx5 或 IBus）隔离。要在 AppImage 中使用中文输入法，关键在于运行程序手动显式加载 fcitx 环境。

@@ -1,7 +1,7 @@
 #+TITLE: OpenGL Graphics Pipeline
 #+AUTHOR: Chuck
 #+DESCRIPTION: The OpenGL graphics pipeline is a sequence of processing steps that converts 3D vertex coordinates and data into a 2D colored image on your screen.
-#+KEYWORDS: Computer Vision, OpenGL
+#+FILETAGS: :ComputerVision:OpenGL:
 #+DATE: <2026-06-27 Sat 14:30>
 
 The OpenGL graphics pipeline is a sequence of processing steps that converts 3D vertex coordinates and data into a 2D colored image on your screen. It handles everything from transforming 3D models and applying lighting to rasterizing shapes and calculating individual pixel colors.

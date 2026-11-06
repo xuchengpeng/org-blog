@@ -1,7 +1,7 @@
 #+TITLE: True Emacs Transparency
 #+AUTHOR: Chuck
 #+DATE: <2024-02-01 Thu 14:37>
-#+KEYWORDS: Emacs
+#+FILETAGS: :Emacs:
 
 Before Emacs 29, we can set the =alpha= frame parameter to adjust the opacity of the frame. The issue with =alpha= is that is set the opacity of the entire window, which means both text foreground and background become transparent together. But what we want is the text remains opaque while the background becomes transparent.
 

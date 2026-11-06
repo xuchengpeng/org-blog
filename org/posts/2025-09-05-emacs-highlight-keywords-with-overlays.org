@@ -1,7 +1,7 @@
 #+TITLE: Emacs Highlight Keywords With Overlays
 #+AUTHOR: Chuck
 #+DESCRIPTION: Use overlays to highlight a buffer’s keywords on the screen.
-#+KEYWORDS: Emacs
+#+FILETAGS: :Emacs:
 #+DATE: <2025-09-05 Fri 15:23>
 
 之前的文章介绍了[[file:2025-02-28-emacs-highlight-keywords.org][使用font-lock来高亮关键字]]，可以优化为使用性能更好的[[https://www.gnu.org/s/emacs/manual/html_node/elisp/Overlays.html][Overlays]]特性来实现。

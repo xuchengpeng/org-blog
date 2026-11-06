@@ -1,7 +1,7 @@
 #+TITLE: Emacs 根据时间切换主题
 #+AUTHOR: Chuck
 #+DATE: <2024-01-05 Fri 12:26>
-#+KEYWORDS: Emacs
+#+FILETAGS: :Emacs:
 
 每小时运行一次，早上6点和晚上18点自动切换主题。
 

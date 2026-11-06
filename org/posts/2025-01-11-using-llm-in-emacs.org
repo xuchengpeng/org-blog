@@ -1,7 +1,7 @@
 #+TITLE: 在 Emacs 中使用大型语言模型
 #+AUTHOR: Chuck
 #+DATE: <2025-01-11 Sat 16:14>
-#+KEYWORDS: Emacs, LLM
+#+FILETAGS: :Emacs:LLM:
 
 Emacs有不少LLM的客户端，这里我们选择[[https://github.com/karthink/gptel][gptel]]，在 =init.el= 中添加以下代码：
 

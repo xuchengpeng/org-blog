@@ -1,7 +1,7 @@
 #+TITLE: 3D Rotations
 #+AUTHOR: Chuck
 #+DESCRIPTION: A basic 3D rotation (also called elemental rotation) is a rotation about one of the axes of a coordinate system.
-#+KEYWORDS: Computer Vision
+#+FILETAGS: :ComputerVision:
 #+DATE: <2025-05-29 Thu 09:58>
 
 A basic 3D rotation (also called elemental rotation) is a rotation about one of the axes of a coordinate system. The following three basic rotation matrices rotate vectors by an angle θ about the x-, y-, or z-axis, in three dimensions, using the [[https://en.wikipedia.org/wiki/Right-hand_rule][right-hand rule]]—which codifies their alternating signs.

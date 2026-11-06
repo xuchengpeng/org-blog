@@ -1,7 +1,7 @@
 #+TITLE: Hugo partialCached
 #+AUTHOR: Chuck
 #+DESCRIPTION: Allows for caching of partials that do not need to be re-rendered on every invocation.
-#+KEYWORDS: Hugo
+#+FILETAGS: :Hugo:
 #+DATE: <2025-08-08 Fri 14:09>
 
 Executes the given template and caches the result, optionally passing context. If the contains a return statement, returns the given value, else returns the rendered output.

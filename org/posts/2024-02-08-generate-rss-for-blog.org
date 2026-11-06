@@ -1,7 +1,7 @@
 #+TITLE: Generate RSS For Blog
 #+AUTHOR: Chuck
 #+DATE: <2024-02-08 Thu 11:44>
-#+KEYWORDS: Emacs, RSS
+#+FILETAGS: :Emacs:RSS:
 
 I'm not sure how many people still use RSS, but I still want to have a RSS feed for my blog though I don't use RSS myself either.
 

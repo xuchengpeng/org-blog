@@ -1,7 +1,7 @@
 #+TITLE: Arch Linux 配置 MPD
 #+AUTHOR: Chuck
 #+DESCRIPTION: Music Player Daemon (MPD) is a flexible, powerful, server-side application for playing music.
-#+KEYWORDS: Linux, Arch, MPD
+#+FILETAGS: :Linux:Arch:MPD:
 #+DATE: <2026-03-27 Fri 11:37>
 
 Music Player Daemon (MPD) is a flexible, powerful, server-side application for playing music.

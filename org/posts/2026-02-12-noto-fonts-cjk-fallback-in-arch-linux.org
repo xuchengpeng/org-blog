@@ -1,7 +1,7 @@
 #+TITLE: Arch Linux 中 Noto CJK 字体回落问题
 #+AUTHOR: Chuck
 #+DESCRIPTION: 因为 noto-fonts-cjk 包修改了一些配置，可能导致部分字体回落时出现问题，例如关、复等字字形过窄，门的字形为竖点插入横折钩而非左上斜点等。
-#+KEYWORDS: Linux, Arch
+#+FILETAGS: :Linux:Arch:
 #+DATE: <2026-02-12 Thu 08:50>
 
 因为 noto-fonts-cjk 包修改了一些配置，可能导致部分字体回落时出现问题，例如关、复等字字形过窄，门的字形为竖点插入横折钩而非左上斜点等。

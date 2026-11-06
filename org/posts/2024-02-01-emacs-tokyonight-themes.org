@@ -1,7 +1,7 @@
 #+TITLE: Emacs tokyonight-themes
 #+AUTHOR: Chuck
 #+DESCRIPTION: A clean dark Visual Studio Code theme that celebrates the lights of Downtown Tokyo at night.
-#+KEYWORDS: Emacs, Themes
+#+FILETAGS: :Emacs:Themes:
 #+DATE: <2024-02-01 Thu 08:28>
 
 #+begin_quote

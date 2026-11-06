@@ -1,7 +1,7 @@
 #+TITLE: Org Mode Archiving
 #+AUTHOR: Chuck
 #+DATE: <2025-02-18 Tue 11:06>
-#+KEYWORDS: Emacs, Org
+#+FILETAGS: :Emacs:Org:
 
 When a project represented by a (sub)tree is finished, you may want to move the tree out of the way and to stop it from contributing to the agenda. Archiving is important to keep your working files compact and global searches like the construction of agenda views fast.
 

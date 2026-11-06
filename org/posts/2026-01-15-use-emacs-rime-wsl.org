@@ -1,7 +1,7 @@
 #+TITLE: 在 WSL 中使用 emacs-rime
 #+AUTHOR: Chuck
 #+DESCRIPTION: 在 WSL 中使用 Emacs 时，无法直接使用 Windows 安装的 RIME 输入法，当前比较好的方案是在 WSL 中安装 librime ，在 Emacs 中使用 emacs-rime 作为前端，使用体验比较贴近原生 RIME 输入法。
-#+KEYWORDS: Emacs, WSL, RIME
+#+FILETAGS: :Emacs:WSL:RIME:
 #+DATE: <2026-01-15 Thu 13:19>
 
 在 WSL 中使用 Emacs 时，无法直接使用 Windows 安装的 RIME 输入法，当前比较好的方案是在 WSL 中安装 [[https://github.com/rime/librime][librime]] ，在 Emacs 中使用 [[https://github.com/DogLooksGood/emacs-rime][emacs-rime]] 作为前端，使用体验比较贴近原生 RIME 输入法。

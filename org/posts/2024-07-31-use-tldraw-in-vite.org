@@ -1,7 +1,7 @@
 #+TITLE: Use tldraw in Vite
 #+AUTHOR: Chuck
 #+DATE: <2024-07-31 Wed 11:28>
-#+KEYWORDS: Vite, tldraw
+#+FILETAGS: :Vite:tldraw:
 
 [[https://vitejs.dev/][Vite]] is a build tool that aims to provide a faster and leaner development experience for modern web projects.
 

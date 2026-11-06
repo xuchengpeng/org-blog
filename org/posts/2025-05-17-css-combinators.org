@@ -1,7 +1,7 @@
 #+TITLE: CSS Combinators
 #+AUTHOR: Chuck
 #+DESCRIPTION: A combinator is a sign that explains the relationship between selectors.
-#+KEYWORDS: Web, CSS
+#+FILETAGS: :Web:CSS:
 #+DATE: <2025-05-17 Sat 16:20>
 
 A combinator is a sign that explains the relationship between selectors.

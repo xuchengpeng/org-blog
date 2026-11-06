@@ -1,7 +1,7 @@
 #+TITLE: Ubuntu Phased Updates
 #+AUTHOR: Chuck
 #+DESCRIPTION: Phased updates are software updates that are gradually rolled out to users rather than all users getting the updates at the same time.
-#+KEYWORDS: Linux, Ubuntu
+#+FILETAGS: :Linux:Ubuntu:
 #+DATE: <2025-12-19 Fri 10:19>
 
 Phased updates are software updates that are gradually rolled out to users rather than all users getting the updates at the same time.

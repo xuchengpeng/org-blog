@@ -1,7 +1,7 @@
 #+TITLE: OpenGL VAO and EBO
 #+AUTHOR: Chuck
 #+DESCRIPTION: 顶点数组对象(Vertex Array Object, VAO)可以像顶点缓冲对象那样被绑定，任何随后的顶点属性调用都会储存在这个 VAO 中。
-#+KEYWORDS: Computer Vision, OpenGL
+#+FILETAGS: :ComputerVision:OpenGL:
 #+DATE: <2026-08-10 Mon 09:08>
 
 顶点数组对象(Vertex Array Object, VAO)可以像顶点缓冲对象那样被绑定，任何随后的顶点属性调用都会储存在这个 VAO 中。

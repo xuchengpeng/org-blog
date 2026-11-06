@@ -27,6 +27,6 @@ Add org capture template:
   (add-to-list 'org-capture-templates
                '("o" "Org Blog" plain
                  (file +org-capture-org-blog)
-                 "#+TITLE: \n#+AUTHOR: \n#+DESCRIPTION: \n#+KEYWORDS: \n#+DATE: %T\n" :jump-to-captured t)
+                 "#+TITLE: \n#+AUTHOR: \n#+DESCRIPTION: \n#+FILETAGS: \n#+DATE: %T\n" :jump-to-captured t)
                t))
 ```

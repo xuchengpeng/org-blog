@@ -1,7 +1,7 @@
 #+TITLE: 使用 FFmpeg 裁剪视频
 #+AUTHOR: Chuck
 #+DESCRIPTION: FFmpeg is complete, cross-platform solution to record, convert and stream audio and video.
-#+KEYWORDS: Linux, FFmpeg
+#+FILETAGS: :Linux:FFmpeg:
 #+DATE: <2026-03-26 Thu 09:32>
 
 FFmpeg is complete, cross-platform solution to record, convert and stream audio and video.

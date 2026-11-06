@@ -1,7 +1,7 @@
 #+TITLE: 在 Emacs 中批量重命名文件
 #+AUTHOR: Chuck
 #+DESCRIPTION: 在 Emacs 的 Dired 模式中，可以快捷方便的进行文件批量重命名。
-#+KEYWORDS: Emacs
+#+FILETAGS: :Emacs:
 #+DATE: <2026-09-28 Mon 15:21>
 
 在 Emacs 的 Dired 模式中，可以快捷方便的进行文件批量重命名。

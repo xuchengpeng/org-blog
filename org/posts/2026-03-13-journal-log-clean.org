@@ -1,7 +1,7 @@
 #+TITLE: Journal 日志清理
 #+AUTHOR: Chuck
 #+DESCRIPTION: Journal 是 systemd 的日志系统，随着系统长时间的使用，其对应的日志目录 /var/log/journal 下会累计大量的日志文件，占据不少系统存储空间。
-#+KEYWORDS: Linux
+#+FILETAGS: :Linux:
 #+DATE: <2026-03-13 Fri 14:32>
 
 Journal 是 systemd 的日志系统，随着系统长时间的使用，其对应的日志目录 /var/log/journal 下会累计大量的日志文件，占据不少系统存储空间。

@@ -1,7 +1,7 @@
 #+TITLE: Install WSL Debian
 #+AUTHOR: Chuck
 #+DESCRIPTION: 官方的WSL分发版中，Debian的版本已经更新到13（代号trixie），大量的软件包得到了更新，可以长期稳定使用。
-#+KEYWORDS: Linux, WSL, Debian
+#+FILETAGS: :Linux:WSL:Debian:
 #+DATE: <2026-01-28 Wed 17:07>
 
 官方的WSL分发版中，Debian的版本已经更新到13（代号trixie），大量的软件包得到了更新，可以长期稳定使用。

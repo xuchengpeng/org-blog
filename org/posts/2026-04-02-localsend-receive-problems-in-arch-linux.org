@@ -1,7 +1,7 @@
 #+TITLE: Arch Linux 下 LocalSend 接收问题
 #+AUTHOR: Chuck
 #+DESCRIPTION: An open-source cross-platform alternative to AirDrop.
-#+KEYWORDS: Linux, Arch, EndeavourOS, Firewall, LocalSend
+#+FILETAGS: :Linux:Arch:EndeavourOS:Firewall:LocalSend:
 #+DATE: <2026-04-02 Thu 08:44>
 
 LocalSend is a free, open-source app that allows you to securely share files and messages with nearby devices over your local network without needing an internet connection.

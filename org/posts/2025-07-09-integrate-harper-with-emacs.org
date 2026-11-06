@@ -1,7 +1,7 @@
 #+TITLE: Integrate Harper With Emacs
 #+AUTHOR: Chuck
 #+DESCRIPTION: Harper is a grammar checker designed to run anywhere there is text (so really, anywhere).
-#+KEYWORDS: Emacs, Harper, Eglot
+#+FILETAGS: :Emacs:Harper:Eglot:
 #+DATE: <2025-07-09 Wed 16:57>
 
 [[https://github.com/Automattic/harper][Harper]] is a grammar checker designed to run anywhere there is text (so really, anywhere). Most Harper users are catching their mistakes in Neovim, Obsidian, or Visual Studio Code.

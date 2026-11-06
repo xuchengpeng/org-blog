@@ -1,7 +1,7 @@
 #+TITLE: Rotation Matrix and Rotation Vector
 #+AUTHOR: Chuck
 #+DESCRIPTION: A rotation vector is a convenient and most compact representation of a rotation matrix (since any rotation matrix has just 3 degrees of freedom).
-#+KEYWORDS: Computer Vision
+#+FILETAGS: :ComputerVision:
 #+DATE: <2025-05-07 Wed 11:22>
 
 A rotation vector is a convenient and most compact representation of a rotation matrix (since any rotation matrix has just 3 degrees of freedom).

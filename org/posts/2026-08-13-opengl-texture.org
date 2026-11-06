@@ -1,7 +1,7 @@
 #+TITLE: OpenGL 纹理
 #+AUTHOR: Chuck
 #+DESCRIPTION: OpenGL 纹理（Texture）是一种将图像或数据映射到 3D 模型表面的技术，用来为图形添加丰富的细节和真实感。
-#+KEYWORDS: Computer Vision, OpenGL
+#+FILETAGS: :ComputerVision:OpenGL:
 #+DATE: <2026-08-13 Thu 14:38>
 
 OpenGL 纹理（Texture）是一种将图像或数据映射到 3D 模型表面的技术，用来为图形添加丰富的细节和真实感。

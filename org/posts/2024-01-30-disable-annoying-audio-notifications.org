@@ -1,7 +1,7 @@
 #+TITLE: Disable Annoying Audio Notifications
 #+AUTHOR: Chuck
 #+DATE: <2024-01-30 Tue 14:29>
-#+KEYWORDS: Emacs
+#+FILETAGS: :Emacs:
 
 By default Emacs ring the bell to attract the user's attention, this is annoying.
 

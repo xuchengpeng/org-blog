@@ -1,7 +1,7 @@
 #+TITLE: Org Babel + Mermaid
 #+AUTHOR: Chuck
 #+DESCRIPTION: Org Babel 内置的语言已支持 PlantUML，在导出文件时可以生成各种图表；同样的，可以为 Org Babel 添加 Mermaid 语言支持。
-#+KEYWORDS: Emacs, Org, Mermaid
+#+FILETAGS: :Emacs:Org:Mermaid:
 #+DATE: <2026-10-09 Fri 14:03>
 
 Org Babel 内置的语言已支持 PlantUML，在导出文件时可以生成各种图表；同样的，可以为 Org Babel 添加 Mermaid 语言支持。

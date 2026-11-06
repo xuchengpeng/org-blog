@@ -1,7 +1,7 @@
 #+TITLE: Emacs New Keymap Functions
 #+AUTHOR: Chuck
 #+DATE: <2024-02-02 Fri 09:47>
-#+KEYWORDS: Emacs
+#+FILETAGS: :Emacs:
 
 Emacs 29 comes with new functions for defining and manipulating keystrokes.
 

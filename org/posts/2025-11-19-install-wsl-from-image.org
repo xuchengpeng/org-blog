@@ -1,7 +1,7 @@
 #+TITLE: Install WSL From Image
 #+AUTHOR: Chuck
 #+DESCRIPTION: You do not need access to the Microsoft Store to use this installation method and the images can be self-hosted on an internal network.
-#+KEYWORDS: Linux, WSL
+#+FILETAGS: :Linux:WSL:
 #+DATE: <2025-11-19 Wed 11:13>
 
 Ubuntu images for WSL can be downloaded directly from [[https://releases.ubuntu.com/][releases.ubuntu.com]].

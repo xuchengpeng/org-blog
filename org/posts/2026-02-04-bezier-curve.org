@@ -1,7 +1,7 @@
 #+TITLE: 贝塞尔曲线
 #+AUTHOR: Chuck
 #+DESCRIPTION: 在数学的数值分析领域中，贝塞尔曲线是计算机图形学中相当重要的参数曲线。
-#+KEYWORDS: Computer Vision
+#+FILETAGS: :ComputerVision:
 #+DATE: <2026-02-04 Wed 17:13>
 
 在数学的数值分析领域中，贝塞尔曲线是计算机图形学中相当重要的参数曲线。

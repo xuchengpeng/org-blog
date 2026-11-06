@@ -128,7 +128,7 @@ PROJECT is the current project."
         res)
     (dolist (e (cdr list))
       (let* ((fields (split-string (car e) "|"))
-             (tags (split-string (car fields) "," t " +")))
+             (tags (split-string (car fields) ":" t " +")))
         (dolist (tag tags)
           (puthash tag (cons (cdr fields) (gethash tag table)) table))))
     (maphash
@@ -159,10 +159,8 @@ ENTRY is a file name.  STYLE is the style of the sitemap.
 PROJECT is the current project."
   (cond ((not (directory-name-p entry))
          (format "%s|%s|%s|%s"
-                 (let ((keywords (org-publish-find-property entry :keywords project 'html)))
-                   (if (org-string-nw-p keywords)
-                       keywords
-                     "Untagged"))
+                 (let ((tags (org-publish-find-property entry :filetags project)))
+                   (if tags (string-join tags ":") "Untagged"))
                  entry
                  (format-time-string "%Y-%m-%d" (org-publish-find-date entry project))
                  (org-publish-find-title entry project)))
@@ -205,7 +203,7 @@ holding export options."
    "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n"
    (format "<title>%s</title>\n" (org-export-data (plist-get info :title) info))
    (format "<meta name=\"description\" content=\"%s\"/>\n" (org-export-data (plist-get info :description) info))
-   (format "<meta name=\"keywords\" content=\"%s\"/>\n" (org-export-data (plist-get info :keywords) info))
+   (format "<meta name=\"keywords\" content=\"%s\"/>\n" (org-export-data (plist-get info :filetags) info))
    +org-html-head
    (when (and (memq (plist-get info :with-latex) '(mathjax t))
               (org-element-map (plist-get info :parse-tree)
@@ -237,11 +235,11 @@ holding export options."
       (when-let* ((meta (concat
                          (when (plist-get info :with-date)
                            (format "<span>%s</span>\n" (org-export-data (org-export-get-date info "%Y-%m-%d") info)))
-                         (when (org-string-nw-p (plist-get info :keywords))
+                         (when-let* ((tags (plist-get info :filetags)))
                            (mapconcat
                             #'(lambda (key)
                                 (format "<a href=\"/tags.html#%s\">#%s</a>\n" (+org-html-stable-ids-to-kebab-case key) key))
-                            (string-split (plist-get info :keywords) "," t " +"))))))
+                            tags)))))
         (when (org-string-nw-p meta)
           (format "<div class=\"article-meta\">%s</div>\n" meta)))
       "</div>\n"))

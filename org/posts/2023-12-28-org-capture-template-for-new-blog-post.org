@@ -1,7 +1,7 @@
 #+TITLE: 为新建博客文章增加 Org Capture 模板
 #+AUTHOR: Chuck
 #+DATE: <2023-12-28 Thu 13:04>
-#+KEYWORDS: Emacs, Org
+#+FILETAGS: :Emacs:Org:
 
 =dotemacs-org-post-file= 函数会在博客文件夹对应的年份目录下新建文章；
 

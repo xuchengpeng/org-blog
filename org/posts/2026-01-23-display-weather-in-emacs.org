@@ -1,7 +1,7 @@
 #+TITLE: 在Emacs中显示天气
 #+AUTHOR: Chuck
 #+DESCRIPTION: 使用异步调用的方式，从 wttr.in 在线获取最新的天气信息，显示到 Emacs 的 mode-line 或者 echo-bar 。
-#+KEYWORDS: Emacs
+#+FILETAGS: :Emacs:
 #+DATE: <2026-01-23 Fri 13:15>
 
 #+begin_quote

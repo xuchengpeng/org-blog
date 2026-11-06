@@ -1,7 +1,7 @@
 #+TITLE: JetBrainsMono With Slashed Zero
 #+AUTHOR: Chuck
 #+DESCRIPTION: With OpenType Feature Freezer, freeze slashed zero with JetBrainsMono font.
-#+KEYWORDS: Themes
+#+FILETAGS: :Themes:
 #+DATE: <2025-10-16 Thu 13:04>
 
 #+begin_src shell

@@ -1,7 +1,7 @@
 #+TITLE: Debian 安装 Google Chrome
 #+AUTHOR: Chuck
 #+DESCRIPTION: 在 Debian 系列的 Linux 发行版如 Ubuntu, Debian, Kali 等安装 Google Chrome 的方法如下。
-#+KEYWORDS: Linux, Debian
+#+FILETAGS: :Linux:Debian:
 #+DATE: <2026-02-06 Fri 09:39>
 
 在 Debian 系列的 Linux 发行版如 Ubuntu, Debian, Kali 等安装 Google Chrome 的方法如下。

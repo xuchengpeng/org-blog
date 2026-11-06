@@ -1,7 +1,7 @@
 #+TITLE: 雾凇拼音简繁切换
 #+AUTHOR: Chuck
 #+DESCRIPTION: 朙月拼音和双拼默认使用的是繁体字库，输入方案中转换简体功能，是通过内置OpenCC进行转换的，词典中保存的都是繁体。
-#+KEYWORDS: RIME, Emacs
+#+FILETAGS: :RIME:Emacs:
 #+DATE: <2026-01-22 Thu 13:37>
 
 朙月拼音和双拼默认使用的是繁体字库，输入方案中转换简体功能，是通过内置OpenCC进行转换的，词典中保存的都是繁体。

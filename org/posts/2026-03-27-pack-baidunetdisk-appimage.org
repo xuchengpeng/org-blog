@@ -1,7 +1,7 @@
 #+TITLE: 打包百度网盘 AppImage
 #+AUTHOR: Chuck
 #+DESCRIPTION: 百度网盘官方只提供了 Linux 下的 deb 和 rpm 格式包文件，在 Arch 或者 SUSE 等发行版上使用不太方便。
-#+KEYWORDS: Linux, Arch, AppImage
+#+FILETAGS: :Linux:Arch:AppImage:
 #+DATE: <2026-03-27 Fri 15:57>
 
 百度网盘官方只提供了 Linux 下的 deb 和 rpm 格式包文件，在 Arch 或者 SUSE 等发行版上使用不太方便。

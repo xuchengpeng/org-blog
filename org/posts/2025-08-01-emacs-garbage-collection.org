@@ -1,7 +1,7 @@
 #+TITLE: Emacs Garbage Collection
 #+AUTHOR: Chuck
 #+DESCRIPTION: gcmh(aka "Garbage Collection Magic Hack") is useful and easy to handle garbage collection for GNU Emacs.
-#+KEYWORDS: Emacs
+#+FILETAGS: :Emacs:
 #+DATE: <2025-08-01 Fri 14:36>
 
 [[https://gitlab.com/koral/gcmh][gcmh]](aka "Garbage Collection Magic Hack") is useful and easy to handle garbage collection for GNU Emacs.

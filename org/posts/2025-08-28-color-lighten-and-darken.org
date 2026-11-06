@@ -1,7 +1,7 @@
 #+TITLE: Color Lighten and Darken
 #+AUTHOR: Chuck
 #+DESCRIPTION: RGB color lighten and darken in catppuccin-themes.
-#+KEYWORDS: Emacs, Themes
+#+FILETAGS: :Emacs:Themes:
 #+DATE: <2025-08-28 Thu 14:09>
 
 RGB color lighten and darken in catppuccin-themes.

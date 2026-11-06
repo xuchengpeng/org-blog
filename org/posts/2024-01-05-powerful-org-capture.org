@@ -1,7 +1,7 @@
 #+TITLE: 强大的 Org Capture
 #+AUTHOR: Chuck
 #+DATE: <2024-01-05 Fri 08:41>
-#+KEYWORDS: Emacs, Org
+#+FILETAGS: :Emacs:Org:
 
 Capture让你快速的保存笔记，并且让你的工作流中很少被打断。
 

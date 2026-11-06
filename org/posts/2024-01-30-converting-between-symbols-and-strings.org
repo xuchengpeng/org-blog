@@ -1,7 +1,7 @@
 #+TITLE: Converting Between Symbols and Strings
 #+AUTHOR: Chuck
 #+DATE: <2024-01-30 Tue 11:55>
-#+KEYWORDS: Emacs
+#+FILETAGS: :Emacs:
 
 Sometimes you might need to convert a symbol to string in Emacs Lisp. You start looking for functions like =symbol-to-string= and =string-to-symbol= but, they do not exist.
 

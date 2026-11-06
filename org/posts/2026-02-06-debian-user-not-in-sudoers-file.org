@@ -1,7 +1,7 @@
 #+TITLE: Debian 用户不在 sudoers 文件中
 #+AUTHOR: Chuck
 #+DESCRIPTION: 为解决 Debian 系统中 user not in sudoers file 错误，可以参考以下步骤。
-#+KEYWORDS: Linux, Debian
+#+FILETAGS: :Linux:Debian:
 #+DATE: <2026-02-06 Fri 09:55>
 
 为解决 Debian 系统中 ~user not in sudoers file~ 错误，可以参考以下步骤。

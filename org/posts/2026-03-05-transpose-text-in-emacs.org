@@ -1,7 +1,7 @@
 #+TITLE: 在 Emacs 中交换文本
 #+AUTHOR: Chuck
 #+DESCRIPTION: Emacs 中内置了交换字符、单词、表达式、行等功能，日常使用起来非常方便。
-#+KEYWORDS: Emacs
+#+FILETAGS: :Emacs:
 #+DATE: <2026-03-05 Thu 11:16>
 
 Emacs 中内置了交换字符、单词、表达式、行等功能，日常使用起来非常方便。

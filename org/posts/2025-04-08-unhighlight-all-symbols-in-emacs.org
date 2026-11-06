@@ -1,7 +1,7 @@
 #+TITLE: Emacs 中去光亮所有符号
 #+AUTHOR: Chuck
 #+DATE: <2025-04-08 Tue 16:33>
-#+KEYWORDS: Emacs
+#+FILETAGS: :Emacs:
 
 之前的文章介绍了如何在[[file:2025-02-26-emacs-highlight-symbol.org][Emacs中高亮符号]]，一般运行 ~M-x unhighlight-regexp~ 来选择其中一个符号去高亮。
 

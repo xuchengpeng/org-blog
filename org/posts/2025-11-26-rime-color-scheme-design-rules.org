@@ -1,7 +1,7 @@
 #+TITLE: RIME Color Scheme Design Rules
 #+AUTHOR: Chuck
 #+DESCRIPTION: Design rules of RIME’s color scheme with beautiful traditional chinese colors.
-#+KEYWORDS: Themes, RIME
+#+FILETAGS: :Themes:RIME:
 #+DATE: <2025-11-26 Wed 11:27>
 
 [[https://github.com/rime][RIME]] is a modular, extensible input method engine in cross-platform C++ code, built on top of open-source technologies.

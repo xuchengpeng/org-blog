@@ -1,7 +1,7 @@
 #+TITLE: 定义一个新的 Org 导出后端
 #+AUTHOR: Chuck
 #+DESCRIPTION: 介绍如何在使用 Org 导出为 HTML 的时候使用自定义的后端。
-#+KEYWORDS: Emacs, Org, HTML
+#+FILETAGS: :Emacs:Org:HTML:
 #+DATE: <2026-11-05 Thu 09:13>
 
 我的博客是使用 ox-publish 将 Org 文件导出为 HTML的，默认使用 Org-mode 的 HTML 导出后端，生成固定页面样式的文件。如果想要在页面增加新的元素或者自定义元素的格式，就需要自己写一个导出后端，根据自己定义的模板来生成。

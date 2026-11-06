@@ -1,7 +1,7 @@
 #+TITLE: em vs rem in CSS
 #+AUTHOR: Chuck
 #+DESCRIPTION: In CSS, em and rem represent relative units that display the scalable and responsive results.
-#+KEYWORDS: CSS
+#+FILETAGS: :CSS:
 #+DATE: <2025-08-13 Wed 14:09>
 
 In CSS, ~em~ and ~rem~ represent relative units that display the scalable and responsive results.

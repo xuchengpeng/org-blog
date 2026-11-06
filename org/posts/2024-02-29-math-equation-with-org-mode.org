@@ -1,7 +1,7 @@
 #+TITLE: Math Equation With Org Mode
 #+AUTHOR: Chuck
 #+DATE: <2024-02-29 Thu 13:06>
-#+KEYWORDS: Org, MathJax
+#+FILETAGS: :Org:MathJax:
 
 [[https://www.latex-project.org][LaTeX]] math snippets can be displayed on HTML pages which exported with org-mode. The default is to use the [[https://www.mathjax.org][MathJax]].
 
