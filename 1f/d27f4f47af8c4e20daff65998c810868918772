@@ -1,0 +1,25 @@
+org/css/style.css
+  h_76dde7977e1f21 584,590-615
+build-site.el
+  h_76dde7977e1f21 103-106,112-114,116,118,125-135,140-180,191-193,238,242,275-288,292,314
+  h_76dde7977e1f21 136-139
+.gitignore
+  h_76dde7977e1f21 5
+html/footer.html
+  h_76dde7977e1f21 2-9
+org/posts/2025-04-01-better-capture-template-for-blog-post.org
+  h_76dde7977e1f21 4
+org/posts/2019-12-01-org-publish-html.org
+  h_76dde7977e1f21 1,4
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "10.11.1",
+  "base_commit_sha": "1fd27f4f47af8c4e20daff65998c810868918772",
+  "prompts": {},
+  "humans": {
+    "h_76dde7977e1f21": {
+      "author": "xuchengpeng <chuckxcp@qq.com>"
+    }
+  }
+}
