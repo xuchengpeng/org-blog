@@ -1,0 +1,20 @@
+.gitignore
+  h_76dde7977e1f21 5
+build-site.el
+  h_76dde7977e1f21 103-106,112-114,116,118,125-183,194-196,241,278-291,295,317
+org/posts/2019-12-01-org-publish-html.org
+  h_76dde7977e1f21 1,4
+org/posts/2025-04-01-better-capture-template-for-blog-post.org
+  h_76dde7977e1f21 4
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "10.11.1",
+  "base_commit_sha": "98af7d1a34143810de1abf8adc182c92e51ff42a",
+  "prompts": {},
+  "humans": {
+    "h_76dde7977e1f21": {
+      "author": "xuchengpeng <chuckxcp@qq.com>"
+    }
+  }
+}
