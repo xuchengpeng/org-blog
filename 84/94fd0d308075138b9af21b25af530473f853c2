@@ -1,0 +1,29 @@
+org/css/style.css
+  h_76dde7977e1f21 584,590-615
+org/posts/2019-12-01-org-publish-html.org
+  h_76dde7977e1f21 1,4
+.gitignore
+  h_76dde7977e1f21 5
+org/posts/2025-04-01-better-capture-template-for-blog-post.org
+  h_76dde7977e1f21 4
+html/footer.html
+  h_76dde7977e1f21 2-9
+build-site.el
+  h_76dde7977e1f21 103-106,112-114,116,118,125,127,129-133,135,137-144,146-181,192-194,239,243,276-289,293,315
+  h_76dde7977e1f21 126,128,134,136,145
+org/posts/2025-08-01-emacs-garbage-collection.org
+  h_76dde7977e1f21 4
+org/posts/2026-06-27-opengl-graphics-pipeline.org
+  h_76dde7977e1f21 4
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "10.11.1",
+  "base_commit_sha": "8494fd0d308075138b9af21b25af530473f853c2",
+  "prompts": {},
+  "humans": {
+    "h_76dde7977e1f21": {
+      "author": "xuchengpeng <chuckxcp@qq.com>"
+    }
+  }
+}
