@@ -100,20 +100,84 @@ If `NAMED-ONLY` is non-nil, return nil."
 (advice-add #'org-html--reference :override #'+org-html-stable-ids-reference)
 
 (defun +org-publish-sitemap (title list)
+  "Default site map, as a string.
+TITLE is the title of the site map.  LIST is an internal
+representation for the files to include, as returned by
+`org-list-to-lisp'.  PROJECT is the current project."
   (concat "#+TITLE: " title "\n"
           "#+OPTIONS: toc:nil date:nil\n\n"
           (org-list-to-org list)))
 
 (defun +org-publish-sitemap-format-entry (entry style project)
+  "Default format for site map ENTRY, as a string.
+ENTRY is a file name.  STYLE is the style of the sitemap.
+PROJECT is the current project."
   (cond ((not (directory-name-p entry))
-         (format "[[file:%s][%s - %s]]"
+         (format "[[file:%s][%s %s]]"
                  entry
-                 (format-time-string "%b %d, %Y" (org-publish-find-date entry project))
+                 (format-time-string "%Y-%m-%d" (org-publish-find-date entry project))
                  (org-publish-find-title entry project)))
         ((eq style 'tree)
          ;; Return only last subdir.
          (file-name-nondirectory (directory-file-name entry)))
         (t entry)))
+
+(defun +org-list-to-tags-org (list)
+  "Convert LIST into an Org plain list, grouped by tags."
+  (let ((table (make-hash-table :test #'equal))
+        res)
+    (dolist (e (cdr list))
+      (let* ((fields (split-string (car e) "|"))
+             (tags (split-string (car fields) "," t " +")))
+        (dolist (tag tags)
+          (puthash tag (cons (cdr fields) (gethash tag table)) table))))
+    (maphash
+     (lambda (tag entries)
+       (push (concat
+              (format "\n* %s\n\n" tag)
+              (mapconcat
+               (lambda (p)
+                 (format "- [[file:posts/%s][%s %s]]\n"
+                         (nth 0 p) (nth 1 p) (nth 2 p)))
+               (nreverse entries) ""))
+             res))
+     table)
+    (apply #'concat (nreverse res))))
+
+(defun +org-publish-tags (title list)
+  "Default tags page, as a string.
+TITLE is the title of the tags page.  LIST is an internal
+representation for the files to include, as returned by
+`org-list-to-lisp'.  PROJECT is the current project."
+  (concat "#+TITLE: " title "\n"
+          "#+OPTIONS: toc:nil date:nil\n\n"
+          (+org-list-to-tags-org list)))
+
+(defun +org-publish-tags-format-entry (entry style project)
+  "Default format for tags ENTRY, as a string.
+ENTRY is a file name.  STYLE is the style of the sitemap.
+PROJECT is the current project."
+  (cond ((not (directory-name-p entry))
+         (format "%s|%s|%s|%s"
+                 (let ((keywords (org-publish-find-property entry :keywords project 'html)))
+                   (if (org-string-nw-p keywords)
+                       keywords
+                     "Untagged"))
+                 entry
+                 (format-time-string "%Y-%m-%d" (org-publish-find-date entry project))
+                 (org-publish-find-title entry project)))
+        (t entry)))
+
+(defun +org-html-publish-tags-to-html (plist filename pub-dir)
+  "Publish an org file to HTML.
+
+FILENAME is the filename of the Org file to be published.  PLIST
+is the property list for the given project.  PUB-DIR is the
+publishing directory.
+
+Return output file name."
+  (when (equal "tags.org" (file-name-nondirectory filename))
+    (+org-html-publish-to-html plist filename pub-dir)))
 
 (defun +org-blog-file-contents (file)
   (with-temp-buffer
@@ -172,11 +236,11 @@ holding export options."
       (format "<h1 class=\"article-title\">%s</h1>\n" (org-export-data (plist-get info :title) info))
       (when-let* ((meta (concat
                          (when (plist-get info :with-date)
-                           (format "<span>%s</span>\n" (org-export-data (org-export-get-date info "%d %B %Y") info)))
+                           (format "<span>%s</span>\n" (org-export-data (org-export-get-date info "%Y-%m-%d") info)))
                          (when (org-string-nw-p (plist-get info :keywords))
                            (mapconcat
                             #'(lambda (key)
-                                (format "<span>#%s</span>\n" key))
+                                (format "<a href=\"/tags.html#%s\">#%s</a>\n" (+org-html-stable-ids-to-kebab-case key) key))
                             (string-split (plist-get info :keywords) "," t " +"))))))
         (when (org-string-nw-p meta)
           (format "<div class=\"article-meta\">%s</div>\n" meta)))
@@ -209,10 +273,24 @@ Return output file name."
 		              plist pub-dir))
 
 (setq org-publish-project-alist
-      `(("blog-posts"
+      `(("blog-tags"
+         :base-directory "./org/posts/"
+         :base-extension "org"
+         :recursive t
+         :exclude ,(rx (seq line-start "index.org"))
+         :publishing-function +org-html-publish-tags-to-html
+         :publishing-directory "./public"
+         :auto-sitemap t
+         :sitemap-filename "tags.org"
+         :sitemap-title "Tags"
+         :sitemap-format-entry +org-publish-tags-format-entry
+         :sitemap-function +org-publish-tags
+         :sitemap-sort-files anti-chronologically)
+        ("blog-posts"
          :base-directory "./org/posts"
          :base-extension "org"
          :recursive t
+         :exclude ,(rx (seq line-start "tags.org"))
          :publishing-function +org-html-publish-to-html
          :publishing-directory "./public/posts"
          :auto-sitemap t
@@ -234,6 +312,6 @@ Return output file name."
          :recursive t
          :publishing-function org-publish-attachment
          :publishing-directory "./public")
-        ("blog" :components ("blog-posts" "blog-pages" "blog-static"))))
+        ("blog" :components ("blog-tags" "blog-posts" "blog-pages" "blog-static"))))
 
 (org-publish "blog" t)

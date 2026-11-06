@@ -579,18 +579,40 @@ pre {
 }
 
 .site-footer {
-  font-family: var(--font-sans);
   display: flex;
   flex-wrap: nowrap;
-  gap: 1em;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 0.875em;
+  flex-direction: column;
   max-width: var(--main-width);
   margin-inline-start: auto;
   margin-inline-end: auto;
   padding: 1em;
   color: rgb(var(--secondary));
+}
+
+.footer-menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  align-items: center;
+  gap: 1em;
+
+  & a {
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+      color: rgb(var(--link));
+    }
+  }
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
+  font-size: 0.875em;
 
   & a {
     color: inherit;
