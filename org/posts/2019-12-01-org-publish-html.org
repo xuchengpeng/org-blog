@@ -1,7 +1,7 @@
 #+TITLE: Publishing Org files to HTML
 #+AUTHOR: Chuck
 #+DESCRIPTION: This is a guide to describe how to publish Org mode files to HTML.
-#+FILETAGS: :Emacs:Org:
+#+FILETAGS: :Emacs:Org:HTML:
 #+DATE: <2019-12-01 Sun 23:03>
 
 #+BEGIN_QUOTE
@@ -85,6 +85,7 @@ Then run =org-publish-project= to generate html files to =~/blog/public= folder.
 
 * Update
 
+- 2026-11-06 Add tags page with sitemap function.
 - 2026-11-04 Define a customized HTML export backend.
 - 2025-12-22 Publish with [[https://github.com/xuchengpeng/org-blog/blob/main/build-site.el][build-site.el]].
 - 2025-10-28 Export woff2 files.
