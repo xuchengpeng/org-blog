@@ -81,14 +81,14 @@ nil."
 
     Raise an error if the ID was used in the document before."
   (let ((cache (plist-get info :internal-references))
-	    (id (+org-html-stable-ids-extract-id datum)))
-	(or (car (rassq datum cache))
-	    (if (assoc id cache)
-		    (user-error "Duplicate ID: %s" id)
-	      (when id
-		    (push (cons id datum) cache)
-		    (plist-put info :internal-references cache)
-		    id)))))
+        (id (+org-html-stable-ids-extract-id datum)))
+    (or (car (rassq datum cache))
+        (if (assoc id cache)
+            (user-error "Duplicate ID: %s" id)
+          (when id
+            (push (cons id datum) cache)
+            (plist-put info :internal-references cache)
+            id)))))
 
 (defun +org-html-stable-ids-reference (datum info &optional named-only)
   "Call `org-export-get-reference` to get a reference for DATUM with INFO.
@@ -199,7 +199,7 @@ holding export options."
    +org-html-head
    (when (and (memq (plist-get info :with-latex) '(mathjax t))
               (org-element-map (plist-get info :parse-tree)
-                  '(latex-fragment latex-environment) #'identity info t nil t))
+                               '(latex-fragment latex-environment) #'identity info t nil t))
      "<script id=\"MathJax-script\" async src=\"https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js\"></script>\n")
    "</head>\n"
    "<body>\n"
@@ -255,12 +255,7 @@ is the property list for the given project.  PUB-DIR is the
 publishing directory.
 
 Return output file name."
-  (org-publish-org-to '+org-html filename
-		              (concat (when (> (length org-html-extension) 0) ".")
-			                  (or (plist-get plist :html-extension)
-				                  org-html-extension
-				                  "html"))
-		              plist pub-dir))
+  (org-publish-org-to '+org-html filename ".html" plist pub-dir))
 
 (setq org-publish-project-alist
       `(("blog-posts"
