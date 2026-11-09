@@ -1,0 +1,24 @@
+build-site.el
+  s_9e89b4f84955c8::t_1fe261e843089e 125-126,128-131,133,135-150,153-154,160-163
+  s_9e89b4f84955c8::t_e54277170d920e 259,275,285
+  s_9e89b4f84955c8::t_08ed0e958a4abe 127,134,151-152,155-159
+  s_9e89b4f84955c8::t_57d4254e9d4622 132
+.gitignore
+  s_9e89b4f84955c8::t_350c34d8b50e65 5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "10.11.1",
+  "base_commit_sha": "6a03ebee8632f31e8b381e159339f4f2a42cb308",
+  "prompts": {},
+  "sessions": {
+    "s_9e89b4f84955c8": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_e4173197fffeEacNC3X1n8aw9b",
+        "model": "unknown"
+      },
+      "human_author": "xuchengpeng <chuckxcp@qq.com>"
+    }
+  }
+}
