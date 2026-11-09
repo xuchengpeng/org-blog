@@ -191,8 +191,11 @@ holding export options."
    "<meta charset=\"utf-8\">\n"
    "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n"
    (format "<title>%s</title>\n" (org-export-data (plist-get info :title) info))
-   (format "<meta name=\"description\" content=\"%s\"/>\n" (org-export-data (plist-get info :description) info))
-   (format "<meta name=\"keywords\" content=\"%s\"/>\n" (org-export-data (plist-get info :filetags) info))
+   (let ((description (plist-get info :description)))
+     (when (org-string-nw-p description)
+       (format "<meta name=\"description\" content=\"%s\"/>\n" description)))
+   (when-let* ((keywords (plist-get info :filetags)))
+     (format "<meta name=\"keywords\" content=\"%s\"/>\n" (string-join keywords ",")))
    +org-html-head
    (when (and (memq (plist-get info :with-latex) '(mathjax t))
               (org-element-map (plist-get info :parse-tree)
