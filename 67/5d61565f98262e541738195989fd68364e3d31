@@ -1,0 +1,26 @@
+org/posts/2026-11-05-weekly-things-1.org
+  s_ed63ab08e89e7e::t_ca954092fcc2d7 8-16,18-19,21,23,25,29-30,32
+org/posts/2026-11-09-weekly-things-2.org
+  h_76dde7977e1f21 1-10
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "10.11.1",
+  "base_commit_sha": "675d61565f98262e541738195989fd68364e3d31",
+  "prompts": {},
+  "humans": {
+    "h_76dde7977e1f21": {
+      "author": "xuchengpeng <chuckxcp@qq.com>"
+    }
+  },
+  "sessions": {
+    "s_ed63ab08e89e7e": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_e50124b94ffe3N1fldjJuY1CYl",
+        "model": "unknown"
+      },
+      "human_author": "xuchengpeng <chuckxcp@qq.com>"
+    }
+  }
+}
