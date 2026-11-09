@@ -1,0 +1,35 @@
+build-site.el
+  s_b884294dfb48f6::t_cb8c76f49533fb 138-152,157-167
+  s_b884294dfb48f6::t_b27419972fbaba 153-156
+  s_9e89b4f84955c8::t_e54277170d920e 263,279,289
+  s_b884294dfb48f6::t_0206c8d5bedde6 131
+  s_9e89b4f84955c8::t_57d4254e9d4622 132
+  s_9e89b4f84955c8::t_08ed0e958a4abe 127,134
+  s_9e89b4f84955c8::t_1fe261e843089e 125-126,128-130,133,135-137
+.gitignore
+  s_9e89b4f84955c8::t_350c34d8b50e65 5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "10.11.1",
+  "base_commit_sha": "34b27ae6f0d6de90af8b9c15df559a45f84d271f",
+  "prompts": {},
+  "sessions": {
+    "s_9e89b4f84955c8": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_e4173197fffeEacNC3X1n8aw9b",
+        "model": "unknown"
+      },
+      "human_author": "xuchengpeng <chuckxcp@qq.com>"
+    },
+    "s_b884294dfb48f6": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_e41284319ffeEPN3sdboyW4Qyr",
+        "model": "unknown"
+      },
+      "human_author": null
+    }
+  }
+}
