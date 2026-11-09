@@ -113,7 +113,10 @@ Then run =org-publish-project= to generate html files to =~/blog/public= folder.
 - https://taingram.org/blog/org-mode-blog.html
 - https://ogbe.net/blog/emacs_org_static_site
 - https://bastibe.de/
+- [[https://peterprevos.com/praxis/publishing-websites-with-org-mode-03-publishing-functions/][https://peterprevos.com/praxis/publishing-websites-with-org-mode-03-publishing-functions/]]
+- [[https://sam-d.com/blog/improving-org-publish-workflow-for-blogging/][https://sam-d.com/blog/improving-org-publish-workflow-for-blogging/]]
 - https://writepermission.com/
+- https://pank.eu/blog/blog-setup.html
 
 #+begin_details
 #+begin_summary
@@ -126,7 +129,6 @@ More examples
 - https://systemcrafters.net/publishing-websites-with-org-mode/building-the-site/
 - https://miikanissi.com/blog/website-with-emacs/
 - https://www.leonrische.me/pages/org_html_export.html
-- https://pank.eu/blog/blog-setup.html
 - https://kennyballou.com/blog/2022/05/org-mode-publishing/index.html
 - https://sbr.pm/posts/2020-03-22-org-mode-website.html
 - https://taxodium.ink/org-publish-blog.html
