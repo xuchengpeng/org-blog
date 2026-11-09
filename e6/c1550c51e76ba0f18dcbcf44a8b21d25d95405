@@ -1,0 +1,14 @@
+build-site.el
+  h_76dde7977e1f21 194-198
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "10.11.1",
+  "base_commit_sha": "e6c1550c51e76ba0f18dcbcf44a8b21d25d95405",
+  "prompts": {},
+  "humans": {
+    "h_76dde7977e1f21": {
+      "author": "xuchengpeng <chuckxcp@qq.com>"
+    }
+  }
+}
