@@ -26,6 +26,7 @@
 (unless (package-installed-p 'htmlize)
   (package-install 'htmlize))
 
+(require 'subr-x)
 (require 'ox-publish)
 
 (setq org-publish-timestamp-directory (expand-file-name ".org-timestamps/")
@@ -122,60 +123,48 @@ PROJECT is the current project."
          (file-name-nondirectory (directory-file-name entry)))
         (t entry)))
 
-(defun +org-list-to-tags-org (list)
-  "Convert LIST into an Org plain list, grouped by tags."
-  (let ((table (make-hash-table :test #'equal))
-        res)
-    (dolist (e (cdr list))
-      (let* ((fields (split-string (car e) "|"))
-             (tags (split-string (car fields) ":" t " +")))
-        (dolist (tag tags)
-          (puthash tag (cons (cdr fields) (gethash tag table)) table))))
-    (maphash
-     (lambda (tag entries)
-       (push (concat
-              (format "\n* %s\n\n" tag)
-              (mapconcat
-               (lambda (p)
-                 (format "- [[file:posts/%s][%s %s]]\n"
-                         (nth 0 p) (nth 1 p) (nth 2 p)))
-               (nreverse entries) ""))
-             res))
-     table)
-    (apply #'concat (nreverse res))))
+(defun +org-blog-prepare-tags (project)
+  "Generate the \"tags.org\" page from FILETAGS of posts.
 
-(defun +org-publish-tags (title list)
-  "Default tags page, as a string.
-TITLE is the title of the tags page.  LIST is an internal
-representation for the files to include, as returned by
-`org-list-to-lisp'.  PROJECT is the current project."
-  (concat "#+TITLE: " title "\n"
-          "#+OPTIONS: toc:nil date:nil\n\n"
-          (+org-list-to-tags-org list)))
-
-(defun +org-publish-tags-format-entry (entry style project)
-  "Default format for tags ENTRY, as a string.
-ENTRY is a file name.  STYLE is the style of the sitemap.
-PROJECT is the current project."
-  (cond ((not (directory-name-p entry))
-         (format "%s|%s|%s|%s"
-                 (let ((tags (org-publish-find-property entry :filetags project)))
-                   (if tags (string-join tags ":") "Untagged"))
-                 entry
-                 (format-time-string "%Y-%m-%d" (org-publish-find-date entry project))
-                 (org-publish-find-title entry project)))
-        (t entry)))
-
-(defun +org-html-publish-tags-to-html (plist filename pub-dir)
-  "Publish an org file to HTML.
-
-FILENAME is the filename of the Org file to be published.  PLIST
-is the property list for the given project.  PUB-DIR is the
-publishing directory.
-
-Return output file name."
-  (when (equal "tags.org" (file-name-nondirectory filename))
-    (+org-html-publish-to-html plist filename pub-dir)))
+PROJECT is the property list of the project being prepared.  The
+page is written as \"tags.org\" under its base directory.  Posts
+are collected from the \"blog-posts\" project, grouped by their
+FILETAGS and sorted by date in reverse order."
+  (let ((posts-project (assoc "blog-posts" org-publish-project-alist)))
+    (unless posts-project
+      (user-error "Project \"blog-posts\" is not defined in `org-publish-project-alist'"))
+    (message "Generating tags for blog-posts")
+    (let* ((table (make-hash-table :test #'equal))
+           (tags-dir (expand-file-name (plist-get project :base-directory)))
+           (posts-dir (expand-file-name (org-publish-property :base-directory posts-project)))
+           (sitemap (expand-file-name
+                     (or (org-publish-property :sitemap-filename posts-project) "sitemap.org")
+                     posts-dir))
+           (posts (seq-keep
+                   (lambda (file)
+                     (unless (equal sitemap file)
+                       (list :tags (or (ensure-list
+                                        (org-publish-find-property file :filetags posts-project))
+                                       '("Untagged"))
+                             :file (file-relative-name file tags-dir)
+                             :date (org-publish-find-date file posts-project)
+                             :title (org-publish-find-title file posts-project))))
+                   (org-publish-get-base-files posts-project))))
+      (dolist (post (sort posts
+                          (lambda (a b)
+                            (time-less-p (plist-get a :date) (plist-get b :date)))))
+        (dolist (tag (plist-get post :tags))
+          (push post (gethash tag table))))
+      (with-temp-file (expand-file-name "tags.org" tags-dir)
+        (insert "#+TITLE: Tags\n"
+                "#+OPTIONS: toc:nil date:nil\n\n")
+        (dolist (tag (sort (hash-table-keys table) #'string<))
+          (insert (format "\n* %s\n\n" tag))
+          (dolist (post (gethash tag table))
+            (insert (format "- [[file:%s][%s %s]]\n"
+                            (plist-get post :file)
+                            (format-time-string "%Y-%m-%d" (plist-get post :date))
+                            (plist-get post :title)))))))))
 
 (defun +org-blog-file-contents (file)
   (with-temp-buffer
@@ -271,24 +260,10 @@ Return output file name."
 		              plist pub-dir))
 
 (setq org-publish-project-alist
-      `(("blog-tags"
-         :base-directory "./org/posts/"
-         :base-extension "org"
-         :recursive t
-         :exclude ,(rx (seq line-start "index.org"))
-         :publishing-function +org-html-publish-tags-to-html
-         :publishing-directory "./public"
-         :auto-sitemap t
-         :sitemap-filename "tags.org"
-         :sitemap-title "Tags"
-         :sitemap-format-entry +org-publish-tags-format-entry
-         :sitemap-function +org-publish-tags
-         :sitemap-sort-files anti-chronologically)
-        ("blog-posts"
+      `(("blog-posts"
          :base-directory "./org/posts"
          :base-extension "org"
          :recursive t
-         :exclude ,(rx (seq line-start "tags.org"))
          :publishing-function +org-html-publish-to-html
          :publishing-directory "./public/posts"
          :auto-sitemap t
@@ -301,6 +276,7 @@ Return output file name."
          :base-directory "./org"
          :base-extension "org"
          :recursive nil
+         :preparation-function +org-blog-prepare-tags
          :publishing-function +org-html-publish-to-html
          :publishing-directory "./public"
          :auto-sitemap nil)
@@ -310,6 +286,6 @@ Return output file name."
          :recursive t
          :publishing-function org-publish-attachment
          :publishing-directory "./public")
-        ("blog" :components ("blog-tags" "blog-posts" "blog-pages" "blog-static"))))
+        ("blog" :components ("blog-posts" "blog-pages" "blog-static"))))
 
 (org-publish "blog" t)

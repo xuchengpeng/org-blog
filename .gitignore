@@ -2,6 +2,6 @@
 .org-timestamps/
 public/
 org/posts/index.org
-org/posts/tags.org
+org/tags.org
 node_modules/
 package-lock.json
