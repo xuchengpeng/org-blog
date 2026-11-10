@@ -1,0 +1,51 @@
+org/posts/2025-01-09-wangbo-tengwanggexu.org
+  s_ed63ab08e89e7e::t_37eaa2e3e48e88 3
+org/posts/2024-01-26-treatment-based-on-syndrome-differentiation.org
+  s_ed63ab08e89e7e::t_4241fabac7d77b 3
+org/posts/2026-11-09-weekly-things-2.org
+  h_76dde7977e1f21 4
+org/posts/2024-04-03-sushi-dingfengbo.org
+  s_ed63ab08e89e7e::t_9fe7a064b3e081 3
+org/posts/2026-11-05-weekly-things-1.org
+  s_ed63ab08e89e7e::t_9cd46ccc07cc53 4
+org/search/index.org
+  h_76dde7977e1f21 50
+html/header.html
+  h_76dde7977e1f21 6-7,9
+html/footer.html
+  h_76dde7977e1f21 3-4
+org/posts/2024-01-24-tcm-five-organs-and-five-elements.org
+  s_ed63ab08e89e7e::t_0a966040c980af 3
+build-site.el
+  h_76dde7977e1f21 105,109-120,122-142,144-159,161-173,207,231-232,235-236,240-242,270,273,284
+  h_76dde7977e1f21 121
+org/posts/2024-05-23-libai-xiakexing.org
+  s_ed63ab08e89e7e::t_b073114523123d 3
+org/posts/2025-01-09-caozhi-luoshenfu.org
+  s_ed63ab08e89e7e::t_55dc803384680f 3
+org/tags/.gitignore
+  h_76dde7977e1f21 1
+org/posts/2024-01-03-yellow-crane-tower.org
+  s_ed63ab08e89e7e::t_8d8277993cdf20 3
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "10.11.1",
+  "base_commit_sha": "12121e5878fe2eb18a6a2f39d6b932c7b9e4efb1",
+  "prompts": {},
+  "humans": {
+    "h_76dde7977e1f21": {
+      "author": "xuchengpeng <chuckxcp@qq.com>"
+    }
+  },
+  "sessions": {
+    "s_ed63ab08e89e7e": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_e50124b94ffe3N1fldjJuY1CYl",
+        "model": "unknown"
+      },
+      "human_author": "xuchengpeng <chuckxcp@qq.com>"
+    }
+  }
+}
