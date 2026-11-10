@@ -1,7 +1,7 @@
 #+TITLE: 使用 Cloudflare Pages 部署博客
 #+AUTHOR: Chuck
 #+DESCRIPTION: Cloudflare Pages is a JAMstack platform for frontend developers to collaborate and deploy websites.
-#+FILETAGS: :Emacs:Hugo:Git:
+#+FILETAGS: :Emacs:Hugo:Git:Cloudflare:
 #+DATE: <2026-02-03 Tue 11:37>
 
 Cloudflare Pages is a JAMstack platform for frontend developers to collaborate and deploy websites.

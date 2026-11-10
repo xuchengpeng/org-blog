@@ -1,0 +1,16 @@
+#+TITLE: 配置 Cloudflare 缓存规则
+#+AUTHOR: Chuck
+#+DESCRIPTION: 为 Cloundflare 托管的网站配置缓存规则，提升站点访问速度。
+#+FILETAGS: :Cloudflare:
+#+DATE: <2026-11-10 Tue 09:42>
+
+默认情况下在 Cloudflare 托管的网站不进行任何缓存，每次访问都会默认从源服务器获取文件，速度非常慢。
+
+之前 Cloudflare 的缓存是通过 Page Rules 来配置的，现在已演进为更先进一代的 Cache Rules 配置，当前 Cache Rules 配置的优先级高于 Page Rules 配置。
+
+1. 先在 Cache Rules 页面新增一条规则，规则填 ~Cache Everything~ (我的博客是静态页面，期望缓存全部内容)；
+2. 选择匹配 ~All incoming requests~ ；
+3. 缓存选择 ~Eligible for cache~ 默认行为就是缓存全部内容，Edge TTL 设置为 1 天，Browser TTL 设置为 7 天。
+4. 保存后回到缓存配置页面，清理全部缓存。
+
+在终端通过命令 ~curl -I https://xuchengpeng.cn~ 进行测试，首次测试时可以看到 ~cf-cache-status~ 返回为 MISS ，再次测试时可以看到返回为 HIT ，表示缓存当前已命中成功。
