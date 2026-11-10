@@ -133,39 +133,39 @@ PROJECT is the property list of the project being prepared."
     (unless posts-project
       (user-error "Project \"blog-posts\" is not defined in `org-publish-project-alist'"))
     (let* ((table (make-hash-table :test #'equal))
-           (tags-dir (expand-file-name (plist-get project :base-directory)))
+           (base-dir (expand-file-name (plist-get project :base-directory)))
            (posts-dir (expand-file-name (org-publish-property :base-directory posts-project)))
            (sitemap (expand-file-name
                      (or (org-publish-property :sitemap-filename posts-project) "sitemap.org")
                      posts-dir))
-           (posts (seq-keep
-                   (lambda (file)
-                     (unless (equal sitemap file)
-                       (list :tags (or (ensure-list
-                                        (org-publish-find-property file :filetags posts-project))
-                                       '("Untagged"))
-                             :description (or (org-publish-find-property file :description posts-project 'html) "")
-                             :file (file-relative-name file tags-dir)
-                             :date (org-publish-find-date file posts-project)
-                             :title (org-publish-find-title file posts-project))))
-                   (org-publish-get-base-files posts-project))))
-      ;; Generate search index
-      (let ((entries (mapcar (lambda (item)
-                               (list :title (plist-get item :title)
-                                     :description (plist-get item :description)
-                                     :keywords (string-join (plist-get item :tags) ",")
-                                     :url (concat "/" (file-name-sans-extension (plist-get item :file)) ".html")))
-                             posts))
-            (json-encoding-pretty-print nil))
-        (with-temp-file (expand-file-name "index.json" tags-dir)
-          (insert (json-encode (vconcat entries)))))
-      ;; Generate tags page
+           (posts nil)
+           (entries nil))
+      (dolist (file (org-publish-get-base-files posts-project))
+        (unless (equal sitemap file)
+          (push (list :tags (or (ensure-list
+                                 (org-publish-find-property file :filetags posts-project))
+                                '("Untagged"))
+                      :description (or (org-publish-find-property file :description posts-project 'html) "")
+                      :file (file-relative-name file base-dir)
+                      :date (org-publish-find-date file posts-project)
+                      :title (org-publish-find-title file posts-project))
+                posts)))
       (dolist (post (sort posts
                           (lambda (a b)
                             (time-less-p (plist-get a :date) (plist-get b :date)))))
+        (push (list :title (plist-get post :title)
+                    :description (plist-get post :description)
+                    :keywords (string-join (plist-get post :tags) ",")
+                    :url (concat "/" (file-name-sans-extension (plist-get post :file)) ".html"))
+              entries)
         (dolist (tag (plist-get post :tags))
           (push post (gethash tag table))))
-      (with-temp-file (expand-file-name "tags.org" tags-dir)
+      ;; Generate search index
+      (let ((json-encoding-pretty-print nil))
+        (with-temp-file (expand-file-name "index.json" base-dir)
+          (insert (json-encode (vconcat entries)))))
+      ;; Generate tags page
+      (with-temp-file (expand-file-name "tags.org" base-dir)
         (insert "#+TITLE: Tags\n"
                 "#+OPTIONS: toc:nil date:nil\n\n")
         (dolist (tag (sort (hash-table-keys table) #'string<))
