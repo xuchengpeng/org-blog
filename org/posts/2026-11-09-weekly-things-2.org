@@ -1,7 +1,7 @@
 #+TITLE: Weekly Things 2
 #+AUTHOR: Chuck
-#+DESCRIPTION: org-publish-project-alist, YUV420SP, NV12, NV21, YUV420P, YU12, YV12
-#+FILETAGS: :Emacs:Org:ComputerVision:
+#+DESCRIPTION: org-publish-project-alist, YUV420SP, NV12, NV21, YUV420P, YU12, YV12, 我之节烈观
+#+FILETAGS: :Emacs:Org:ComputerVision:鲁迅:
 #+DATE: <2026-11-09 Mon 18:21>
 
 * Emacs
@@ -19,7 +19,7 @@
   #+begin_src mermaid :file yuv420sp_nv12.svg
     block
         columns 4
-            
+
         block:planeY:4
             columns 4
             Y0["Y0"] Y1["Y1"] Y2["Y2"] Y3["Y3"]
@@ -27,7 +27,7 @@
             Y8["Y8"] Y9["Y9"] Y10["Y10"] Y11["Y11"]
             Y12["Y12"] Y13["Y13"] Y14["Y14"] Y15["Y15"]
         end
-            
+
         block:planeUV:4
             columns 4
             U0["U0"] V0["V0"] U1["U1"] V1["V1"]
@@ -42,7 +42,7 @@
   #+begin_src mermaid :file yuv420sp_nv21.svg
     block
         columns 4
-            
+
         block:planeY:4
             columns 4
             Y0["Y0"] Y1["Y1"] Y2["Y2"] Y3["Y3"]
@@ -50,7 +50,7 @@
             Y8["Y8"] Y9["Y9"] Y10["Y10"] Y11["Y11"]
             Y12["Y12"] Y13["Y13"] Y14["Y14"] Y15["Y15"]
         end
-            
+
         block:planeUV:4
             columns 4
             V0["V0"] U0["U0"] V1["V1"] U1["U1"]
@@ -65,7 +65,7 @@
   #+begin_src mermaid :file yuv420p_yu12.svg
     block
         columns 4
-        
+
         block:planeY:4
             columns 4
             Y0["Y0"] Y1["Y1"] Y2["Y2"] Y3["Y3"]
@@ -73,7 +73,7 @@
             Y8["Y8"] Y9["Y9"] Y10["Y10"] Y11["Y11"]
             Y12["Y12"] Y13["Y13"] Y14["Y14"] Y15["Y15"]
         end
-        
+
         block:planeUV:4
             columns 4
             U0["U0"] U1["U1"] U2["U2"] U3["U3"]
@@ -88,7 +88,7 @@
   #+begin_src mermaid :file yuv420p_yv12.svg
     block
         columns 4
-        
+
         block:planeY:4
             columns 4
             Y0["Y0"] Y1["Y1"] Y2["Y2"] Y3["Y3"]
@@ -96,7 +96,7 @@
             Y8["Y8"] Y9["Y9"] Y10["Y10"] Y11["Y11"]
             Y12["Y12"] Y13["Y13"] Y14["Y14"] Y15["Y15"]
         end
-        
+
         block:planeUV:4
             columns 4
             V0["V0"] V1["V1"] V2["V2"] V3["V3"]
@@ -107,3 +107,9 @@
   #+CAPTION: YUV420P YV12
   #+RESULTS:
   [[file:yuv420p_yv12.svg]]
+
+
+* Reading
+
+- 我之节烈观 ::
+  极难，极苦，不愿身受，然而不利自他，无益社会国家，于人生将来又毫无意义的行为，现在已经失了存在的生命和价值。
