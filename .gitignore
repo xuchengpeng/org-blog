@@ -3,5 +3,6 @@
 public/
 org/posts/index.org
 org/tags.org
+org/index.json
 node_modules/
 package-lock.json

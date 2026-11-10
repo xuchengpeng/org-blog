@@ -27,6 +27,7 @@
   (package-install 'htmlize))
 
 (require 'subr-x)
+(require 'json)
 (require 'ox-publish)
 
 (setq org-publish-timestamp-directory (expand-file-name ".org-timestamps/")
@@ -123,17 +124,14 @@ PROJECT is the current project."
          (file-name-nondirectory (directory-file-name entry)))
         (t entry)))
 
-(defun +org-blog-prepare-tags (project)
-  "Generate the \"tags.org\" page from FILETAGS of posts.
+(defun +org-blog-pages-prepare (project)
+  "Generate tags page and search index for all posts.
 
-PROJECT is the property list of the project being prepared.  The
-page is written as \"tags.org\" under its base directory.  Posts
-are collected from the \"blog-posts\" project, grouped by their
-FILETAGS and sorted by date in reverse order."
+PROJECT is the property list of the project being prepared."
+  (message "Preparation for blog-pages")
   (let ((posts-project (assoc "blog-posts" org-publish-project-alist)))
     (unless posts-project
       (user-error "Project \"blog-posts\" is not defined in `org-publish-project-alist'"))
-    (message "Generating tags for blog-posts")
     (let* ((table (make-hash-table :test #'equal))
            (tags-dir (expand-file-name (plist-get project :base-directory)))
            (posts-dir (expand-file-name (org-publish-property :base-directory posts-project)))
@@ -146,10 +144,22 @@ FILETAGS and sorted by date in reverse order."
                        (list :tags (or (ensure-list
                                         (org-publish-find-property file :filetags posts-project))
                                        '("Untagged"))
+                             :description (or (org-publish-find-property file :description posts-project 'html) "")
                              :file (file-relative-name file tags-dir)
                              :date (org-publish-find-date file posts-project)
                              :title (org-publish-find-title file posts-project))))
                    (org-publish-get-base-files posts-project))))
+      ;; Generate search index
+      (let ((entries (mapcar (lambda (item)
+                               (list :title (plist-get item :title)
+                                     :description (plist-get item :description)
+                                     :keywords (string-join (plist-get item :tags) ",")
+                                     :url (concat "/" (file-name-sans-extension (plist-get item :file)) ".html")))
+                             posts))
+            (json-encoding-pretty-print nil))
+        (with-temp-file (expand-file-name "index.json" tags-dir)
+          (insert (json-encode (vconcat entries)))))
+      ;; Generate tags page
       (dolist (post (sort posts
                           (lambda (a b)
                             (time-less-p (plist-get a :date) (plist-get b :date)))))
@@ -274,13 +284,13 @@ Return output file name."
          :base-directory "./org"
          :base-extension "org"
          :recursive nil
-         :preparation-function +org-blog-prepare-tags
+         :preparation-function +org-blog-pages-prepare
          :publishing-function +org-html-publish-to-html
          :publishing-directory "./public"
          :auto-sitemap nil)
         ("blog-static"
          :base-directory "./org"
-         :base-extension "js\\|css\\|jpg\\|png\\|svg\\|gif\\|webp\\|ico\\|txt\\|webmanifest\\|woff2"
+         :base-extension "js\\|css\\|jpg\\|png\\|svg\\|gif\\|webp\\|ico\\|txt\\|json\\|webmanifest\\|woff2"
          :recursive t
          :publishing-function org-publish-attachment
          :publishing-directory "./public")
