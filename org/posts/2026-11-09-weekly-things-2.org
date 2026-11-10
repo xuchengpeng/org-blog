@@ -1,7 +1,7 @@
 #+TITLE: Weekly Things 2
 #+AUTHOR: Chuck
 #+DESCRIPTION: org-publish-project-alist, YUV420SP, NV12, NV21, YUV420P, YU12, YV12, 我之节烈观
-#+FILETAGS: :Emacs:Org:ComputerVision:鲁迅:
+#+FILETAGS: :Emacs:Org:ComputerVision:
 #+DATE: <2026-11-09 Mon 18:21>
 
 * Emacs

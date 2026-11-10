@@ -1,7 +1,7 @@
 #+TITLE: Non-reentrant Functions in C++
 #+AUTHOR: Chuck
 #+DESCRIPTION: A function can be non-reentrant if it uses memory that is not on the stack.
-#+FILETAGS: :C++:
+#+FILETAGS: :CPP:
 #+DATE: <2025-08-19 Tue 14:09>
 
 C语言标准库中，不可重入（Non-reentrant）的函数通常是指那些使用了内部静态变量、全局数据结构、或者返回指向静态内存的指针的函数。在多线程环境或信号处理函数中调用这些函数可能会导致数据竞争或不确定的行为。

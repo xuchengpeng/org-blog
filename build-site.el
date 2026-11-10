@@ -101,80 +101,74 @@ If `NAMED-ONLY` is non-nil, return nil."
 (advice-add #'org-export-get-reference :override #'+org-export-stable-ids-get-reference)
 (advice-add #'org-html--reference :override #'+org-html-stable-ids-reference)
 
-(defun +org-publish-sitemap (title list)
-  "Default site map, as a string.
-TITLE is the title of the site map.  LIST is an internal
-representation for the files to include, as returned by
-`org-list-to-lisp'.  PROJECT is the current project."
-  (concat "#+TITLE: " title "\n"
-          "#+OPTIONS: toc:nil date:nil\n\n"
-          (org-list-to-org list)))
-
-(defun +org-publish-sitemap-format-entry (entry style project)
-  "Default format for site map ENTRY, as a string.
-ENTRY is a file name.  STYLE is the style of the sitemap.
-PROJECT is the current project."
-  (cond ((not (directory-name-p entry))
-         (format "[[file:%s][%s %s]]"
-                 entry
-                 (format-time-string "%Y-%m-%d" (org-publish-find-date entry project))
-                 (org-publish-find-title entry project)))
-        ((eq style 'tree)
-         ;; Return only last subdir.
-         (file-name-nondirectory (directory-file-name entry)))
-        (t entry)))
-
 (defun +org-blog-pages-prepare (project)
-  "Generate tags page and search index for all posts.
+  "Generate search index, posts and tags page for all posts.
 
 PROJECT is the property list of the project being prepared."
   (message "Preparation for blog-pages")
-  (let ((posts-project (assoc "blog-posts" org-publish-project-alist)))
-    (unless posts-project
-      (user-error "Project \"blog-posts\" is not defined in `org-publish-project-alist'"))
-    (let* ((table (make-hash-table :test #'equal))
-           (base-dir (expand-file-name (plist-get project :base-directory)))
-           (posts-dir (expand-file-name (org-publish-property :base-directory posts-project)))
-           (sitemap (expand-file-name
-                     (or (org-publish-property :sitemap-filename posts-project) "sitemap.org")
-                     posts-dir))
-           (posts nil)
-           (entries nil))
-      (dolist (file (org-publish-get-base-files posts-project))
-        (unless (equal sitemap file)
-          (push (list :tags (or (ensure-list
-                                 (org-publish-find-property file :filetags posts-project))
-                                '("Untagged"))
-                      :description (or (org-publish-find-property file :description posts-project 'html) "")
-                      :file (file-relative-name file base-dir)
-                      :date (org-publish-find-date file posts-project)
-                      :title (org-publish-find-title file posts-project))
-                posts)))
-      (dolist (post (sort posts
-                          (lambda (a b)
-                            (time-less-p (plist-get a :date) (plist-get b :date)))))
-        (push (list :title (plist-get post :title)
-                    :description (plist-get post :description)
-                    :keywords (string-join (plist-get post :tags) ",")
-                    :url (concat "/" (file-name-sans-extension (plist-get post :file)) ".html"))
-              entries)
-        (dolist (tag (plist-get post :tags))
-          (push post (gethash tag table))))
-      ;; Generate search index
-      (let ((json-encoding-pretty-print nil))
-        (with-temp-file (expand-file-name "index.json" base-dir)
-          (insert (json-encode (vconcat entries)))))
-      ;; Generate tags page
-      (with-temp-file (expand-file-name "tags.org" base-dir)
-        (insert "#+TITLE: Tags\n"
+  (let* ((pages-project (assoc "blog-pages" org-publish-project-alist))
+         (base-dir (expand-file-name (plist-get project :base-directory)))
+         (posts-dir (expand-file-name "posts" base-dir))
+         (tags-dir (expand-file-name "tags" base-dir))
+         (posts-page (expand-file-name "index.org" posts-dir))
+         (table (make-hash-table :test #'equal))
+         (posts (sort (seq-keep
+                       (lambda (file)
+                         (unless (equal posts-page file)
+                           (list :tags (or (ensure-list
+                                            (org-publish-find-property file :filetags pages-project))
+                                           '("Untagged"))
+                                 :description (or (org-publish-find-property file :description pages-project 'html) "")
+                                 :file file
+                                 :date (org-publish-find-date file pages-project)
+                                 :title (org-publish-find-title file pages-project))))
+                       (directory-files-recursively posts-dir "\\.org$"))
+                      (lambda (a b)
+                        (time-less-p (plist-get a :date) (plist-get b :date)))))
+         (search-index nil))
+    (dolist (post posts)
+      (push (list :title (plist-get post :title)
+                  :description (plist-get post :description)
+                  :keywords (string-join (plist-get post :tags) ",")
+                  :url (concat "/"
+                               (file-name-sans-extension (file-relative-name (plist-get post :file)
+                                                                             base-dir))
+                               ".html"))
+            search-index)
+      (dolist (tag (plist-get post :tags))
+        (push post (gethash tag table))))
+    (message "Generating search index")
+    (with-temp-file (expand-file-name "index.json" base-dir)
+      (insert (json-encode (vconcat search-index))))
+    (message "Generating posts page")
+    (with-temp-file posts-page
+      (insert "#+TITLE: Posts\n"
+              "#+OPTIONS: toc:nil date:nil\n\n")
+      (dolist (post (nreverse posts))
+        (insert (format "- [[file:%s][%s %s]]\n"
+                        (file-relative-name (plist-get post :file) posts-dir)
+                        (format-time-string "%Y-%m-%d" (plist-get post :date))
+                        (plist-get post :title)))))
+    (message "Generating tags page")
+    (dolist (tag (hash-table-keys table))
+      (with-temp-file (expand-file-name
+                       (format "%s.org" (+org-html-stable-ids-to-kebab-case tag))
+                       tags-dir)
+        (insert "#+TITLE: Tag: " tag "\n"
                 "#+OPTIONS: toc:nil date:nil\n\n")
-        (dolist (tag (sort (hash-table-keys table) #'string<))
-          (insert (format "\n* %s\n\n" tag))
-          (dolist (post (gethash tag table))
-            (insert (format "- [[file:%s][%s %s]]\n"
-                            (plist-get post :file)
-                            (format-time-string "%Y-%m-%d" (plist-get post :date))
-                            (plist-get post :title)))))))))
+        (dolist (post (gethash tag table))
+          (insert (format "- [[file:%s][%s %s]]\n"
+                          (file-relative-name (plist-get post :file) tags-dir)
+                          (format-time-string "%Y-%m-%d" (plist-get post :date))
+                          (plist-get post :title))))))
+    (with-temp-file (expand-file-name "index.org" tags-dir)
+      (insert "#+TITLE: Tags\n"
+              "#+OPTIONS: toc:nil date:nil\n\n")
+      (dolist (tag (sort (hash-table-keys table) #'string<))
+        (insert (format "- [[file:%s][%s]] /%d/\n"
+                        (format "%s.org" (+org-html-stable-ids-to-kebab-case tag))
+                        tag
+                        (length (gethash tag table))))))))
 
 (defun +org-blog-file-contents (file)
   (with-temp-buffer
@@ -208,8 +202,7 @@ holding export options."
      (format "<meta name=\"keywords\" content=\"%s\"/>\n" (string-join keywords ",")))
    +org-html-head
    (when (and (memq (plist-get info :with-latex) '(mathjax t))
-              (org-element-map (plist-get info :parse-tree)
-                               '(latex-fragment latex-environment) #'identity info t nil t))
+              (org-element-map (plist-get info :parse-tree) '(latex-fragment latex-environment) #'identity info t nil t))
      "<script id=\"MathJax-script\" async src=\"https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js\"></script>\n")
    "</head>\n"
    "<body>\n"
@@ -233,14 +226,18 @@ holding export options."
    (when (plist-get info :with-title)
      (concat
       "<div class=\"article-header\">\n"
-      (format "<h1 class=\"article-title\">%s</h1>\n" (org-export-data (plist-get info :title) info))
+      (format "<h1 class=\"article-title\">%s</h1>\n"
+              (org-export-data (plist-get info :title) info))
       (when-let* ((meta (concat
                          (when (plist-get info :with-date)
-                           (format "<span>%s</span>\n" (org-export-data (org-export-get-date info "%Y-%m-%d") info)))
+                           (format "<span>%s</span>\n"
+                                   (org-export-data (org-export-get-date info "%Y-%m-%d") info)))
                          (when-let* ((tags (plist-get info :filetags)))
                            (mapconcat
                             #'(lambda (key)
-                                (format "<a href=\"/tags.html#%s\">#%s</a>\n" (+org-html-stable-ids-to-kebab-case key) key))
+                                (format "<a href=\"/tags/%s.html\">#%s</a>\n"
+                                        (+org-html-stable-ids-to-kebab-case key)
+                                        key))
                             tags)))))
         (when (org-string-nw-p meta)
           (format "<div class=\"article-meta\">%s</div>\n" meta)))
@@ -268,22 +265,10 @@ Return output file name."
   (org-publish-org-to '+org-html filename ".html" plist pub-dir))
 
 (setq org-publish-project-alist
-      `(("blog-posts"
-         :base-directory "./org/posts"
-         :base-extension "org"
-         :recursive t
-         :publishing-function +org-html-publish-to-html
-         :publishing-directory "./public/posts"
-         :auto-sitemap t
-         :sitemap-filename "index.org"
-         :sitemap-title "Posts"
-         :sitemap-format-entry +org-publish-sitemap-format-entry
-         :sitemap-function +org-publish-sitemap
-         :sitemap-sort-files anti-chronologically)
-        ("blog-pages"
+      `(("blog-pages"
          :base-directory "./org"
          :base-extension "org"
-         :recursive nil
+         :recursive t
          :preparation-function +org-blog-pages-prepare
          :publishing-function +org-html-publish-to-html
          :publishing-directory "./public"
@@ -294,6 +279,6 @@ Return output file name."
          :recursive t
          :publishing-function org-publish-attachment
          :publishing-directory "./public")
-        ("blog" :components ("blog-posts" "blog-pages" "blog-static"))))
+        ("blog" :components ("blog-pages" "blog-static"))))
 
 (org-publish "blog" t)

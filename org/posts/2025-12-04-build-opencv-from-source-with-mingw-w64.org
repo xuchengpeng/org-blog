@@ -1,7 +1,7 @@
 #+TITLE: Build OpenCV From Source With mingw-w64
 #+AUTHOR: Chuck
 #+DESCRIPTION: A guide to build OpenCV on Windows with mingw-w64 toolchains.
-#+FILETAGS: :ComputerVision:OpenCV:Windows:mingw-w64:
+#+FILETAGS: :ComputerVision:OpenCV:Windows:
 #+DATE: <2025-12-04 Thu 13:21>
 
 OpenCV (Open Source Computer Vision Library: http://opencv.org) is an open-source library that includes several hundreds of computer vision algorithms.

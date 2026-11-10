@@ -1,6 +1,6 @@
 #+TITLE: 黄鹤楼
 #+DATE: <2024-01-03 Wed 14:22>
-#+FILETAGS: :Poetry:崔颢:
+#+FILETAGS: :Poetry:
 
 #+begin_center
 

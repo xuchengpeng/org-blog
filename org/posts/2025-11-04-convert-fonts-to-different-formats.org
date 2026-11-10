@@ -1,7 +1,7 @@
 #+TITLE: Convert Fonts to Different Formats
 #+AUTHOR: Chuck
 #+DESCRIPTION: fontTools is a family of libraries and utilities for manipulating fonts in Python.
-#+FILETAGS: :Emacs:TX-02:BerkeleyMono:
+#+FILETAGS: :Emacs:BerkeleyMono:
 #+DATE: <2025-11-04 Tue 15:02>
 
 [[https://github.com/fonttools/fonttools][fontTools]] is a family of libraries and utilities for manipulating fonts in Python.

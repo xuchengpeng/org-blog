@@ -85,7 +85,7 @@ Then run =org-publish-project= to generate html files to =~/blog/public= folder.
 
 * Update
 
-- 2026-11-10 优化 Fuse 索引的生成，不再使用生成的 html 文件来提取信息，直接在 Org 文件导出时生成索引。
+- 2026-11-10 优化 Fuse 索引的生成，不再使用生成的 html 文件来提取信息，直接在 Org 文件导出时生成索引； Posts 页面使用索引生成，不再使用 sitemap 来生成站点文件。
 - 2026-11-09 优化 tags 页面的生成，发布 blog-pages 时通过指定 ~:preparation-function~ 函数来生成 blog-posts 对应的 tags文件。
 - 2026-11-06 Add tags page with sitemap function.
 - 2026-11-04 Define a customized HTML export backend.
