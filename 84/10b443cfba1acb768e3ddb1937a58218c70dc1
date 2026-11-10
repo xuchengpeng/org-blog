@@ -1,0 +1,29 @@
+build-site.el
+  s_b86ae5a2857b87::t_7f7c15104cfccc 30
+  h_76dde7977e1f21 127-128,130-131,147,152-162,287,293
+.gitignore
+  h_76dde7977e1f21 6
+package.json
+  h_76dde7977e1f21 15
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "10.11.1",
+  "base_commit_sha": "8410b443cfba1acb768e3ddb1937a58218c70dc1",
+  "prompts": {},
+  "humans": {
+    "h_76dde7977e1f21": {
+      "author": "xuchengpeng <chuckxcp@qq.com>"
+    }
+  },
+  "sessions": {
+    "s_b86ae5a2857b87": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_e3c2ffcf3ffeICeURJfC4H5wa6",
+        "model": "unknown"
+      },
+      "human_author": "xuchengpeng <chuckxcp@qq.com>"
+    }
+  }
+}
