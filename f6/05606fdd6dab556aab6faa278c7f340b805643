@@ -1,0 +1,22 @@
+org/posts/2026-11-09-weekly-things-2.org
+  h_76dde7977e1f21 3-4,14-109
+org/posts/yuv420p_yu12.svg
+  h_76dde7977e1f21 1
+org/posts/yuv420p_yv12.svg
+  h_76dde7977e1f21 1
+org/posts/yuv420sp_nv12.svg
+  h_76dde7977e1f21 1
+org/posts/yuv420sp_nv21.svg
+  h_76dde7977e1f21 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "10.11.1",
+  "base_commit_sha": "f605606fdd6dab556aab6faa278c7f340b805643",
+  "prompts": {},
+  "humans": {
+    "h_76dde7977e1f21": {
+      "author": "xuchengpeng <chuckxcp@qq.com>"
+    }
+  }
+}
