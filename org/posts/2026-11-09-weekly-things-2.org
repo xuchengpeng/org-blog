@@ -1,6 +1,6 @@
 #+TITLE: Weekly Things 2
 #+AUTHOR: Chuck
-#+DESCRIPTION: ox-publish, YUV420SP, NV12, NV21, YUV420P, YU12, YV12, 鲁迅
+#+DESCRIPTION: ox-publish, YUV420, 鲁迅, rsync
 #+FILETAGS: :Emacs:Org:ComputerVision:Reading:
 #+DATE: <2026-11-09 Mon 18:21>
 
@@ -13,7 +13,7 @@
   在 Emacs 中使用 ~tabify~ 和 ~untabify~ 来进行 Tab 和 Space 之间的转换。
 
 - 文件夹同步 ::
-  博客发布新的文件后，需要覆盖到托管的目录下，但是有些文件可能被删掉了，托管的目录下需要同步删掉，这样的话就不能简单的使用拷贝覆盖命令了， rsync 命令的 --delete 参数可以把托管目录的多余的文件删掉，注意要通过 --exclude 参数来过滤 .git 文件夹。
+  博客发布新的文件后，需要覆盖到托管的目录下，但是有些文件可能被删掉了，托管的目录下需要同步删掉，这样的话就不能简单的使用拷贝覆盖命令了， rsync 命令的 ~--delete~ 参数可以把托管目录的多余的文件删掉，注意要通过 ~--exclude~ 参数来过滤 .git 文件夹。
   #+begin_src bash
   rsync -av --delete --exclude='.git/' public/ publish/
   #+end_src
