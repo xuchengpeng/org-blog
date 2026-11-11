@@ -12,20 +12,6 @@
 (setq locale-coding-system 'utf-8)
 (set-selection-coding-system 'utf-8)
 
-(require 'package)
-(setq package-user-dir (expand-file-name ".elpa/")
-      package-check-signature nil
-      package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
-                         ("nongnu" . "https://elpa.nongnu.org/nongnu/")
-                         ("melpa" . "https://melpa.org/packages/")))
-
-(package-initialize)
-(unless package-archive-contents
-  (package-refresh-contents))
-
-(unless (package-installed-p 'htmlize)
-  (package-install 'htmlize))
-
 (require 'subr-x)
 (require 'json)
 (require 'ox-publish)

@@ -3,7 +3,7 @@
 Build site:
 
 ```emacs-lisp
-emacs -Q --script build-site.el
+emacs --batch --load htmlize.el --load build-site.el
 ```
 
 Minify CSS/JavaScript/HTML after publishing:
