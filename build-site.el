@@ -179,10 +179,9 @@ PROJECT is the property list of the project being prepared."
 (defvar +org-html-header (+org-blog-file-contents "html/header.html"))
 (defvar +org-html-footer (+org-blog-file-contents "html/footer.html"))
 
-(org-export-define-derived-backend
- '+org-html 'html
- :translate-alist '((template . +org-html-template)
-                    (inner-template . +org-html-inner-template)))
+(org-export-define-derived-backend '+org-html 'html
+  :translate-alist '((template . +org-html-template)
+                     (inner-template . +org-html-inner-template)))
 
 (defun +org-html-template (contents info)
   "Return complete document string after HTML conversion.
