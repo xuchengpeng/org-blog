@@ -11,4 +11,4 @@
 
 * Recent Posts
 
-#+include: posts/index.org :lines "4-14"
+#+include: recent-posts.inc

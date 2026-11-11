@@ -97,7 +97,8 @@ PROJECT is the property list of the project being prepared."
          (posts-dir (expand-file-name "posts" base-dir))
          (tags-dir (expand-file-name "tags" base-dir))
          (posts-page (expand-file-name "index.org" posts-dir))
-         (table (make-hash-table :test #'equal))
+         (t-table (make-hash-table :test #'equal))
+         (y-table (make-hash-table :test #'equal))
          (posts (sort (seq-keep
                        (lambda (file)
                          (unless (equal posts-page file)
@@ -122,39 +123,50 @@ PROJECT is the property list of the project being prepared."
                                ".html"))
             search-index)
       (dolist (tag (plist-get post :tags))
-        (push post (gethash tag table))))
+        (push post (gethash tag t-table)))
+      (let ((year (format-time-string "%Y" (plist-get post :date))))
+        (push post (gethash year y-table))))
     (message "Generating search index")
     (with-temp-file (expand-file-name "index.json" base-dir)
       (insert (json-encode (vconcat search-index))))
+    (message "Generating recent posts")
+    (with-temp-file (expand-file-name "recent-posts.inc" base-dir)
+      (dolist (post (seq-take (nreverse posts) 10))
+        (insert (format "- %s [[file:%s][%s]]\n"
+                        (format-time-string "%b %d, %Y" (plist-get post :date))
+                        (file-relative-name (plist-get post :file) base-dir)
+                        (plist-get post :title)))))
     (message "Generating posts page")
     (with-temp-file posts-page
       (insert "#+TITLE: Posts\n"
               "#+OPTIONS: toc:nil date:nil\n\n")
-      (dolist (post (nreverse posts))
-        (insert (format "- [[file:%s][%s %s]]\n"
-                        (file-relative-name (plist-get post :file) posts-dir)
-                        (format-time-string "%Y-%m-%d" (plist-get post :date))
-                        (plist-get post :title)))))
+      (dolist (year (sort (hash-table-keys y-table) #'string>))
+        (insert (format "\n* %s\n\n" year))
+        (dolist (post (gethash year y-table))
+          (insert (format "- %s [[file:%s][%s]]\n"
+                          (format-time-string "%b %d, %Y" (plist-get post :date))
+                          (file-relative-name (plist-get post :file) posts-dir)
+                          (plist-get post :title))))))
     (message "Generating tags page")
-    (dolist (tag (hash-table-keys table))
+    (dolist (tag (hash-table-keys t-table))
       (with-temp-file (expand-file-name
                        (format "%s.org" (+org-html-stable-ids-to-kebab-case tag))
                        tags-dir)
         (insert "#+TITLE: Tag: " tag "\n"
                 "#+OPTIONS: toc:nil date:nil\n\n")
-        (dolist (post (gethash tag table))
-          (insert (format "- [[file:%s][%s %s]]\n"
+        (dolist (post (gethash tag t-table))
+          (insert (format "- %s [[file:%s][%s]]\n"
+                          (format-time-string "%b %d, %Y" (plist-get post :date))
                           (file-relative-name (plist-get post :file) tags-dir)
-                          (format-time-string "%Y-%m-%d" (plist-get post :date))
                           (plist-get post :title))))))
     (with-temp-file (expand-file-name "index.org" tags-dir)
       (insert "#+TITLE: Tags\n"
               "#+OPTIONS: toc:nil date:nil\n\n")
-      (dolist (tag (sort (hash-table-keys table) #'string<))
+      (dolist (tag (sort (hash-table-keys t-table) #'string<))
         (insert (format "- [[file:%s][%s]] /%d/\n"
                         (format "%s.org" (+org-html-stable-ids-to-kebab-case tag))
                         tag
-                        (length (gethash tag table))))))))
+                        (length (gethash tag t-table))))))))
 
 (defun +org-blog-file-contents (file)
   (with-temp-buffer
@@ -216,7 +228,7 @@ holding export options."
       (when-let* ((meta (concat
                          (when (plist-get info :with-date)
                            (format "<span>%s</span>\n"
-                                   (org-export-data (org-export-get-date info "%Y-%m-%d") info)))
+                                   (org-export-data (org-export-get-date info "%b %d, %Y") info)))
                          (when-let* ((tags (plist-get info :filetags)))
                            (mapconcat
                             #'(lambda (key)

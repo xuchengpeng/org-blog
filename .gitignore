@@ -2,7 +2,7 @@
 .org-timestamps/
 public/
 org/posts/index.org
-org/tags.org
+org/recent-posts.inc
 org/index.json
 node_modules/
 package-lock.json
