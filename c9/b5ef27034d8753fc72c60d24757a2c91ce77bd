@@ -1,0 +1,26 @@
+org/posts/2026-11-05-define-a-new-org-export-backend.org
+  s_ed63ab08e89e7e::t_6880ce17e31dde 14,32,34
+org/index.org
+  h_76dde7977e1f21 3
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "10.11.1",
+  "base_commit_sha": "c9b5ef27034d8753fc72c60d24757a2c91ce77bd",
+  "prompts": {},
+  "humans": {
+    "h_76dde7977e1f21": {
+      "author": "xuchengpeng <chuckxcp@qq.com>"
+    }
+  },
+  "sessions": {
+    "s_ed63ab08e89e7e": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_e50124b94ffe3N1fldjJuY1CYl",
+        "model": "unknown"
+      },
+      "human_author": "xuchengpeng <chuckxcp@qq.com>"
+    }
+  }
+}
