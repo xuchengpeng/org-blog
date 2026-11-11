@@ -1,0 +1,18 @@
+.gitignore
+  h_76dde7977e1f21 5
+build-site.el
+  h_76dde7977e1f21 100-101,126-128,132-138,143-149,151,157-159,165,169,231
+org/index.org
+  h_76dde7977e1f21 14
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "10.11.1",
+  "base_commit_sha": "5345286f2e98d7dfbf85471706f6837df65d359c",
+  "prompts": {},
+  "humans": {
+    "h_76dde7977e1f21": {
+      "author": "xuchengpeng <chuckxcp@qq.com>"
+    }
+  }
+}
