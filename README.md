@@ -6,10 +6,9 @@ Build site:
 emacs -Q --script build-site.el
 ```
 
-Generate `index.json` and minify CSS/JavaScript/HTML after publishing:
+Minify CSS/JavaScript/HTML after publishing:
 
 ```bash
-npm run index
 npm run minify
 ```
 
