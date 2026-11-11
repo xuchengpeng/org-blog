@@ -11,8 +11,7 @@ Org 中使用 ~org-export-define-backend~ 来定义导出后端，由于已经�
 下面提供一个简单的示例，示例中定义了 ~+org-html~ 导出后端，继承自 ~html~ 导出后端，并且通过 menu-entry 将导出功能添加到 ~org-export-dispatch~ 中：
 
 #+begin_src emacs-lisp
-  (org-export-define-derived-backend
-      '+org-html 'html
+  (org-export-define-derived-backend '+org-html 'html
     :translate-alist '((template . +org-html-template))
     :menu-entry '(?h "Export to HTML"
                      ((?b "+org-html to buffer" +org-html-export-as-html)
@@ -30,10 +29,9 @@ Org 中使用 ~org-export-define-backend~ 来定义导出后端，由于已经�
      "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n"
      (format "<title>%s</title>\n" (org-export-data (plist-get info :title) info))
      "<link rel=\"stylesheet\" href=\"https://orgmode.org/worg/style/worg.css\">\n"
-     "<style> body { max-width: 72rem; width: 100%; margin: 0 auto; padding: 1em; } </style>"
+     "<style> body { max-width: 72rem; width: 100%; margin: 0 auto; padding: 1em; } </style>\n"
      (when (and (memq (plist-get info :with-latex) '(mathjax t))
-                (org-element-map (plist-get info :parse-tree)
-                    '(latex-fragment latex-environment) #'identity info t nil t))
+                (org-element-map (plist-get info :parse-tree) '(latex-fragment latex-environment) #'identity info t nil t))
        "<script id=\"MathJax-script\" async src=\"https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js\"></script>\n")
      "</head>\n"
      "<body>\n"
