@@ -1,0 +1,14 @@
+org/posts/2026-11-09-weekly-things-2.org
+  h_76dde7977e1f21 116-118
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "10.11.1",
+  "base_commit_sha": "34b4716bd878a5455e9f6cb18b830805c4f125bc",
+  "prompts": {},
+  "humans": {
+    "h_76dde7977e1f21": {
+      "author": "xuchengpeng <chuckxcp@qq.com>"
+    }
+  }
+}
