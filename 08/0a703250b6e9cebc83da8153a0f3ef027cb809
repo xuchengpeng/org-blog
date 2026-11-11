@@ -1,0 +1,18 @@
+.github/workflows/main.yml
+  h_76dde7977e1f21 32
+README.md
+  h_76dde7977e1f21 6
+htmlize.el
+  h_76dde7977e1f21 1-1816
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "10.11.1",
+  "base_commit_sha": "080a703250b6e9cebc83da8153a0f3ef027cb809",
+  "prompts": {},
+  "humans": {
+    "h_76dde7977e1f21": {
+      "author": "xuchengpeng <chuckxcp@qq.com>"
+    }
+  }
+}
