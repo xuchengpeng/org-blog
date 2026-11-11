@@ -813,6 +813,9 @@ mjx-container[jax="CHTML"][display="true"] {
   font-size: 1em;
   line-height: 1.5;
   margin: 1em 0;
+  max-height: calc(100vh - 150px);
+  min-height: 0;
+  overflow-x: hidden;
 
   & h2 {
     font-size: 1.2em;
