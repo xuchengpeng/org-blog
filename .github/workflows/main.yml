@@ -38,7 +38,7 @@ jobs:
           path: publish
       - name: Upload site
         run: |
-          cp -rf public/* publish/
+          rsync -av --delete --exclude='.git/' public/ publish/
           cd publish
           git config user.name xuchengpeng
           git config user.email chuckxcp@qq.com
