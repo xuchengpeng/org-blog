@@ -1,0 +1,14 @@
+.github/workflows/main.yml
+  h_76dde7977e1f21 41
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "10.11.1",
+  "base_commit_sha": "07f8a7c0638e8bbb6008914a2d4d8b40455b25a9",
+  "prompts": {},
+  "humans": {
+    "h_76dde7977e1f21": {
+      "author": "xuchengpeng <chuckxcp@qq.com>"
+    }
+  }
+}
