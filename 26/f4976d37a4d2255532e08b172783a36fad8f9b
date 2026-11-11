@@ -1,0 +1,14 @@
+org/posts/2026-11-10-configure-cloudflare-cache-rules.org
+  h_76dde7977e1f21 13
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "10.11.1",
+  "base_commit_sha": "26f4976d37a4d2255532e08b172783a36fad8f9b",
+  "prompts": {},
+  "humans": {
+    "h_76dde7977e1f21": {
+      "author": "xuchengpeng <chuckxcp@qq.com>"
+    }
+  }
+}
