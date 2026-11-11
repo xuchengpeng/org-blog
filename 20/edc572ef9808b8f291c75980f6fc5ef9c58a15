@@ -1,0 +1,14 @@
+org/robots.txt
+  h_76dde7977e1f21 2
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "10.11.1",
+  "base_commit_sha": "20edc572ef9808b8f291c75980f6fc5ef9c58a15",
+  "prompts": {},
+  "humans": {
+    "h_76dde7977e1f21": {
+      "author": "xuchengpeng <chuckxcp@qq.com>"
+    }
+  }
+}
