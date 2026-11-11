@@ -1,0 +1,14 @@
+README.md
+  h_76dde7977e1f21 9
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "10.11.1",
+  "base_commit_sha": "0c260e9b6a8069aa9cf1e6454781a3b960448c9a",
+  "prompts": {},
+  "humans": {
+    "h_76dde7977e1f21": {
+      "author": "xuchengpeng <chuckxcp@qq.com>"
+    }
+  }
+}
