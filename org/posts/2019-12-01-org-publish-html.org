@@ -120,6 +120,7 @@ Then run =org-publish-project= to generate html files to =~/blog/public= folder.
 - https://sam-d.com/blog/improving-org-publish-workflow-for-blogging/
 - https://writepermission.com/
 - https://pank.eu/blog/blog-setup.html
+- https://entropicthoughts.com/why-stick-to-emacs-blog
 
 #+begin_details
 #+begin_summary
