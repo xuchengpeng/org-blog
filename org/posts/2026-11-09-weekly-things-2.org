@@ -18,11 +18,21 @@
   rsync -av --delete --exclude='.git/' public/ publish/
   #+end_src
 
+- Org 导出代码块 ::
+  Org 在导出代码块时，可以通过 ~:exports~ 参数来控制导出的内容。
+
+  1. ~:exports code~ 默认参数，仅导出代码块；
+  2. ~:exports results~ 仅导出代码块的执行结果；
+  3. ~:exports both~ 代码块和执行结果都导出；
+  4. ~:exports none~ 代码块和执行结果都不导出。
+
+  需要注意的是 ~org-export-use-babel~ 不能设置为 nil ，否则所有的导出参数均不生效。
+
 * Computer Vision
 
 - YUV420 图像数据分布 ::
 
-  #+begin_src mermaid :file yuv420sp_nv12.svg
+  #+begin_src mermaid :file yuv420sp_nv12.svg :exports none
     block
         columns 4
 
@@ -42,10 +52,9 @@
   #+end_src
 
   #+CAPTION: YUV420SP NV12
-  #+RESULTS:
   [[file:yuv420sp_nv12.svg]]
 
-  #+begin_src mermaid :file yuv420sp_nv21.svg
+  #+begin_src mermaid :file yuv420sp_nv21.svg :exports none
     block
         columns 4
 
@@ -65,10 +74,9 @@
   #+end_src
 
   #+CAPTION: YUV420SP NV21
-  #+RESULTS:
   [[file:yuv420sp_nv21.svg]]
 
-  #+begin_src mermaid :file yuv420p_yu12.svg
+  #+begin_src mermaid :file yuv420p_yu12.svg :exports none
     block
         columns 4
 
@@ -88,10 +96,9 @@
   #+end_src
 
   #+CAPTION: YUV420P YU12(I420)
-  #+RESULTS:
   [[file:yuv420p_yu12.svg]]
 
-  #+begin_src mermaid :file yuv420p_yv12.svg
+  #+begin_src mermaid :file yuv420p_yv12.svg :exports none
     block
         columns 4
 
@@ -111,7 +118,6 @@
   #+end_src
 
   #+CAPTION: YUV420P YV12
-  #+RESULTS:
   [[file:yuv420p_yv12.svg]]
 
 
