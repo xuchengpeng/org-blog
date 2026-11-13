@@ -1,0 +1,29 @@
+org/js/sidenote.js
+  s_46cc03f69b9837::t_c8efd102aaf55c 14,16
+org/posts/2019-12-01-org-publish-html.org
+  s_ed63ab08e89e7e::t_9cbb82d3c9a8af 88,161-163
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "10.11.1",
+  "base_commit_sha": "6ab3eb77669e45fa76641fce06ecb5f0e9f6be5c",
+  "prompts": {},
+  "sessions": {
+    "s_46cc03f69b9837": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_e3075d0b2ffeoDe4KUypNWQ65y",
+        "model": "unknown"
+      },
+      "human_author": null
+    },
+    "s_ed63ab08e89e7e": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_e50124b94ffe3N1fldjJuY1CYl",
+        "model": "unknown"
+      },
+      "human_author": "xuchengpeng <chuckxcp@qq.com>"
+    }
+  }
+}
