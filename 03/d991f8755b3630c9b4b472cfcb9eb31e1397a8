@@ -1,0 +1,28 @@
+org/posts/2019-12-01-org-publish-html.org
+  s_ed63ab08e89e7e::t_1e44b631895881 88
+org/posts/2024-01-05-powerful-org-capture.org
+  s_ed63ab08e89e7e::t_dc9c187dd53bf8 10,12,24-26,61-63
+org/posts/2026-11-09-weekly-things-2.org
+  h_76dde7977e1f21 131-133
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "10.11.1",
+  "base_commit_sha": "03d991f8755b3630c9b4b472cfcb9eb31e1397a8",
+  "prompts": {},
+  "humans": {
+    "h_76dde7977e1f21": {
+      "author": "xuchengpeng <chuckxcp@qq.com>"
+    }
+  },
+  "sessions": {
+    "s_ed63ab08e89e7e": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_e50124b94ffe3N1fldjJuY1CYl",
+        "model": "unknown"
+      },
+      "human_author": "xuchengpeng <chuckxcp@qq.com>"
+    }
+  }
+}
