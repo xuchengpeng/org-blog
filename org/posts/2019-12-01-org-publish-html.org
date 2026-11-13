@@ -91,7 +91,7 @@ Then run =org-publish-project= to generate html files to =~/blog/public= folder.
 - 2026-11-09 优化 tags 页面的生成，发布 blog-pages 时通过指定 ~:preparation-function~ 函数来生成 blog-posts 对应的 tags文件。
 - 2026-11-06 Add tags page with sitemap function.
 - 2026-11-04 Define a customized HTML export backend.
-- 2025-12-22 Publish with [[https://github.com/xuchengpeng/org-blog/blob/main/build-site.el][build-site.el]].
+- 2025-12-22 Publish with [[https://github.com/xuchengpeng/org-blog/blob/main/publish.el][publish.el]].
 - 2025-10-28 Export woff2 files.
 - 2025-09-24 Render math with MathJax 4.
 - 2025-07-29 Search with [[https://www.fusejs.io/][Fuse.js]].

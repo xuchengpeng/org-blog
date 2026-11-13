@@ -1,4 +1,4 @@
-;;; build-site.el --- Build site.  -*- lexical-binding: t -*-
+;;; publish.el --- Publish org blog.  -*- lexical-binding: t -*-
 
 (set-charset-priority 'unicode)
 (set-language-environment "UTF-8")

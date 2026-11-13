@@ -1,9 +1,9 @@
 # org-blog
 
-Build site:
+Publish org blog:
 
 ```emacs-lisp
-emacs --batch --load htmlize.el --load build-site.el
+emacs --batch --load htmlize.el --load publish.el
 ```
 
 Minify CSS/JavaScript/HTML after publishing:
