@@ -1,0 +1,19 @@
+org/posts/2026-10-09-org-babel-mermaid.org
+  s_ed63ab08e89e7e::t_12b3b221bc4af2 46,48-49,51
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "10.11.1",
+  "base_commit_sha": "08b94c24d99b8b58afb1700b7badd9370ca4d8ae",
+  "prompts": {},
+  "sessions": {
+    "s_ed63ab08e89e7e": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_e50124b94ffe3N1fldjJuY1CYl",
+        "model": "unknown"
+      },
+      "human_author": "xuchengpeng <chuckxcp@qq.com>"
+    }
+  }
+}
