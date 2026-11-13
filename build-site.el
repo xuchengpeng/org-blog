@@ -185,9 +185,9 @@ a plist used as a communication channel.
 Return the table of contents as a string, or nil."
   (when-let* ((toc-entries
                (mapcar (lambda (headline)
-		                 (cons (org-html--format-toc-headline headline info)
-			                   (org-export-get-relative-level headline info)))
-		               (org-export-collect-headlines info depth))))
+                         (cons (org-html--format-toc-headline headline info)
+                               (org-export-get-relative-level headline info)))
+                       (org-export-collect-headlines info depth))))
     (format "<details id=\"table-of-contents\" role=\"doc-toc\">\n<summary>%s</summary>\n<div id=\"text-table-of-contents\" role=\"doc-toc\">\n%s\n</div>\n</details>\n"
             (org-html--translate "Table of Contents" info)
             (org-html--toc-text toc-entries))))
