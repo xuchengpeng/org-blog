@@ -43,8 +43,11 @@ Org Babel 内置的语言已支持 PlantUML，在导出文件时可以生成各�
 
 #+begin_quote
 🔴 如果在导出过程中碰到类似 ~Error: Could not find chrome-headless-shell~ 的错误，可以通过环境变量指定浏览器的路径：
+
 #+begin_src bash
-export PUPPETEER_EXECUTABLE_PATH="/path/to/chrome"
+  export PUPPETEER_EXECUTABLE_PATH="/path/to/chrome"
+  export PUPPETEER_SKIP_DOWNLOAD=1
 #+end_src
+
 ~PUPPETEER_EXECUTABLE_PATH~ 是 Puppeteer 的一个环境变量，用于指定浏览器（如 Chrome 或 Chromium）的自定义二进制文件路径。
 #+end_quote
