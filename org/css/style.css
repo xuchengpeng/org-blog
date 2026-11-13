@@ -228,20 +228,6 @@ pre {
     min-width: 0;
     max-width: 100%;
   }
-
-  @media (min-width: 1024px) {
-    flex-direction: row;
-
-    & > .table-of-contents {
-      order: 1;
-      width: calc(var(--spacing) * 64);
-      padding-left: calc(var(--spacing) * 4);
-      & > .toc {
-        position: sticky;
-        top: 4em;
-      }
-    }
-  }
 }
 
 .article h1 {
@@ -337,6 +323,42 @@ pre {
   }
 }
 
+.article .sidenote {
+  display: none;
+}
+
+@media (min-width: 120rem) {
+  .article .sidenote {
+    --sidenote-width: min(28rem, calc(50vw - var(--main-width) / 2 - 3rem));
+    display: block;
+    float: right;
+    clear: right;
+    width: var(--sidenote-width);
+    margin: 0.25rem calc(-1 * var(--sidenote-width) - 1.5rem) 0.25rem 1.5rem;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875em;
+    line-height: 1.4;
+    border-radius: var(--radius);
+    transition: background-color 0.2s ease-in-out;
+
+    & .footpara {
+      display: inline;
+    }
+
+    & p {
+      margin: 0;
+    }
+
+    & a {
+      overflow-wrap: anywhere;
+    }
+  }
+
+  .article :is(sup:hover, a.footref:hover) + .sidenote {
+    background-color: rgb(var(--tertiary));
+  }
+}
+
 .article table {
   display: block;
   overflow: auto;
@@ -413,7 +435,6 @@ pre {
   padding-left: 0.5em;
   margin-left: 0.5em;
   float: right;
-  border-left: 1px solid rgb(var(--secondary));
 }
 
 /* GTD Style */
@@ -813,13 +834,17 @@ mjx-container[jax="CHTML"][display="true"] {
   font-size: 1em;
   line-height: 1.5;
   margin: 1em 0;
-  max-height: calc(100vh - 150px);
-  min-height: 0;
-  overflow-x: hidden;
 
-  & h2 {
+  & summary {
     font-size: 1.2em;
+    font-weight: bold;
+    line-height: 1.5;
     margin: 0;
+    padding: 0.25em 0.5em;
+    background-color: rgb(var(--code-bg));
+    border-radius: var(--radius);
+    cursor: pointer;
+    user-select: none;
   }
 
   & #text-table-of-contents {
@@ -832,10 +857,6 @@ mjx-container[jax="CHTML"][display="true"] {
     text-decoration: none;
     &:hover {
       color: rgb(var(--link));
-    }
-    &.active {
-      color: rgb(var(--link));
-      font-weight: bold;
     }
   }
 

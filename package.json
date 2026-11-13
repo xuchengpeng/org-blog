@@ -10,8 +10,8 @@
   },
   "scripts": {
     "minify-css": "postcss public/css/style.css -o public/css/main.bundle.min.css",
-    "minify-js": "terser public/js/appearance.js -c -m -o public/js/appearance.min.js && terser public/js/menu.js public/js/code.js public/js/scroll.js -c -m -o public/js/main.bundle.min.js",
+    "minify-js": "terser public/js/appearance.js -c -m -o public/js/appearance.min.js && terser public/js/menu.js public/js/code.js public/js/scroll.js public/js/sidenote.js -c -m -o public/js/main.bundle.min.js",
     "minify-html": "posthtml -c posthtmlrc.json",
-    "minify": "npm run minify-css && npm run minify-js && npm rum minify-html"
+    "minify": "npm run minify-css && npm run minify-js && npm run minify-html"
   }
 }

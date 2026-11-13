@@ -1,6 +1,8 @@
-var menuButton = document.getElementById("menu-button");
-var menuList = document.getElementById("menu-list");
+window.addEventListener("DOMContentLoaded", (_) => {
+  var menuButton = document.getElementById("menu-button");
+  var menuList = document.getElementById("menu-list");
 
-menuButton.addEventListener("click", () => {
-  menuList.classList.toggle("!block");
+  menuButton.addEventListener("click", () => {
+    menuList.classList.toggle("!block");
+  });
 });

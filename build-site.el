@@ -177,6 +177,21 @@ PROJECT is the property list of the project being prepared."
 (defvar +org-html-header (+org-blog-file-contents "html/header.html"))
 (defvar +org-html-footer (+org-blog-file-contents "html/footer.html"))
 
+(defun +org-html-toc (depth info)
+  "Build a collapsible table of contents as a details element.
+DEPTH is an integer specifying the depth of the table.  INFO is
+a plist used as a communication channel.
+
+Return the table of contents as a string, or nil."
+  (when-let* ((toc-entries
+               (mapcar (lambda (headline)
+		                 (cons (org-html--format-toc-headline headline info)
+			                   (org-export-get-relative-level headline info)))
+		               (org-export-collect-headlines info depth))))
+    (format "<details id=\"table-of-contents\" role=\"doc-toc\">\n<summary>%s</summary>\n<div id=\"text-table-of-contents\" role=\"doc-toc\">\n%s\n</div>\n</details>\n"
+            (org-html--translate "Table of Contents" info)
+            (org-html--toc-text toc-entries))))
+
 (org-export-define-derived-backend '+org-html 'html
   :translate-alist '((template . +org-html-template)
                      (inner-template . +org-html-inner-template)))
@@ -240,9 +255,8 @@ holding export options."
           (format "<div class=\"article-meta\">%s</div>\n" meta)))
       "</div>\n"))
    "<div class=\"article-content\">\n"
-   (when-let* ((depth (plist-get info :with-toc))
-               (toc (org-html-toc depth info)))
-     (format "<div class=\"table-of-contents\"><div class=\"toc\">%s</div></div>\n" toc))
+   (when-let* ((depth (plist-get info :with-toc)))
+     (+org-html-toc depth info))
    "<div class=\"content\">\n"
    contents
    (org-html-footnote-section info)
