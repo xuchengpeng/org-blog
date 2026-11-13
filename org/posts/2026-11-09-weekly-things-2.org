@@ -10,7 +10,7 @@
   在 org-publish-project-alist 中可以为发布的项目指定准备和完成函数，分别通过 ~:preparation-function~ 和 ~:completion-function~ 设置，这些函数会在文件发布前后进行执行。我的博客当前就在准备函数中自动生成 tags 页面的 Org 文件。
 
 - Tab 和 Space转换 ::
-  在 Emacs 中使用 ~tabify~ 和 ~untabify~ 来进行 Tab 和 Space 之间的转换。
+  在 Emacs 中使用 ~tabify~ 和 ~untabify~ 来进行 Tab 和 Space 之间的转换。直接运行 ~whitespace-cleanup~ 也可以将所有的 Tab 转换成 Space 。
 
 - 文件夹同步 ::
   博客发布新的文件后，需要覆盖到托管的目录下，但是有些文件可能被删掉了，托管的目录下需要同步删掉，这样的话就不能简单的使用拷贝覆盖命令了， rsync 命令的 ~--delete~ 参数可以把托管目录的多余的文件删掉，注意要通过 ~--exclude~ 参数来过滤 .git 文件夹。
