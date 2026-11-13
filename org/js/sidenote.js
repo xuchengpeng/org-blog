@@ -11,8 +11,9 @@ function sidenotes() {
       return;
     }
 
-    const sidenote = document.createElement("aside");
+    const sidenote = document.createElement("span");
     sidenote.classList.add("sidenote");
+    sidenote.setAttribute("role", "note");
     sidenote.innerHTML = def.innerText + ". " + para.innerHTML;
 
     (ref.closest("sup") || ref).after(sidenote);
