@@ -7,12 +7,9 @@ Capture让你快速的保存笔记，并且让你的工作流中很少被打断�
 
 Capture的配置比较复杂，主要是Capture templates。
 
-* Capture templates[fn:1]
-:PROPERTIES:
-:CUSTOM_ID: capture-templates
-:END:
+* Capture templates
 
-配置Capture templates的基本形式是：
+配置 Capture templates[fn:1] 的基本形式是：
 
 #+begin_src emacs-lisp
 (setq org-capture-templates
@@ -24,10 +21,9 @@ Capture的配置比较复杂，主要是Capture templates。
 
 在Capture菜单中按下 ~t~ 时，Org会准备Todo模板：
 
-* Template elements[fn:2]
-:PROPERTIES:
-:CUSTOM_ID: template-elements
-:END:
+* Template elements
+
+模板元素[fn:2]主要包含以下内容：
 
 | 关键字        | 对应内容                                  | 描述                         |
 |-------------+-----------------------------------------+-----------------------------|
@@ -62,10 +58,9 @@ Capture的配置比较复杂，主要是Capture templates。
 | clock             | 文件到当前正在计时的条目  | (clock)                                                 |
 | function          | 自定义函数             | (function function-finding-location)                    |
 
-* Template expansion[fn:3]
-:PROPERTIES:
-:CUSTOM_ID: template-expansion
-:END:
+* Template expansion
+
+模板展开[fn:3]也可用以下内置的类型：
 
 | type         | description                          |
 |--------------+--------------------------------------|
