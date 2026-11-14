@@ -1,0 +1,19 @@
+org/js/appearance.js
+  s_f67b91d6950e72::t_908bd3eb7d884c 7
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "10.11.1",
+  "base_commit_sha": "aad0235324493fd204032709213b9ffbd4618081",
+  "prompts": {},
+  "sessions": {
+    "s_f67b91d6950e72": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_e2708ee27ffe5OT5yXlTxef7KC",
+        "model": "unknown"
+      },
+      "human_author": "xuchengpeng <chuckxcp@qq.com>"
+    }
+  }
+}
