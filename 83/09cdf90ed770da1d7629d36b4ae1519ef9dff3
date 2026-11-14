@@ -1,0 +1,19 @@
+org/js/appearance.js
+  s_f67b91d6950e72::t_71395b300f7a72 1-5,7-12,14
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "10.11.1",
+  "base_commit_sha": "8309cdf90ed770da1d7629d36b4ae1519ef9dff3",
+  "prompts": {},
+  "sessions": {
+    "s_f67b91d6950e72": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_e2708ee27ffe5OT5yXlTxef7KC",
+        "model": "unknown"
+      },
+      "human_author": null
+    }
+  }
+}
