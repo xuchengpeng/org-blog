@@ -1,0 +1,21 @@
+org/js/scroll.js
+  s_f67b91d6950e72::t_42051ff5cb8373 1,13,17
+  s_f67b91d6950e72::t_3cdfd4e6c0c5d1 3-12,15-16
+  s_f67b91d6950e72::t_10604999be0693 14
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "10.11.1",
+  "base_commit_sha": "df2db35c6ff8a79b5339b22c6ce7c53dca4a24b5",
+  "prompts": {},
+  "sessions": {
+    "s_f67b91d6950e72": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_e2708ee27ffe5OT5yXlTxef7KC",
+        "model": "unknown"
+      },
+      "human_author": "xuchengpeng <chuckxcp@qq.com>"
+    }
+  }
+}
