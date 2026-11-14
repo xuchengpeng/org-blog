@@ -130,6 +130,7 @@ More examples
 
 - https://orgmode.org/worg/org-blog-wiki.html
 - https://7d.nz/Blogging-with-org.html
+- https://idlip.in/log/denden/
 - https://www.danliden.com/posts/20211203-this-site.html
 - https://www.faijdherbe.net/org-publish.html
 - https://systemcrafters.net/publishing-websites-with-org-mode/building-the-site/
