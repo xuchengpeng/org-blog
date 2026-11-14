@@ -34,7 +34,7 @@
   --font-sans: "Berkeley Mono", "LXGW WenKai", sans-serif;
   --font-serif: "Berkeley Mono", "LXGW WenKai", serif;
   --font-mono: "Berkeley Mono", "LXGW WenKai", monospace;
-  --main-width: 72rem;
+  --main-width: 64rem;
   --spacing: 0.25em;
   --radius: 4px;
   --theme: 255, 255, 255;
@@ -327,7 +327,7 @@ pre {
   display: none;
 }
 
-@media (min-width: 120rem) {
+@media (min-width: 100rem) {
   .article .sidenote {
     --sidenote-width: min(28rem, calc(50vw - var(--main-width) / 2 - 3rem));
     display: block;
