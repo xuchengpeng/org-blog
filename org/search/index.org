@@ -6,7 +6,7 @@
 <div id="search-box">
   <input id="search-input" autofocus placeholder="Searching..."
          aria-label="search" type="search" autocomplete="off" maxlength="64">
-  <ul id="search-results" aria-label="search results"></ul>
+  <ul id="search-results" aria-label="search results" aria-live="polite"></ul>
 </div>
 
 <script type="module">
@@ -15,66 +15,88 @@ import Fuse from 'https://cdn.jsdelivr.net/npm/fuse.js@7.5.0/dist/fuse.min.mjs'
 var fuse;
 var searchInput = document.getElementById("search-input");
 var searchResults = document.getElementById("search-results");
-var first = searchResults.firstChild;
-var last = searchResults.lastChild;
+var first = null;
 var hasResults = false;
+var defaultPlaceholder = searchInput.placeholder;
 
-// load index
-window.addEventListener("load", (_) => {
-  let xhr = new XMLHttpRequest();
-  xhr.onreadystatechange = function () {
-    if (xhr.readyState === 4) {
-      if (xhr.status === 200) {
-        let data = JSON.parse(xhr.responseText);
-        if (data) {
-          // fuse.js options; check fuse.js website for details
-          let options = {
-            shouldSort: true,
-            location: 0,
-            threshold: 0.6,
-            distance: 100,
-            ignoreLocation: false,
-            keys: [
-              'title',
-              'description',
-              'keywords',
-            ]
-          };
-          fuse = new Fuse(data, options); // build the index from the json file
-        }
-      } else {
-        console.log(xhr.responseText);
-      }
-    }
-  };
-  xhr.open('GET', "../index.json");
-  xhr.send();
+// escape user-derived strings for safe use in HTML text and attributes
+function esc(s) {
+  return String(s == null ? "" : s)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+// load index (module scripts run after DOM parse, so start immediately)
+async function loadIndex() {
+  searchInput.placeholder = "Loading index...";
+  try {
+    const res = await fetch("../index.json");
+    if (!res.ok) throw new Error("HTTP " + res.status);
+    const data = await res.json();
+    if (!data) throw new Error("empty index");
+    // fuse.js options; check fuse.js website for details
+    const options = {
+      shouldSort: true,
+      location: 0,
+      threshold: 0.6,
+      distance: 100,
+      ignoreLocation: false,
+      minMatchCharLength: 2,
+      keys: [
+        'title',
+        'description',
+        'keywords',
+      ]
+    };
+    fuse = new Fuse(data, options); // build the index from the json file
+    searchInput.placeholder = defaultPlaceholder;
+    if (searchInput.value) doSearch(); // re-run search if user typed during load
+  } catch (e) {
+    console.error("Failed to load search index:", e);
+    searchInput.placeholder = "Search is unavailable.";
+  }
+}
+loadIndex();
+
+function clearResults() {
+  searchResults.innerHTML = "";
+  hasResults = false;
+  first = null;
+}
+
+function doSearch() {
+  const q = searchInput.value.trim();
+  if (!q) {
+    clearResults();
+    return;
+  }
+  if (!fuse) return; // index still loading or failed; status shown in placeholder
+  const results = fuse.search(q, { limit: 20 });
+  if (results.length !== 0) {
+    searchResults.innerHTML = results.map(({ item }) =>
+      `<li><a href="${esc(item.url)}" aria-label="${esc(item.title)}">
+        <h1>${esc(item.title)}</h1><p>${esc(item.description)}</p></a></li>`
+    ).join("");
+    hasResults = true;
+    first = searchResults.firstElementChild.firstElementChild;
+  } else {
+    clearResults();
+  }
+}
+
+// debounce search while typing (also covers paste via input event)
+let debounceTimer;
+searchInput.addEventListener("input", () => {
+  clearTimeout(debounceTimer);
+  debounceTimer = setTimeout(doSearch, 200);
 });
 
-// execute search as each character is typed
-searchInput.onkeyup = function (_) {
-  if (fuse && this.value) {
-    let results = fuse.search(this.value);
-    if (results.length !== 0) {
-      let resultSet = "";
-      for (let item in results) {
-        resultSet += `<li><a href="${results[item].item.url}" aria-label="${results[item].item.title}">
-          <h1>${results[item].item.title}</h1><p>${results[item].item.description}</p></a></li>`
-      }
-      searchResults.innerHTML = resultSet;
-      hasResults = true;
-      first = searchResults.firstChild.firstElementChild;
-      last = searchResults.lastChild.firstElementChild;
-    } else {
-      searchResults.innerHTML = "";
-      hasResults = false;
-    }
-  }
-};
-
 function clearSearch() {
-  hasResults = false;
-  searchResults.innerHTML = "";
+  clearTimeout(debounceTimer);
+  clearResults();
   searchInput.value = "";
   searchInput.focus();
 }
@@ -87,37 +109,34 @@ searchInput.addEventListener("search", (_) => {
 document.addEventListener("keydown", function (event) {
   if (event.key == "Escape") {
     clearSearch();
-  } else if (event.key == "ArrowDown") {
-    if (hasResults) {
-      event.preventDefault();
-      if (document.activeElement == searchInput) {
-        first.focus();
-      } else if (document.activeElement == last) {
-        last.focus();
-      } else {
-        document.activeElement.parentElement.nextSibling.firstElementChild.focus();
-      }
+    return;
+  }
+  if (!hasResults) return;
+  const active = document.activeElement;
+  const inResults = active && active.closest && active.closest("#search-results") !== null;
+
+  if (event.key == "ArrowDown") {
+    event.preventDefault();
+    if (!inResults) {
+      first.focus();
+    } else {
+      const next = active.parentElement.nextElementSibling;
+      (next ? next.firstElementChild : first).focus();
     }
   } else if (event.key == "ArrowUp") {
-    if (hasResults) {
-      event.preventDefault();
-      if (document.activeElement == searchInput) {
-        searchInput.focus();
-      } else if (document.activeElement == first) {
-        searchInput.focus();
-      } else {
-        document.activeElement.parentElement.previousSibling.firstElementChild.focus();
-      }
+    event.preventDefault();
+    if (!inResults || active === first) {
+      searchInput.focus();
+    } else {
+      const prev = active.parentElement.previousElementSibling;
+      (prev ? prev.firstElementChild : searchInput).focus();
     }
   } else if (event.key == "Enter") {
-    if (hasResults) {
+    if (active === searchInput) {
       event.preventDefault();
-      if (document.activeElement == searchInput) {
-        first.focus();
-      } else {
-        document.activeElement.click();
-      }
+      first.focus();
     }
+    // focused links handle Enter natively
   }
 });
 
