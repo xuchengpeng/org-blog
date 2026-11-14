@@ -338,8 +338,9 @@ pre {
     padding: 0.25rem 0.5rem;
     font-size: 0.875em;
     line-height: 1.4;
-    border-radius: var(--radius);
-    transition: background-color 0.2s ease-in-out;
+    /* 常态保留透明双细线边框，高亮时仅切换颜色，避免布局抖动 */
+    border: 3px double transparent;
+    transition: border-color 0.2s ease-in-out;
 
     & .footpara {
       display: inline;
@@ -354,8 +355,22 @@ pre {
     }
   }
 
-  .article :is(sup:hover, a.footref:hover) + .sidenote {
-    background-color: rgb(var(--tertiary));
+  /* 正文脚注号（仅限后跟 sidenote 的 sup，普通 sup 不受影响） */
+  .article sup:has(+ .sidenote) {
+    border: 3px double transparent;
+    transition: border-color 0.2s ease-in-out;
+  }
+
+  /* 双向联动高亮：悬停脚注号或 sidenote 任意一方，两者同时显示边框 */
+  /* 悬停 sidenote 自身 */
+  .article .sidenote:hover,
+  /* 悬停脚注号 → 高亮 sidenote */
+  .article sup:hover+.sidenote,
+  /* 悬停脚注号自身 */
+  .article sup:has(+ .sidenote):hover,
+  /* 悬停 sidenote → 反向高亮脚注号 */
+  .article sup:has(+ .sidenote:hover) {
+    border-color: rgb(var(--secondary));
   }
 }
 
