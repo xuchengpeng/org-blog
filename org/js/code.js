@@ -1,22 +1,24 @@
-async function copyCodeToClipboard(button, highlightDiv) {
-  const codeToCopy = highlightDiv.querySelector("pre.src").textContent.trim();
-  await navigator.clipboard.writeText(codeToCopy);
-  button.innerText = "Copied";
-  setTimeout(function () {
+(() => {
+  function createCopyButton(highlightDiv) {
+    const button = document.createElement("button");
+    button.className = "copy-code";
+    button.type = "button";
     button.innerText = "Copy";
-  }, 2000);
-}
+    let timer;
+    button.addEventListener("click", async () => {
+      const codeToCopy = highlightDiv.querySelector("pre.src")?.textContent.trim();
+      if (!codeToCopy) return;
+      try {
+        await navigator.clipboard.writeText(codeToCopy);
+        button.innerText = "Copied";
+      } catch {
+        button.innerText = "Failed";
+      }
+      clearTimeout(timer);
+      timer = setTimeout(() => (button.innerText = "Copy"), 2000);
+    });
+    highlightDiv.appendChild(button);
+  }
 
-function createCopyButton(highlightDiv) {
-  const button = document.createElement("button");
-  button.className = "copy-code";
-  button.type = "button";
-  button.ariaLabel = "Copy";
-  button.innerText = "Copy";
-  button.addEventListener("click", () => copyCodeToClipboard(button, highlightDiv));
-  highlightDiv.appendChild(button);
-}
-
-window.addEventListener("DOMContentLoaded", (_) => {
-  document.querySelectorAll(".org-src-container").forEach((highlightDiv) => createCopyButton(highlightDiv));
-});
+  document.querySelectorAll(".org-src-container").forEach(createCopyButton);
+})();
