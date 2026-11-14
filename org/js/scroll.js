@@ -1,16 +1,17 @@
-window.addEventListener("DOMContentLoaded", (_) => {
-  scrollTop();
-});
-
-function scrollTop() {
+(() => {
   var toplink = document.getElementById("top-link");
-  window.addEventListener("scroll", () => {
-    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-      toplink.style.visibility = "visible";
-      toplink.style.opacity = "1";
-    } else {
-      toplink.style.visibility = "hidden";
-      toplink.style.opacity = "0";
-    }
-  }, { passive: true });
-}
+  if (!toplink) return;
+
+  var visible = false;
+
+  function update(scrollY) {
+    var show = scrollY > 50;
+    if (show === visible) return;
+    visible = show;
+    toplink.style.visibility = show ? "visible" : "hidden";
+    toplink.style.opacity = show ? "1" : "0";
+  }
+
+  window.addEventListener("scroll", () => update(window.scrollY), { passive: true });
+  update(window.scrollY); // handle scroll position restored before load
+})();
