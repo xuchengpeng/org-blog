@@ -1,0 +1,38 @@
+package.json
+  s_d4525048d6a3ad::t_1575277ea23eb7 13
+.github/workflows/main.yml
+  s_d4525048d6a3ad::t_dd52d31e52c495 34
+org/css/style.css
+  s_d4525048d6a3ad::t_031766f45355e7 362,369
+  s_d4525048d6a3ad::t_d540cd34594344 343,361,363
+  s_46cc03f69b9837::t_f7ae751da14d31 370-372
+  s_d4525048d6a3ad::t_8c7671d0896991 359
+  s_d4525048d6a3ad::t_e138b106916e03 342
+  s_d4525048d6a3ad::t_e5c04d2533b81d 360
+  s_d4525048d6a3ad::t_accfcebc442a41 341,358,364-368
+  s_46cc03f69b9837::t_d66cf03fbe2617 373
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "10.11.1",
+  "base_commit_sha": "c724c10551d6f8c652d200014e352977d6e88a1a",
+  "prompts": {},
+  "sessions": {
+    "s_46cc03f69b9837": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_e3075d0b2ffeoDe4KUypNWQ65y",
+        "model": "unknown"
+      },
+      "human_author": "xuchengpeng <chuckxcp@qq.com>"
+    },
+    "s_d4525048d6a3ad": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_e2876d9e3ffeXUMVRcGzk0JEJH",
+        "model": "unknown"
+      },
+      "human_author": null
+    }
+  }
+}
