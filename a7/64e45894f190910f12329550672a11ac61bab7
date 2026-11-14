@@ -1,0 +1,19 @@
+org/posts/2024-01-03-yellow-crane-tower.org
+  s_ed63ab08e89e7e::t_1ab3802fbca4ff 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "10.11.1",
+  "base_commit_sha": "a764e45894f190910f12329550672a11ac61bab7",
+  "prompts": {},
+  "sessions": {
+    "s_ed63ab08e89e7e": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_e50124b94ffe3N1fldjJuY1CYl",
+        "model": "unknown"
+      },
+      "human_author": "xuchengpeng <chuckxcp@qq.com>"
+    }
+  }
+}
