@@ -1,0 +1,20 @@
+org/js/sidenotes.js
+  s_f67b91d6950e72::t_5485263b5c682f 4-5,10-11
+  s_f67b91d6950e72::t_af28fdae5c05d6 1,15
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "10.11.1",
+  "base_commit_sha": "faae99a16b002d56300be951dd0c1132ee92c484",
+  "prompts": {},
+  "sessions": {
+    "s_f67b91d6950e72": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_e2708ee27ffe5OT5yXlTxef7KC",
+        "model": "unknown"
+      },
+      "human_author": "xuchengpeng <chuckxcp@qq.com>"
+    }
+  }
+}
