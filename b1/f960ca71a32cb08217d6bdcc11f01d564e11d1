@@ -1,0 +1,22 @@
+org/search/index.org
+  s_f67b91d6950e72::t_4ac014558994e1 76
+  s_f67b91d6950e72::t_fd37df51a07705 34,55-56,59
+  s_f67b91d6950e72::t_34f3a9785e2af3 9,18,22-30,32-33,35-54,57-58,61-62,64,66-75,77-99,112-124,127-132,135,137,139
+  s_f67b91d6950e72::t_4cc56fae67ddec 20
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "10.11.1",
+  "base_commit_sha": "b1f960ca71a32cb08217d6bdcc11f01d564e11d1",
+  "prompts": {},
+  "sessions": {
+    "s_f67b91d6950e72": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_e2708ee27ffe5OT5yXlTxef7KC",
+        "model": "unknown"
+      },
+      "human_author": "xuchengpeng <chuckxcp@qq.com>"
+    }
+  }
+}
