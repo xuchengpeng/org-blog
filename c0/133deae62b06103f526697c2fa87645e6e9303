@@ -1,0 +1,14 @@
+org/css/style.css
+  h_76dde7977e1f21 487
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "10.11.1",
+  "base_commit_sha": "c0133deae62b06103f526697c2fa87645e6e9303",
+  "prompts": {},
+  "humans": {
+    "h_76dde7977e1f21": {
+      "author": "xuchengpeng <chuckxcp@qq.com>"
+    }
+  }
+}
