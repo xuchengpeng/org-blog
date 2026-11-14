@@ -1,0 +1,20 @@
+org/js/menu.js
+  s_f67b91d6950e72::t_56b0f37ccd698b 1,5,9-13
+  s_f67b91d6950e72::t_b6249c35dc2efc 8
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "10.11.1",
+  "base_commit_sha": "d3ec3ac6be4ea9bbf5836b66d21ac9c6303ce5ec",
+  "prompts": {},
+  "sessions": {
+    "s_f67b91d6950e72": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_e2708ee27ffe5OT5yXlTxef7KC",
+        "model": "unknown"
+      },
+      "human_author": null
+    }
+  }
+}
