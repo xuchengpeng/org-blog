@@ -481,26 +481,20 @@ pre {
 
 /* GTD Style */
 .article :is(.todo, .done) {
-  border-radius: var(--radius);
   font-family: var(--font-mono);
-  font-size: 0.85em;
-  line-height: 1;
-  padding: 0.1em 0.3em;
-  background-clip: padding-box;
+  font-weight: bold;
 }
 
 .article .todo {
-  background: red;
-  color: white;
+  color: var(--org-error);
 }
 
 .article .done {
-  background: green;
-  color: white;
+  color: var(--org-rx-construct);
 }
 
 .article .priority {
-  color: orange;
+  color: var(--org-warning);
   font-family: var(--font-mono);
 }
 
