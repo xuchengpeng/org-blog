@@ -1,0 +1,19 @@
+org/posts/2026-09-28-batch-rename-files-in-emacs.org
+  s_ed63ab08e89e7e::t_b92a2aa8f3d38c 13-20
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "10.11.1",
+  "base_commit_sha": "f7f713dc8de7df2fc3573e2a4353988342e9995b",
+  "prompts": {},
+  "sessions": {
+    "s_ed63ab08e89e7e": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_e50124b94ffe3N1fldjJuY1CYl",
+        "model": "unknown"
+      },
+      "human_author": "xuchengpeng <chuckxcp@qq.com>"
+    }
+  }
+}
