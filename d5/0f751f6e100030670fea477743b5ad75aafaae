@@ -1,0 +1,21 @@
+org/css/style.css
+  s_1c32ca781f0a60::t_3c4c0a40103db1 72-85
+  s_1c32ca781f0a60::t_4b771f7f568714 47-60
+  s_1c32ca781f0a60::t_44fb86889bfd32 779,783,787,790,793,798,802,805,808,815,818,821,825,828
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "10.11.1",
+  "base_commit_sha": "d50f751f6e100030670fea477743b5ad75aafaae",
+  "prompts": {},
+  "sessions": {
+    "s_1c32ca781f0a60": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_e1bda14acffeGTBvDLsbXKp9BH",
+        "model": "unknown"
+      },
+      "human_author": "xuchengpeng <chuckxcp@qq.com>"
+    }
+  }
+}
