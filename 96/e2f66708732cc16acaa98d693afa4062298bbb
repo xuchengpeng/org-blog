@@ -1,0 +1,19 @@
+org/css/style.css
+  s_1c32ca781f0a60::t_4cceede43f246b 485,489,493,497
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "10.11.1",
+  "base_commit_sha": "96e2f66708732cc16acaa98d693afa4062298bbb",
+  "prompts": {},
+  "sessions": {
+    "s_1c32ca781f0a60": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_e1bda14acffeGTBvDLsbXKp9BH",
+        "model": "unknown"
+      },
+      "human_author": "xuchengpeng <chuckxcp@qq.com>"
+    }
+  }
+}
