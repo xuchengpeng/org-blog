@@ -3,7 +3,7 @@
 Publish org blog:
 
 ```emacs-lisp
-emacs --batch --load htmlize.el --load publish.el
+emacs -Q --script publish.el
 ```
 
 Minify CSS/JavaScript/HTML after publishing:

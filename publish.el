@@ -12,11 +12,18 @@
 (setq locale-coding-system 'utf-8)
 (set-selection-coding-system 'utf-8)
 
+(defvar +org-blog-root-dir
+  (file-name-directory (or load-file-name buffer-file-name default-directory))
+  "Root directory of the blog, where publish.el lives.")
+
+(add-to-list 'load-path +org-blog-root-dir)
+
 (require 'subr-x)
 (require 'json)
 (require 'ox-publish)
+(require 'htmlize)
 
-(setq org-publish-timestamp-directory (expand-file-name ".org-timestamps/")
+(setq org-publish-timestamp-directory (expand-file-name ".org-timestamps/" +org-blog-root-dir)
       org-export-in-background t
       org-export-headline-levels 4
       org-export-with-section-numbers nil
@@ -131,7 +138,7 @@ PROJECT is the property list of the project being prepared."
       (insert (json-encode (vconcat search-index))))
     (message "Generating recent posts")
     (with-temp-file (expand-file-name "recent-posts.inc" base-dir)
-      (dolist (post (seq-take (nreverse posts) 10))
+      (dolist (post (seq-take (reverse posts) 10))
         (insert (format "- %s [[file:%s][%s]]\n"
                         (format-time-string "%b %d, %Y" (plist-get post :date))
                         (file-relative-name (plist-get post :file) base-dir)
@@ -173,9 +180,9 @@ PROJECT is the property list of the project being prepared."
     (insert-file-contents file)
     (buffer-string)))
 
-(defvar +org-html-head (+org-blog-file-contents "html/head.html"))
-(defvar +org-html-header (+org-blog-file-contents "html/header.html"))
-(defvar +org-html-footer (+org-blog-file-contents "html/footer.html"))
+(defvar +org-html-head (+org-blog-file-contents (expand-file-name "html/head.html" +org-blog-root-dir)))
+(defvar +org-html-header (+org-blog-file-contents (expand-file-name "html/header.html" +org-blog-root-dir)))
+(defvar +org-html-footer (+org-blog-file-contents (expand-file-name "html/footer.html" +org-blog-root-dir)))
 
 (defun +org-html-toc (depth info)
   "Build a collapsible table of contents as a details element.
@@ -209,9 +216,9 @@ holding export options."
    (format "<title>%s</title>\n" (org-export-data (plist-get info :title) info))
    (let ((description (plist-get info :description)))
      (when (org-string-nw-p description)
-       (format "<meta name=\"description\" content=\"%s\"/>\n" description)))
+       (format "<meta name=\"description\" content=\"%s\"/>\n" (org-html-encode-plain-text description))))
    (when-let* ((keywords (plist-get info :filetags)))
-     (format "<meta name=\"keywords\" content=\"%s\"/>\n" (string-join keywords ",")))
+     (format "<meta name=\"keywords\" content=\"%s\"/>\n" (org-html-encode-plain-text (string-join keywords ","))))
    +org-html-head
    (when (and (memq (plist-get info :with-latex) '(mathjax t))
               (org-element-map (plist-get info :parse-tree) '(latex-fragment latex-environment) #'identity info t nil t))
@@ -277,19 +284,19 @@ Return output file name."
 
 (setq org-publish-project-alist
       `(("blog-pages"
-         :base-directory "./org"
+         :base-directory ,(expand-file-name "org" +org-blog-root-dir)
          :base-extension "org"
          :recursive t
          :preparation-function +org-blog-pages-prepare
          :publishing-function +org-html-publish-to-html
-         :publishing-directory "./public"
+         :publishing-directory ,(expand-file-name "public" +org-blog-root-dir)
          :auto-sitemap nil)
         ("blog-static"
-         :base-directory "./org"
+         :base-directory ,(expand-file-name "org" +org-blog-root-dir)
          :base-extension "js\\|css\\|jpg\\|png\\|svg\\|gif\\|webp\\|ico\\|txt\\|json\\|webmanifest\\|woff2"
          :recursive t
          :publishing-function org-publish-attachment
-         :publishing-directory "./public")
+         :publishing-directory ,(expand-file-name "public" +org-blog-root-dir))
         ("blog" :components ("blog-pages" "blog-static"))))
 
-(org-publish "blog" t)
+(org-publish "blog")
