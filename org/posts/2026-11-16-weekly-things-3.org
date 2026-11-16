@@ -1,0 +1,15 @@
+#+TITLE: Weekly Things 3
+#+AUTHOR: Chuck
+#+DESCRIPTION: default-directory
+#+FILETAGS: :Emacs:
+#+DATE: <2026-11-16 Mon 11:17>
+
+* Emacs
+
+** 当前 elisp 文件的目录
+
+#+begin_src emacs-lisp
+(file-name-directory (or load-file-name buffer-file-name default-directory))
+#+end_src
+
+通过以上代码可以获取当前 elisp 文件的目录， ~load-file-name~ 为通过参数 ~--load~ 或 ~--script~ 运行文件时传入， ~buffer-file-name~ 为当前 Buffer 对应的文件， ~default-directory~ 为当前 Buffer 的默认目录。
