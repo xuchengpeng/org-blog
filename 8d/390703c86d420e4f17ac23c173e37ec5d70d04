@@ -1,0 +1,25 @@
+publish.el
+  s_727d6f37580e8e::t_e27ce8f7c19c97 134
+  h_76dde7977e1f21 212,214,295
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "10.11.1",
+  "base_commit_sha": "8d390703c86d420e4f17ac23c173e37ec5d70d04",
+  "prompts": {},
+  "humans": {
+    "h_76dde7977e1f21": {
+      "author": "xuchengpeng <chuckxcp@qq.com>"
+    }
+  },
+  "sessions": {
+    "s_727d6f37580e8e": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_e1e1e5ccbffencqiwlAHZztYgk",
+        "model": "unknown"
+      },
+      "human_author": "xuchengpeng <chuckxcp@qq.com>"
+    }
+  }
+}
