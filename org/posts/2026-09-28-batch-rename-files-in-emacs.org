@@ -10,3 +10,11 @@
 2. 执行 ~C-c C-e~ 进入 WDired 模式；
 3. 执行 ~query-replace~ 进行查找替换对文件名称进行修改；
 4. 执行 ~C-c C-c~ 完成重命名，或者执行 ~C-c ESC~ 放弃重命名。
+
+批量给文件添加前缀或者后缀是一种特殊的查找替换，此时需要用到 ~query-replace-regexp~ 进行正则匹配[fn:1]：
+1. 批量添加 libtree-sitter 前缀： ~^~ -> ~libtree-sitter-~ ；
+2. 批量添加 .bak 后缀： ~$~ -> ~.bak~ 。
+
+* Footnotes
+
+[fn:1] 使用 ~dired-do-rename-regexp~ 也可以进行正则匹配重命名，步骤稍微麻烦点，先标记需要重命名的所有文件，上面的例子中对应的匹配替换规则就是 ~\(.*\)~ -> ~libtree-sitter-\1~ ， ~\(.*\)~ -> ~\1.bak~ 。
