@@ -3,19 +3,19 @@
     const button = document.createElement("button");
     button.className = "copy-code";
     button.type = "button";
-    button.innerText = "Copy";
+    button.textContent = "Copy";
     let timer;
     button.addEventListener("click", async () => {
       const codeToCopy = highlightDiv.querySelector("pre.src")?.textContent.trim();
       if (!codeToCopy) return;
       try {
         await navigator.clipboard.writeText(codeToCopy);
-        button.innerText = "Copied";
+        button.textContent = "Copied";
       } catch {
-        button.innerText = "Failed";
+        button.textContent = "Failed";
       }
       clearTimeout(timer);
-      timer = setTimeout(() => (button.innerText = "Copy"), 2000);
+      timer = setTimeout(() => (button.textContent = "Copy"), 2000);
     });
     highlightDiv.appendChild(button);
   }
