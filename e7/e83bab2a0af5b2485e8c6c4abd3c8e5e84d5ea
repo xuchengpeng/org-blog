@@ -1,0 +1,32 @@
+README.md
+  h_76dde7977e1f21 6
+publish.el
+  s_727d6f37580e8e::t_3ae49c8ce9df98 26
+  s_727d6f37580e8e::t_69e0da55d4f713 183-185
+  s_727d6f37580e8e::t_e27ce8f7c19c97 141
+  s_727d6f37580e8e::t_b427d28bf3434b 221
+  h_76dde7977e1f21 292
+  s_727d6f37580e8e::t_ca394c9dc2461d 287,295
+  h_76dde7977e1f21 15-20,24,219,299,302
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "10.11.1",
+  "base_commit_sha": "e7e83bab2a0af5b2485e8c6c4abd3c8e5e84d5ea",
+  "prompts": {},
+  "humans": {
+    "h_76dde7977e1f21": {
+      "author": "xuchengpeng <chuckxcp@qq.com>"
+    }
+  },
+  "sessions": {
+    "s_727d6f37580e8e": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_e1e1e5ccbffencqiwlAHZztYgk",
+        "model": "unknown"
+      },
+      "human_author": null
+    }
+  }
+}
