@@ -1,0 +1,19 @@
+org/posts/2025-01-11-using-llm-in-emacs.org
+  s_ed63ab08e89e7e::t_5059142301496c 5,46-59
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "10.11.1",
+  "base_commit_sha": "944cca2a5ce9c89259e9c141cc878dd989dcf02d",
+  "prompts": {},
+  "sessions": {
+    "s_ed63ab08e89e7e": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_e50124b94ffe3N1fldjJuY1CYl",
+        "model": "unknown"
+      },
+      "human_author": "xuchengpeng <chuckxcp@qq.com>"
+    }
+  }
+}
