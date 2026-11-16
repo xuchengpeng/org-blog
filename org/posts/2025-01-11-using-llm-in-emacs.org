@@ -2,6 +2,7 @@
 #+AUTHOR: Chuck
 #+DATE: <2025-01-11 Sat 16:14>
 #+FILETAGS: :Emacs:LLM:
+#+DESCRIPTION: 在 Emacs 中使用 gptel 接入使用大模型。
 
 Emacs有不少LLM的客户端，这里我们选择[[https://github.com/karthink/gptel][gptel]]，在 =init.el= 中添加以下代码：
 
@@ -42,3 +43,17 @@ gptel的 ~:key~ 属性支持设置为一个函数来返回key，另外一种通�
         gptel-use-curl nil)
 #+end_src
 
+另外， gptel 支持从 authinfo 中读取对应的 API key ，将 ~:key~ 设置为 ~gptel-api-key~ 即可。
+
+#+begin_src emacs-lisp
+  (setq gptel-model 'gemini-4-hydrogen
+        gptel-backend (gptel-make-gemini "Gemini"
+                        :key #'gptel-api-key
+                        :stream t))
+#+end_src
+
+需要将对应的 API key 添加到 ~~/.authinfo~ 文件中去：
+
+#+begin_src
+machine generativelanguage.googleapis.com login apikey password xxxxxxxxxxxxxxx
+#+end_src
