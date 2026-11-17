@@ -13,3 +13,13 @@
 #+end_src
 
 通过以上代码可以获取当前 elisp 文件的目录， ~load-file-name~ 为通过参数 ~--load~ 或 ~--script~ 运行文件时传入， ~buffer-file-name~ 为当前 Buffer 对应的文件， ~default-directory~ 为当前 Buffer 的默认目录。
+
+* Reading
+
+** 论“他妈的！”
+
+要攻击高门大族的坚固的旧堡垒，却去瞄准他的血统，在战略上，真可谓奇谲[fn:1]的了。最先发明这一句"他妈的”的人物，确要算一个天才，——然而是一个卑劣的天才。
+
+* Footnotes
+
+[fn:1] 读作 jué ，本义为欺骗、诈骗、奇异、怪诞。
