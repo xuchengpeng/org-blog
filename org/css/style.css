@@ -44,20 +44,20 @@
   --code-bg: 248, 250, 252;
   --border: 203, 213, 225;
   --link: 37, 99, 235;
-  --org-builtin: #8f0075;
-  --org-comment: #595959;
-  --org-constant: #0000b0;
-  --org-doc: #2a5045;
-  --org-error: #a60000;
-  --org-function: #721045;
-  --org-keyword: #531ab6;
-  --org-operator: #000000;
-  --org-preprocessor: #a0132f;
-  --org-string: #3548cf;
-  --org-type: #005f5f;
-  --org-variable: #005e8b;
-  --org-warning: #884900;
-  --org-rx-construct: #00663f;
+  --org-builtin: #d20f39;
+  --org-comment: #7c7f93;
+  --org-constant: #fe640b;
+  --org-doc: #9ca0b0;
+  --org-error: #d20f39;
+  --org-function: #1e66f5;
+  --org-keyword: #8839ef;
+  --org-operator: #04a5e5;
+  --org-preprocessor: #9ca0b0;
+  --org-string: #40a02b;
+  --org-type: #df8e1d;
+  --org-variable: #dc8a78;
+  --org-warning: #df8e1d;
+  --org-regex: #ea76cb;
 }
 
 .dark {
@@ -69,20 +69,20 @@
   --code-bg: 51, 65, 85;
   --border: 71, 85, 105;
   --link: 96, 165, 250;
-  --org-builtin: #f78fe7;
-  --org-comment: #989898;
-  --org-constant: #00bcff;
-  --org-doc: #9ac8e0;
-  --org-error: #ff5f59;
-  --org-function: #feacd0;
-  --org-keyword: #b6a0ff;
-  --org-operator: #ffffff;
-  --org-preprocessor: #ff7f86;
-  --org-string: #79a8ff;
-  --org-type: #6ae4b9;
-  --org-variable: #00d3d0;
-  --org-warning: #fec43f;
-  --org-rx-construct: #00c06f;
+  --org-builtin: #f38ba8;
+  --org-comment: #9399b2;
+  --org-constant: #fab387;
+  --org-doc: #6c7086;
+  --org-error: #f38ba8;
+  --org-function: #89b4fa;
+  --org-keyword: #cba6f7;
+  --org-operator: #89dceb;
+  --org-preprocessor: #6c7086;
+  --org-string: #a6e3a1;
+  --org-type: #f9e2af;
+  --org-variable: #f5e0dc;
+  --org-warning: #f9e2af;
+  --org-regex: #f5c2e7;
 }
 
 *,
@@ -490,7 +490,7 @@ pre {
 }
 
 .article .done {
-  color: var(--org-rx-construct);
+  color: var(--org-string);
 }
 
 .article .priority {
@@ -787,8 +787,7 @@ mjx-container[jax="CHTML"][display="true"] {
   color: var(--org-error);
 }
 .org-function-name,
-.org-css-selector,
-.org-regexp-grouping-backslash {
+.org-css-selector {
   color: var(--org-function);
 }
 .org-keyword,
@@ -804,7 +803,6 @@ mjx-container[jax="CHTML"][display="true"] {
 .org-string,
 .org-sh-escaped-newline,
 .org-sh-heredoc,
-.org-regexp,
 .org-tex-math {
   color: var(--org-string);
 }
@@ -818,8 +816,10 @@ mjx-container[jax="CHTML"][display="true"] {
 .org-warning-1 {
   color: var(--org-warning);
 }
+.org-regexp,
+.org-regexp-grouping-backslash,
 .org-regexp-grouping-construct {
-  color: var(--org-rx-construct);
+  color: var(--org-regex);
 }
 
 #table-of-contents {
