@@ -1,7 +1,7 @@
 #+TITLE: Weekly Things 3
 #+AUTHOR: Chuck
-#+DESCRIPTION: default-directory, 鲁迅, 国骂, Typescript
-#+FILETAGS: :Emacs:Reading:Programming:Eglot:
+#+DESCRIPTION: default-directory, 鲁迅, 国骂, Typescript, Git
+#+FILETAGS: :Emacs:Reading:Programming:Eglot:Git:
 #+DATE: <2026-11-16 Mon 11:17>
 
 * Emacs
@@ -41,6 +41,20 @@ Typescript v7 发布了，使用 Go 语言编写，并且内置完成对 LSP 的
                                    ((js-json-mode json-mode json-ts-mode jsonc-mode)
                                     . ("vscode-json-language-server" "--stdio"))
                                    (org-mode . ("harper-ls" "--stdio")))))))
+#+end_src
+
+** Git 提交前检查状态
+
+在脚本中进行自动 Git 提交前，需要判定仓库是否真正有变化，否则 git commit 的时候就会报错，可以使用 ~git status --porcelain~ 来进行检查，仓库无变化时返回为空，有变化时返回的字符串也是在脚本中非常容易解析的。
+
+#+begin_src shell
+if [[ -n "$(git status --porcelain)" ]]; then
+  git add .
+  git commit -m "new commit"
+  git push origin main
+else
+  echo "nothing to commit"
+fi
 #+end_src
 
 * Footnotes
