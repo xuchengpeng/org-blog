@@ -20,7 +20,7 @@ Create your blog files and css files.
 Example of file directory structure
 #+end_summary
 
-#+begin_src shell
+#+begin_src
 ~/blog/org/
    |- css/
    |  `- worg.css
