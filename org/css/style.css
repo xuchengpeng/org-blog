@@ -354,7 +354,7 @@ pre {
   display: none;
 }
 
-@media (min-width: 100rem) {
+@media (min-width: 90rem) {
   .article .sidenote {
     --sidenote-width: min(28rem, calc(50vw - var(--main-width) / 2 - 3rem));
     display: block;

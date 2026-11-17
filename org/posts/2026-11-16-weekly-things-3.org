@@ -1,7 +1,7 @@
 #+TITLE: Weekly Things 3
 #+AUTHOR: Chuck
-#+DESCRIPTION: default-directory
-#+FILETAGS: :Emacs:
+#+DESCRIPTION: default-directory, 鲁迅, 国骂
+#+FILETAGS: :Emacs:Reading:
 #+DATE: <2026-11-16 Mon 11:17>
 
 * Emacs
