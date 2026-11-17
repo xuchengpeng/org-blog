@@ -6,7 +6,7 @@
                                      (tsx-ts-mode :language-id "typescriptreact")
                                      (typescript-ts-mode :language-id "typescript")
                                      (typescript-mode :language-id "typescript"))
-                                    . ("typescript-language-server" "--stdio"))
+                                    . ("tsc" "--lsp" "--stdio"))
                                    ((js-json-mode json-mode json-ts-mode jsonc-mode)
                                     . ("vscode-json-language-server" "--stdio"))
                                    (org-mode . ("harper-ls" "--stdio")))))))
