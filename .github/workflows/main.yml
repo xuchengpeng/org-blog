@@ -29,7 +29,7 @@ jobs:
           version: 31.1
       - name: build
         run: |
-          emacs --batch --load htmlize.el --load publish.el
+          emacs -Q --script publish.el
           npm run minify
           rm -f ./public/css/style.css ./public/js/appearance.js ./public/js/code.js ./public/js/menu.js ./public/js/scroll.js ./public/js/sidenotes.js
       - uses: actions/checkout@v7
