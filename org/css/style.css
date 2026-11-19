@@ -751,7 +751,7 @@ mjx-container[jax="CHTML"][display="true"] {
     background: rgba(var(--link), 0.25);
   }
 
-  & h1 {
+  & h2 {
     font-size: 1.2em;
     font-weight: bold;
     margin: 0;

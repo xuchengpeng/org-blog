@@ -74,11 +74,11 @@ function doSearch() {
     return;
   }
   if (!fuse) return; // index still loading or failed; status shown in placeholder
-  const results = fuse.search(q, { limit: 20 });
+  const results = fuse.search(q);
   if (results.length !== 0) {
     searchResults.innerHTML = results.map(({ item }) =>
       `<li><a href="${esc(item.url)}" aria-label="${esc(item.title)}">
-        <h1>${esc(item.title)}</h1><p>${esc(item.description)}</p></a></li>`
+        <h2>${esc(item.title)}</h2><p>${esc(item.description)}</p></a></li>`
     ).join("");
     hasResults = true;
     first = searchResults.firstElementChild.firstElementChild;
