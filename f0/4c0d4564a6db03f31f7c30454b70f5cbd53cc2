@@ -1,0 +1,14 @@
+org/posts/2026-11-19-rss-and-atom-feed.org
+  h_76dde7977e1f21 1-124
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "10.11.1",
+  "base_commit_sha": "f04c0d4564a6db03f31f7c30454b70f5cbd53cc2",
+  "prompts": {},
+  "humans": {
+    "h_76dde7977e1f21": {
+      "author": "xuchengpeng <chuckxcp@qq.com>"
+    }
+  }
+}
