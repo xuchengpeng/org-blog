@@ -1,0 +1,124 @@
+#+TITLE: RSS 和 Atom Feed 订阅格式
+#+AUTHOR: Chuck
+#+DESCRIPTION: RSS 与 Atom 是最常见的两种基于 XML 的 Feed 订阅格式。
+#+FILETAGS: :Emacs:RSS:
+#+DATE: <2026-11-19 Thu 20:31>
+
+RSS 与 Atom 是最常见的两种基于 XML 的 Feed 订阅格式，用于向阅读器或聚合器推送网站的最新更新。两者核心目的相同，但标签结构、规范严谨程度和时间格式有所差异。
+
+* RSS 2.0 格式
+
+RSS 2.0 结构简单直观，顶层为 ~<rss version="2.0">~ ，频道信息放在 ~<channel>~ 内，每篇文章对应一个 ~<item>~ ，时间采用 RFC 822 格式。
+
+#+begin_src xml
+  <?xml version="1.0" encoding="UTF-8"?>
+  <rss version="2.0">
+    <channel>
+      <title>示例博客</title>
+      <link>https://example.com</link>
+      <description>分享技术与生活笔记</description>
+      <language>zh-CN</language>
+      <lastBuildDate>Thu, 19 Nov 2026 12:00:00 +0800</lastBuildDate>
+
+      <item>
+        <title>第一篇文章标题</title>
+        <link>https://example.composts/1</link>
+        <guid isPermaLink="true">https://example.composts/1</guid>
+        <pubDate>Thu, 19 Nov 2026 10:00:00 +0800</pubDate>
+        <author>author@example.com (张三)</author>
+        <description><![CDATA[<p>这是文章摘要或正文内容。</p>]]></description>
+      </item>
+    </channel>
+  </rss>
+#+end_src
+
+* Atom 1.0 格式
+
+Atom 由 IETF 制定为正式标准，规范更严格，自带命名空间（ ~xmlns="http://w3.org"~ ），根节点为 ~<feed>~ ，每篇文章对应一个 ~<entry>~ ，时间采用 RFC 3339（ISO 8601 子集）格式。
+
+#+begin_src xml
+  <?xml version="1.0" encoding="UTF-8"?>
+  <feed xmlns="http://w3.org">
+    <title>示例博客</title>
+    <subtitle>分享技术与生活笔记</subtitle>
+    <link href="https://example.com" rel="self"/>
+    <link href="https://example.com"/>
+    <id>https://example.com</id>
+    <updated>2026-11-19T12:00:00+08:00</updated>
+
+    <entry>
+      <title>第一篇文章标题</title>
+      <link href="https://example.composts/1"/>
+      <id>urn:uuid:123e4567-e89b-12d3-a456-426614174000</id>
+      <published>2026-11-19T10:00:00+08:00</published>
+      <updated>2026-11-19T10:30:00+08:00</updated>
+      <author>
+        <name>张三</name>
+        <email>author@example.com</email>
+      </author>
+      <summary>这是文章摘要。</summary>
+      <content type="html"><![CDATA[<p>这是文章完整内容。</p>]]></content>
+    </entry>
+  </feed>
+#+end_src
+
+* Feed 生成
+
+之前的文章也介绍了如何[[file:2024-02-08-generate-rss-for-blog.org][为博客生成RSS]] ，其核心是解析已导出的 HTML 文件，再生成最终所需要的 XML 文件。
+
+当前博客在导出 Org 文件为 HTML 文件前， 在 ~:preparation-function~ 中已解析了所有的文章相关的信息，可以直接在这里生成 XML 文件，以下给出示例代码。
+
+#+begin_src emacs-lisp
+  (defvar +org-blog-site-url "https://www.example.com"
+    "Absolute URL of the published site, without trailing slash.")
+
+  (defvar +org-blog-title "Chuck's Blog"
+    "Site title used in the Atom feed.")
+
+  (defun +org-blog-xml-escape (string)
+    "Escape XML special characters in STRING."
+    (replace-regexp-in-string
+     "[&<>\"']"
+     (lambda (ch)
+       (pcase ch
+         ("&" "&amp;") ("<" "&lt;") (">" "&gt;")
+         ("\"" "&quot;") ("'" "&apos;")))
+     (or string "")))
+
+  (defun +org-blog-generate-atom-feed (posts base-dir)
+    "Generate an Atom 1.0 feed from POSTS into BASE-DIR.
+
+  POSTS is the post plist list built in `+org-blog-pages-prepare',
+  sorted from oldest to newest.  Write `atom.xml' with the 20 most
+  recent posts and return its file name."
+    (let* ((entries (reverse (seq-take (reverse posts) 20))) ; newest first
+           (feed-updated (plist-get (car entries) :date)))
+      (with-temp-file (expand-file-name "atom.xml" base-dir)
+        (insert "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n"
+                "<feed xmlns=\"http://www.w3.org/2005/Atom\">\n"
+                (format "  <title>%s</title>\n" (+org-blog-xml-escape +org-blog-title))
+                (format "  <id>%s/</id>\n" +org-blog-site-url)
+                (when feed-updated
+                  (format "  <updated>%s</updated>\n" (format-time-string "%Y-%m-%dT%H:%M:%SZ" feed-updated t)))
+                (format "  <link href=\"%s/\" rel=\"alternate\" type=\"text/html\"/>\n" +org-blog-site-url)
+                (format "  <link href=\"%s/atom.xml\" rel=\"self\" type=\"application/atom+xml\"/>\n" +org-blog-site-url)
+                "  <author><name>Chuck</name></author>\n")
+        (dolist (post entries)
+          (let ((link (concat +org-blog-site-url "/"
+                              (file-name-sans-extension
+                               (file-relative-name (plist-get post :file) base-dir))
+                              ".html")))
+            (insert "  <entry>\n"
+                    (format "    <title>%s</title>\n" (+org-blog-xml-escape (plist-get post :title)))
+                    (format "    <id>%s</id>\n" link)
+                    (format "    <link href=\"%s\" rel=\"alternate\" type=\"text/html\"/>\n" link)
+                    (format "    <published>%s</published>\n" (format-time-string "%Y-%m-%dT%H:%M:%SZ" (plist-get post :date) t))
+                    (format "    <updated>%s</updated>\n" (format-time-string "%Y-%m-%dT%H:%M:%SZ" (plist-get post :date) t))
+                    (dolist (tag (plist-get post :tags))
+                      (format "    <category term=\"%s\"/>\n" (+org-blog-xml-escape tag)))
+                    (when (org-string-nw-p (plist-get post :description))
+                      (format "    <summary>%s</summary>\n" (+org-blog-xml-escape (plist-get post :description))))
+                    "  </entry>\n")))
+        (insert "</feed>\n"))
+      (expand-file-name "atom.xml" base-dir)))
+    #+end_src
