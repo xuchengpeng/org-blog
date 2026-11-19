@@ -1,7 +1,7 @@
 #+TITLE: Weekly Things 3
 #+AUTHOR: Chuck
 #+DESCRIPTION: default-directory, 鲁迅, 国骂, Typescript, Git
-#+FILETAGS: :Emacs:Reading:Programming:Eglot:Git:
+#+FILETAGS: :Emacs:Reading:Programming:Eglot:Git:Linux:
 #+DATE: <2026-11-16 Mon 11:17>
 
 * Emacs
@@ -57,6 +57,14 @@ else
 fi
 #+end_src
 
+** /dev/null
+
+在 Linux 的脚本命令中，经常看到一条命令后有 ~2>/dev/null~ ，这个意思是将命令运行产生的标准错误[fn:2]输出丢弃，不显示在屏幕上。 ~>~ 是重定向符号，表示把命令的输出发送到后面的位置， ~/dev/null~ 为重定向的位置，是一个特殊的空设备文件，所有写入的数据都会直接被丢弃，同时返回写入成功的状态。
+
+其他常见的类似写法， ~>/dev/null~ 表示丢弃标准输出，标准错误信息仍然会显示在屏幕上， ~>/dev/null 2>&1~ 表示先将标准输出丢弃，再把标准错误信息重定向到标准输出所在的位置，此时标准输出和标准错误全部都丢弃。
+
 * Footnotes
 
 [fn:1] 读作 jué ，本义为欺骗、诈骗、奇异、怪诞。
+
+[fn:2] 0 是标准输入 stdin ，1 是标准输出 stdout ，2 是标准错误 stderr 。
