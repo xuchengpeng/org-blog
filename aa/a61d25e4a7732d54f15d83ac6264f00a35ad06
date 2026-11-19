@@ -1,0 +1,14 @@
+publish.el
+  h_76dde7977e1f21 81
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "10.11.1",
+  "base_commit_sha": "aaa61d25e4a7732d54f15d83ac6264f00a35ad06",
+  "prompts": {},
+  "humans": {
+    "h_76dde7977e1f21": {
+      "author": "xuchengpeng <chuckxcp@qq.com>"
+    }
+  }
+}
