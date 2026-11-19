@@ -78,7 +78,7 @@ nil."
         (id (+org-html-stable-ids-extract-id datum)))
     (or (car (rassq datum cache))
         (if (assoc id cache)
-            (user-error "Duplicate ID: %s" id)
+            (user-error "Duplicate ID: %s in %s" id (plist-get info :input-file))
           (when id
             (push (cons id datum) cache)
             (plist-put info :internal-references cache)
