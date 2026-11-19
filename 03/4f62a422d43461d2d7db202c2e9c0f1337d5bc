@@ -1,0 +1,19 @@
+org/posts/2025-12-04-build-opencv-from-source-with-mingw-w64.org
+  s_ed63ab08e89e7e::t_120acf4df65575 9-10,12-14
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "10.11.1",
+  "base_commit_sha": "034f62a422d43461d2d7db202c2e9c0f1337d5bc",
+  "prompts": {},
+  "sessions": {
+    "s_ed63ab08e89e7e": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_e50124b94ffe3N1fldjJuY1CYl",
+        "model": "unknown"
+      },
+      "human_author": "xuchengpeng <chuckxcp@qq.com>"
+    }
+  }
+}
