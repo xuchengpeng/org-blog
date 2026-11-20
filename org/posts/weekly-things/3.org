@@ -1,7 +1,7 @@
 #+TITLE: Weekly Things 3
 #+AUTHOR: Chuck
-#+DESCRIPTION: default-directory, 鲁迅, 国骂, Typescript, Git
-#+FILETAGS: :Emacs:Reading:Programming:Eglot:Git:Linux:
+#+DESCRIPTION: default-directory, 鲁迅, 国骂, Typescript, Git, /dev/null, Org EXPORT_FILE_NAME
+#+FILETAGS: :Emacs:Reading:Programming:Linux:
 #+DATE: <2026-11-16 Mon 11:17>
 
 * Emacs
