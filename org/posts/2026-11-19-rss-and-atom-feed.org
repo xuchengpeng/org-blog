@@ -66,7 +66,7 @@ Atom 由 IETF 制定为正式标准，规范更严格，自带命名空间（ ~x
 
 之前的文章也介绍了如何[[file:2024-02-08-generate-rss-for-blog.org][为博客生成RSS]] ，其核心是解析已导出的 HTML 文件，再生成最终所需要的 XML 文件。
 
-当前博客在导出 Org 文件为 HTML 文件前， 在 ~:preparation-function~ 中已解析了所有的文章相关的信息，可以直接在这里生成 XML 文件，以下给出示例代码。
+当前博客在导出 Org 文件为 HTML 文件前， 在 ~:preparation-function~ 中已解析了所有的文章相关的信息[fn:1]，可以直接在这里生成 XML 文件，以下给出示例代码。
 
 #+begin_src emacs-lisp
   (defvar +org-blog-site-url "https://www.example.com"
@@ -122,3 +122,7 @@ Atom 由 IETF 制定为正式标准，规范更严格，自带命名空间（ ~x
         (insert "</feed>\n"))
       (expand-file-name "atom.xml" base-dir)))
     #+end_src
+
+* Footnotes
+
+[fn:1] 代码见 [[https://github.com/xuchengpeng/org-blog/blob/main/publish.el][publish.el]] 文件的 ~+org-blog-pages-prepare~ 函数，当前搜索索引、文章列表、Tags 页面都是在这里生成的。
