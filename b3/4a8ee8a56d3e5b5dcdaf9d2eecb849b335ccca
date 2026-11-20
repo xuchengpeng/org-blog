@@ -1,0 +1,14 @@
+org/posts/weekly-things/3.org
+  h_76dde7977e1f21 3-4
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "10.11.1",
+  "base_commit_sha": "b34a8ee8a56d3e5b5dcdaf9d2eecb849b335ccca",
+  "prompts": {},
+  "humans": {
+    "h_76dde7977e1f21": {
+      "author": "xuchengpeng <chuckxcp@qq.com>"
+    }
+  }
+}
