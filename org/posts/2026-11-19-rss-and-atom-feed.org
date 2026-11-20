@@ -66,7 +66,7 @@ Atom 由 IETF 制定为正式标准，规范更严格，自带命名空间（ ~x
 
 之前的文章也介绍了如何[[file:2024-02-08-generate-rss-for-blog.org][为博客生成RSS]] ，其核心是解析已导出的 HTML 文件，再生成最终所需要的 XML 文件。
 
-当前博客在导出 Org 文件为 HTML 文件前， 在 ~:preparation-function~ 中已解析了所有的文章相关的信息[fn:1]，可以直接在这里生成 XML 文件，以下给出示例代码。
+当前博客在导出 Org 文件为 HTML 文件前， 在 ~:preparation-function~ 中已解析了所有的文章相关的信息[fn:preparation-function]，可以直接在这里生成 XML 文件，以下给出示例代码。
 
 #+begin_src emacs-lisp
   (defvar +org-blog-site-url "https://www.example.com"
@@ -74,16 +74,6 @@ Atom 由 IETF 制定为正式标准，规范更严格，自带命名空间（ ~x
 
   (defvar +org-blog-title "Chuck's Blog"
     "Site title used in the Atom feed.")
-
-  (defun +org-blog-xml-escape (string)
-    "Escape XML special characters in STRING."
-    (replace-regexp-in-string
-     "[&<>\"']"
-     (lambda (ch)
-       (pcase ch
-         ("&" "&amp;") ("<" "&lt;") (">" "&gt;")
-         ("\"" "&quot;") ("'" "&apos;")))
-     (or string "")))
 
   (defun +org-blog-generate-atom-feed (posts base-dir)
     "Generate an Atom 1.0 feed from POSTS into BASE-DIR.
@@ -96,7 +86,7 @@ Atom 由 IETF 制定为正式标准，规范更严格，自带命名空间（ ~x
       (with-temp-file (expand-file-name "atom.xml" base-dir)
         (insert "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n"
                 "<feed xmlns=\"http://www.w3.org/2005/Atom\">\n"
-                (format "  <title>%s</title>\n" (+org-blog-xml-escape +org-blog-title))
+                (format "  <title>%s</title>\n" (xml-escape-string +org-blog-title))
                 (format "  <id>%s/</id>\n" +org-blog-site-url)
                 (when feed-updated
                   (format "  <updated>%s</updated>\n" (format-time-string "%Y-%m-%dT%H:%M:%SZ" feed-updated t)))
@@ -109,15 +99,15 @@ Atom 由 IETF 制定为正式标准，规范更严格，自带命名空间（ ~x
                                (file-relative-name (plist-get post :file) base-dir))
                               ".html")))
             (insert "  <entry>\n"
-                    (format "    <title>%s</title>\n" (+org-blog-xml-escape (plist-get post :title)))
+                    (format "    <title>%s</title>\n" (xml-escape-string (plist-get post :title)))
                     (format "    <id>%s</id>\n" link)
                     (format "    <link href=\"%s\" rel=\"alternate\" type=\"text/html\"/>\n" link)
                     (format "    <published>%s</published>\n" (format-time-string "%Y-%m-%dT%H:%M:%SZ" (plist-get post :date) t))
                     (format "    <updated>%s</updated>\n" (format-time-string "%Y-%m-%dT%H:%M:%SZ" (plist-get post :date) t))
                     (dolist (tag (plist-get post :tags))
-                      (format "    <category term=\"%s\"/>\n" (+org-blog-xml-escape tag)))
+                      (format "    <category term=\"%s\"/>\n" (xml-escape-string tag)))
                     (when (org-string-nw-p (plist-get post :description))
-                      (format "    <summary>%s</summary>\n" (+org-blog-xml-escape (plist-get post :description))))
+                      (format "    <summary>%s</summary>\n" (xml-escape-string (plist-get post :description))))
                     "  </entry>\n")))
         (insert "</feed>\n"))
       (expand-file-name "atom.xml" base-dir)))
@@ -125,4 +115,4 @@ Atom 由 IETF 制定为正式标准，规范更严格，自带命名空间（ ~x
 
 * Footnotes
 
-[fn:1] 代码见 [[https://github.com/xuchengpeng/org-blog/blob/main/publish.el][publish.el]] 文件的 ~+org-blog-pages-prepare~ 函数，当前搜索索引、文章列表、Tags 页面都是在这里生成的。
+[fn:preparation-function] 代码见 [[https://github.com/xuchengpeng/org-blog/blob/main/publish.el][publish.el]] 文件的 ~+org-blog-pages-prepare~ 函数，当前搜索索引、文章列表、Tags 页面都是在这里生成的。
