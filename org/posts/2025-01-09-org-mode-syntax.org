@@ -1,5 +1,5 @@
 #+TITLE: Org Mode Syntax
-#+SUBTITLE: Your life in plain text
+#+DESCRIPTION: Your life in plain text
 #+AUTHOR: Chuck
 #+DATE: <2025-01-09 Thu 14:50>
 #+FILETAGS: :Emacs:Org:
@@ -146,6 +146,15 @@ int main(int arc, char **argv)
   return 0;
 }
 #+end_src
+
+*** Mermaid
+
+#+begin_src mermaid :file mermaid-test.png
+  sequenceDiagram
+    A-->B: Works!
+#+end_src
+
+[[./mermaid-test.png]]
 
 ** Notes at the footer
 
