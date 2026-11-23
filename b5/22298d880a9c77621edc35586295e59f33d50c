@@ -1,0 +1,14 @@
+org/posts/2026-11-23-opencv-5-release.org
+  h_76dde7977e1f21 1-45
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "10.11.1",
+  "base_commit_sha": "b522298d880a9c77621edc35586295e59f33d50c",
+  "prompts": {},
+  "humans": {
+    "h_76dde7977e1f21": {
+      "author": "xuchengpeng <chuckxcp@qq.com>"
+    }
+  }
+}
