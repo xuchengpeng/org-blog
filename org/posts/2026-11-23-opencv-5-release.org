@@ -1,0 +1,45 @@
+#+TITLE: OpenCV 5 正式版发布
+#+AUTHOR: Chuck
+#+DESCRIPTION: OpenCV 5 正式版发布，相比 OpenCV 4 有不少变化。
+#+FILETAGS: :OpenCV:
+#+DATE: <2026-11-23 Mon 16:08>
+
+OpenCV 5 于 2026 年 6 月发布正式版本。相比 4.x 的主要变化：
+
+** 彻底移除 C API
+- OpenCV 4 中已标记废弃的 C 语言接口(=cvLoadImage= 等)在 5.x 中完全删除，只保留 C++ API
+- 老代码迁移成本：仍在用 C API 的项目必须重写
+
+** 语言标准与现代化
+- 最低要求 *C++17*
+- 大量代码用现代 C++ 重写，清理了历史遗留的宏和兼容层
+- ABI 不兼容[fn:abi]，与 4.x 不保证二进制兼容
+
+** 模块大幅精简
+- 主仓库瘦身，多个模块被移到 =opencv_contrib= 或独立仓库，如：
+  - =face= 、部分跟踪算法(tracker)移出主库
+  - 一些 legacy/不常用模块直接删除
+- =dnn= 模块重构：移除旧的层实现，强化 OpenVINO 等推理后端集成
+
+** 移除/弱化过时机制
+- *UMat / Transparent API (T-API) 被移除* ——这是 4.x 时代为兼容 OpenCL[fn:opencl] 引入的机制，实践中收益有限
+- HAL 层做了统一重构
+
+** G-API 地位提升
+- G-API(计算图加速框架)[fn:G-API]成为官方主推的异构执行方式，取代原先 T-API 的角色
+
+** 其他改进
+- 新图像编解码支持(如 JPEG XL[fn:jxl] 相关工作)
+- 构建系统 CMake 现代化，构建更快
+- Python/Java 绑定重新生成，部分函数签名有变化
+- 更好的 16-bit / 高位深图像处理支持
+
+** Footnotes
+
+[fn:abi] 不能直接替换 OpenCV 的库文件直接使用了，所有依赖 OpenCV 的代码都需要重新编译。
+
+[fn:opencl] *OpenCL* （Open Computing Language）是一个开放的跨平台并行计算框架，由 Khronos Group 制定标准。它允许程序利用 *GPU、CPU、DSP、FPGA* 等异构计算设备来加速通用计算。
+
+[fn:G-API] T-API 是“把 =Mat= 换成 =UMat= 就能加速”的美好愿望，但实践证明单函数级加速 + 隐式数据传输收益不可靠；G-API 换成了“描述整张计算图，显式选择后端”的思路，把优化决策权交给框架全局视角。OpenCV 5 砍掉前者、力推后者，就是承认了这条路线之争的结果。
+
+[fn:jxl] JPEG XL 的核心优势在于兼具高画质压缩、出色的无损压缩能力、可逆转换传统 JPEG 以及丰富的现代图像特性。
