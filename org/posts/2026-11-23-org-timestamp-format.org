@@ -1,0 +1,12 @@
+#+TITLE: Org 时间戳格式
+#+AUTHOR: Chuck
+#+DESCRIPTION: Org 的活动时间戳和非活动时间戳。
+#+FILETAGS: :Emacs:Org:
+#+DATE: <2026-11-23 Mon 09:40>
+
+在 Org-mode 填入时间戳有两种格式：
+
+- =<2026-11-19 Thu>= — active timestamp（活动时间戳）：会被纳入 org-agenda（出现在日程视图里），支持 =S-<left/right>= 调整日期，可配合 =C-c .= 插入。
+- =[2026-11-19 Thu]= — inactive timestamp（非活动时间戳）：仅作记录，不进 agenda，不会产生任何提醒/日程行为，用 =C-c != 插入。
+
+对博客导出而言，时间戳填在 =#+DATE:= 中，两种格式都可以。
