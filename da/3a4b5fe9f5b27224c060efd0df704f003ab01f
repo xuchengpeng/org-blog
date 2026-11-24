@@ -1,0 +1,19 @@
+org/posts/2019-12-01-org-publish-html.org
+  s_ed63ab08e89e7e::t_91bf5072e3638b 125
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "10.11.1",
+  "base_commit_sha": "da3a4b5fe9f5b27224c060efd0df704f003ab01f",
+  "prompts": {},
+  "sessions": {
+    "s_ed63ab08e89e7e": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_e50124b94ffe3N1fldjJuY1CYl",
+        "model": "unknown"
+      },
+      "human_author": "xuchengpeng <chuckxcp@qq.com>"
+    }
+  }
+}
