@@ -1,0 +1,17 @@
+#+TITLE: Weekly Things 4
+#+AUTHOR: Chuck
+#+DESCRIPTION: 狂人日记
+#+FILETAGS: :Reading:
+#+DATE: <2026-11-24 Tue 08:11>
+
+* Reading
+
+** 狂人日记
+
+没有吃过人的孩子，或者还有？
+
+救救孩子......
+
+#+begin_quote
+《狂人日记》是中国现代文学史上第一篇白话小说，这是鲁迅投向旧社会的第一声“呐喊”，奠定了新文化运动批判封建主义的思想基调，也是理解鲁迅“改造国民性”思想的起点。
+#+end_quote
