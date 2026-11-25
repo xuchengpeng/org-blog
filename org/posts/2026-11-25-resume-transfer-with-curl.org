@@ -17,7 +17,7 @@
   max_retries=100
   retry_delay=3
 
-  for ((i=1; i<=max_retries; i++)); do
+  for ((i = 1; i <= max_retries; i++)); do
       # -C - 表示自动从已下载的字节处续传
       curl -C - --retry 5 --retry-delay 2 -LO "$url"
       if [ $? -eq 0 ]; then
