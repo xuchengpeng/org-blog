@@ -1,0 +1,26 @@
+org/posts/2019-12-01-org-publish-html.org
+  s_ed63ab08e89e7e::t_3b4a16ecfa0bb4 88,165
+org/posts/weekly-things/4.org
+  h_76dde7977e1f21 3,18-27
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "10.11.1",
+  "base_commit_sha": "de49916e46518ac62212973733f4b6b45cbf5490",
+  "prompts": {},
+  "humans": {
+    "h_76dde7977e1f21": {
+      "author": "xuchengpeng <chuckxcp@qq.com>"
+    }
+  },
+  "sessions": {
+    "s_ed63ab08e89e7e": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_e50124b94ffe3N1fldjJuY1CYl",
+        "model": "unknown"
+      },
+      "human_author": "xuchengpeng <chuckxcp@qq.com>"
+    }
+  }
+}
