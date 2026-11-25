@@ -4,7 +4,7 @@
 <span class=org-variable-name>max_retries</span>=100
 <span class=org-variable-name>retry_delay</span>=3
 
-<span class=org-keyword>for</span> ((<span class=org-variable-name>i</span>=1; i&lt;=max_retries; i++)); <span class=org-keyword>do</span>
+<span class=org-keyword>for</span> ((i = 1; i &lt;= max_retries; i++)); <span class=org-keyword>do</span>
     <span class=org-comment-delimiter># </span><span class=org-comment>-C - 表示自动从已下载的字节处续传
 </span>    curl -C - --retry 5 --retry-delay 2 -LO <span class=org-string>"$url"</span>
     <span class=org-keyword>if</span> [ $<span class=org-variable-name>?</span> -eq 0 ]; <span class=org-keyword>then</span>
