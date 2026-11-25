@@ -1,0 +1,14 @@
+org/posts/2026-11-25-resume-transfer-with-curl.org
+  h_76dde7977e1f21 20
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "10.11.1",
+  "base_commit_sha": "1aaa6a7025fc6db16c8a70e88f1f04cbdb324f95",
+  "prompts": {},
+  "humans": {
+    "h_76dde7977e1f21": {
+      "author": "xuchengpeng <chuckxcp@qq.com>"
+    }
+  }
+}
