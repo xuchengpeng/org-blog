@@ -7,3 +7,26 @@
 使用 curl 进行文件下载时，如果因为网络问题或人为操作问题导致下载中断，可以断点续传下载。
 
 命令为 ~curl -C - -OL https://example.com~ ，参数 =-C= 用于指定续传的位置， =-C -= 表示从上次中断的位置续传。
+
+写一个脚本，自动尝试续传直至下载完成：
+
+#+begin_src shell
+  #!/bin/bash
+
+  url=$1
+  max_retries=100
+  retry_delay=3
+
+  for ((i=1; i<=max_retries; i++)); do
+      # -C - 表示自动从已下载的字节处续传
+      curl -C - --retry 5 --retry-delay 2 -LO "$url"
+      if [ $? -eq 0 ]; then
+          echo "下载完成"
+          exit 0
+      fi
+      echo "第 $i 次失败，${retry_delay}s 后重试..."
+      sleep $retry_delay
+  done
+  echo "下载失败，已达最大重试次数"
+  exit 1
+#+end_src
