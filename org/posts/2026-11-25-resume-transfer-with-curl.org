@@ -1,0 +1,9 @@
+#+TITLE: 使用 curl 断点续传
+#+AUTHOR: Chuck
+#+DESCRIPTION: curl 支持断点续传，可从指定的位置恢复下载。
+#+FILETAGS: :Linux:
+#+DATE: <2026-11-25 Wed 09:02>
+
+使用 curl 进行文件下载时，如果因为网络问题或人为操作问题导致下载中断，可以断点续传下载。
+
+命令为 ~curl -C - -OL https://example.com~ ，参数 =-C= 用于指定续传的位置， =-C -= 表示从上次中断的位置续传。
