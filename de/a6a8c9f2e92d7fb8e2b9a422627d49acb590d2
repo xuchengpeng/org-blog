@@ -1,0 +1,14 @@
+org/posts/2026-11-26-how-to-make-dandelion-tea.org
+  h_76dde7977e1f21 1-35
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "10.30.1",
+  "base_commit_sha": "dea6a8c9f2e92d7fb8e2b9a422627d49acb590d2",
+  "prompts": {},
+  "humans": {
+    "h_76dde7977e1f21": {
+      "author": "xuchengpeng <chuckxcp@qq.com>"
+    }
+  }
+}
