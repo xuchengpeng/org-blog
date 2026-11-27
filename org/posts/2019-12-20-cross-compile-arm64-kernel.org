@@ -1,7 +1,8 @@
 #+TITLE: 交叉编译 ARM64 内核
 #+AUTHOR: Chuck
 #+DATE: <2019-12-20 Fri 23:03>
-#+FILETAGS: :Linux:ARM64:
+#+FILETAGS: :Linux:
+#+DESCRIPTION: 使用 linaro 或 arm 工具链交叉编译 Linux 内核
 
 介绍如何使用编译器交叉编译ARM64内核。
 
