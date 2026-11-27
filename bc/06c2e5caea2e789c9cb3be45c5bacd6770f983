@@ -1,0 +1,49 @@
+org/posts/2019-12-02-what-is-rest.org
+  s_ed63ab08e89e7e::t_88391185c6fdb0 4
+org/posts/2019-12-08-github-unlimited-free-private-repos.org
+  s_ed63ab08e89e7e::t_14b5f42f281403 4
+org/posts/2019-12-20-cross-compile-arm64-kernel.org
+  s_ed63ab08e89e7e::t_ee518251a13ba4 4-5
+org/posts/2024-01-29-eglot-clangd-configuration.org
+  s_ed63ab08e89e7e::t_3666b16ac8d34d 4
+org/posts/2024-02-29-math-equation-with-org-mode.org
+  s_ed63ab08e89e7e::t_02ca83a23b210d 4
+org/posts/2024-07-31-use-tldraw-in-vite.org
+  s_ed63ab08e89e7e::t_a177f2b8d90b9d 4
+org/posts/2024-12-09-sdcv.org
+  s_ed63ab08e89e7e::t_b0b3c3e71e2bd9 4
+org/posts/2025-01-07-minify-css-and-js.org
+  s_ed63ab08e89e7e::t_0f6b8f03faa7ff 4
+org/posts/2025-07-09-integrate-harper-with-emacs.org
+  s_ed63ab08e89e7e::t_c6ebe7bc373147 4
+org/posts/2025-07-31-generate-fuse-index-with-nodejs.org
+  s_ed63ab08e89e7e::t_3f89da60d0aad8 4
+org/posts/2025-12-16-powershell-change-directory-color.org
+  s_ed63ab08e89e7e::t_1038fa3c6fd67d 4
+org/posts/2025-12-19-ubuntu-phased-updates.org
+  s_ed63ab08e89e7e::t_91514b12c75907 4
+org/posts/2026-03-27-config-mpd-in-arch-linux.org
+  s_ed63ab08e89e7e::t_3f1ae12c28560d 4
+org/posts/2026-04-02-localsend-receive-problems-in-arch-linux.org
+  s_ed63ab08e89e7e::t_396da510a88bf3 4
+org/posts/2026-08-29-ty-ruff-as-lsp-server-in-emacs.org
+  s_ed63ab08e89e7e::t_5330bf3ba17af1 4
+org/posts/2026-10-09-org-babel-mermaid.org
+  s_ed63ab08e89e7e::t_0ff7a4052c39e3 4
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "10.30.1",
+  "base_commit_sha": "bc06c2e5caea2e789c9cb3be45c5bacd6770f983",
+  "prompts": {},
+  "sessions": {
+    "s_ed63ab08e89e7e": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_e50124b94ffe3N1fldjJuY1CYl",
+        "model": "unknown"
+      },
+      "human_author": "xuchengpeng <chuckxcp@qq.com>"
+    }
+  }
+}
