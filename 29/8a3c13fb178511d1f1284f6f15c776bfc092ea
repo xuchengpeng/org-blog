@@ -1,0 +1,14 @@
+org/posts/2026-11-26-dazz-camera-common-filters.org
+  h_76dde7977e1f21 13,15,17-19
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "10.30.1",
+  "base_commit_sha": "298a3c13fb178511d1f1284f6f15c776bfc092ea",
+  "prompts": {},
+  "humans": {
+    "h_76dde7977e1f21": {
+      "author": "xuchengpeng <chuckxcp@qq.com>"
+    }
+  }
+}
