@@ -1,6 +1,6 @@
 #+TITLE: Weekly Things 2
 #+AUTHOR: Chuck
-#+DESCRIPTION: ox-publish, YUV420, 鲁迅, rsync
+#+DESCRIPTION: ox-publish, YUV420, 鲁迅
 #+FILETAGS: :Emacs:Org:ComputerVision:Reading:
 #+DATE: <2026-11-09 Mon 18:21>
 
@@ -11,12 +11,6 @@
 
 - Tab 和 Space转换 ::
   在 Emacs 中使用 ~tabify~ 和 ~untabify~ 来进行 Tab 和 Space 之间的转换。直接运行 ~whitespace-cleanup~ 也可以将所有的 Tab 转换成 Space 。
-
-- 文件夹同步 ::
-  博客发布新的文件后，需要覆盖到托管的目录下，但是有些文件可能被删掉了，托管的目录下需要同步删掉，这样的话就不能简单的使用拷贝覆盖命令了， rsync 命令的 ~--delete~ 参数可以把托管目录的多余的文件删掉，注意要通过 ~--exclude~ 参数来过滤 .git 文件夹。
-  #+begin_src bash
-  rsync -av --delete --exclude='.git/' public/ publish/
-  #+end_src
 
 - Org 导出代码块 ::
   Org 在导出代码块时，可以通过 ~:exports~ 参数来控制导出的内容。
@@ -32,94 +26,7 @@
 
 - YUV420 图像数据分布 ::
 
-  #+begin_src mermaid :file yuv420sp_nv12.svg :exports none
-    block
-        columns 4
-
-        block:planeY:4
-            columns 4
-            Y0["Y0"] Y1["Y1"] Y2["Y2"] Y3["Y3"]
-            Y4["Y4"] Y5["Y5"] Y6["Y6"] Y7["Y7"]
-            Y8["Y8"] Y9["Y9"] Y10["Y10"] Y11["Y11"]
-            Y12["Y12"] Y13["Y13"] Y14["Y14"] Y15["Y15"]
-        end
-
-        block:planeUV:4
-            columns 4
-            U0["U0"] V0["V0"] U1["U1"] V1["V1"]
-            U2["U2"] V2["V2"] U3["U3"] V3["V3"]
-        end
-  #+end_src
-
-  #+CAPTION: YUV420SP NV12
-  [[file:yuv420sp_nv12.svg]]
-
-  #+begin_src mermaid :file yuv420sp_nv21.svg :exports none
-    block
-        columns 4
-
-        block:planeY:4
-            columns 4
-            Y0["Y0"] Y1["Y1"] Y2["Y2"] Y3["Y3"]
-            Y4["Y4"] Y5["Y5"] Y6["Y6"] Y7["Y7"]
-            Y8["Y8"] Y9["Y9"] Y10["Y10"] Y11["Y11"]
-            Y12["Y12"] Y13["Y13"] Y14["Y14"] Y15["Y15"]
-        end
-
-        block:planeUV:4
-            columns 4
-            V0["V0"] U0["U0"] V1["V1"] U1["U1"]
-            V2["V2"] U2["U2"] V3["V3"] U3["U3"]
-        end
-  #+end_src
-
-  #+CAPTION: YUV420SP NV21
-  [[file:yuv420sp_nv21.svg]]
-
-  #+begin_src mermaid :file yuv420p_yu12.svg :exports none
-    block
-        columns 4
-
-        block:planeY:4
-            columns 4
-            Y0["Y0"] Y1["Y1"] Y2["Y2"] Y3["Y3"]
-            Y4["Y4"] Y5["Y5"] Y6["Y6"] Y7["Y7"]
-            Y8["Y8"] Y9["Y9"] Y10["Y10"] Y11["Y11"]
-            Y12["Y12"] Y13["Y13"] Y14["Y14"] Y15["Y15"]
-        end
-
-        block:planeUV:4
-            columns 4
-            U0["U0"] U1["U1"] U2["U2"] U3["U3"]
-            V0["V0"] V1["V1"] V2["V2"] V3["V3"]
-        end
-  #+end_src
-
-  #+CAPTION: YUV420P YU12(I420)
-  [[file:yuv420p_yu12.svg]]
-
-  #+begin_src mermaid :file yuv420p_yv12.svg :exports none
-    block
-        columns 4
-
-        block:planeY:4
-            columns 4
-            Y0["Y0"] Y1["Y1"] Y2["Y2"] Y3["Y3"]
-            Y4["Y4"] Y5["Y5"] Y6["Y6"] Y7["Y7"]
-            Y8["Y8"] Y9["Y9"] Y10["Y10"] Y11["Y11"]
-            Y12["Y12"] Y13["Y13"] Y14["Y14"] Y15["Y15"]
-        end
-
-        block:planeUV:4
-            columns 4
-            V0["V0"] V1["V1"] V2["V2"] V3["V3"]
-            U0["U0"] U1["U1"] U2["U2"] U3["U3"]
-        end
-  #+end_src
-
-  #+CAPTION: YUV420P YV12
-  [[file:yuv420p_yv12.svg]]
-
+[[file:../2026-11-28-yuv420-image-format.org][YUV420 图像格式]]
 
 * Reading
 
