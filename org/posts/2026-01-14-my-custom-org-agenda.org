@@ -1,4 +1,4 @@
-#+TITLE: My Custom Org Agenda
+#+TITLE: 我的自定义 Org Agenda
 #+AUTHOR: Chuck
 #+DESCRIPTION: By setting the org-agenda-custom-commands variable, we can define our own agenda views that only include necessary information.
 #+FILETAGS: :Emacs:Org:
