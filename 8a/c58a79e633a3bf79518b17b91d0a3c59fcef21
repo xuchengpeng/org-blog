@@ -1,0 +1,19 @@
+org/posts/2026-01-14-my-custom-org-agenda.org
+  s_ed63ab08e89e7e::t_8f36a9d5cca294 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "10.30.1",
+  "base_commit_sha": "8ac58a79e633a3bf79518b17b91d0a3c59fcef21",
+  "prompts": {},
+  "sessions": {
+    "s_ed63ab08e89e7e": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_e50124b94ffe3N1fldjJuY1CYl",
+        "model": "unknown"
+      },
+      "human_author": "xuchengpeng <chuckxcp@qq.com>"
+    }
+  }
+}
