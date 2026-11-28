@@ -1,0 +1,14 @@
+package.json
+  h_76dde7977e1f21 5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "10.30.1",
+  "base_commit_sha": "fde1f2301ae761c23b0b638ffdccc771af31f6db",
+  "prompts": {},
+  "humans": {
+    "h_76dde7977e1f21": {
+      "author": "xuchengpeng <chuckxcp@qq.com>"
+    }
+  }
+}
