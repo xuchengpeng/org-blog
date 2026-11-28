@@ -162,6 +162,6 @@ for (auto b : cv::videoio_registry::getBackends())
 |---|---|---|
 | 是否改 OpenCV 源码 | 是 | 否 |
 | ABI 兼容性要求 | 无 | 严格（必须同版本/同编译器） |
-| 签名稳定性 | 接口随源码一起编译，无 ABI 问题 | 受 =plugin_api.hpp= 中 ABI_VERSION 约束 |
+| 签名稳定性 | 接口随源码一起编译，无 ABI 问题 | 受 =plugin_api.hpp= 中 =ABI_VERSION= 约束 |
 | 部署 | 需重新编译发布 | 只需放置 .so/.dll |
 | 推荐场景 | 深度集成、性能关键 | 独立分发编解码器 |
