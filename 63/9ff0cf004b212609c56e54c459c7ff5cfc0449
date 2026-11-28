@@ -1,0 +1,19 @@
+org/posts/2026-04-02-localsend-receive-problems-in-arch-linux.org
+  s_ed63ab08e89e7e::t_bc4bae74272daa 4
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "10.30.1",
+  "base_commit_sha": "639ff0cf004b212609c56e54c459c7ff5cfc0449",
+  "prompts": {},
+  "sessions": {
+    "s_ed63ab08e89e7e": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_e50124b94ffe3N1fldjJuY1CYl",
+        "model": "unknown"
+      },
+      "human_author": "xuchengpeng <chuckxcp@qq.com>"
+    }
+  }
+}
