@@ -1,0 +1,167 @@
+#+TITLE: 注册新的 OpenCV 视频解码后端
+#+AUTHOR: Chuck
+#+DESCRIPTION: OpenCV 中注册新后端的两种实现路径
+#+FILETAGS: :OpenCV:ComputerVision:
+#+DATE: <2026-11-28 Sat 16:47>
+
+OpenCV 的 Video I/O 后端由 =modules/videoio/src/videoio_registry.cpp= 中的 *注册表* 统一管理。注册新后端有两条路： *编译期内置注册* 和 *运行时插件注册* 。
+
+* 路径一：编译期内置注册（修改 OpenCV 源码）
+
+适合你能控制 OpenCV 构建的场景，是最稳定的方式。
+
+** 定义后端 ID
+
+在 =include/opencv2/videoio.hpp= 的 =VideoCaptureAPIs= 枚举中添加：
+
+#+begin_src cpp
+enum VideoCaptureAPIs {
+    // ... 现有 ID ...
+    CAP_MYCODEC = 3100,   // 自定义 ID（避开官方保留值）
+};
+#+end_src
+
+** 实现捕获类
+
+新建 =modules/videoio/src/cap_mycodec.cpp= ：
+
+#+begin_src cpp
+#include "precomp.hpp"
+
+namespace cv {
+
+class MyCodecCapture : public IVideoCapture {
+public:
+    bool open(const String& filename);
+    void release() CV_OVERRIDE;
+    double getProperty(int propId) const CV_OVERRIDE;
+    bool setProperty(int propId, double value) CV_OVERRIDE;
+    bool grabFrame() CV_OVERRIDE;
+    bool retrieveFrame(int flag, OutputArray outFrame) CV_OVERRIDE;
+    int getCaptureDomain() CV_OVERRIDE { return CAP_MYCODEC; }
+};
+
+// 工厂函数（供 registry 调用）
+Ptr<IVideoCapture> createMyCodecFileCapture(const String& filename) {
+    auto cap = makePtr<MyCodecCapture>();
+    if (cap->open(filename)) return cap;
+    return nullptr;
+}
+
+} // namespace cv
+#+end_src
+
+并在 =cap_private.hpp= （或 =precomp.hpp= ）中声明工厂函数：
+
+#+begin_src cpp
+namespace cv {
+Ptr<IVideoCapture> createMyCodecFileCapture(const String& filename);
+}
+#+end_src
+
+** 注册到 registry
+
+在 =modules/videoio/src/videoio_registry.cpp= 中找到后端表（ =g_backends= 或类似的 =VideoBackendInfo= 初始化列表），仿照 FFmpeg 条目添加一行：
+
+#+begin_src cpp
+// 关键字段示意（具体结构随版本变化）
+{ CAP_MYCODEC, "MYCODEC", 1000,
+  [](const VideoCaptureParameters& params) {
+      // createFileCapture 回调
+      return createMyCodecFileCapture(params.get<String>(CAP_PROP_FORMAT, ""));
+  },
+  0 /* createWriter */ }
+#+end_src
+
+** CMake 集成
+
+在 =modules/videoio/CMakeLists.txt= 中：
+
+#+begin_src cmake
+list(APPEND videoio_srcs src/cap_mycodec.cpp)
+ocv_define_module(videoio ...)
+#+end_src
+
+如需开关控制，在 =cvconfig.h.in= 中加 =#cmakedefine HAVE_MYCODEC= ，并在 registry 注册处用 =#ifdef HAVE_MYCODEC= 包裹。
+
+* 路径二：运行时插件注册（不修改 OpenCV）
+
+这是 4.x 的官方插件机制，最佳参考模板是源码中的 =modules/videoio/src/cap_ffmpeg_plugin.cpp= 。
+
+** 实现插件 API
+
+插件的核心头文件是 =modules/videoio/src/plugin_api.hpp= （不在安装目录，需从源码获取）。核心工作：
+
+1. 实现 =OpenCV_VideoIO_Capture_Base= 虚表： =open / release / grab / retrieve / getProperty / setProperty= ；
+2. 填充 =OpenCV_VideoIO_Plugin_API= 结构体，把虚表和 =init= 挂上；
+3. 导出入口函数（签名以你版本的 =plugin_api.hpp= 为准）：
+
+#+begin_src cpp
+#include "plugin_api.hpp"   // 注意 ABI_VERSION / API_VERSION 检查
+
+CvPlugin CV_API_CALL cv_createOpenCVVideoIOPlugin(const char* api_version)
+{
+    // 校验 api_version 后返回填充好的 API 结构体
+    return OpenCV_getPluginAPI(...);
+}
+#+end_src
+
+** 编译为共享库
+
+#+begin_src bash
+g++ -shared -fPIC mycodec_plugin.cpp \
+    -I<opencv_src>/modules/videoio/src \
+    -I/usr/local/include/opencv4 \
+    -o opencv_videoio_mycodec.so
+#+end_src
+
+*命名很关键* ：加载器按 =opencv_videoio_<name>[版本号后缀].so|dll|dylib= 的模式查找。
+
+** 让 OpenCV 找到插件
+
+三种方式（按优先级）：
+
+#+begin_src bash
+# 方式 1：环境变量直接指定完整路径（后端名大写）
+export OPENCV_VIDEOIO_PLUGIN_MYCODEC=/path/to/opencv_videoio_mycodec.so
+
+# 方式 2：指定搜索目录
+export OPENCV_VIDEOIO_PLUGIN_PATH=/path/to/plugins/
+
+# 方式 3：放到 OpenCV 库的标准目录（如 /usr/local/lib）
+#+end_src
+
+** 触发加载
+
+OpenCV 是 *惰性加载* 插件的：只有当用户显式请求该后端，或遍历后端尝试打开时才 =dlopen= ：
+
+#+begin_src cpp
+cv::VideoCapture cap("foo.myc", cv::CAP_MYCODEC);  // 显式指定后端 ID
+#+end_src
+
+注意：动态插件的后端 ID =CAP_MYCODEC= 必须在 *主程序和插件中数值一致* （直接在应用里自定义同值枚举即可，因为插件 API 中后端 ID 通过 =open= 时传入或插件内部硬编码）。
+
+* 调试与验证
+
+#+begin_src bash
+# 打开 INFO 日志可看到插件搜索和加载的完整过程
+export OPENCV_LOG_LEVEL=INFO
+./my_app
+# 输出会包含: Video I/O: probing plugins ... trying load 'opencv_videoio_mycodec.so' ...
+#+end_src
+
+#+begin_src cpp
+// 枚举所有可用后端
+for (auto b : cv::videoio_registry::getBackends())
+    std::cout << cv::videoio_registry::getBackendName(b) << "\n";
+#+end_src
+
+* 两条路径对比
+
+| 对比 | 编译期注册 | 运行时插件 |
+|---|---|---|
+| 是否改 OpenCV 源码 | 是 | 否 |
+| ABI 兼容性要求 | 无 | 严格（必须同版本/同编译器） |
+| 签名稳定性 | 接口随源码一起编译，无 ABI 问题 | 受 =plugin_api.hpp= 中 ABI_VERSION 约束 |
+| 部署 | 需重新编译发布 | 只需放置 .so/.dll |
+| 推荐场景 | 深度集成、性能关键 | 独立分发编解码器 |
